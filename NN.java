@@ -23,4 +23,14 @@ public class NN {
         return 1 / (1 + Math.exp(-numToBeRectified) );
     }
 
+
+    public static double average(double[] sum) {
+        double temp = 0;
+        for(double i : sum){
+            temp += i;
+        }
+        temp = temp/ sum.length;
+        return temp;
+    }
+
 }

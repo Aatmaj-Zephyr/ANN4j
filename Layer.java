@@ -12,6 +12,10 @@ class Layer {
             addNeuron(newNeuron);
         }
     }
+
+    public ArrayList<Neuron> getListOfNeurons() {
+        return listOfNeurons;
+    }
     public void setLayerNum(int layerNum) {
         this.layerNum = layerNum;
         for(Neuron i: listOfNeurons){

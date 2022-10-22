@@ -2,7 +2,7 @@ import java.util.*;
 
 public class LayerManager {
     static ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); //dump all connectoins here for eaier debugging purposes.
-
+    static double lossfunction;
     
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
 
@@ -55,5 +55,9 @@ public class LayerManager {
         }
         str+="________________________________"+"\n"+"\n";
         return str;
+    }
+
+    public Layer getOutput(){
+      return listOfLayers.get(listOfLayers.size()-1);
     }
 }

@@ -4,4 +4,6 @@ public class OutputLayer  extends Layer{
         super(numOfNeurons);
     }
 
+    
+
 }
