@@ -4,12 +4,23 @@ public class NN {
 
     private NN(){} //Static class cannot be instantiated
 
-    
+
     public static double getRandom(){
         return Math.random();
     }
+
+    public static double getSmallSignedRandom(){
+        //returns numbers from -0.5 tp 0.5
+        return Math.random()-1;
+    }
+    
+    public static double rectify(double numToBeRectified){
+
+        return sigmoid(numToBeRectified);
+    }
+    
     public static double sigmoid(double numToBeRectified){
-        return 1/1+Math.exp(-numToBeRectified);
+        return 1 / (1 + Math.exp(-numToBeRectified) );
     }
 
 }
