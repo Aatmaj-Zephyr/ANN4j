@@ -12,6 +12,5 @@ public class Main
 		System.out.println(myLayerManager.ConnectionHeap);
 		System.out.println(LossCalculator.lossfunction(myLayerManager.getOutputLayer(),expectedLayer));
 
-
 	}
 }

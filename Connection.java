@@ -23,5 +23,7 @@ public class Connection {
     public String toString(){
      return "Neuron #" + leftNeuron.getNeuronNum()+" in layer #"+leftNeuron.getLayerNum()+ " and Neuron #" + rightNeuron.getNeuronNum() + " in Layer #"+rightNeuron.getLayerNum()+" are connected with weight" + weight+"\n";
     }
+    public void backPropogate() {
+    }
 
 }

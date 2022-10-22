@@ -54,6 +54,13 @@ class Neuron{
         
     }
 
+    public void backwardPropagate(){
+       for(Connection i : leftConnections){
+         i.backPropogate();
+       }
+       //change bias
+       
+    }
     public String toString(){
         return "Neuron #"+neuronNum+" has activation " +activation +"\n";
     }
