@@ -41,6 +41,10 @@ class Neuron{
         
     }
 
+    public String toString(){
+        return activation + "";
+    }
+
 
 
     

@@ -19,6 +19,12 @@ class Layer {
             }
     }
 
+    public String toString(){
+        String str = "Layer:"+"\n"+"Length: " + listOfNeurons.size()+"\n";
+        for(int i = 0; i < listOfNeurons.size(); i++){
+            str += "Neuron #"+i+" has activation "+listOfNeurons.get(i).toString()+"\n";
+        }
+        return str+"\n";
+    }
     
-
 }

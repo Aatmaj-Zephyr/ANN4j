@@ -32,4 +32,18 @@ public class LayerManager {
             }
         }
     }
+
+    public void forwardPropagate() {
+        for(Layer i: listOfLayers){
+            i.forwardPropagate();
+        }
+    }
+
+    public String toString(){
+        String str="";
+        for(Layer i : listOfLayers){
+            str+=i.toString();
+        }
+        return str;
+    }
 }
