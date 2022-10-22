@@ -14,8 +14,13 @@ public class NN {
         return Math.random()-1;
     }
     
+    /**
+     * The rectify function takes a number and returns the sigmoid of that number
+     * 
+     * @param numToBeRectified The number to be rectified.
+     * @return The sigmoid of the number passed in.
+     */
     public static double rectify(double numToBeRectified){
-
         return sigmoid(numToBeRectified);
     }
     
@@ -24,7 +29,17 @@ public class NN {
     }
 
 
+    
     public static double average(double[] sum) {
+
+        /**
+     * It takes an array of doubles, adds them all together, divides by the length of the array, and
+     * returns the result
+     * 
+     * @param sum an array of doubles
+     * @return The average of the array.
+     */
+
         double temp = 0;
         for(double i : sum){
             temp += i;

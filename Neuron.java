@@ -40,6 +40,7 @@ class Neuron{
     
     private double getWeightedSum(){
         double sum=0;
+        // Iterating through the leftConnections ArrayList and adding the activation of each connection to the sum.
         for(Connection i : leftConnections){
             sum += i.calculateActivationForwardPropagation();
             }
@@ -50,6 +51,7 @@ class Neuron{
     }
 
     public void forwardPropagate(){
+        // Setting the activation of the neuron to the rectified value of the weighted sum of the left connections plus the bias.
         this.activation = NN.rectify(getWeightedSum()+getBias());
         
     }

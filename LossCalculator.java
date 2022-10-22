@@ -1,11 +1,13 @@
 public class LossCalculator {
     public static double lossfunctionByLayer(OutputLayer outputLayer,OutputLayer expectedLayer){
+        // Checking if the length of the output layer and the expected layer are the same. If they are not, it throws an error.
         if(outputLayer.getListOfNeurons().size()!=expectedLayer.getListOfNeurons().size()){
             throw new RuntimeException("Length mismatch between lists of neurons and expected lists of neurons");
         }
         
         //Mean squared error
         double [] sum= new double[outputLayer.getListOfNeurons().size()];
+        // Calculating the mean squared error between the output layer and the expected layer.
         for(int i=0;i<outputLayer.getListOfNeurons().size();i++){
             sum[i]=Math.pow((outputLayer.getListOfNeurons().get(i).activation-expectedLayer.getListOfNeurons().get(i).activation),2);
         } 

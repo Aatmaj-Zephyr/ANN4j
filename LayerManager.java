@@ -16,7 +16,7 @@ public class LayerManager {
     LayerManager(int[] layerLengths) {
 
         // Adding a new InputLayer to the listOfLayers ArrayList.
-         this.InputLayer = new InputLayer(layerLengths[0]);
+        this.InputLayer = new InputLayer(layerLengths[0]);
         this.InputLayer.setLayerNum(0);
         listOfLayers.add(InputLayer);
 
@@ -36,12 +36,14 @@ public class LayerManager {
     }
 
     private void joinAllLayers() {
+        // Joining all the layers together.
         for(int i=0; i<listOfLayers.size() - 1; i++) {
            joinLayer(listOfLayers.get(i),listOfLayers.get(i+1));
     }
 }
 
     private void joinLayer(Layer layer, Layer layer2) {
+       // Creating a connection between every neuron in layer 1 and every neuron in layer 2.
         for(Neuron i: layer.listOfNeurons){
             for(Neuron j: layer2.listOfNeurons){
                 new Connection(i, j);
@@ -50,6 +52,7 @@ public class LayerManager {
     }
 
     public void forwardPropagate() {
+        // Calling the forwardPropagate() method on every layer in the listOfLayers ArrayList.
         for(Layer i: listOfLayers){
             i.forwardPropagate();
         }
@@ -65,6 +68,7 @@ public class LayerManager {
     }
 
     public Layer getOutput(){
+// Returning the last layer in the listOfLayers ArrayList.
       return listOfLayers.get(listOfLayers.size()-1);
     }
 
