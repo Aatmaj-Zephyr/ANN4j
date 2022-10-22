@@ -27,7 +27,9 @@ class Neuron{
     public void setNeuronNum(int neuronNum) {
         this.neuronNum = neuronNum;
     }
-
+    public int getNeuronNum() {
+        return neuronNum;
+    }
     public void addLeftConnections(Connection connection) {
         leftConnections.add(connection);
     }

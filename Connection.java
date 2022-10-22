@@ -8,6 +8,7 @@ public class Connection {
         leftNeuron.addLeftConnections(this);
         rightNeuron.addRightConnections(this);
         initializeWeights();
+        LayerManager.ConnectionHeap.add(this);
     }
     private void initializeWeights(){
         weight = NN.getSmallSignedRandom();
@@ -20,7 +21,7 @@ public class Connection {
     }
 
     public String toString(){
-     return "Neuron #" + leftNeuron.getLayerNum()+" and Neuron #" + rightNeuron.getLayerNum() + "are connected with weight" + weight;
+     return "Neuron #" + leftNeuron.getNeuronNum()+" in layer #"+leftNeuron.getLayerNum()+ " and Neuron #" + rightNeuron.getNeuronNum() + " in Layer #"+rightNeuron.getLayerNum()+" are connected with weight" + weight+"\n";
     }
 
 }

@@ -1,6 +1,9 @@
 import java.util.*;
 
 public class LayerManager {
+    static ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); //dump all connectoins here for eaier debugging purposes.
+
+    
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
 
     LayerManager(int[] layerLengths) {

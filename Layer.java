@@ -4,17 +4,19 @@ class Layer {
     int layerNum;
 
     Layer(int numOfNeurons){
-
+        
         //aggregation
         for(int i=0;i<numOfNeurons;i++){
             Neuron newNeuron = new Neuron();
-            newNeuron.setLayerNum(layerNum);
             newNeuron.setNeuronNum(i);
             addNeuron(newNeuron);
         }
     }
     public void setLayerNum(int layerNum) {
         this.layerNum = layerNum;
+        for(Neuron i: listOfNeurons){
+            i.setLayerNum(layerNum);
+        }
     }
     void addNeuron(Neuron toBeAdded){
         listOfNeurons.add(toBeAdded);
