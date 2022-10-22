@@ -5,13 +5,20 @@ public class LayerManager {
     static double lossfunction;
     
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
-
+    public InputLayer InputLayer;
+    public OutputLayer OutputLayer;
+    public OutputLayer getOutputLayer() {
+        return OutputLayer;
+    }
+    public InputLayer getInputLayer() {
+        return InputLayer;
+    }
     LayerManager(int[] layerLengths) {
 
         // Adding a new InputLayer to the listOfLayers ArrayList.
-        Layer inputLayer = new InputLayer(layerLengths[0]);
-        inputLayer.setLayerNum(0);
-        listOfLayers.add(inputLayer);
+         this.InputLayer = new InputLayer(layerLengths[0]);
+        this.InputLayer.setLayerNum(0);
+        listOfLayers.add(InputLayer);
 
         for (int i = 1; i < layerLengths.length - 1; i++) {
             // Adding a new HiddenLayer to the listOfLayers ArrayList.
@@ -21,9 +28,9 @@ public class LayerManager {
         }
 
         // Adding a new OutputLayer to the listOfLayers ArrayList.
-        Layer outputLayer = new OutputLayer(layerLengths[layerLengths.length-1]);
-        outputLayer.setLayerNum(layerLengths.length-1);
-        listOfLayers.add(outputLayer);
+        this.OutputLayer = new OutputLayer(layerLengths[layerLengths.length-1]);
+        OutputLayer.setLayerNum(layerLengths.length-1);
+        listOfLayers.add(OutputLayer);
 
         joinAllLayers();
     }
@@ -60,4 +67,6 @@ public class LayerManager {
     public Layer getOutput(){
       return listOfLayers.get(listOfLayers.size()-1);
     }
+
+    
 }
