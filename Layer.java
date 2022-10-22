@@ -1,8 +1,9 @@
 import java.util.*;
 class Layer {
-    ArrayList<Neuron> listOfNeurons;
+    ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
     
     Layer(int numOfNeurons){
+
         //aggregation
         for(int i=0;i<numOfNeurons;i++){
             addNeuron(new Neuron());

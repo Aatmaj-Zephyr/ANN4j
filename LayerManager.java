@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class LayerManager {
-    ArrayList<Layer> listOfLayers; // polymporphism
+    ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
 
     LayerManager(int[] layerLengths) {
 
@@ -14,7 +14,7 @@ public class LayerManager {
         }
 
         // Adding a new OutputLayer to the listOfLayers ArrayList.
-        listOfLayers.add(new OutputLayer(layerLengths[layerLengths.length]));
+        listOfLayers.add(new OutputLayer(layerLengths[layerLengths.length-1]));
 
         joinAllLayers();
     }

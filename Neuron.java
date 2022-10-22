@@ -1,18 +1,19 @@
 import java.util.*;
 class Neuron{
     double activation;
-    ArrayList<Connection> leftConnections;
-    ArrayList<Connection> rightConnections;
+    ArrayList<Connection> leftConnections = new ArrayList<Connection>();
+    ArrayList<Connection> rightConnections = new ArrayList<Connection>();
 
     double getActivation(){
         return activation;
     }
-    
+
     void setActivation(double activation){
         this.activation = activation;
     }
     Neuron(){
         setActivation(NN.getRandom());
+        
     }
     
 
