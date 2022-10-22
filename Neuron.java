@@ -1,6 +1,8 @@
 import java.util.*;
 class Neuron{
     double activation;
+    int layerNum;
+    int neuronNum;
     ArrayList<Connection> leftConnections = new ArrayList<Connection>();
     ArrayList<Connection> rightConnections = new ArrayList<Connection>();
 
@@ -8,14 +10,23 @@ class Neuron{
         return activation;
     }
 
+
     void setActivation(double activation){
         this.activation = activation;
     }
     Neuron(){
-        setActivation(NN.getRandom());
-        
+        setActivation(NN.getRandom()); 
     }
     
+    public void setLayerNum(int layerNum) {
+        this.layerNum = layerNum;
+    }
+    public int getLayerNum() {
+        return layerNum;
+    }
+    public void setNeuronNum(int neuronNum) {
+        this.neuronNum = neuronNum;
+    }
 
     public void addLeftConnections(Connection connection) {
         leftConnections.add(connection);
@@ -42,7 +53,7 @@ class Neuron{
     }
 
     public String toString(){
-        return activation + "";
+        return "Neuron #"+neuronNum+" has activation " +activation +"\n";
     }
 
 

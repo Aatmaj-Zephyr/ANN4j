@@ -6,15 +6,21 @@ public class LayerManager {
     LayerManager(int[] layerLengths) {
 
         // Adding a new InputLayer to the listOfLayers ArrayList.
-        listOfLayers.add(new InputLayer(layerLengths[0]));
+        Layer inputLayer = new InputLayer(layerLengths[0]);
+        inputLayer.setLayerNum(0);
+        listOfLayers.add(inputLayer);
 
         for (int i = 1; i < layerLengths.length - 1; i++) {
             // Adding a new HiddenLayer to the listOfLayers ArrayList.
-            listOfLayers.add(new HiddenLayer(layerLengths[i]));
+            Layer hiddenLayer = new HiddenLayer(layerLengths[i]);
+            hiddenLayer.setLayerNum(i);
+            listOfLayers.add(hiddenLayer);
         }
 
         // Adding a new OutputLayer to the listOfLayers ArrayList.
-        listOfLayers.add(new OutputLayer(layerLengths[layerLengths.length-1]));
+        Layer outputLayer = new OutputLayer(layerLengths[layerLengths.length-1]);
+        outputLayer.setLayerNum(layerLengths.length-1);
+        listOfLayers.add(outputLayer);
 
         joinAllLayers();
     }
@@ -44,6 +50,7 @@ public class LayerManager {
         for(Layer i : listOfLayers){
             str+=i.toString();
         }
+        str+="________________________________"+"\n"+"\n";
         return str;
     }
 }

@@ -4,4 +4,6 @@ public class InputLayer  extends Layer{
         super(numOfNeurons);
     }
 
+   
+
 }

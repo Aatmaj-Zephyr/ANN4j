@@ -19,4 +19,8 @@ public class Connection {
         return rightNeuron.getActivation()*weight;
     }
 
+    public String toString(){
+     return "Neuron #" + leftNeuron.getLayerNum()+" and Neuron #" + rightNeuron.getLayerNum() + "are connected with weight" + weight;
+    }
+
 }
