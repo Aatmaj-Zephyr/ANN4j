@@ -46,7 +46,7 @@ public class LossCalculator {
             sum[i]=Math.pow((outputLayer.getListOfNeurons().get(i).activation-expectedLayer[i]),1);
            
         } 
-        System.out.println(NN.average(sum));
+       // System.out.println(NN.average(sum));
         return NN.average(sum);
     }
 

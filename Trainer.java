@@ -24,6 +24,8 @@ public class Trainer {
 
         System.out.println(myLayerManager.OutputLayer.listOfNeurons.get(0));	
 
+
+
     
     
 		
