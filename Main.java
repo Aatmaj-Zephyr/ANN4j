@@ -13,12 +13,15 @@ public class Main
 
 		double [] expectedLayer = {1,0,0};
 		myLayerManager.setExpectedOutputArray(expectedLayer);
-		
+
 		System.out.print(myLayerManager);
         myLayerManager.forwardPropagate();
 		System.out.println(myLayerManager);
 		System.out.println(LayerManager.ConnectionHeap);
-		System.out.println();
+        myLayerManager.backwardPropagate();
+		System.out.println(myLayerManager);
+		System.out.println(LayerManager.ConnectionHeap);
+
 
 	}
 }

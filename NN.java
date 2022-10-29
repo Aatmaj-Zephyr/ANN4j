@@ -10,8 +10,8 @@ public class NN {
     }
 
     public static double getSmallSignedRandom(){
-        //returns numbers from -0.5 tp 0.5
-        return Math.random()-1;
+        //returns numbers from -0.5 to 0.5
+        return Math.random()-0.5;
     }
     
     /**

@@ -26,9 +26,12 @@ public class Connection {
     }
 
     public String toString(){
-     return "Neuron #" + leftNeuron.getNeuronNum()+" in layer #"+leftNeuron.getLayerNum()+ " and Neuron #" + rightNeuron.getNeuronNum() + " in Layer #"+rightNeuron.getLayerNum()+" are connected with weight" + weight+"\n";
+     return "Neuron #" + leftNeuron.getNeuronNum()+" in layer #"+leftNeuron.getLayerNum()+ " and Neuron #" + rightNeuron.getNeuronNum() + " in Layer #"+rightNeuron.getLayerNum()+" are connected with weight " + weight+"\n";
     }
     public void backPropogate() {
+       // This is the backpropogation algorithm. It is calculating the gradient of the loss function
+       // with respect to the weight. It then updates the weight by subtracting the learning rate times
+       // the gradient.
         double gradient = calculateGradient();
         oldWeight = weight;
         weight = weight - LayerManager.learningRate * gradient;

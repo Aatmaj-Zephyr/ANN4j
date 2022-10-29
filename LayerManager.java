@@ -68,6 +68,9 @@ public class LayerManager {
         for(Layer i: listOfLayers){
             i.forwardPropagate();
         }
+        // Calculating the new loss function and storing it in the variable lossFunction, storing the old loss function in the variable old lossFunction
+        oldLossFunction=lossFunction;
+        this.lossFunction=calculateLossFunction();
     }
 
     public String toString(){
@@ -83,6 +86,12 @@ public class LayerManager {
     public Layer getOutput(){
 // Returning the last layer in the listOfLayers ArrayList.
       return listOfLayers.get(listOfLayers.size()-1);
+    }
+    public void backwardPropagate() {
+        for(Connection i: ConnectionHeap){
+            i.backPropogate();
+        }
+
     }
 
     
