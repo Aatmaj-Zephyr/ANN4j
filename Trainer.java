@@ -14,8 +14,11 @@ public class Trainer {
         
         myLayerManager.backwardPropagate();
 
+        System.out.println(myLayerManager.OutputLayer.listOfNeurons.get(1).leftConnections);	
         System.out.println(myLayerManager.OutputLayer);	
-	
+
+        System.out.println(myLayerManager.lossFunction);	
+
     
     
 		
