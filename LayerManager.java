@@ -25,6 +25,7 @@ public class LayerManager {
     public void setInputLayer(double [] inputLayerArray){
         this.InputLayer.setInput(inputLayerArray);
     }
+
     LayerManager(int[] layerLengths) {
 
         // Adding a new InputLayer to the listOfLayers ArrayList.
@@ -68,7 +69,8 @@ public class LayerManager {
         for(Layer i: listOfLayers){
             i.forwardPropagate();
         }
-        // Calculating the new loss function and storing it in the variable lossFunction, storing the old loss function in the variable old lossFunction
+        // Calculating the new loss function and storing it in the variable lossFunction,
+        // storing the old loss function in the variable old lossFunction
         oldLossFunction=lossFunction;
         this.lossFunction=calculateLossFunction();
     }
@@ -89,7 +91,7 @@ public class LayerManager {
     }
     public void backwardPropagate() {
         for(Connection i: ConnectionHeap){
-            i.backPropogate();
+            i.backPropagate();
         }
 
     }

@@ -58,7 +58,7 @@ class Neuron{
 
     public void backwardPropagate(){
        for(Connection i : leftConnections){
-         i.backPropogate();
+         i.backPropagate();
        }
        //change bias
        
