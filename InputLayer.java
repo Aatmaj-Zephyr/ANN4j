@@ -1,7 +1,10 @@
 public class InputLayer  extends Layer{
 
-    InputLayer(int numOfNeurons) {
+    InputLayer(int numOfNeurons, double[] inputLayerArray) {
         super(numOfNeurons);
+        for( int i = 0; i<=inputLayerArray.length-1;i++){
+            listOfNeurons.get(i).setActivation(inputLayerArray[i]);
+        }
     }
 
     private double getWeightedSum(){

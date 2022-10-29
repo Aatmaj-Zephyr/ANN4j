@@ -15,10 +15,10 @@ public class LayerManager {
     public InputLayer getInputLayer() {
         return InputLayer;
     }
-    LayerManager(int[] layerLengths) {
+    LayerManager(int[] layerLengths, double [] inputLayerArray) {
 
         // Adding a new InputLayer to the listOfLayers ArrayList.
-        this.InputLayer = new InputLayer(layerLengths[0]);
+        this.InputLayer = new InputLayer(layerLengths[0],inputLayerArray);
         this.InputLayer.setLayerNum(0);
         listOfLayers.add(InputLayer);
 
