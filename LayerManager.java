@@ -9,11 +9,18 @@ public class LayerManager {
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;
     public OutputLayer OutputLayer;
+    public double [] ExpectedOutputArray;
     public OutputLayer getOutputLayer() {
         return OutputLayer;
     }
     public InputLayer getInputLayer() {
         return InputLayer;
+    }
+    public double calculateLossFunction(){
+        return LossCalculator.calculateLossFunction(this.getOutputLayer(),this.ExpectedOutputArray);
+    }
+    public void setExpectedOutputArray(double[] expectedOutputArray) {
+        ExpectedOutputArray = expectedOutputArray;
     }
     public void setInputLayer(double [] inputLayerArray){
         this.InputLayer.setInput(inputLayerArray);
@@ -69,6 +76,7 @@ public class LayerManager {
             str+=i.toString();
         }
         str+="________________________________"+"\n"+"\n";
+        str+="Loss is " + calculateLossFunction()+"\n"+"\n";
         return str;
     }
 
