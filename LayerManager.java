@@ -92,8 +92,9 @@ public class LayerManager {
       return listOfLayers.get(listOfLayers.size()-1);
     }
     public void backwardPropagate() {
-        for(Connection i: ConnectionHeap){
-            i.backPropagate();
+        //backwardPropagate in reverse order
+        for(int i=ConnectionHeap.size();i<=0;i--){
+            ConnectionHeap.get(i).backPropagate();
         }
 
     }
