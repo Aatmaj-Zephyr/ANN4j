@@ -10,8 +10,8 @@ public class Connection {
         
         this.leftNeuron = leftNeuron;
         this.rightNeuron = rightNeuron;
-        leftNeuron.addLeftConnections(this);
-        rightNeuron.addRightConnections(this);
+        leftNeuron.addRightConnections(this);
+        rightNeuron.addLeftConnections(this);
         initializeWeights();
         LayerManager.ConnectionHeap.add(this);
     }
@@ -19,10 +19,8 @@ public class Connection {
         weight = NN.getSmallSignedRandom();
     }
     public double calculateActivationForwardPropagation(){
+       
         return leftNeuron.getActivation()*weight;
-    }
-    public double calculateActivationBackPropagation(){
-        return rightNeuron.getActivation()*weight;
     }
 
     public String toString(){
@@ -37,6 +35,6 @@ public class Connection {
         weight = weight - LayerManager.learningRate * gradient;
     }
     public double calculateGradient(){
-        return (oldWeight - weight)/(LayerManager.oldLossFunction-LayerManager.lossFunction);
+        return (LayerManager.lossFunction-LayerManager.oldLossFunction)/(oldWeight - weight);
     }
 }

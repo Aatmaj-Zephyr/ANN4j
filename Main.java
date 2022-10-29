@@ -11,7 +11,16 @@ public class Main
 		double [] actualLayer = {1,0,0};
 		double [] expectedLayer = {1,0,0};
 		Trainer.train(myLayerManager, actualLayer, expectedLayer);
-		Trainer.train(myLayerManager, actualLayer, expectedLayer);
-
+		//Trainer.train(myLayerManager, actualLayer, expectedLayer);
+/* 
+		//test drive
+		// Training the network with random values.
+		for(int i=0;i<=10;i++){
+			actualLayer[0]=NN.getRandom();
+			actualLayer[1]=NN.getRandom();
+			actualLayer[2]=NN.getRandom();
+			Trainer.train(myLayerManager, actualLayer, expectedLayer);
+		}
+*/
 	}
 }

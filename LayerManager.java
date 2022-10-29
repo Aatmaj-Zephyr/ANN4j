@@ -2,6 +2,7 @@ import java.util.*;
 
 public class LayerManager {
     static ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); //dump all connectoins here for eaier debugging purposes.
+    //all connectoins must be in order of creation
     static double lossFunction;
     public static double oldLossFunction = 0;
     static final double learningRate = 0.01;
@@ -66,8 +67,9 @@ public class LayerManager {
 
     public void forwardPropagate() {
         // Calling the forwardPropagate() method on every layer in the listOfLayers ArrayList.
-        for(Layer i: listOfLayers){
-            i.forwardPropagate();
+        //dont forward propagate the input layer
+        for(int i=1;i<=listOfLayers.size()-1;i++){
+            listOfLayers.get(i).forwardPropagate();
         }
         // Calculating the new loss function and storing it in the variable lossFunction,
         // storing the old loss function in the variable old lossFunction

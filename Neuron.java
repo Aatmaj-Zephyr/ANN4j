@@ -43,6 +43,8 @@ class Neuron{
         // Iterating through the leftConnections ArrayList and adding the activation of each connection to the sum.
         for(Connection i : leftConnections){
             sum += i.calculateActivationForwardPropagation();
+        //    System.out.println("Getting sum from connection -----     "+i); Test code
+
             }
         return sum;
     }
@@ -51,9 +53,10 @@ class Neuron{
     }
 
     public void forwardPropagate(){
+     //   System.out.println("Forward propagating in neuron # "+this.neuronNum+" in layer number "+this.layerNum);    //test code
         // Setting the activation of the neuron to the rectified value of the weighted sum of the left connections plus the bias.
         this.activation = NN.rectify(getWeightedSum()+getBias());
-        
+
     }
 
     public void backwardPropagate(){
