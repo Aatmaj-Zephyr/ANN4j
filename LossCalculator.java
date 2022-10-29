@@ -31,4 +31,24 @@ public class LossCalculator {
       
         return NN.average(sum);
     }
+
+    public static double calculateDifference(OutputLayer outputLayer,double [] expectedLayer){
+
+        //Overloaded for arrays as input
+
+        if(outputLayer.getListOfNeurons().size()!=expectedLayer.length){
+            throw new RuntimeException("Length mismatch between lists of neurons and expected lists of neurons");
+        }
+        
+        //Mean squared error
+        double [] sum= new double[outputLayer.getListOfNeurons().size()];
+        for(int i=0;i<outputLayer.getListOfNeurons().size();i++){
+            sum[i]=Math.pow((outputLayer.getListOfNeurons().get(i).activation-expectedLayer[i]),1);
+           
+        } 
+        System.out.println(NN.average(sum));
+        return NN.average(sum);
+    }
+
+    
 }

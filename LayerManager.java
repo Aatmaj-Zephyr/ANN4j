@@ -4,8 +4,8 @@ public class LayerManager {
     static ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); //dump all connectoins here for eaier debugging purposes.
     //all connectoins must be in order of creation
     static double lossFunction;
-    public static double oldLossFunction = 0;
-    static final double learningRate = 0.01;
+    public static double deltaDifferenced = 0;
+    static final double learningRate = 0.05;
     
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;
@@ -73,10 +73,13 @@ public class LayerManager {
         }
         // Calculating the new loss function and storing it in the variable lossFunction,
         // storing the old loss function in the variable old lossFunction
-        oldLossFunction=lossFunction;
+        deltaDifferenced=calculateDifference();
         this.lossFunction=calculateLossFunction();
     }
 
+    private double calculateDifference() {
+        return LossCalculator.calculateDifference(this.getOutputLayer(),this.ExpectedOutputArray);
+    }
     public String toString(){
         String str="";
         for(Layer i : listOfLayers){
@@ -93,7 +96,8 @@ public class LayerManager {
     }
     public void backwardPropagate() {
         //backwardPropagate in reverse order
-        for(int i=ConnectionHeap.size();i<=0;i--){
+
+        for(int i=ConnectionHeap.size()-1;i>=0;i--){
             ConnectionHeap.get(i).backPropagate();
         }
 

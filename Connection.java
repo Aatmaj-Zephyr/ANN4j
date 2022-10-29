@@ -2,7 +2,6 @@ public class Connection {
     Neuron leftNeuron;
     Neuron rightNeuron;
     double weight;
-    private double oldWeight = 0;
     Connection(Neuron leftNeuron,Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and right neurons
         // for the connection, adding the connection to the left and right neurons, initializing the
@@ -30,11 +29,12 @@ public class Connection {
        // This is the backpropagation algorithm. It is calculating the gradient of the loss function
        // with respect to the weight. It then updates the weight by subtracting the learning rate times
        // the gradient.
-        double gradient = calculateGradient();
-        oldWeight = weight;
-        weight = weight - LayerManager.learningRate * gradient;
+       
+        weight = weight - LayerManager.learningRate * calculateGradient();;
     }
     public double calculateGradient(){
-        return (LayerManager.lossFunction-LayerManager.oldLossFunction)/(oldWeight - weight);
+  //      System.out.println(LayerManager.deltaDifferenced);
+
+        return LayerManager.deltaDifferenced*leftNeuron.getActivation();
     }
 }
