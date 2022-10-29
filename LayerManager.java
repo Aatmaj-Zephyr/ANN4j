@@ -2,7 +2,9 @@ import java.util.*;
 
 public class LayerManager {
     static ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); //dump all connectoins here for eaier debugging purposes.
-    static double lossfunction;
+    static double lossFunction;
+    public static double oldLossFunction = 0;
+    static final double learningRate = 0.01;
     
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;

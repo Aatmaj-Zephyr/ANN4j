@@ -2,6 +2,7 @@ public class Connection {
     Neuron leftNeuron;
     Neuron rightNeuron;
     double weight;
+    private double oldWeight = 0;
     Connection(Neuron leftNeuron,Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and right neurons
         // for the connection, adding the connection to the left and right neurons, initializing the
@@ -28,6 +29,11 @@ public class Connection {
      return "Neuron #" + leftNeuron.getNeuronNum()+" in layer #"+leftNeuron.getLayerNum()+ " and Neuron #" + rightNeuron.getNeuronNum() + " in Layer #"+rightNeuron.getLayerNum()+" are connected with weight" + weight+"\n";
     }
     public void backPropogate() {
+        double gradient = calculateGradient();
+        oldWeight = weight;
+        weight = weight - LayerManager.learningRate * gradient;
     }
-
+    public double calculateGradient(){
+        return (oldWeight - weight)/(LayerManager.oldLossFunction-LayerManager.lossFunction);
+    }
 }
