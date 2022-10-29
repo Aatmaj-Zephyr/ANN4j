@@ -6,7 +6,8 @@ public class Main
 		int[] layerArray= {3,5,3};
 		double [] actualLayer = {1,0,0};
 		double [] expectedLayer = {1,0,0};
-		LayerManager myLayerManager = new LayerManager(layerArray,actualLayer);
+		LayerManager myLayerManager = new LayerManager(layerArray);
+		myLayerManager.setInputLayer(actualLayer);
 		System.out.print(myLayerManager);
         myLayerManager.forwardPropagate();
 		System.out.println(myLayerManager);
