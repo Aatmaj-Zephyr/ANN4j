@@ -1,5 +1,5 @@
 public class LossCalculator {
-    public static double lossfunctionByLayer(OutputLayer outputLayer,OutputLayer expectedLayer){
+    public static double calculateLossfunctionByLayer(OutputLayer outputLayer,OutputLayer expectedLayer){
         // Checking if the length of the output layer and the expected layer are the same. If they are not, it throws an error.
         if(outputLayer.getListOfNeurons().size()!=expectedLayer.getListOfNeurons().size()){
             throw new RuntimeException("Length mismatch between lists of neurons and expected lists of neurons");
@@ -14,7 +14,7 @@ public class LossCalculator {
         return NN.average(sum);
     }
 
-    public static double lossfunction(OutputLayer outputLayer,double [] expectedLayer){
+    public static double calculateLossFunction(OutputLayer outputLayer,double [] expectedLayer){
 
         //Overloaded for arrays as input
 
