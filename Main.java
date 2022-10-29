@@ -15,7 +15,7 @@ public class Main
 
 		//test drive
 		// Training the network with random values.
-		for(int i=0;i<=10;i++){
+		for(int i=0;i<=100;i++){
 			inputLayer[0]=NN.getRandom();
 			inputLayer[1]=NN.getRandom();
 			Trainer.train(myLayerManager, inputLayer, expectedLayer);

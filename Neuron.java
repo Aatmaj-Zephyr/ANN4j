@@ -5,6 +5,7 @@ class Neuron{
     int neuronNum;
     ArrayList<Connection> leftConnections = new ArrayList<Connection>();
     ArrayList<Connection> rightConnections = new ArrayList<Connection>();
+    public double bias=0.01;
 
     double getActivation(){
         return activation;
@@ -49,7 +50,7 @@ class Neuron{
         return sum;
     }
     private double getBias(){
-        return 0.1;
+        return bias;
     }
 
     public void forwardPropagate(){
@@ -64,6 +65,7 @@ class Neuron{
          i.backPropagate();
        }
        //change bias
+       bias -= LayerManager.deltaDifferenced * LayerManager.learningRate;
        
     }
     public String toString(){

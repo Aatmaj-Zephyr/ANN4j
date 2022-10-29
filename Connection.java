@@ -18,7 +18,8 @@ public class Connection {
         weight = NN.getSmallSignedRandom();
     }
     public double calculateActivationForwardPropagation(){
-       
+   //     System.out.println(leftNeuron.getActivation()*weight);
+
         return leftNeuron.getActivation()*weight;
     }
 
@@ -29,7 +30,7 @@ public class Connection {
        // This is the backpropagation algorithm. It is calculating the gradient of the loss function
        // with respect to the weight. It then updates the weight by subtracting the learning rate times
        // the gradient.
-       
+
         weight = weight - LayerManager.learningRate * calculateGradient();;
     }
     public double calculateGradient(){

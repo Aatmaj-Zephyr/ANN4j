@@ -9,10 +9,16 @@ public class Trainer {
 	
 		myLayerManager.setExpectedOutputArray(expectedLayer);
 	   
+       
       
+
         myLayerManager.forwardPropagate();
-        
+       
+
         myLayerManager.backwardPropagate();
+        
+       
+
 
 //        System.out.println(myLayerManager.OutputLayer);	
 
