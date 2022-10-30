@@ -21,13 +21,18 @@ public class NN {
      * @return The sigmoid of the number passed in.
      */
     public static double rectify(double numToBeRectified){
-        return sigmoid(numToBeRectified);
+        return relu(numToBeRectified);
     }
     
     public static double sigmoid(double numToBeRectified){
         return 1 / (1 + Math.exp(-numToBeRectified) );
     }
-
+    public static double relu(double numToBeRectified){
+        if(numToBeRectified>0){
+            return numToBeRectified;
+        }
+        return 0;
+    }
 
     
     public static double average(double[] sum) {

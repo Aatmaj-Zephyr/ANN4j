@@ -65,7 +65,7 @@ public double []generateInputFromBigArray(double [] array){
     //generates the input array from the total array , that is it excludes the first element of the array
     double [] inputArray = new double[784];
     for(int i=0; i<=783; i++){
-      inputArray[i] = array[i+1];
+      inputArray[i] = array[i+1]/256;
     }
     return inputArray;
 }

@@ -4,7 +4,7 @@ public class Main
 {   
 	public static void main(String[] args) {
 		System.out.println("Hello World");
-		int[] layerArray= {784,9,10};
+		int[] layerArray= {784,16,10};
 		LayerManager myLayerManager = new LayerManager(layerArray);
 		//The new method must be outside the train method.
 
@@ -17,7 +17,7 @@ public class Main
 		try{
 		MNISTDataBaseFileReader myMnistDataBaseFileReader = new MNISTDataBaseFileReader("mnist_test.csv"); //must not be in for loop
 
-		for(int i=0;i<=1;i++){
+		for(int i=0;i<=100;i++){
 			
 				myMnistDataBaseFileReader.next();
 				expectedLayer= myMnistDataBaseFileReader.getExpectedOutputArray();

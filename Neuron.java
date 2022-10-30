@@ -1,7 +1,7 @@
 import java.util.*;
 class Neuron{
     double activation;
-    int layerNum;
+    int layerNum=-1;
     int neuronNum;
     ArrayList<Connection> leftConnections = new ArrayList<Connection>();
     ArrayList<Connection> rightConnections = new ArrayList<Connection>();
@@ -47,8 +47,8 @@ class Neuron{
         //    System.out.println("Getting sum from connection -----     "+i); Test code
 
             }
-            
-            System.out.println(sum);
+
+           // System.out.println(sum);
 
         return sum;
     }

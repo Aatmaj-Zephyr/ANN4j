@@ -19,7 +19,7 @@ public class Connection {
     }
     public double calculateActivationForwardPropagation(){
         //System.out.println(leftNeuron.getActivation()*weight);
-        
+      //  System.out.println(leftNeuron);
         return leftNeuron.getActivation()*this.weight;
     }
 

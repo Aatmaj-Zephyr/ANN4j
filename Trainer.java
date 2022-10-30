@@ -8,10 +8,10 @@ public class Trainer {
 		myLayerManager.setInputLayer(actualLayer);
 	
 		myLayerManager.setExpectedOutputArray(expectedLayer);
-        System.out.println(myLayerManager.OutputLayer);	
+       // System.out.println(myLayerManager.listOfLayers.get(1));	
 
         myLayerManager.forwardPropagate();
-        System.out.println(myLayerManager.OutputLayer);	
+      // System.out.println(myLayerManager.listOfLayers.get(1));	
 
 
         myLayerManager.backwardPropagate();
