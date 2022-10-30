@@ -5,7 +5,7 @@ public class LayerManager {
     //all connectoins must be in order of creation
     static double lossFunction;
     public static double deltaDifferenced = 0;
-    static final double learningRate = 0.05;
+    static final double learningRate = 0.0001;
     
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;

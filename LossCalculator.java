@@ -43,7 +43,7 @@ public class LossCalculator {
         //Mean squared error
         double [] sum= new double[outputLayer.getListOfNeurons().size()];
         for(int i=0;i<outputLayer.getListOfNeurons().size();i++){
-            sum[i]=Math.pow((outputLayer.getListOfNeurons().get(i).activation-expectedLayer[i]),1);
+            sum[i]=outputLayer.getListOfNeurons().get(i).activation-expectedLayer[i];
            
         } 
        // System.out.println(NN.average(sum));

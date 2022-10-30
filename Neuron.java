@@ -5,7 +5,7 @@ class Neuron{
     int neuronNum;
     ArrayList<Connection> leftConnections = new ArrayList<Connection>();
     ArrayList<Connection> rightConnections = new ArrayList<Connection>();
-    public double bias=0.01;
+    public double bias;
 
     double getActivation(){
         return activation;
@@ -17,6 +17,7 @@ class Neuron{
     }
     Neuron(){
         setActivation(NN.getRandom()); 
+        bias = NN.setBias();
     }
     
     public void setLayerNum(int layerNum) {

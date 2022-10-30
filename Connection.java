@@ -31,7 +31,7 @@ public class Connection {
        // with respect to the weight. It then updates the weight by subtracting the learning rate times
        // the gradient.
 
-        this.weight = this.weight - LayerManager.learningRate * calculateGradient();;
+        this.weight = this.weight - LayerManager.learningRate * calculateGradient();
     }
     public double calculateGradient(){
   //      System.out.println(LayerManager.deltaDifferenced);

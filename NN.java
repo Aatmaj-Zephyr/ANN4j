@@ -11,15 +11,9 @@ public class NN {
 
     public static double getSmallSignedRandom(){
         //returns numbers from -0.5 to 0.5
-        return Math.random()-0.5;
+        return (Math.random()-0.5);
     }
-    
-    /**
-     * The rectify function takes a number and returns the sigmoid of that number
-     * 
-     * @param numToBeRectified The number to be rectified.
-     * @return The sigmoid of the number passed in.
-     */
+  
     public static double rectify(double numToBeRectified){
         return relu(numToBeRectified);
     }
@@ -51,6 +45,11 @@ public class NN {
         }
         temp = temp/ sum.length;
         return temp;
+    }
+
+
+    public static double setBias() {
+        return NN.getRandom();
     }
 
 }
