@@ -11,10 +11,7 @@ public class InputLayer  extends Layer{
             listOfNeurons.get(i).setActivation(inputLayerArray[i]);
         }
     }
-    private double getWeightedSum(){
-        //not applicable for input layer
-     return 0;
-    }
+
 
 
    
