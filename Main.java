@@ -7,9 +7,7 @@ public class Main {
 		LayerManager myLayerManager = new LayerManager(layerArray);
 		// The new method must be outside the train method.
 
-		double[] inputLayer;
-		double[] expectedLayer;
-		double label;
+		
 		// test drive
 		// Training the network with random values.
 		try {
@@ -18,17 +16,9 @@ public class Main {
 																												// be in
 																												// for
 																												// loop
-            Trainer myTrainer = new Trainer();
-			for (int i = 0; i <= 700; i++) {
-
-				myMnistDataBaseFileReader.next();
-				expectedLayer = myMnistDataBaseFileReader.getExpectedOutputArray();
-				inputLayer = myMnistDataBaseFileReader.getInputArray();
-				label = myMnistDataBaseFileReader.getLabel();
-				System.out.println("actuall " + label);
-				myTrainer.train(myLayerManager, inputLayer, expectedLayer);
-
-			}
+            Trainer myTrainer = new Trainer(myLayerManager,myMnistDataBaseFileReader);
+			myTrainer.train(20);
+			
 
 			// System.out.println(LayerManager.ConnectionHeap);
 

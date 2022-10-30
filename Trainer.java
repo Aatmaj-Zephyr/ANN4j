@@ -1,9 +1,30 @@
 public class Trainer {
+    public LayerManager myLayerManager;
+    public double[] expectedLayer;
+    public InputFileReader myMnistDataBaseFileReader;
+    double[] inputLayer;
+		double label;
 
+    Trainer(LayerManager myLayerManager,  InputFileReader myMnistDataBaseFileReader){
+        this.myLayerManager= myLayerManager;
+        this.myMnistDataBaseFileReader= myMnistDataBaseFileReader;
+    }
+    public void train(int epochs){
+        for (int i = 0; i <= epochs; i++) {
+
+            myMnistDataBaseFileReader.next();
+            expectedLayer = myMnistDataBaseFileReader.getExpectedOutputArray();
+            inputLayer = myMnistDataBaseFileReader.getInputArray();
+            label = myMnistDataBaseFileReader.getLabel();
+            System.out.println("actuall " + label);
+            train();
+
+        }
     
-    public void train(LayerManager myLayerManager, double[] actualLayer, double[] expectedLayer) {
+    }
+    public void train() {
 
-        myLayerManager.setInputLayer(actualLayer);
+        myLayerManager.setInputLayer(inputLayer);
 
         myLayerManager.setExpectedOutputArray(expectedLayer);
         // System.out.println(myLayerManager.listOfLayers.get(1));
