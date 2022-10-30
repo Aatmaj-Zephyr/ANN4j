@@ -9,8 +9,6 @@ public class Trainer {
 	
 		myLayerManager.setExpectedOutputArray(expectedLayer);
 	   
-       
-      
 
         myLayerManager.forwardPropagate();
        
@@ -22,14 +20,23 @@ public class Trainer {
 
 //        System.out.println(myLayerManager.OutputLayer);	
 
-        System.out.println(myLayerManager.OutputLayer.listOfNeurons.get(0));	
+        	
+        int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        System.out.println("prediction "+ prediction);
+        System.out.println("value "+ myLayerManager.OutputLayer.listOfNeurons.get(prediction));
 
-
-
-    
-    
-		
-
+    }
+    public static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager){
+        double temp=0;
+        int no=0;
+        for(int i = 0 ; i<myLayerManager.OutputLayer.listOfNeurons.size();i++ ){
+            double val = myLayerManager.OutputLayer.listOfNeurons.get(i).activation;
+            if(val>temp){
+                no=i;
+                temp=val;
+            }
+        }
+        return no;
     }
     
 }

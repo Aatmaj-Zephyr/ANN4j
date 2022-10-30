@@ -14,20 +14,24 @@ public class Main
 		double label;
 		//test drive
 		// Training the network with random values.
-		for(int i=0;i<=1;i++){
-			try{
-				MNISTDataBaseFileReader myMnistDataBaseFileReader = new MNISTDataBaseFileReader("mnist_test.csv");
+		try{
+		MNISTDataBaseFileReader myMnistDataBaseFileReader = new MNISTDataBaseFileReader("mnist_test.csv"); //must not be in for loop
+
+		for(int i=0;i<=10;i++){
+			
 				myMnistDataBaseFileReader.next();
 				expectedLayer= myMnistDataBaseFileReader.getExpectedOutputArray();
 				inputLayer= myMnistDataBaseFileReader.getInputArray();
-				Trainer.train(myLayerManager, inputLayer, expectedLayer);
 				label=myMnistDataBaseFileReader.getLabel();
+				System.out.println("actuall "+label);
+
+				Trainer.train(myLayerManager, inputLayer, expectedLayer);
 				
 			}
 			
-				catch(FileNotFoundException ex){}
+				
 			
-		}
+		}catch(FileNotFoundException ex){}
 		
 	
         
