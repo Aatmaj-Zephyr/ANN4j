@@ -1,29 +1,35 @@
 import java.util.*;
 
 public class LayerManager {
-    static ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); //dump all connectoins here for eaier debugging purposes.
-    //all connectoins must be in order of creation
+    static ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); // dump all connectoins here for eaier
+                                                                               // debugging purposes.
+    // all connectoins must be in order of creation
     static double lossFunction;
     public static double deltaDifferenced = 0;
     static final double learningRate = 0.0001;
-    
+
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;
     public OutputLayer OutputLayer;
-    public double [] ExpectedOutputArray;
+    public double[] ExpectedOutputArray;
+
     public OutputLayer getOutputLayer() {
         return OutputLayer;
     }
+
     public InputLayer getInputLayer() {
         return InputLayer;
     }
-    public double calculateLossFunction(){
-        return LossCalculator.calculateLossFunction(this.getOutputLayer(),this.ExpectedOutputArray);
+
+    public double calculateLossFunction() {
+        return LossCalculator.calculateLossFunction(this.getOutputLayer(), this.ExpectedOutputArray);
     }
+
     public void setExpectedOutputArray(double[] expectedOutputArray) {
         ExpectedOutputArray = expectedOutputArray;
     }
-    public void setInputLayer(double [] inputLayerArray){
+
+    public void setInputLayer(double[] inputLayerArray) {
         this.InputLayer.setInput(inputLayerArray);
     }
 
@@ -42,8 +48,8 @@ public class LayerManager {
         }
 
         // Adding a new OutputLayer to the listOfLayers ArrayList.
-        this.OutputLayer = new OutputLayer(layerLengths[layerLengths.length-1]);
-        OutputLayer.setLayerNum(layerLengths.length-1);
+        this.OutputLayer = new OutputLayer(layerLengths[layerLengths.length - 1]);
+        OutputLayer.setLayerNum(layerLengths.length - 1);
         listOfLayers.add(OutputLayer);
 
         joinAllLayers();
@@ -51,58 +57,63 @@ public class LayerManager {
 
     private void joinAllLayers() {
         // Joining all the layers together.
-        for(int i=0; i<listOfLayers.size() - 1; i++) {
-           joinLayer(listOfLayers.get(i),listOfLayers.get(i+1));
-         //  System.out.println("Layers "+listOfLayers.get(i).layerNum+" and "+listOfLayers.get(i+1).layerNum+" joined"); ///debug code
+        for (int i = 0; i < listOfLayers.size() - 1; i++) {
+            joinLayer(listOfLayers.get(i), listOfLayers.get(i + 1));
+            // System.out.println("Layers "+listOfLayers.get(i).layerNum+" and
+            // "+listOfLayers.get(i+1).layerNum+" joined"); ///debug code
+        }
     }
-}
 
     private void joinLayer(Layer layer, Layer layer2) {
-       // Creating a connection between every neuron in layer 1 and every neuron in layer 2.
-        for(Neuron i: layer.listOfNeurons){
-            for(Neuron j: layer2.listOfNeurons){
+        // Creating a connection between every neuron in layer 1 and every neuron in
+        // layer 2.
+        for (Neuron i : layer.listOfNeurons) {
+            for (Neuron j : layer2.listOfNeurons) {
                 new Connection(i, j);
             }
         }
     }
 
     public void forwardPropagate() {
-        // Calling the forwardPropagate() method on every layer in the listOfLayers ArrayList.
-        //dont forward propagate the input layer
-        for(int i=1;i<=listOfLayers.size()-1;i++){
+        // Calling the forwardPropagate() method on every layer in the listOfLayers
+        // ArrayList.
+        // dont forward propagate the input layer
+        for (int i = 1; i <= listOfLayers.size() - 1; i++) {
             listOfLayers.get(i).forwardPropagate();
         }
-        // Calculating the new loss function and storing it in the variable lossFunction,
+        // Calculating the new loss function and storing it in the variable
+        // lossFunction,
         // storing the old loss function in the variable old lossFunction
-        deltaDifferenced=calculateDifference();
-        LayerManager.lossFunction=calculateLossFunction();
+        deltaDifferenced = calculateDifference();
+        LayerManager.lossFunction = calculateLossFunction();
     }
 
     private double calculateDifference() {
-        return LossCalculator.calculateDifference(this.getOutputLayer(),this.ExpectedOutputArray);
+        return LossCalculator.calculateDifference(this.getOutputLayer(), this.ExpectedOutputArray);
     }
-    public String toString(){
-        String str="";
-        for(Layer i : listOfLayers){
-            str+=i.toString();
+
+    public String toString() {
+        String str = "";
+        for (Layer i : listOfLayers) {
+            str += i.toString();
         }
-        str+="________________________________"+"\n"+"\n";
-        str+="Loss is " + calculateLossFunction()+"\n"+"\n";
+        str += "________________________________" + "\n" + "\n";
+        str += "Loss is " + calculateLossFunction() + "\n" + "\n";
         return str;
     }
 
-    public Layer getOutput(){
-// Returning the last layer in the listOfLayers ArrayList.
-      return listOfLayers.get(listOfLayers.size()-1);
+    public Layer getOutput() {
+        // Returning the last layer in the listOfLayers ArrayList.
+        return listOfLayers.get(listOfLayers.size() - 1);
     }
-    public void backwardPropagate() {
-        //backwardPropagate in reverse order
 
-        for(int i=ConnectionHeap.size()-1;i>=0;i--){
+    public void backwardPropagate() {
+        // backwardPropagate in reverse order
+
+        for (int i = ConnectionHeap.size() - 1; i >= 0; i--) {
             ConnectionHeap.get(i).backPropagate();
         }
 
     }
 
-    
 }

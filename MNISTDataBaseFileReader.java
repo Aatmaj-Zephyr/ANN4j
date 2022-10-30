@@ -6,23 +6,26 @@ public class MNISTDataBaseFileReader extends CSVFileREader {
     double[] expectedOutputArray;
     double[] inputArray;
     double label;
+
     MNISTDataBaseFileReader(String filename) throws FileNotFoundException {
         super(filename);
 
     }
-    public double getLabel(){
+
+    public double getLabel() {
         return label;
     }
-    public void next(){
-        double [] array;
-        try{
+
+    public void next() {
+        double[] array;
+        try {
             array = readLineToDoubleArray();
             label = array[0];
             expectedOutputArray = generateExpectedOutputArrayFromLabel();
             inputArray = generateInputFromBigArray(array);
 
+        } catch (IOException ex) {
         }
-        catch(IOException ex){}
     }
 
     public double[] readLineToDoubleArray() throws IOException {
@@ -61,13 +64,14 @@ public class MNISTDataBaseFileReader extends CSVFileREader {
         return expectedOutputArray;
     }
 
-public double []generateInputFromBigArray(double [] array){
-    //generates the input array from the total array , that is it excludes the first element of the array
-    double [] inputArray = new double[784];
-    for(int i=0; i<=783; i++){
-      inputArray[i] = array[i+1]/256;
+    public double[] generateInputFromBigArray(double[] array) {
+        // generates the input array from the total array , that is it excludes the
+        // first element of the array
+        double[] inputArray = new double[784];
+        for (int i = 0; i <= 783; i++) {
+            inputArray[i] = array[i + 1] / 256;
+        }
+        return inputArray;
     }
-    return inputArray;
-}
 
 }
