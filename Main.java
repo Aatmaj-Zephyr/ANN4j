@@ -18,7 +18,7 @@ public class Main {
 																												// be in
 																												// for
 																												// loop
-
+            Trainer myTrainer = new Trainer();
 			for (int i = 0; i <= 700; i++) {
 
 				myMnistDataBaseFileReader.next();
@@ -26,7 +26,7 @@ public class Main {
 				inputLayer = myMnistDataBaseFileReader.getInputArray();
 				label = myMnistDataBaseFileReader.getLabel();
 				System.out.println("actuall " + label);
-				Trainer.train(myLayerManager, inputLayer, expectedLayer);
+				myTrainer.train(myLayerManager, inputLayer, expectedLayer);
 
 			}
 

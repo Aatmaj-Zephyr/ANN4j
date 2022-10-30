@@ -1,9 +1,7 @@
 public class Trainer {
-    private Trainer() {
-        // Static class has no constructor.
-    }
 
-    public static void train(LayerManager myLayerManager, double[] actualLayer, double[] expectedLayer) {
+    
+    public void train(LayerManager myLayerManager, double[] actualLayer, double[] expectedLayer) {
 
         myLayerManager.setInputLayer(actualLayer);
 
