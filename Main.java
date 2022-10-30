@@ -13,13 +13,13 @@ public class Main {
 		// test drive
 		// Training the network with random values.
 		try {
-			MNISTDataBaseFileReader myMnistDataBaseFileReader = new MNISTDataBaseFileReader("mnist_test.csv"); // must
+			InputFileReader myMnistDataBaseFileReader = new MNISTDataBaseFileReader("mnist_test.csv"); // must
 																												// not
 																												// be in
 																												// for
 																												// loop
 
-			for (int i = 0; i <= 7000; i++) {
+			for (int i = 0; i <= 700; i++) {
 
 				myMnistDataBaseFileReader.next();
 				expectedLayer = myMnistDataBaseFileReader.getExpectedOutputArray();

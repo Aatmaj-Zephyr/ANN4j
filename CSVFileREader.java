@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;  
 import java.io.IOException;  
-public abstract class CSVFileREader extends FileReader {
+public  class CSVFileREader extends InputFileReader {
     //Here we are using two seperate scanners one for the expected outputs (labels) and one for the inputs.
     BufferedReader expectedOutputArrayScanner;
     BufferedReader inputArrayScanner;
