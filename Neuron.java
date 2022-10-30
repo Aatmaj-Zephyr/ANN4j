@@ -47,9 +47,13 @@ class Neuron{
         //    System.out.println("Getting sum from connection -----     "+i); Test code
 
             }
+            
+            System.out.println(sum);
+
         return sum;
     }
     private double getBias(){
+        //System.out.println(bias); //debug code
         return bias;
     }
 

@@ -8,17 +8,18 @@ public class Trainer {
 		myLayerManager.setInputLayer(actualLayer);
 	
 		myLayerManager.setExpectedOutputArray(expectedLayer);
-	   
+        System.out.println(myLayerManager.OutputLayer);	
 
         myLayerManager.forwardPropagate();
-       
+        System.out.println(myLayerManager.OutputLayer);	
+
 
         myLayerManager.backwardPropagate();
         
        
 
 
-//        System.out.println(myLayerManager.OutputLayer);	
+        
 
         	
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);

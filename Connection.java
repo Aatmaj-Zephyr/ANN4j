@@ -15,12 +15,12 @@ public class Connection {
         LayerManager.ConnectionHeap.add(this);
     }
     private void initializeWeights(){
-        weight = NN.getSmallSignedRandom();
+        this.weight = NN.getSmallSignedRandom();
     }
     public double calculateActivationForwardPropagation(){
-   //     System.out.println(leftNeuron.getActivation()*weight);
-
-        return leftNeuron.getActivation()*weight;
+        //System.out.println(leftNeuron.getActivation()*weight);
+        
+        return leftNeuron.getActivation()*this.weight;
     }
 
     public String toString(){
@@ -31,7 +31,7 @@ public class Connection {
        // with respect to the weight. It then updates the weight by subtracting the learning rate times
        // the gradient.
 
-        weight = weight - LayerManager.learningRate * calculateGradient();;
+        this.weight = this.weight - LayerManager.learningRate * calculateGradient();;
     }
     public double calculateGradient(){
   //      System.out.println(LayerManager.deltaDifferenced);
