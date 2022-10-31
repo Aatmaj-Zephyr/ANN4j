@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class LayerManager {
-    static ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); // dump all connectoins here for eaier
+    ArrayList<Connection> ConnectionHeap = new ArrayList<Connection>(); // dump all connectoins here for eaier
                                                                                // debugging purposes.
     // all connectoins must be in order of creation
     static double lossFunction;
@@ -69,7 +69,8 @@ public class LayerManager {
         // layer 2.
         for (Neuron i : layer.listOfNeurons) {
             for (Neuron j : layer2.listOfNeurons) {
-                new Connection(i, j);
+                //Adding the connectoin in the connnection heap.
+                ConnectionHeap.add(new Connection(i, j));
             }
         }
     }

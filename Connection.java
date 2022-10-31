@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Connection {
     Neuron leftNeuron;
     Neuron rightNeuron;
@@ -15,7 +17,6 @@ public class Connection {
         leftNeuron.addRightConnections(this);
         rightNeuron.addLeftConnections(this);
         initializeWeights();
-        LayerManager.ConnectionHeap.add(this);
     }
 
     private void initializeWeights() {
