@@ -1,15 +1,18 @@
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
-public class MNISTDataBaseFileReader extends CSVFileReader {
+public class MNISTDataBaseFileReader extends InputFileReader {
     // This class is custom made for the MNIST database Dataset
     double[] expectedOutputArray;
     double[] inputArray;
     double label;
+    private BufferedReader singleFileReader;
 
     MNISTDataBaseFileReader(String filename) throws FileNotFoundException {
         super(filename);
-
+        this.singleFileReader = new BufferedReader(new FileReader(filename));
     }
 
     public double getLabel() {
