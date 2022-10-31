@@ -2,9 +2,9 @@ import java.util.*;
 
 public class LayerManager {
     ArrayList<Connection> connectionHeap = new ArrayList<Connection>(); // dump all connectoins here for eaier
-                                                                               // debugging purposes.
+                                                                        // debugging purposes.
     // all connectoins must be in order of creation
-    static double lossFunction;
+    public static double lossFunction;
     public static double deltaDifferenced = 0;
     static final double learningRate = 0.01;
 
@@ -69,7 +69,7 @@ public class LayerManager {
         // layer 2.
         for (Neuron i : layer.listOfNeurons) {
             for (Neuron j : layer2.listOfNeurons) {
-                //Adding the connectoin in the connnection heap.
+                // Adding the connectoin in the connnection heap.
                 connectionHeap.add(new Connection(i, j));
             }
         }

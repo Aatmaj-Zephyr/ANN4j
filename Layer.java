@@ -2,7 +2,7 @@ import java.util.*;
 
 class Layer {
     ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
-    int layerNum;
+    public int layerNum;
 
     Layer(int numOfNeurons) {
 
@@ -27,11 +27,11 @@ class Layer {
         }
     }
 
-    void addNeuron(Neuron toBeAdded) {
+    public void addNeuron(Neuron toBeAdded) {
         listOfNeurons.add(toBeAdded);
     }
 
-    void forwardPropagate() {
+    public void forwardPropagate() {
         // Iterating through the list of neurons and calling the forwardPropagate method
         // on each neuron.
         for (Neuron i : listOfNeurons) {
