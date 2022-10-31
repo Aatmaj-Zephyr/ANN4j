@@ -1,7 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class MNISTDataBaseFileReader extends CSVFileREader {
+public class MNISTDataBaseFileReader extends CSVFileReader {
     // This class is custom made for the MNIST database Dataset
     double[] expectedOutputArray;
     double[] inputArray;
