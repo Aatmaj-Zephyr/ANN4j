@@ -53,6 +53,7 @@ public class Connection {
 
     public double calculateGradient() {
         // System.out.println(LayerManager.deltaDifferenced);
+        //System.out.println(leftNeuron.getActivation());
 
         return LayerManager.deltaDifferenced * leftNeuron.getActivation();
     }

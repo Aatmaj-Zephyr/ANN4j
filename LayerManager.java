@@ -7,7 +7,7 @@ public class LayerManager {
     public static double lossFunction;
     public static double deltaDifferenced = 0;
     public static int change= 1;
-    public static int batchsize=10;
+    public static int batchsize=5;
     static final double learningRate = 0.01;
 
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism

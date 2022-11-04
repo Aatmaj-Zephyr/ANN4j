@@ -18,6 +18,8 @@ public class LossCalculator {
     }
 
     public static double calculateLossFunction(OutputLayer outputLayer, double[] expectedLayer) {
+        outputLayer = threshold(outputLayer); //threshold of the acrtivation
+
 
         // Overloaded for arrays as input
 
@@ -36,6 +38,7 @@ public class LossCalculator {
     }
 
     public static double calculateDifference(OutputLayer outputLayer, double[] expectedLayer) {
+        outputLayer = threshold(outputLayer); //threshold of the acrtivation
 
         // Overloaded for arrays as input
 
@@ -51,6 +54,22 @@ public class LossCalculator {
         }
         // System.out.println(NN.average(sum));
         return NN.average(sum);
+    }
+
+    private static OutputLayer threshold(OutputLayer outputLayer) {
+        OutputLayer thresholdedOutputLayer  = new OutputLayer(outputLayer.getListOfNeurons().size());
+        for(int i=0; i<outputLayer.getListOfNeurons().size();i++){
+            thresholdedOutputLayer.getListOfNeurons().get(i).activation=thresholdFun(outputLayer.getListOfNeurons().get(i).activation);
+        }
+
+        return thresholdedOutputLayer;
+    }
+
+    private static double thresholdFun(double activation) {
+        if( activation<0.5){
+            return 0;
+        }
+        return 1;
     }
 
 }
