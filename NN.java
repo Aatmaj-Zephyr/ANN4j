@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.ArrayList;
 
 public class NN {
     // helper class for providing the necessary methods for neural networks
@@ -51,6 +52,17 @@ public class NN {
 
     public static double setBias() {
         return NN.getRandom()*0.1;
+    }
+
+    public static double average(ArrayList <Double> input) {
+        if(input.size()==0){
+            return 0;
+        }
+        int sum = 0;
+        for (int i=0; i< input.size(); i++) {
+              sum += i;
+        }
+        return sum / input.size();
     }
 
 }

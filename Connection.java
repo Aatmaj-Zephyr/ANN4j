@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Connection {
     Neuron leftNeuron;
     Neuron rightNeuron;
     double weight;
+    private ArrayList<Double> weightBuffer = new ArrayList<Double>();
 
     Connection(Neuron leftNeuron, Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and
@@ -39,7 +42,12 @@ public class Connection {
         // with respect to the weight. It then updates the weight by subtracting the
         // learning rate times
         // the gradient.
-
+        if(LayerManager.change%LayerManager.batchsize==0){
+            weightBuffer.add(this.weight - LayerManager.learningRate * calculateGradient());
+        }
+        else{
+            this.weight=NN.average(weightBuffer);
+        }
         this.weight = this.weight - LayerManager.learningRate * calculateGradient();
     }
 

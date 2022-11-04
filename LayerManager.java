@@ -6,6 +6,8 @@ public class LayerManager {
     // all connectoins must be in order of creation
     public static double lossFunction;
     public static double deltaDifferenced = 0;
+    public static int change= 1;
+    public static int batchsize=1;
     static final double learningRate = 0.01;
 
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
@@ -110,7 +112,7 @@ public class LayerManager {
 
     public void backwardPropagate() {
         // backwardPropagate in reverse order
-
+        change++;
         for (int i = connectionHeap.size() - 1; i >= 0; i--) {
             connectionHeap.get(i).backPropagate();
         }
