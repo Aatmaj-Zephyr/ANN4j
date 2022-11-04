@@ -47,6 +47,7 @@ public class Connection {
         }
         else{
             this.weight=NN.average(weightBuffer);
+            weightBuffer.clear();
         }
         this.weight = this.weight - LayerManager.learningRate * calculateGradient();
     }
