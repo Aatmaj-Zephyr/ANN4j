@@ -55,13 +55,12 @@ public class NN {
     }
 
     public static double average(ArrayList <Double> input) {
-        if(input.size()==0){
-            return 0;
-        }
+        
         int sum = 0;
         for (int i=0; i< input.size(); i++) {
-              sum += i;
+              sum += input.get(i);
         }
+        //System.out.println(sum);
         return sum / input.size();
     }
 

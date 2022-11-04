@@ -42,12 +42,12 @@ public class LossCalculator {
         if (outputLayer.getListOfNeurons().size() != expectedLayer.length) {
             throw new RuntimeException("Length mismatch between lists of neurons and expected lists of neurons");
         }
-
+        
         // Mean squared error
         double[] sum = new double[outputLayer.getListOfNeurons().size()];
         for (int i = 0; i < outputLayer.getListOfNeurons().size(); i++) {
             sum[i] = outputLayer.getListOfNeurons().get(i).activation - expectedLayer[i];
-
+            //System.out.println(outputLayer.getListOfNeurons().get(i).activation);
         }
         // System.out.println(NN.average(sum));
         return NN.average(sum);

@@ -71,6 +71,7 @@ class Neuron {
         // Setting the activation of the neuron to the rectified value of the weighted
         // sum of the left connections plus the bias.
         this.activation = NN.rectify(getWeightedSum() + getBias());
+        //System.out.println(this.activation);
 
     }
 

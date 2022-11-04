@@ -37,7 +37,7 @@ public class Trainer {
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
         System.out.println("prediction " + prediction);
        // System.out.println("value " + myLayerManager.OutputLayer.listOfNeurons.get(prediction));
-        System.out.println("loss " + LayerManager.deltaDifferenced);
+        System.out.println("Delta difference " + LayerManager.deltaDifferenced);
     //    System.out.println(myLayerManager.OutputLayer);
 
     }
