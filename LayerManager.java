@@ -5,9 +5,8 @@ public class LayerManager {
                                                                         // debugging purposes.
     // all connectoins must be in order of creation
     public static double lossFunction;
-    public static double deltaDifferenced = 0;
     public static int batchControlCounter= 1;
-    public static int batchsize=5;
+    public static int batchsize=1;
     static final double learningRate = 0.01;
 
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
@@ -35,8 +34,8 @@ public class LayerManager {
         this.InputLayer.setInput(inputLayerArray);
     }
 
-    LayerManager(int[] layerLengths) {
-
+    LayerManager(int[] layerLengths,int batchsize) {
+        LayerManager.batchsize=batchsize;
         // Adding a new InputLayer to the listOfLayers ArrayList.
         this.InputLayer = new InputLayer(layerLengths[0]);
         this.InputLayer.setLayerNum(0);
@@ -87,13 +86,11 @@ public class LayerManager {
         // Calculating the new loss function and storing it in the variable
         // lossFunction,
         // storing the old loss function in the variable old lossFunction
-        deltaDifferenced = calculateDifference();
+        
         LayerManager.lossFunction = calculateLossFunction();
     }
 
-    private double calculateDifference() {
-        return LossCalculator.calculateDifference(this.getOutputLayer(), this.ExpectedOutputArray);
-    }
+
 
     public String toString() {
         String str = "";

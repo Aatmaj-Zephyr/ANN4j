@@ -80,7 +80,7 @@ class Neuron {
             i.backPropagate(delta);
         }
         // change bias
-        bias -= LayerManager.deltaDifferenced * LayerManager.learningRate;
+        //bias -= LayerManager.deltaDifferenced * LayerManager.learningRate;
 
     }
 
