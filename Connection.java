@@ -23,8 +23,8 @@ public class Connection {
     }
 
     public double calculateActivationForwardPropagation() {
-        // System.out.println(leftNeuron.getActivation()*weight);
-        // System.out.println(leftNeuron);
+      
+// Calculating the activation of the left neuron times the weight of the connection.
         return leftNeuron.getActivation() * this.weight;
     }
 
@@ -43,12 +43,12 @@ public class Connection {
         
       
         this.weight = this.weight + LayerManager.learningRate * rightNeuron.getDelta() * leftNeuron.getActivation();
-       // System.out.println(this.weight);
     }
 
  
 
     public double getBackwardWeightedSum() {
+// Calculating the gradient of the loss function with respect to the weight.
         return this.weight*rightNeuron.getDelta();
     }
 }

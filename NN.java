@@ -60,7 +60,6 @@ public class NN {
         for (int i=0; i< input.size(); i++) {
               sum += input.get(i);
         }
-        //System.out.println(sum);
         return sum / input.size();
     }
 

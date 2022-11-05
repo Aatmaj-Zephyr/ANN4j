@@ -52,17 +52,14 @@ class Neuron {
         // each connection to the sum.
         for (Connection i : leftConnections) {
             sum += i.calculateActivationForwardPropagation();
-            // System.out.println("Getting sum from connection ----- "+i); Test code
 
         }
 
-        // System.out.println(sum);
 
         return sum;
     }
 
     private double getBias() {
-        // System.out.println(bias); //debug code
         return bias;
     }
 
@@ -72,7 +69,6 @@ class Neuron {
         // Setting the activation of the neuron to the rectified value of the weighted
         // sum of the left connections plus the bias.
         this.activation = NN.rectify(getWeightedSum() + getBias());
-        //System.out.println(this.activation);
 
     }
     public double getDelta() {
@@ -83,8 +79,7 @@ class Neuron {
             this.delta=delta;
             i.backPropagate();
         }
-        // change bias
-        //bias -= LayerManager.deltaDifferenced * LayerManager.learningRate;
+        //TO-DO change bias
 
     }
 

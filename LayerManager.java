@@ -57,8 +57,7 @@ public class LayerManager {
         // Joining all the layers together.
         for (int i = 0; i < listOfLayers.size() - 1; i++) {
             joinLayer(listOfLayers.get(i), listOfLayers.get(i + 1));
-            // System.out.println("Layers "+listOfLayers.get(i).layerNum+" and
-            // "+listOfLayers.get(i+1).layerNum+" joined"); ///debug code
+            
         }
     }
 

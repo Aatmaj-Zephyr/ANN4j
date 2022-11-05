@@ -12,42 +12,39 @@ public class Trainer {
     public void train(int epochs){
         for (int i = 0; i <= epochs; i++) {
 
+            // Getting the next image from the mnist database.
             myMnistDataBaseFileReader.next();
+
+            // Getting the expected output array from the mnist database.
             expectedLayer = myMnistDataBaseFileReader.getExpectedOutputArray();
+            // Getting the input array from the mnist database.
             inputLayer = myMnistDataBaseFileReader.getInputArray();
+            // Getting the label of the image from the mnist database.
             label = myMnistDataBaseFileReader.getLabel();
             System.out.print(" actual " + label);
             
 
             train();
-           // System.out.println(LayerManager.ExpectedOutputArray[(int) label]);
 
         }
     
     }
     public void train() {
+        //Heart of the code
 
         myLayerManager.setInputLayer(inputLayer);
 
         myLayerManager.setExpectedOutputArray(expectedLayer);
-        // System.out.println(myLayerManager.listOfLayers.get(1));
 
         myLayerManager.forwardPropagate();
-        // System.out.println(myLayerManager.listOfLayers.get(1));
-//        System.out.println(myLayerManager.OutputLayer);
-
         myLayerManager.backwardPropagate();
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
         System.out.println(" prediction " + prediction);
-       // System.out.println("value " + myLayerManager.OutputLayer.listOfNeurons.get(prediction));
-        //System.out.println("Loss Function " + LayerManager.lossFunction);
-      //  for(int i=0;i<=10;i++)
-   // System.out.println(myLayerManager.OutputLayer);
-  // System.out.println(myLayerManager.OutputLayer.printWeights());
     }
 
     public static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager) {
+      // Finding the most significant neuron in the output layer.
         double temp = 0;
         int no = 0;
         for (int i = 0; i < myLayerManager.OutputLayer.listOfNeurons.size(); i++) {
