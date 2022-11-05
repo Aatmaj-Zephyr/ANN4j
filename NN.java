@@ -17,7 +17,7 @@ public class NN {
     }
 
     public static double rectify(double numToBeRectified) {
-        return relu(numToBeRectified);
+        return sigmoid(numToBeRectified);
     }
 
     public static double sigmoid(double numToBeRectified) {

@@ -4,7 +4,8 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Hello World");
 		int[] layerArray = { 784, 16, 16, 10 };
-		LayerManager myLayerManager = new LayerManager(layerArray);
+		int batchsize=1;
+		LayerManager myLayerManager = new LayerManager(layerArray,batchsize);
 		// The new method must be outside the train method.
 
 		
@@ -17,7 +18,7 @@ public class Main {
 																												// for
 																												// loop
             Trainer myTrainer = new Trainer(myLayerManager,myMnistDataBaseFileReader);
-			myTrainer.train(8000);
+			myTrainer.train(800);
 			
 
 			// System.out.println(LayerManager.ConnectionHeap);

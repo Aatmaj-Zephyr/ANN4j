@@ -17,7 +17,10 @@ public class Trainer {
             inputLayer = myMnistDataBaseFileReader.getInputArray();
             label = myMnistDataBaseFileReader.getLabel();
             System.out.println("actuall " + label);
+            
+
             train();
+            System.out.println(LayerManager.ExpectedOutputArray[(int) label]);
 
         }
     
@@ -31,15 +34,17 @@ public class Trainer {
 
         myLayerManager.forwardPropagate();
         // System.out.println(myLayerManager.listOfLayers.get(1));
+//        System.out.println(myLayerManager.OutputLayer);
 
         myLayerManager.backwardPropagate();
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
         System.out.println("prediction " + prediction);
        // System.out.println("value " + myLayerManager.OutputLayer.listOfNeurons.get(prediction));
-        System.out.println("Delta difference " + LayerManager.deltaDifferenced);
-    //    System.out.println(myLayerManager.OutputLayer);
-
+        System.out.println("Loss Function " + LayerManager.lossFunction);
+      //  for(int i=0;i<=10;i++)
+   // System.out.println(myLayerManager.OutputLayer);
+  // System.out.println(myLayerManager.OutputLayer.printWeights());
     }
 
     public static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager) {

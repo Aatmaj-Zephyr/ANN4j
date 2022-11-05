@@ -1,19 +1,17 @@
 import java.util.*;
 
 public class LayerManager {
-    ArrayList<Connection> connectionHeap = new ArrayList<Connection>(); // dump all connectoins here for eaier
-                                                                        // debugging purposes.
+
     // all connectoins must be in order of creation
     public static double lossFunction;
-    public static double deltaDifferenced = 0;
-    public static int change= 1;
-    public static int batchsize=5;
+    public static int batchControlCounter= 1;
+    public static int batchsize=1;
     static final double learningRate = 0.01;
 
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;
     public OutputLayer OutputLayer;
-    public double[] ExpectedOutputArray;
+    public static double[] ExpectedOutputArray; // this will be used by various algorithms, especially backpropagation in the concrete implementations of layer class.
 
     public OutputLayer getOutputLayer() {
         return OutputLayer;
@@ -24,7 +22,7 @@ public class LayerManager {
     }
 
     public double calculateLossFunction() {
-        return LossCalculator.calculateLossFunction(this.getOutputLayer(), this.ExpectedOutputArray);
+        return LossCalculator.calculateLossFunction(this.getOutputLayer(), LayerManager.ExpectedOutputArray);
     }
 
     public void setExpectedOutputArray(double[] expectedOutputArray) {
@@ -35,8 +33,8 @@ public class LayerManager {
         this.InputLayer.setInput(inputLayerArray);
     }
 
-    LayerManager(int[] layerLengths) {
-
+    LayerManager(int[] layerLengths,int batchsize) {
+        LayerManager.batchsize=batchsize;
         // Adding a new InputLayer to the listOfLayers ArrayList.
         this.InputLayer = new InputLayer(layerLengths[0]);
         this.InputLayer.setLayerNum(0);
@@ -72,7 +70,7 @@ public class LayerManager {
         for (Neuron i : layer.listOfNeurons) {
             for (Neuron j : layer2.listOfNeurons) {
                 // Adding the connectoin in the connnection heap.
-                connectionHeap.add(new Connection(i, j));
+                new Connection(i, j);
             }
         }
     }
@@ -81,19 +79,19 @@ public class LayerManager {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
         // dont forward propagate the input layer
+        
+
         for (int i = 1; i <= listOfLayers.size() - 1; i++) {
             listOfLayers.get(i).forwardPropagate();
         }
         // Calculating the new loss function and storing it in the variable
         // lossFunction,
         // storing the old loss function in the variable old lossFunction
-        deltaDifferenced = calculateDifference();
+        
         LayerManager.lossFunction = calculateLossFunction();
     }
 
-    private double calculateDifference() {
-        return LossCalculator.calculateDifference(this.getOutputLayer(), this.ExpectedOutputArray);
-    }
+
 
     public String toString() {
         String str = "";
@@ -112,9 +110,9 @@ public class LayerManager {
 
     public void backwardPropagate() {
         // backwardPropagate in reverse order
-        change++;
-        for (int i = connectionHeap.size() - 1; i >= 0; i--) {
-            connectionHeap.get(i).backPropagate();
+        batchControlCounter++;
+        for (int i = 1; i <= listOfLayers.size() - 1; i++) {
+            listOfLayers.get(i).backwardPropagate();
         }
 
     }
