@@ -10,7 +10,8 @@ public class LayerManager {
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;
     public OutputLayer OutputLayer;
-    public static double[] ExpectedOutputArray; // this will be used by various algorithms, especially backpropagation in the concrete implementations of layer class.
+    public static double[] ExpectedOutputArray; // this will be used by various algorithms, especially backpropagation
+                                                // in the concrete implementations of layer class.
 
     public OutputLayer getOutputLayer() {
         return OutputLayer;
@@ -57,7 +58,7 @@ public class LayerManager {
         // Joining all the layers together.
         for (int i = 0; i < listOfLayers.size() - 1; i++) {
             joinLayer(listOfLayers.get(i), listOfLayers.get(i + 1));
-            
+
         }
     }
 
@@ -76,7 +77,6 @@ public class LayerManager {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
         // dont forward propagate the input layer
-        
 
         for (int i = 1; i <= listOfLayers.size() - 1; i++) {
             listOfLayers.get(i).forwardPropagate();
@@ -84,11 +84,9 @@ public class LayerManager {
         // Calculating the new loss function and storing it in the variable
         // lossFunction,
         // storing the old loss function in the variable old lossFunction
-        
+
         LayerManager.lossFunction = calculateMSE();
     }
-
-
 
     public String toString() {
         String str = "";
@@ -107,8 +105,8 @@ public class LayerManager {
 
     public void backwardPropagate() {
         // backwardPropagate in reverse order
-        for (int i = listOfLayers.size() - 1; i >=0 ; i--) {
-                        listOfLayers.get(i).backwardPropagate();
+        for (int i = listOfLayers.size() - 1; i >= 0; i--) {
+            listOfLayers.get(i).backwardPropagate();
         }
 
     }

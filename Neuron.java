@@ -55,7 +55,6 @@ class Neuron {
 
         }
 
-
         return sum;
     }
 
@@ -71,15 +70,17 @@ class Neuron {
         this.activation = NN.rectify(getWeightedSum() + getBias());
 
     }
+
     public double getDelta() {
         return delta;
     }
+
     public void backwardPropagate(double delta) {
         for (Connection i : leftConnections) {
-            this.delta=delta;
+            this.delta = delta;
             i.backPropagate();
         }
-        //TO-DO change bias
+        // TO-DO change bias
 
     }
 

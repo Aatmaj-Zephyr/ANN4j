@@ -7,18 +7,16 @@ public class Main {
 		LayerManager myLayerManager = new LayerManager(layerArray);
 		// The new method must be outside the train method.
 
-		
 		// test drive
 		// Training the network with random values.
 		try {
 			InputFileReader myMnistDataBaseFileReader = new MNISTDataBaseFileReader("mnist_train.csv"); // must
-																												// not
-																												// be in
-																												// for
-																												// loop
-            Trainer myTrainer = new Trainer(myLayerManager,myMnistDataBaseFileReader);
+																										// not
+																										// be in
+																										// for
+																										// loop
+			Trainer myTrainer = new Trainer(myLayerManager, myMnistDataBaseFileReader);
 			myTrainer.train(55555);
-			
 
 			// System.out.println(LayerManager.ConnectionHeap);
 

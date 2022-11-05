@@ -8,9 +8,7 @@ public class OutputLayer extends Layer {
     public double calculateDelta(Neuron i) {
         double expectedValue = LayerManager.ExpectedOutputArray[i.getNeuronNum()];
         double activation = i.getActivation();
-        return activation*(1-activation)*(expectedValue-activation);
+        return activation * (1 - activation) * (expectedValue - activation);
     }
-
-    
 
 }

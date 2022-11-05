@@ -47,24 +47,31 @@ abstract class Layer {
         }
         return str + "\n";
     }
+
     public String printWeights() {
-        String s="";
+        String s = "";
         for (Neuron i : listOfNeurons) {
             s += i.leftConnections.toString();
         }
         return s;
     }
+
     public void backwardPropagate() {
-         // Iterating through the list of neurons and calling the backwardPropagate method
+        // Iterating through the list of neurons and calling the backwardPropagate
+        // method
         // on each neuron.
         for (Neuron i : listOfNeurons) {
             i.backwardPropagate(calculateDelta(i));
         }
         /*
-         * The delta of each neuron will be different accouding to it's type, that is if it belongs to hidden layer or the output layer. 
+         * The delta of each neuron will be different accouding to it's type, that is if
+         * it belongs to hidden layer or the output layer.
          * Hence we make a abstract method to calculate the delta of each neuron.
-         * It will be implemented by the subclases HiddenLayer and OutputLayer. (InputLayer will return 0)
-         * For calculating the delta of each neuron, the activation value will be required. Alo the actual expected value will be required. This is why we are passing the neuron into the method. 
+         * It will be implemented by the subclases HiddenLayer and OutputLayer.
+         * (InputLayer will return 0)
+         * For calculating the delta of each neuron, the activation value will be
+         * required. Alo the actual expected value will be required. This is why we are
+         * passing the neuron into the method.
          * Each implementation of the method will differ according to the formula.
          */
     }

@@ -51,14 +51,14 @@ public class NN {
     }
 
     public static double setBias() {
-        return NN.getRandom()*0.1;
+        return NN.getRandom() * 0.1;
     }
 
-    public static double average(ArrayList <Double> input) {
-        
+    public static double average(ArrayList<Double> input) {
+
         int sum = 0;
-        for (int i=0; i< input.size(); i++) {
-              sum += input.get(i);
+        for (int i = 0; i < input.size(); i++) {
+            sum += input.get(i);
         }
         return sum / input.size();
     }
