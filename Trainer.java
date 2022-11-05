@@ -31,6 +31,7 @@ public class Trainer {
 
         myLayerManager.forwardPropagate();
         // System.out.println(myLayerManager.listOfLayers.get(1));
+//        System.out.println(myLayerManager.OutputLayer);
 
         myLayerManager.backwardPropagate();
 

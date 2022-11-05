@@ -36,7 +36,7 @@ public class Connection {
                 + weight + "\n";
     }
 
-    public void backPropagate(double delta) {
+    public void backPropagate() {
         // This is the backpropagation algorithm. It is calculating the gradient of the
         // loss function
         // with respect to the weight. It then updates the weight by subtracting the
@@ -52,16 +52,11 @@ public class Connection {
             weightBuffer.clear();
         }
         */
-        this.weight = this.weight - LayerManager.learningRate * calculateGradient(delta);
+        this.weight = this.weight + LayerManager.learningRate * rightNeuron.getDelta() * leftNeuron.getActivation();
        // System.out.println(this.weight);
     }
 
-    public double calculateGradient(double delta) {
-        // System.out.println(LayerManager.deltaDifferenced);
-        //System.out.println(leftNeuron.getActivation());
-
-        return delta * leftNeuron.getActivation();
-    }
+ 
 
     public double getBackwardWeightedSum() {
         return this.weight*rightNeuron.getDelta();

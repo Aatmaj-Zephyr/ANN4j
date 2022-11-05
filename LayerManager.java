@@ -80,6 +80,8 @@ public class LayerManager {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
         // dont forward propagate the input layer
+        
+
         for (int i = 1; i <= listOfLayers.size() - 1; i++) {
             listOfLayers.get(i).forwardPropagate();
         }
