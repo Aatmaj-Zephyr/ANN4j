@@ -41,15 +41,7 @@ public class Connection {
         // learning rate times
         // the gradient.
         
-        /*
-            weightBuffer.add(this.weight - LayerManager.learningRate * calculateGradient(delta));
-           // System.out.println(this.weight);
-        if(LayerManager.batchControlCounter%LayerManager.batchsize==0){
-          // System.out.println(LayerManager.batchControlCounter);
-            this.weight=NN.average(weightBuffer);
-            weightBuffer.clear();
-        }
-        */
+      
         this.weight = this.weight + LayerManager.learningRate * rightNeuron.getDelta() * leftNeuron.getActivation();
        // System.out.println(this.weight);
     }

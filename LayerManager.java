@@ -4,8 +4,7 @@ public class LayerManager {
 
     // all connectoins must be in order of creation
     public static double lossFunction;
-    public static int batchControlCounter= 1;
-    public static int batchsize=1;
+
     static final double learningRate = 1;
 
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
@@ -33,8 +32,7 @@ public class LayerManager {
         this.InputLayer.setInput(inputLayerArray);
     }
 
-    LayerManager(int[] layerLengths,int batchsize) {
-        LayerManager.batchsize=batchsize;
+    LayerManager(int[] layerLengths) {
         // Adding a new InputLayer to the listOfLayers ArrayList.
         this.InputLayer = new InputLayer(layerLengths[0]);
         this.InputLayer.setLayerNum(0);
@@ -110,7 +108,6 @@ public class LayerManager {
 
     public void backwardPropagate() {
         // backwardPropagate in reverse order
-        batchControlCounter++;
         for (int i = listOfLayers.size() - 1; i >=0 ; i--) {
                         listOfLayers.get(i).backwardPropagate();
         }
