@@ -7,6 +7,7 @@ class Neuron {
     ArrayList<Connection> leftConnections = new ArrayList<Connection>();
     ArrayList<Connection> rightConnections = new ArrayList<Connection>();
     public double bias;
+    private double delta;
 
     double getActivation() {
         return activation;
@@ -74,9 +75,12 @@ class Neuron {
         //System.out.println(this.activation);
 
     }
-
+    public double getDelta() {
+        return delta;
+    }
     public void backwardPropagate(double delta) {
         for (Connection i : leftConnections) {
+            this.delta=delta;
             i.backPropagate(delta);
         }
         // change bias

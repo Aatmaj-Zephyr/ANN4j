@@ -38,7 +38,8 @@ public class Trainer {
         System.out.println("prediction " + prediction);
        // System.out.println("value " + myLayerManager.OutputLayer.listOfNeurons.get(prediction));
         System.out.println("Loss Function " + LayerManager.lossFunction);
-    //    System.out.println(myLayerManager.OutputLayer);
+      //  for(int i=0;i<=10;i++)
+    System.out.println(myLayerManager.OutputLayer);
 
     }
 

@@ -20,8 +20,12 @@ public class InputLayer extends Layer {
 
     @Override
     public double calculateDelta(Neuron i) {
-        // Overriddenfor null ( input neurons done backpropagate)
-        return 0;
+        double activation = i.getActivation();
+        double weightedSum=0;
+        for(Connection j: i.rightConnections){
+            weightedSum+=j.getBackwardWeightedSum();
+        }
+        return weightedSum*activation*(1-activation);
     }
 
 }

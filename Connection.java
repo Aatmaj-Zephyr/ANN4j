@@ -53,7 +53,7 @@ public class Connection {
         }
         */
         this.weight = this.weight - LayerManager.learningRate * calculateGradient(delta);
-        System.out.println(this.weight);
+       // System.out.println(this.weight);
     }
 
     public double calculateGradient(double delta) {
@@ -64,6 +64,6 @@ public class Connection {
     }
 
     public double getBackwardWeightedSum() {
-        return this.weight*rightNeuron.getActivation();
+        return this.weight*rightNeuron.getDelta();
     }
 }
