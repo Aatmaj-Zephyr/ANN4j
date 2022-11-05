@@ -17,7 +17,10 @@ public class Trainer {
             inputLayer = myMnistDataBaseFileReader.getInputArray();
             label = myMnistDataBaseFileReader.getLabel();
             System.out.println("actuall " + label);
+            
+
             train();
+            System.out.println(LayerManager.ExpectedOutputArray[(int) label]);
 
         }
     
@@ -41,7 +44,7 @@ public class Trainer {
         System.out.println("Loss Function " + LayerManager.lossFunction);
       //  for(int i=0;i<=10;i++)
    // System.out.println(myLayerManager.OutputLayer);
-   System.out.println(myLayerManager.OutputLayer.printWeights());
+  // System.out.println(myLayerManager.OutputLayer.printWeights());
     }
 
     public static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager) {
