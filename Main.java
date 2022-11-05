@@ -16,7 +16,7 @@ public class Main {
 																										// for
 																										// loop
 			Trainer myTrainer = new Trainer(myLayerManager, myMnistDataBaseFileReader);
-			myTrainer.train(55555);
+			myTrainer.train(55553);
 
 			// System.out.println(LayerManager.ConnectionHeap);
 
