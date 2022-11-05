@@ -40,8 +40,8 @@ public class Trainer {
        // System.out.println("value " + myLayerManager.OutputLayer.listOfNeurons.get(prediction));
         System.out.println("Loss Function " + LayerManager.lossFunction);
       //  for(int i=0;i<=10;i++)
-    System.out.println(myLayerManager.OutputLayer);
-
+   // System.out.println(myLayerManager.OutputLayer);
+   System.out.println(myLayerManager.OutputLayer.printWeights());
     }
 
     public static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager) {

@@ -22,7 +22,7 @@ public class LayerManager {
     }
 
     public double calculateLossFunction() {
-        return LossCalculator.calculateLossFunction(this.getOutputLayer(), this.ExpectedOutputArray);
+        return LossCalculator.calculateLossFunction(this.getOutputLayer(), LayerManager.ExpectedOutputArray);
     }
 
     public void setExpectedOutputArray(double[] expectedOutputArray) {

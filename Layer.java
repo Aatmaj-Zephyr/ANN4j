@@ -47,7 +47,13 @@ abstract class Layer {
         }
         return str + "\n";
     }
-
+    public String printWeights() {
+        String s="";
+        for (Neuron i : listOfNeurons) {
+            s += i.leftConnections.toString();
+        }
+        return s;
+    }
     public void backwardPropagate() {
          // Iterating through the list of neurons and calling the backwardPropagate method
         // on each neuron.

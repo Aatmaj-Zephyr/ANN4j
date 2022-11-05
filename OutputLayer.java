@@ -11,4 +11,6 @@ public class OutputLayer extends Layer {
         return activation*(1-activation)*(expectedValue-activation);
     }
 
+    
+
 }
