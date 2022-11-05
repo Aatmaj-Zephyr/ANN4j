@@ -4,6 +4,7 @@ public class Connection {
     Neuron leftNeuron;
     Neuron rightNeuron;
     double weight;
+    double oldWeight; // To store old weight
     private ArrayList<Double> weightBuffer = new ArrayList<Double>();
 
     Connection(Neuron leftNeuron, Neuron rightNeuron) {
@@ -52,6 +53,7 @@ public class Connection {
             weightBuffer.clear();
         }
         */
+        this.oldWeight=this.weight;
         this.weight = this.weight + LayerManager.learningRate * rightNeuron.getDelta() * leftNeuron.getActivation();
        // System.out.println(this.weight);
     }
@@ -59,6 +61,6 @@ public class Connection {
  
 
     public double getBackwardWeightedSum() {
-        return this.weight*rightNeuron.getDelta();
+        return this.oldWeight*rightNeuron.getDelta();
     }
 }
