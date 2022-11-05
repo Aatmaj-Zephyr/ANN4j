@@ -12,13 +12,13 @@ public class Main {
 		// test drive
 		// Training the network with random values.
 		try {
-			InputFileReader myMnistDataBaseFileReader = new MNISTDataBaseFileReader("mnist_test.csv"); // must
+			InputFileReader myMnistDataBaseFileReader = new MNISTDataBaseFileReader("mnist_train.csv"); // must
 																												// not
 																												// be in
 																												// for
 																												// loop
             Trainer myTrainer = new Trainer(myLayerManager,myMnistDataBaseFileReader);
-			myTrainer.train(800);
+			myTrainer.train(50000);
 			
 
 			// System.out.println(LayerManager.ConnectionHeap);

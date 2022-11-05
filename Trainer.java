@@ -16,7 +16,7 @@ public class Trainer {
             expectedLayer = myMnistDataBaseFileReader.getExpectedOutputArray();
             inputLayer = myMnistDataBaseFileReader.getInputArray();
             label = myMnistDataBaseFileReader.getLabel();
-            System.out.println(" actual " + label);
+            System.out.print(" actual " + label);
             
 
             train();
@@ -39,7 +39,7 @@ public class Trainer {
         myLayerManager.backwardPropagate();
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
-        System.out.print(" prediction " + prediction);
+        System.out.println(" prediction " + prediction);
        // System.out.println("value " + myLayerManager.OutputLayer.listOfNeurons.get(prediction));
         //System.out.println("Loss Function " + LayerManager.lossFunction);
       //  for(int i=0;i<=10;i++)
