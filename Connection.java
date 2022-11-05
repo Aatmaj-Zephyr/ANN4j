@@ -44,7 +44,7 @@ public class Connection {
         // the gradient.
         
             weightBuffer.add(this.weight - LayerManager.learningRate * calculateGradient());
-        if(LayerManager.change%LayerManager.batchsize==0){
+        if(LayerManager.batchControlCounter%LayerManager.batchsize==0){
             this.weight=NN.average(weightBuffer);
             weightBuffer.clear();
         }

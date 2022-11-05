@@ -6,7 +6,7 @@ public class LayerManager {
     // all connectoins must be in order of creation
     public static double lossFunction;
     public static double deltaDifferenced = 0;
-    public static int change= 1;
+    public static int batchControlCounter= 1;
     public static int batchsize=5;
     static final double learningRate = 0.01;
 
@@ -112,9 +112,9 @@ public class LayerManager {
 
     public void backwardPropagate() {
         // backwardPropagate in reverse order
-        change++;
-        for (int i = connectionHeap.size() - 1; i >= 0; i--) {
-            connectionHeap.get(i).backPropagate();
+        batchControlCounter++;
+        for (int i = 1; i <= listOfLayers.size() - 1; i++) {
+            listOfLayers.get(i).backwardPropagate();
         }
 
     }

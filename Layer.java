@@ -48,4 +48,12 @@ class Layer {
         return str + "\n";
     }
 
+    public void backwardPropagate() {
+         // Iterating through the list of neurons and calling the backwardPropagate method
+        // on each neuron.
+        for (Neuron i : listOfNeurons) {
+            i.backwardPropagate();
+        }
+    }
+
 }
