@@ -75,9 +75,9 @@ class Neuron {
 
     }
 
-    public void backwardPropagate() {
+    public void backwardPropagate(double delta) {
         for (Connection i : leftConnections) {
-            i.backPropagate();
+            i.backPropagate(delta);
         }
         // change bias
         bias -= LayerManager.deltaDifferenced * LayerManager.learningRate;

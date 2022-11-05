@@ -13,5 +13,15 @@ public class InputLayer extends Layer {
             listOfNeurons.get(i).setActivation(inputLayerArray[i]);
         }
     }
+    @Override
+    public void backwardPropagate(){
+        // Overriddenfor null ( input neurons done backpropagate)
+    }
+
+    @Override
+    public double calculateDelta(Neuron i) {
+        // Overriddenfor null ( input neurons done backpropagate)
+        return 0;
+    }
 
 }

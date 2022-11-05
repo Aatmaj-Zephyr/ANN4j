@@ -13,7 +13,7 @@ public class LayerManager {
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;
     public OutputLayer OutputLayer;
-    public double[] ExpectedOutputArray;
+    public static double[] ExpectedOutputArray; // this will be used by various algorithms, especially backpropagation in the concrete implementations of layer class.
 
     public OutputLayer getOutputLayer() {
         return OutputLayer;
