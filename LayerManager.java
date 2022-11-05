@@ -111,8 +111,8 @@ public class LayerManager {
     public void backwardPropagate() {
         // backwardPropagate in reverse order
         batchControlCounter++;
-        for (int i = 1; i <= listOfLayers.size() - 1; i++) {
-            listOfLayers.get(i).backwardPropagate();
+        for (int i = listOfLayers.size() - 1; i >=0 ; i--) {
+                        listOfLayers.get(i).backwardPropagate();
         }
 
     }
