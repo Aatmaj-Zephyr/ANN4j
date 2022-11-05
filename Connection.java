@@ -5,7 +5,6 @@ public class Connection {
     Neuron rightNeuron;
     double weight;
     double oldWeight; // To store old weight
-    private ArrayList<Double> weightBuffer = new ArrayList<Double>();
 
     Connection(Neuron leftNeuron, Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and
