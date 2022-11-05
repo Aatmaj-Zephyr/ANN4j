@@ -70,6 +70,7 @@ public class LayerManager {
         for (Neuron i : layer.listOfNeurons) {
             for (Neuron j : layer2.listOfNeurons) {
                 // Adding the connectoin in the connnection heap.
+                new Connection(i, j);
             }
         }
     }
