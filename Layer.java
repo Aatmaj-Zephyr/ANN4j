@@ -61,9 +61,14 @@ abstract class Layer {
         // method
         // on each neuron.
         for (Neuron i : listOfNeurons) {
-            i.backwardPropagate(calculateDelta(i));
+            calculateDelta(i); // set the error (delta) values.
+            i.backwardPropagate();
         }
-        /*
+       
+    }
+
+    public abstract void calculateDelta(Neuron i);
+     /*
          * The delta of each neuron will be different accouding to it's type, that is if
          * it belongs to hidden layer or the output layer.
          * Hence we make a abstract method to calculate the delta of each neuron.
@@ -74,8 +79,5 @@ abstract class Layer {
          * passing the neuron into the method.
          * Each implementation of the method will differ according to the formula.
          */
-    }
-
-    public abstract double calculateDelta(Neuron i);
 
 }

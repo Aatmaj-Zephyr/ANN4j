@@ -5,10 +5,10 @@ public class OutputLayer extends Layer {
     }
 
     @Override
-    public double calculateDelta(Neuron i) {
+    public void calculateDelta(Neuron i) {
         double expectedValue = LayerManager.ExpectedOutputArray[i.getNeuronNum()];
         double activation = i.getActivation();
-        return activation * (1 - activation) * (expectedValue - activation);
+        i.delta= activation * (1 - activation) * (expectedValue - activation);
     }
 
 }
