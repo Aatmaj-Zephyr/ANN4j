@@ -21,8 +21,8 @@ public class LayerManager {
         return InputLayer;
     }
 
-    public double calculateLossFunction() {
-        return LossCalculator.calculateLossFunction(this.getOutputLayer(), LayerManager.ExpectedOutputArray);
+    public double calculateMSE() {
+        return MeanSquaredErrorCalculator.calculateMSE(this.getOutputLayer(), LayerManager.ExpectedOutputArray);
     }
 
     public void setExpectedOutputArray(double[] expectedOutputArray) {
@@ -88,7 +88,7 @@ public class LayerManager {
         // lossFunction,
         // storing the old loss function in the variable old lossFunction
         
-        LayerManager.lossFunction = calculateLossFunction();
+        LayerManager.lossFunction = calculateMSE();
     }
 
 
