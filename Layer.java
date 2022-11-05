@@ -1,7 +1,7 @@
 import java.util.*;
 
 abstract class Layer {
-    ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
+    public ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
     public int layerNum;
 
     Layer(int numOfNeurons) {

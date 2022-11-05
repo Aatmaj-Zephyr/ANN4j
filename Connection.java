@@ -1,8 +1,8 @@
 
 public class Connection {
-    Neuron leftNeuron;
-    Neuron rightNeuron;
-    double weight;
+   public Neuron leftNeuron;
+   public Neuron rightNeuron;
+   public double weight;
 
     Connection(Neuron leftNeuron, Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and
@@ -18,7 +18,7 @@ public class Connection {
         initializeWeights();
     }
 
-    private void initializeWeights() {
+    public void initializeWeights() {
         this.weight = NN.getSmallSignedRandom();
     }
 

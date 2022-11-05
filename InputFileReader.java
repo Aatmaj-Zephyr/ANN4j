@@ -1,7 +1,7 @@
 import java.io.FileNotFoundException;
 
 public class InputFileReader {
-    String filename;
+    public String filename;
 
     InputFileReader(String filename) throws FileNotFoundException {
         this.filename = filename;

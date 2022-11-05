@@ -5,10 +5,10 @@ import java.io.IOException;
 
 public class MNISTDataBaseFileReader extends InputFileReader {
     // This class is custom made for the MNIST database Dataset
-    double[] expectedOutputArray;
-    double[] inputArray;
-    double label;
-    private BufferedReader singleFileReader;
+    public double[] expectedOutputArray;
+    public double[] inputArray;
+    public double label;
+    public BufferedReader singleFileReader;
 
     MNISTDataBaseFileReader(String filename) throws FileNotFoundException {
         super(filename);

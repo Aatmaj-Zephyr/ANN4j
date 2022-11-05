@@ -2,22 +2,22 @@ import java.util.*;
 
 class Neuron {
     double activation;
-    int layerNum = -1;
-    int neuronNum;
-    ArrayList<Connection> leftConnections = new ArrayList<Connection>();
-    ArrayList<Connection> rightConnections = new ArrayList<Connection>();
+   public int neuronNum;
+   public int layerNum = -1;
+   public ArrayList<Connection> leftConnections = new ArrayList<Connection>();
+   public ArrayList<Connection> rightConnections = new ArrayList<Connection>();
     public double bias;
     public double delta;
 
-    double getActivation() {
+   public double getActivation() {
         return activation;
     }
 
-    void setActivation(double activation) {
+   public void setActivation(double activation) {
         this.activation = activation;
     }
 
-    Neuron() {
+   public Neuron() {
         setActivation(NN.getRandom());
         bias = NN.setBias();
     }
@@ -46,7 +46,7 @@ class Neuron {
         rightConnections.add(connection);
     }
 
-    private double getWeightedSum() {
+    public double getWeightedSum() {
         double sum = 0;
         // Iterating through the leftConnections ArrayList and adding the activation of
         // each connection to the sum.
@@ -58,7 +58,7 @@ class Neuron {
         return sum;
     }
 
-    private double getBias() {
+    public double getBias() {
         return bias;
     }
 
