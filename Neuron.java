@@ -8,6 +8,7 @@ class Neuron {
    public ArrayList<Connection> rightConnections = new ArrayList<Connection>();
     public double bias;
     public double delta;
+    public NeuronBehaviour myBehaviour;
 
    public double getActivation() {
         return activation;
@@ -16,7 +17,9 @@ class Neuron {
    public void setActivation(double activation) {
         this.activation = activation;
     }
-
+   public void setBehaviour(NeuronBehaviour myBehaviour){
+    this.myBehaviour= myBehaviour;
+   }
    public Neuron() {
         setActivation(NN.getRandom());
         bias = NN.setBias();
@@ -76,11 +79,16 @@ class Neuron {
     }
 
     public void backwardPropagate() {
+        setDelta();
         for (Connection i : leftConnections) {
             i.backPropagate();
         }
         // TO-DO change bias
 
+    }
+
+    public void setDelta() {
+        this.delta=myBehaviour.setDelta(this);
     }
 
     public String toString() {
