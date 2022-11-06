@@ -14,15 +14,12 @@ public class InputLayer extends Layer {
         }
     }
 
+  
+
     @Override
-    public void calculateDelta(Neuron i) {
-        double activation = i.getActivation();
-        double weightedSum=0;
-        for(Connection j: i.rightConnections){
-            weightedSum+=j.getBackwardWeightedSum();
-        }
-    
-        i.delta= weightedSum*activation*(1-activation);
+    public void setBehaviour() {
+        this.myBehaviour = InputLayerNeuronBehaviour.getInstance();
+        
     }
 
 }
