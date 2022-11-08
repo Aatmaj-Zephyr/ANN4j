@@ -9,6 +9,13 @@ public class parameter {
     private static String rectificationFunction; //static because it is used by many classes.
     private static InputFileReader testingFileReader;
     private static int batchsize;
+    private static double biasLearningRate;
+    public static double getBiasLearningRate() {
+        return biasLearningRate;
+    }
+    public static void setBiasLearningRate(double biasLearningRate) {
+        parameter.biasLearningRate = biasLearningRate;
+    }
     public static void setRectificationFunction(String rectificationFunction) {
         parameter.rectificationFunction = rectificationFunction;
     }

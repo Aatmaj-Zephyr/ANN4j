@@ -65,6 +65,7 @@ private int batchSize; //avoid using static parameters as they incerase time com
 
     public double getBackwardWeightedSum() {
         // Calculating the gradient of the loss function with respect to the weight.
+        //USed in class neuron for calculation of delta.
         return this.weight * rightNeuron.getDelta();
     }
 }

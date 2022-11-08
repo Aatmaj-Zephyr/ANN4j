@@ -9,6 +9,10 @@ class Neuron {
     public double bias;
     public double delta;
     public NeuronBehaviour myBehaviour;
+    private int batchCounter;
+    private ArrayList<Double> biasChangeWishlist;
+    private int batchSize;
+    private double biasLearningRate;
 
    public double getActivation() {
         return activation;
@@ -23,6 +27,9 @@ class Neuron {
    public Neuron() {
         setActivation(NN.getRandom());
         bias = NN.setBias();
+        batchSize=parameter.getBatchsize();
+        biasLearningRate=parameter.getBiasLearningRate();
+        biasChangeWishlist=new ArrayList<Double>();
     }
 
     public void setLayerNum(int layerNum) {
@@ -83,8 +90,20 @@ class Neuron {
         for (Connection i : leftConnections) {
             i.backPropagate();
         }
-        // TO-DO change bias
+        changeBias();
 
+    }
+
+    private void changeBias() {
+        batchCounter++;
+        biasChangeWishlist.add( biasLearningRate *this.getDelta());
+
+        if(batchCounter==batchSize){
+            batchCounter=0;
+        }
+        if(batchCounter==0){
+            this.bias= NN.average(biasChangeWishlist);
+            biasChangeWishlist=new ArrayList<Double>();        }
     }
 
     public void setDelta() {
