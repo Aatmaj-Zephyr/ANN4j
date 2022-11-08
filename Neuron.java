@@ -67,7 +67,7 @@ class Neuron {
         // layer number "+this.layerNum); //test code
         // Setting the activation of the neuron to the rectified value of the weighted
         // sum of the left connections plus the bias.
-        this.activation = NN.rectify(getWeightedSum() + getBias());
+        this.activation = parameter.rectify(getWeightedSum() + getBias());
 
     }
 

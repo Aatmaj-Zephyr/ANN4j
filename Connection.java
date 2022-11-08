@@ -42,7 +42,7 @@ public class Connection {
         // learning rate times
         // the gradient.
 
-        this.weight = this.weight + LayerManager.learningRate * rightNeuron.getDelta() * leftNeuron.getActivation();
+        this.weight = this.weight + parameter.getLearningRate() * rightNeuron.getDelta() * leftNeuron.getActivation();
     }
 
     public double getBackwardWeightedSum() {
