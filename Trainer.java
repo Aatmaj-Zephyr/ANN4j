@@ -8,6 +8,7 @@ public class Trainer {
 
     double[] inputLayer;
     double label;
+    private int correctCounter=0;
 
     Trainer() {
 		this.myLayerManager = new LayerManager(parameter.getLayerArray());
@@ -31,7 +32,7 @@ public class Trainer {
             // Getting the label of the image from the mnist database.
             label = trainingFileReader.getLabel();
 
-            System.out.print(" actual " + label);
+            //System.out.print(" actual " + label);
 
             train();
 
@@ -53,10 +54,10 @@ public class Trainer {
              // Getting the label of the image from the mnist database.
              label = testingFileReader.getLabel();
  
-             System.out.print(" actual " + label);
  
              test();
         }
+        System.out.println("accuracy "+(double) 100*correctCounter/epochs);
     }
     public void test() {
         myLayerManager.setInputLayer(inputLayer);
@@ -67,8 +68,10 @@ public class Trainer {
 
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        if(prediction == label){
+            correctCounter++;
+        }
         
-        System.out.println(" prediction " + prediction);
     }
     public void train() {
         // Heart of the code
@@ -83,7 +86,7 @@ public class Trainer {
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
         
-        System.out.println(" prediction " + prediction);
+       // System.out.println(" prediction " + prediction);
     }
 
     public static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager) {
