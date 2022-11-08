@@ -1,13 +1,15 @@
 public class Trainer {
+        //template pattern
+
     public LayerManager myLayerManager;
     public double[] expectedLayer;
     public InputFileReader myMnistDataBaseFileReader;
     double[] inputLayer;
     double label;
 
-    Trainer(LayerManager myLayerManager, InputFileReader myMnistDataBaseFileReader) {
-        this.myLayerManager = myLayerManager;
-        this.myMnistDataBaseFileReader = myMnistDataBaseFileReader;
+    Trainer() {
+		this.myLayerManager = new LayerManager(parameter.getLayerArray());
+        this.myMnistDataBaseFileReader = parameter.getMyInputFileReader();
     }
 
     public void train(int epochs) {

@@ -16,9 +16,7 @@ public class NN {
         return (Math.random() - 0.5);
     }
 
-    public static double rectify(double numToBeRectified) {
-        return sigmoid(numToBeRectified);
-    }
+    
 
     public static double sigmoid(double numToBeRectified) {
         return 1 / (1 + Math.exp(-numToBeRectified));
