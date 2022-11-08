@@ -22,16 +22,26 @@ public class parameter {
     }
     }
     public static double rectify(double numToBeRectified) {
+    // This is the rectification function. It is used to rectify the output of the neuron.
+    //The rectification function will rectify according to the string provided. The functions fromn NN module will be utilized for this.
         if(rectificationFunction=="relu"){
             return NN.relu(numToBeRectified);
         }
         if(rectificationFunction=="tanh"){
             return NN.tanh(numToBeRectified);
         }
+        if(rectificationFunction=="softplus"){
+            return NN.softplus(numToBeRectified);
+        }
+        if(rectificationFunction=="leakyrelu"){
+            return NN.leakyrelu(numToBeRectified);
+        }
 
         return NN.sigmoid(numToBeRectified);
     }
     public static void setParameters(){
+// This is setting the parameters of the model. The layerArray is the array of the number of neurons in
+// each layer. The learning rate is the rate at which the model learns.
         layerArray = new int[]{ 784, 16, 16, 10 };
         learningRate = 1;
     }
