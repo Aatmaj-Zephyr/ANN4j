@@ -59,7 +59,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         for (int i = 0; i < 10; i++) {
             if (i == label) {
                 expectedOutputArray[i] = 1;
-            } else {
+            } else {       
                 expectedOutputArray[i] = 0;
             }
         }

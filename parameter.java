@@ -4,19 +4,33 @@ public class parameter {
     //This class is used for setting the parameters of the model. 
     //There is no point in passing its object to the layerManager or Trainer classes so it is static class.
     private static int[] layerArray; //used only by trainer class. Can be made non static and object of this class can be passed if required.
-    private static InputFileReader myInputFileReader; //used only by trainer class. Can be made non static and object of this class can be passed if required.
+    private static InputFileReader trainingFileReader; //used only by trainer class. Can be made non static and object of this class can be passed if required.
     private static double learningRate; //static because it is used by many classes.
     private static String rectificationFunction; //static because it is used by many classes.
+    private static InputFileReader testingFileReader;
     public static void setRectificationFunction(String rectificationFunction) {
         parameter.rectificationFunction = rectificationFunction;
     }
-    public static InputFileReader getMyInputFileReader() {
-        return myInputFileReader;
+    public static InputFileReader getTrainingFileReader() {
+        return trainingFileReader;
     }
-    public static void setMyInputFileReader(String fileName, String type) {
+    public static InputFileReader getTestingFileReader() {
+        return testingFileReader;
+    }
+    
+    public static void setTestingFileReader(String fileName, String type) {
         try {
         if(type=="mnist"){
-            parameter.myInputFileReader = new MNISTDataBaseFileReader(fileName);
+            parameter.testingFileReader = new MNISTDataBaseFileReader(fileName);
+        }
+    } catch (FileNotFoundException ex) {
+    }
+    }
+
+    public static void setTrainingFileReader(String fileName, String type) {
+        try {
+        if(type=="mnist"){
+            parameter.trainingFileReader = new MNISTDataBaseFileReader(fileName);
         }
     } catch (FileNotFoundException ex) {
     }
@@ -51,4 +65,5 @@ public class parameter {
     public static int[] getLayerArray() {
         return layerArray;
     }
+   
 }

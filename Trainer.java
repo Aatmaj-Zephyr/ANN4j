@@ -3,29 +3,33 @@ public class Trainer {
 
     public LayerManager myLayerManager;
     public double[] expectedLayer;
-    public InputFileReader myMnistDataBaseFileReader;
+    public InputFileReader trainingFileReader;
+    public InputFileReader testingFileReader;
+
     double[] inputLayer;
     double label;
 
     Trainer() {
 		this.myLayerManager = new LayerManager(parameter.getLayerArray());
-        this.myMnistDataBaseFileReader = parameter.getMyInputFileReader();
+        this.trainingFileReader = parameter.getTrainingFileReader();
+        this.testingFileReader = parameter.getTestingFileReader();
+
     }
 
     public void train(int epochs) {
         for (int i = 0; i <= epochs; i++) {
 
             // Getting the next image from the mnist database.
-            myMnistDataBaseFileReader.next();
+            trainingFileReader.next();
 
             // Getting the expected output array from the mnist database.
-            expectedLayer = myMnistDataBaseFileReader.getExpectedOutputArray();
+            expectedLayer = trainingFileReader.getExpectedOutputArray();
 
             // Getting the input array from the mnist database.
-            inputLayer = myMnistDataBaseFileReader.getInputArray();
+            inputLayer = trainingFileReader.getInputArray();
 
             // Getting the label of the image from the mnist database.
-            label = myMnistDataBaseFileReader.getLabel();
+            label = trainingFileReader.getLabel();
 
             System.out.print(" actual " + label);
 
@@ -33,8 +37,39 @@ public class Trainer {
 
         }
 
-    }
 
+    }
+    public void test(int epochs){
+        for (int i = 0; i <= epochs; i++) {
+             // Getting the next image from the mnist database.
+             testingFileReader.next();
+
+             // Getting the expected output array from the mnist database.
+             expectedLayer = testingFileReader.getExpectedOutputArray();
+ 
+             // Getting the input array from the mnist database.
+             inputLayer = testingFileReader.getInputArray();
+ 
+             // Getting the label of the image from the mnist database.
+             label = testingFileReader.getLabel();
+ 
+             System.out.print(" actual " + label);
+ 
+             test();
+        }
+    }
+    public void test() {
+        myLayerManager.setInputLayer(inputLayer);
+
+        myLayerManager.setExpectedOutputArray(expectedLayer);
+
+        myLayerManager.forwardPropagate();
+
+
+        int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        
+        System.out.println(" prediction " + prediction);
+    }
     public void train() {
         // Heart of the code
 
