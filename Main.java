@@ -9,7 +9,7 @@ public class Main {
 		parameter.setLearningRate(1);
 		parameter.setBiasLearningRate(1);
 
-		parameter.setBatchsize(1);
+		parameter.setBatchsize(10);
 		parameter.setRectificationFunction("sigmoid");
 		Trainer myTrainer = new Trainer();
 		myTrainer.train(55053);
