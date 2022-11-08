@@ -12,6 +12,9 @@ public class LayerManager {
     public static double[] ExpectedOutputArray; // this will be used by various algorithms, especially backpropagation
                                                 // in the concrete implementations of layer class.
 
+
+    public static int batchCounter;
+
     public OutputLayer getOutputLayer() {
         return OutputLayer;
     }
@@ -103,6 +106,10 @@ public class LayerManager {
     }
 
     public void backwardPropagate() {
+        batchCounter++;
+        if(batchCounter==parameter.getBatchsize()){
+            batchCounter=0;
+        }
         // backwardPropagate in reverse order
         for (int i = listOfLayers.size() - 1; i >= 0; i--) {
             listOfLayers.get(i).backwardPropagate();

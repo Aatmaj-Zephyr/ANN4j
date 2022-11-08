@@ -97,9 +97,9 @@ public class NN {
 
     public static double average(ArrayList<Double> input) {
 
-        int sum = 0;
+        double sum = 0;
         for (int i = 0; i < input.size(); i++) {
-            sum += input.get(i);
+            sum = sum + input.get(i);
         }
         return sum / input.size();
     }

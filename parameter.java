@@ -8,6 +8,7 @@ public class parameter {
     private static double learningRate; //static because it is used by many classes.
     private static String rectificationFunction; //static because it is used by many classes.
     private static InputFileReader testingFileReader;
+    private static int batchsize;
     public static void setRectificationFunction(String rectificationFunction) {
         parameter.rectificationFunction = rectificationFunction;
     }
@@ -64,5 +65,10 @@ public class parameter {
     public static int[] getLayerArray() {
         return layerArray;
     }
-   
+    public static int getBatchsize() {
+        return batchsize;
+    }
+    public static void setBatchsize(int batchsize) {
+        parameter.batchsize = batchsize;
+    }
 }

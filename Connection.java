@@ -1,8 +1,10 @@
+import java.util.ArrayList;
 
 public class Connection {
    public Neuron leftNeuron;
    public Neuron rightNeuron;
    public double weight;
+   public ArrayList<Double> changeWishlist;
 
     Connection(Neuron leftNeuron, Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and
@@ -16,6 +18,8 @@ public class Connection {
         leftNeuron.addRightConnections(this);
         rightNeuron.addLeftConnections(this);
         initializeWeights();
+        this.changeWishlist=new ArrayList<Double>();
+
     }
 
     public void initializeWeights() {
@@ -42,7 +46,12 @@ public class Connection {
         // learning rate times
         // the gradient.
 
-        this.weight = this.weight + parameter.getLearningRate() * rightNeuron.getDelta() * leftNeuron.getActivation();
+        changeWishlist.add(this.weight + parameter.getLearningRate() * rightNeuron.getDelta() * leftNeuron.getActivation());
+        if(LayerManager.batchCounter==0){
+            this.weight= NN.average(changeWishlist);
+            changeWishlist=new ArrayList<Double>();
+
+        }
     }
 
     public double getBackwardWeightedSum() {
