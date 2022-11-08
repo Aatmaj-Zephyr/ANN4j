@@ -26,7 +26,9 @@ public class parameter {
     } catch (FileNotFoundException ex) {
     }
     }
-
+    public static void setLearningRate(double learningRate) {
+        parameter.learningRate = learningRate;
+    }
     public static void setTrainingFileReader(String fileName, String type) {
         try {
         if(type=="mnist"){
@@ -53,11 +55,8 @@ public class parameter {
 
         return NN.sigmoid(numToBeRectified);
     }
-    public static void setParameters(){
-// This is setting the parameters of the model. The layerArray is the array of the number of neurons in
-// each layer. The learning rate is the rate at which the model learns.
-        layerArray = new int[]{ 784, 16, 16, 10 };
-        learningRate = 1;
+    public static void setLayerArray(int...LayerArray){
+        parameter.layerArray = LayerArray;
     }
     public static double getLearningRate() {
         return learningRate;
