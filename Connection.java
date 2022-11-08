@@ -5,6 +5,9 @@ public class Connection {
    public Neuron rightNeuron;
    public double weight;
    public ArrayList<Double> changeWishlist;
+private int batchCounter;
+private double learningRate;  //avoid using static parameters as they incerase time complexity.
+private int batchSize; //avoid using static parameters as they incerase time complexity.
 
     Connection(Neuron leftNeuron, Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and
@@ -19,6 +22,8 @@ public class Connection {
         rightNeuron.addLeftConnections(this);
         initializeWeights();
         this.changeWishlist=new ArrayList<Double>();
+        batchSize=parameter.getBatchsize();
+        learningRate=parameter.getLearningRate();
 
     }
 
@@ -46,8 +51,12 @@ public class Connection {
         // learning rate times
         // the gradient.
 
-        changeWishlist.add(this.weight + parameter.getLearningRate() * rightNeuron.getDelta() * leftNeuron.getActivation());
-        if(LayerManager.batchCounter==0){
+        changeWishlist.add(this.weight + learningRate * rightNeuron.getDelta() * leftNeuron.getActivation());
+        batchCounter++;
+        if(batchCounter==batchSize){
+            batchCounter=0;
+        }
+        if(batchCounter==0){
             this.weight= NN.average(changeWishlist);
             changeWishlist=new ArrayList<Double>();
 
