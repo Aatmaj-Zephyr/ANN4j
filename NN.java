@@ -16,7 +16,9 @@ public class NN {
         return (Math.random() - 0.5);
     }
 
-    
+    public static double tanh(double numToBeRectified){
+        return Math.tanh(numToBeRectified);
+    }
 
     public static double sigmoid(double numToBeRectified) {
         return 1 / (1 + Math.exp(-numToBeRectified));

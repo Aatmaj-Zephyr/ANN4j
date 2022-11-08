@@ -25,6 +25,9 @@ public class parameter {
         if(rectificationFunction=="relu"){
             return NN.relu(numToBeRectified);
         }
+        if(rectificationFunction=="tanh"){
+            return NN.tanh(numToBeRectified);
+        }
 
         return NN.sigmoid(numToBeRectified);
     }
