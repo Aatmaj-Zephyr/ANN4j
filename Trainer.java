@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Trainer {
         //template pattern
 
@@ -18,6 +20,9 @@ public class Trainer {
     }
 
     public void train(int epochs) {
+        for (int j = 0; j <= 10; j++) {
+            parameter.setTrainingFileReader("mnist_train.csv", "mnist"); 
+            this.trainingFileReader = parameter.getTrainingFileReader();
         for (int i = 0; i <= epochs; i++) {
 
             // Getting the next image from the mnist database.
@@ -36,7 +41,7 @@ public class Trainer {
 
             train();
 
-        }
+        }}
 
 
     }
@@ -68,6 +73,11 @@ public class Trainer {
 
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        if(label==7){
+        System.out.print(" Label " + label+" ");
+
+        System.out.println(getMostSignificantNeuronAsPredictionInHiddenLayer(myLayerManager));
+    }
         if(prediction == label){
             correctCounter++;
         }
@@ -98,6 +108,18 @@ public class Trainer {
             if (val > temp) {
                 no = i;
                 temp = val;
+            }
+        }
+        return no;
+    }
+    public static ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer(LayerManager myLayerManager) {
+        // Finding the most significant neuron in the output layer.
+        double temp = 0.9;
+        ArrayList<Integer> no= new ArrayList<Integer>();
+        for (int i = 0; i < myLayerManager.listOfLayers.get(myLayerManager.listOfLayers.size()-2).listOfNeurons.size(); i++) {
+            double val = myLayerManager.listOfLayers.get(myLayerManager.listOfLayers.size()-2).listOfNeurons.get(i).activation;
+            if (val > temp) {
+                no.add(i);
             }
         }
         return no;
