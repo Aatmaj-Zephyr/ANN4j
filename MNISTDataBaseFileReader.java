@@ -9,9 +9,11 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     public double[] inputArray;
     public double label;
     public BufferedReader singleFileReader;
+    public int outputLayerLength;
 
-    MNISTDataBaseFileReader(String filename) throws FileNotFoundException {
+    MNISTDataBaseFileReader(String filename,int outputLayerLength) throws FileNotFoundException {
         super(filename);
+        this.outputLayerLength= outputLayerLength;
         this.singleFileReader = new BufferedReader(new FileReader(filename));
     }
 
@@ -55,7 +57,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     }
 
     public double[] generateExpectedOutputArrayFromLabel() {
-        double[] expectedOutputArray = new double[10];
+        double[] expectedOutputArray = new double[outputLayerLength];
         for (int i = 0; i < 10; i++) {
             if (i == label) {
                 expectedOutputArray[i] = 1;

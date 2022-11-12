@@ -29,8 +29,9 @@ public class parameter {
     public static void setTestingFileReader(String fileName, String type) {
         try {
         if(type=="mnist"){
-            parameter.testingFileReader = new MNISTDataBaseFileReader(fileName);
-        }
+            parameter.testingFileReader = new MNISTDataBaseFileReader(fileName,layerArray[layerArray.length-1]);
+        //The layer array must be initialized before this always
+    }
     } catch (FileNotFoundException ex) {
     }
     }
@@ -40,7 +41,7 @@ public class parameter {
     public static void setTrainingFileReader(String fileName, String type) {
         try {
         if(type=="mnist"){
-            parameter.trainingFileReader = new MNISTDataBaseFileReader(fileName);
+            parameter.trainingFileReader = new MNISTDataBaseFileReader(fileName,layerArray[layerArray.length-1]);
         }
     } catch (FileNotFoundException ex) {
     }

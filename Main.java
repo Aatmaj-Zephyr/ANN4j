@@ -2,10 +2,9 @@
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("Hello World");
-		
+		parameter.setLayerArray(784,16,16,10);
 		parameter.setTrainingFileReader("mnist_train.csv", "mnist"); 
 		parameter.setTestingFileReader("mnist_test.csv", "mnist"); 
-		parameter.setLayerArray(784,16,16,10);
 		parameter.setLearningRate(1);
 		parameter.setBiasLearningRate(1);
 
