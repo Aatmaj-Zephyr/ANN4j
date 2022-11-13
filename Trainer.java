@@ -46,7 +46,7 @@ public class Trainer {
 
     }
     public void test(int epochs){
-        for (int i = 0; i <= epochs; i++) {
+        for (int i = 0; i < epochs; i++) {
              // Getting the next image from the mnist database.
              testingFileReader.next();
 
@@ -80,7 +80,7 @@ public class Trainer {
     }*/
         myLayerManager.relevancePropagate();
         for(Neuron i:myLayerManager.InputLayer.listOfNeurons){
-            System.out.print(i.relevance);
+            System.out.print((int)(NN.sigmoid(i.relevance)*255)+",");
         }
         System.out.print("\n");
         if(prediction == label){
