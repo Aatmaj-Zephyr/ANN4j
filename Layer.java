@@ -81,6 +81,16 @@ abstract class Layer {
        
     }
 
+    public void relevancePropagate() {
+        // Iterating through the list of neurons and calling the backwardPropagate
+        // method
+        // on each neuron.
+        for (Neuron i : listOfNeurons) {
+            i.relevancePropagate();
+        }
+       
+    }
+
      
 
 }

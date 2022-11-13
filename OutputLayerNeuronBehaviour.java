@@ -15,5 +15,10 @@ public class OutputLayerNeuronBehaviour implements NeuronBehaviour{
         double activation = i.getActivation();
         return activation * (1 - activation) * (expectedValue - activation);
     }
+    @Override
+    public void relevancePropagate(Neuron neuron) {
+        neuron.relevance=neuron.activation;
+        
+    }
 
 }

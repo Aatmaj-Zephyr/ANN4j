@@ -73,11 +73,16 @@ public class Trainer {
 
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
-        if(label==7){
+        /*if(label==7){
         System.out.print(" Label " + label+" ");
 
         System.out.println(getMostSignificantNeuronAsPredictionInHiddenLayer(myLayerManager));
-    }
+    }*/
+        myLayerManager.relevancePropagate();
+        for(Neuron i:myLayerManager.InputLayer.listOfNeurons){
+            System.out.print(i.relevance);
+        }
+        System.out.print("\n");
         if(prediction == label){
             correctCounter++;
         }

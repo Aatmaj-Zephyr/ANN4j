@@ -113,4 +113,13 @@ public class LayerManager {
 
     }
 
+    public void relevancePropagate() {
+
+        // backwardPropagate in reverse order
+        for (int i = listOfLayers.size() - 1; i >= 0; i--) {
+            listOfLayers.get(i).relevancePropagate();
+        }
+
+    }
+
 }

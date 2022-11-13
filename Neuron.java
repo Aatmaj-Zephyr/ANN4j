@@ -13,6 +13,7 @@ class Neuron {
     private ArrayList<Double> biasChangeWishlist;
     private int batchSize;
     private double biasLearningRate;
+    double relevance;
 
    public double getActivation() {
         return activation;
@@ -114,4 +115,9 @@ class Neuron {
         return "Neuron #" + neuronNum + " has activation " + activation + "\n";
     }
 
-}
+    public void relevancePropagate() {
+        myBehaviour.relevancePropagate(this);
+        
+    }
+    }
+

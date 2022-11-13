@@ -19,5 +19,20 @@ public class InputLayerNeuronBehaviour implements NeuronBehaviour{
         }
         return  weightedSum * activation * (1 - activation);
     }
+    @Override
+    public void relevancePropagate(Neuron neuron) {
+       
+        neuron.relevance=0;
+       for(Connection i : neuron.rightConnections){
+        double numerator=neuron.activation*i.weight*i.rightNeuron.relevance;
+        double denominator=0;
+        for(Connection k : i.rightNeuron.leftConnections){
+denominator+=k.leftNeuron.getActivation()*k.weight;
+        }
+        neuron.relevance+=numerator/denominator;
+       }
+        
+        
+    }
 
 }
