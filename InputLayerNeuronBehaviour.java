@@ -29,7 +29,7 @@ public class InputLayerNeuronBehaviour implements NeuronBehaviour{
         for(Connection k : i.rightNeuron.leftConnections){
 denominator+=k.leftNeuron.getActivation()*k.weight;
         }
-        neuron.relevance+=numerator/denominator;
+        neuron.relevance+=numerator/(parameter.getEpsillion()+denominator);
        }
         
         
