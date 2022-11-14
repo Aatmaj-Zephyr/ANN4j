@@ -24,12 +24,12 @@ public class InputLayerNeuronBehaviour implements NeuronBehaviour{
        
         neuron.relevance=0;
        for(Connection i : neuron.rightConnections){
-        double numerator=neuron.activation*i.weight*i.rightNeuron.relevance;
+        double numerator=i.weight*i.weight*i.rightNeuron.relevance;
         double denominator=0;
         for(Connection k : i.rightNeuron.leftConnections){
-denominator+=k.leftNeuron.getActivation()*k.weight;
+denominator+=k.weight*k.weight;
         }
-        neuron.relevance+=numerator/(parameter.getEpsillion()+denominator);
+        neuron.relevance+=numerator/parameter.rectify((parameter.getEpsillion()+denominator));
        }
         
         
