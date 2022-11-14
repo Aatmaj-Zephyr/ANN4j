@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Neuron {
-    double activation;
+   private double activation;
    public int neuronNum;
    public int layerNum = -1;
    public ArrayList<Connection> leftConnections = new ArrayList<Connection>();

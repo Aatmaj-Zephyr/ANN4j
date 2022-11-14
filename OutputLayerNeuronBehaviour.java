@@ -17,7 +17,7 @@ public class OutputLayerNeuronBehaviour implements NeuronBehaviour{
     }
     @Override
     public void relevancePropagate(Neuron neuron) {
-        neuron.relevance=neuron.activation;
+        neuron.relevance=neuron.getActivation();
         
     }
 

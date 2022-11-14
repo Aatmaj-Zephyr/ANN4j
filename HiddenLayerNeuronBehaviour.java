@@ -23,10 +23,10 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour{
     public void relevancePropagate(Neuron neuron) {
         neuron.relevance=0;
        for(Connection i : neuron.rightConnections){
-        double numerator=neuron.activation*i.weight*i.rightNeuron.relevance;
+        double numerator=neuron.getActivation()*i.getWeight()*i.rightNeuron.relevance;
         double denominator=0;
         for(Connection k : i.rightNeuron.leftConnections){
-denominator+=k.leftNeuron.getActivation()*k.weight;
+denominator+=k.leftNeuron.getActivation()*k.getWeight();
         }
         neuron.relevance+=numerator/(denominator+parameter.getEpsillion());
        }

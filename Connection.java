@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Connection {
    public Neuron leftNeuron;
    public Neuron rightNeuron;
-   public double weight;
+   private double weight;
    public ArrayList<Double> changeWishlist;
 private int batchCounter;
 private double learningRate;  //avoid using static parameters as they incerase time complexity.
@@ -26,7 +26,9 @@ private int batchSize; //avoid using static parameters as they incerase time com
         learningRate=parameter.getLearningRate();
 
     }
-
+    public double getWeight() {
+        return weight;
+    }
     public void initializeWeights() {
         this.weight = NN.getSmallSignedRandom();
     }

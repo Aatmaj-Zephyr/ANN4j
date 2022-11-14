@@ -78,10 +78,11 @@ public class Trainer {
 
         System.out.println(getMostSignificantNeuronAsPredictionInHiddenLayer(myLayerManager));
     }*/
-        myLayerManager.relevancePropagate();
-        for(Neuron i:myLayerManager.InputLayer.listOfNeurons){
-            System.out.print((int)(NN.sigmoid(i.relevance)*255)+",");
-        }
+        
+       
+        myLayerManager.relevancePropagate(2);
+        
+
         System.out.print("\n");
         if(prediction == label){
             correctCounter++;
@@ -109,7 +110,7 @@ public class Trainer {
         double temp = 0;
         int no = 0;
         for (int i = 0; i < myLayerManager.OutputLayer.listOfNeurons.size(); i++) {
-            double val = myLayerManager.OutputLayer.listOfNeurons.get(i).activation;
+            double val = myLayerManager.OutputLayer.listOfNeurons.get(i).getActivation();
             if (val > temp) {
                 no = i;
                 temp = val;
@@ -122,7 +123,7 @@ public class Trainer {
         double temp = 0.9;
         ArrayList<Integer> no= new ArrayList<Integer>();
         for (int i = 0; i < myLayerManager.listOfLayers.get(myLayerManager.listOfLayers.size()-2).listOfNeurons.size(); i++) {
-            double val = myLayerManager.listOfLayers.get(myLayerManager.listOfLayers.size()-2).listOfNeurons.get(i).activation;
+            double val = myLayerManager.listOfLayers.get(myLayerManager.listOfLayers.size()-2).listOfNeurons.get(i).getActivation();
             if (val > temp) {
                 no.add(i);
             }
