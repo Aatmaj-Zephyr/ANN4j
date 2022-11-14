@@ -23,7 +23,7 @@ public class NN {
    * @return The hyperbolic tangent of the number.
    */
     public static double tanh(double numToBeRectified){
-        return Math.tanh(numToBeRectified);
+        return (Math.tanh(numToBeRectified)+1)/2;
     }
  /**
   * > The softplus function is a smooth approximation of the rectifier function
