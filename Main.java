@@ -7,7 +7,7 @@ public class Main {
 		parameter.setTestingFileReader("mnist_test.csv", "mnist"); 
 		parameter.setLearningRate(1);
 		parameter.setBiasLearningRate(1);
-
+		parameter.setEpsillion(0.05);
 		parameter.setBatchsize(10);
 		parameter.setRectificationFunction("sigmoid");
 		Trainer myTrainer = new Trainer();

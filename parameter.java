@@ -10,8 +10,15 @@ public class parameter {
     private static InputFileReader testingFileReader;
     private static int batchsize;
     private static double biasLearningRate;
+    private static double epsillion;
     public static double getBiasLearningRate() {
         return biasLearningRate;
+    }
+    public static double getEpsillion() {
+        return epsillion;
+    }
+    public static void setEpsillion(double epsillion) {
+        parameter.epsillion = epsillion;
     }
     public static void setBiasLearningRate(double biasLearningRate) {
         parameter.biasLearningRate = biasLearningRate;
