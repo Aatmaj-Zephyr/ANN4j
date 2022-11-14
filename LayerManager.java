@@ -114,9 +114,9 @@ public class LayerManager {
     }
 
     public void relevancePropagate() {
-        listOfLayers.get(2).listOfNeurons.get(5).relevance=listOfLayers.get(2).listOfNeurons.get(5).activation;
+        //listOfLayers.get(2).listOfNeurons.get(5).relevance=listOfLayers.get(2).listOfNeurons.get(5).activation;
         // backwardPropagate in reverse order
-        for (int i = listOfLayers.size() - 3; i >= 0; i--) {
+        for (int i = listOfLayers.size() - 1; i >= 0; i--) {
             listOfLayers.get(i).relevancePropagate();
         }
 

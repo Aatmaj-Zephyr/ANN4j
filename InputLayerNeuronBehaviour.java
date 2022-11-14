@@ -32,7 +32,8 @@ public class InputLayerNeuronBehaviour implements NeuronBehaviour{
          neuron.relevance+=numerator/(denominator+parameter.getEpsillion());
         }
         
-        
+        neuron.relevance=parameter.rectify(neuron.relevance);
+
     }
 
 }

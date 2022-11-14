@@ -30,7 +30,7 @@ denominator+=k.leftNeuron.getActivation()*k.weight;
         }
         neuron.relevance+=numerator/(denominator+parameter.getEpsillion());
        }
-        
+        neuron.relevance=parameter.rectify(neuron.relevance);
     }
 
 }
