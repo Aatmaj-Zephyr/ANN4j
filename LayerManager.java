@@ -113,28 +113,29 @@ public class LayerManager {
 
     }
 
-    public void relevancePropagate(int n) {
-        listOfLayers.get(2).listOfNeurons.get(n).relevance=listOfLayers.get(2).listOfNeurons.get(n).getActivation();
-        // backwardPropagate in reverse order
-        for (int i = listOfLayers.size() - 3; i >= 0; i--) {
+    public void relevancePropagate(int layerNumber,int neuronNumber) {
+        for (int i = layerNumber; i >= 0; i--) {
+            if(i==layerNumber){
+                for(Neuron j: listOfLayers.get(layerNumber).listOfNeurons){
+                    j.relevance=0;
+                    if(j.getNeuronNum()==neuronNumber){
+                        j.relevance=j.getActivation();
+                    }
+                }
+                
+            }
+            else{
             listOfLayers.get(i).relevancePropagate();
+            }
         }
+        
         
 
         for(Neuron i:this.InputLayer.listOfNeurons){
             System.out.print((int)(NN.sigmoid(i.relevance)*255)+",");
         }
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ");
-        listOfLayers.get(2).listOfNeurons.get(n).relevance=0;
-
-         listOfLayers.get(2).listOfNeurons.get(10).relevance=listOfLayers.get(2).listOfNeurons.get(10).getActivation();
-
-        for (int i = listOfLayers.size() - 3; i >= 0; i--) {
-            listOfLayers.get(i).relevancePropagate();
-        }
-        for(Neuron i:this.InputLayer.listOfNeurons){
-            System.out.print((int)(NN.sigmoid(i.relevance)*255)+",");
-        }
+        
 
     }
 

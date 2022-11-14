@@ -80,7 +80,7 @@ public class Trainer {
     }*/
         
        
-        myLayerManager.relevancePropagate(2);
+        myLayerManager.relevancePropagate(7,5);
         
 
         System.out.print("\n");
