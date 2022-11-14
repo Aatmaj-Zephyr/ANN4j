@@ -125,6 +125,7 @@ public class LayerManager {
             System.out.print((int)(NN.sigmoid(i.relevance)*255)+",");
         }
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ");
+        listOfLayers.get(2).listOfNeurons.get(n).relevance=0;
 
          listOfLayers.get(2).listOfNeurons.get(10).relevance=listOfLayers.get(2).listOfNeurons.get(10).getActivation();
 
