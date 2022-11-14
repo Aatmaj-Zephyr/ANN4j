@@ -23,14 +23,14 @@ public class InputLayerNeuronBehaviour implements NeuronBehaviour{
     public void relevancePropagate(Neuron neuron) {
        
         neuron.relevance=0;
-       for(Connection i : neuron.rightConnections){
-        double numerator=i.weight*i.weight*i.rightNeuron.relevance;
-        double denominator=0;
-        for(Connection k : i.rightNeuron.leftConnections){
-denominator+=k.weight*k.weight;
+        for(Connection i : neuron.rightConnections){
+         double numerator=neuron.activation*i.weight*i.rightNeuron.relevance;
+         double denominator=0;
+         for(Connection k : i.rightNeuron.leftConnections){
+ denominator+=k.leftNeuron.getActivation()*k.weight;
+         }
+         neuron.relevance+=numerator/(denominator+parameter.getEpsillion());
         }
-        neuron.relevance+=numerator/parameter.rectify((parameter.getEpsillion()+denominator));
-       }
         
         
     }
