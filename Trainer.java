@@ -68,8 +68,8 @@ public class Trainer {
         myLayerManager.setInputLayer(inputLayer);
 
         myLayerManager.setExpectedOutputArray(expectedLayer);
-
         myLayerManager.forwardPropagate();
+        myLayerManager.forwardPropagatewithExclusion();
 
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
@@ -80,7 +80,7 @@ public class Trainer {
     }*/
         
        
-        myLayerManager.relevancePropagate(7,5);
+       // myLayerManager.relevancePropagate(7,5);
         
 
         System.out.print("\n");

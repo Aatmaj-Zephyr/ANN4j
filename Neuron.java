@@ -62,7 +62,12 @@ class Neuron {
         // Iterating through the leftConnections ArrayList and adding the activation of
         // each connection to the sum.
         for (Connection i : leftConnections) {
+            if(i.leftNeuron.getLayerNum()==0 & i.leftNeuron.getNeuronNum()==LayerManager.numtobeExcluded){
+                
+            }
+            else{
             sum += i.calculateActivationForwardPropagation();
+            }
 
         }
 

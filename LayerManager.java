@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class LayerManager {
-
+    public static int numtobeExcluded;
     // all connectoins must be in order of creation
     public static double lossFunction;
 
@@ -88,7 +88,33 @@ public class LayerManager {
 
         LayerManager.lossFunction = calculateMSE();
     }
+    public void forwardPropagatewithExclusion() {
+        // Calling the forwardPropagate() method on every layer in the listOfLayers
+        // ArrayList.
+        // dont forward propagate the input layer
+        for(;numtobeExcluded<=784;numtobeExcluded++){
+        
+        
+        for (int i = 1; i <= listOfLayers.size() - 1; i++) {
+            listOfLayers.get(i).forwardPropagate();
+        }
+        // Calculating the new loss function and storing it in the variable
+        // lossFunction,
+        // storing the old loss function in the variable old lossFunction
 
+        double temp = LayerManager.lossFunction-calculateMSE();
+        if(temp==0){
+            System.out.print(127+",");
+        }
+        else if (temp<0){
+            System.out.print(0+",");
+        }
+        else{
+            System.out.print(255+",");
+        }
+        
+    }
+    }
     public String toString() {
         String str = "";
         for (Layer i : listOfLayers) {
