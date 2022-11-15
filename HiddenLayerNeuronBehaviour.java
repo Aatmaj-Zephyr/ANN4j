@@ -21,6 +21,7 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour{
     }
     @Override
     public void relevancePropagate(Neuron neuron) {
+       // Calculating the relevance of the neuron.
         neuron.relevance=0;
        for(Connection i : neuron.rightConnections){
         double numerator=neuron.getActivation()*i.getWeight()*i.rightNeuron.relevance;

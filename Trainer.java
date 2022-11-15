@@ -68,7 +68,7 @@ public class Trainer {
         myLayerManager.setInputLayer(inputLayer);
 
         myLayerManager.setExpectedOutputArray(expectedLayer);
-        myLayerManager.forwardPropagate();
+        myLayerManager.forwardPropagate(); //for calculation of MSE
         myLayerManager.forwardPropagatewithExclusion();
 
 

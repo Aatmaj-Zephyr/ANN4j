@@ -120,6 +120,10 @@ class Neuron {
         return "Neuron #" + neuronNum + " has activation " + activation + "\n";
     }
 
+    /**
+     * > The function `relevancePropagate()` is called on the `myBehaviour` object, which is of type
+     * `Behaviour`, and the `this` object is passed as an argument
+     */
     public void relevancePropagate() {
         myBehaviour.relevancePropagate(this);
         

@@ -81,7 +81,7 @@ public class LayerManager {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
         // dont forward propagate the input layer
-
+        numtobeExcluded=-1;
         for (int i = 1; i <= listOfLayers.size() - 1; i++) {
             listOfLayers.get(i).forwardPropagate();
         }
@@ -96,9 +96,10 @@ public class LayerManager {
         positivePixels=0;
         negativePixels=0;
         // Calling the forwardPropagate() method on every layer in the listOfLayers
-        // ArrayList.
-        // dont forward propagate the input layer
-        numtobeExcluded=0;
+       
+
+        numtobeExcluded=0; //previously was set -1
+
         for(;numtobeExcluded<=784;numtobeExcluded++){
         
         
@@ -110,6 +111,11 @@ public class LayerManager {
         // storing the old loss function in the variable old lossFunction
 
         double temp = LayerManager.lossFunction-calculateMSE();
+
+        //If your error is increasing when you remove a pixel, that pixel is important, i.e positive pixel.
+
+// This is the code that is used to calculate the relevance of each pixel.
+
         if(temp==0){
             zeroPixels++;
            // System.out.print(127+",");
