@@ -73,6 +73,7 @@ public class Trainer {
 
 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        double confidence = getconfidence(myLayerManager);
         /*if(label==7){
         System.out.print(" Label " + label+" ");
 
@@ -82,6 +83,8 @@ public class Trainer {
        
        // myLayerManager.relevancePropagate(7,5);
         
+       System.out.println("Digit "+label+" is predicted as "+prediction+" with confidence " + confidence+ " correct pixels " + myLayerManager.positivePixels+ " negative pixles "+ myLayerManager.negativePixels);
+       
 
         System.out.print("\n");
         if(prediction == label){
@@ -117,6 +120,19 @@ public class Trainer {
             }
         }
         return no;
+    }
+    public static double getconfidence(LayerManager myLayerManager) {
+        // Finding the most significant neuron in the output layer.
+        double temp = 0;
+        int no = 0;
+        for (int i = 0; i < myLayerManager.OutputLayer.listOfNeurons.size(); i++) {
+            double val = myLayerManager.OutputLayer.listOfNeurons.get(i).getActivation();
+            if (val > temp) {
+                no = i;
+                temp = val;
+            }
+        }
+        return temp;
     }
     public static ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer(LayerManager myLayerManager) {
         // Finding the most significant neuron in the output layer.

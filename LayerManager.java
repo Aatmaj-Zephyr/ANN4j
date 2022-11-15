@@ -9,6 +9,9 @@ public class LayerManager {
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;
     public OutputLayer OutputLayer;
+    public int positivePixels;
+    public int negativePixels;
+    public int zeroPixels;
     public static double[] ExpectedOutputArray; // this will be used by various algorithms, especially backpropagation
                                                 // in the concrete implementations of layer class.
 
@@ -89,6 +92,9 @@ public class LayerManager {
         LayerManager.lossFunction = calculateMSE();
     }
     public void forwardPropagatewithExclusion() {
+        zeroPixels=0;
+        positivePixels=0;
+        negativePixels=0;
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
         // dont forward propagate the input layer
@@ -105,15 +111,18 @@ public class LayerManager {
 
         double temp = LayerManager.lossFunction-calculateMSE();
         if(temp==0){
-            System.out.print(127+",");
+            zeroPixels++;
+           // System.out.print(127+",");
         }
         else if (temp<0){
-            System.out.print(0+",");
+           // System.out.print(0+",");
+           negativePixels++;
         }
         else{
-            System.out.print(255+",");
+            //System.out.print(255+",");
+            positivePixels++;
         }
-        
+
     }
     }
     public String toString() {
