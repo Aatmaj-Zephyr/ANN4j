@@ -100,8 +100,7 @@ public class LayerManager {
 
         numtobeExcluded=0; //previously was set -1
 
-        for(;numtobeExcluded<=784;numtobeExcluded++){
-        
+        for(;numtobeExcluded<784;numtobeExcluded++){
         
         for (int i = 1; i <= listOfLayers.size() - 1; i++) {
             listOfLayers.get(i).forwardPropagate();
@@ -115,7 +114,7 @@ public class LayerManager {
         //If your error is increasing when you remove a pixel, that pixel is important, i.e positive pixel.
 
 // This is the code that is used to calculate the relevance of each pixel.
-System.out.print((int)(temp*10000+127)+",");
+//System.out.print((int)(temp*10000+127)+",");
         
         if(temp==0){
             zeroPixels++;
@@ -130,6 +129,8 @@ System.out.print((int)(temp*10000+127)+",");
             positivePixels++;
         }
 
+        System.out.print(InputLayer.listOfNeurons.get(numtobeExcluded).relevance*256+"---");
+        System.out.println((int)(temp*10000+128));
     }
     }
     public String toString() {
@@ -155,7 +156,17 @@ System.out.print((int)(temp*10000+127)+",");
         }
 
     }
-
+    public void relevancePropagate(){
+        // backwardPropagate in reverse order
+        for (int i = listOfLayers.size() - 1; i >= 0; i--) {
+           
+                
+            
+            listOfLayers.get(i).relevancePropagate();
+            
+        }
+    }
+    // This is the code that is used to calculate the relevance of each pixel.
     public void relevancePropagate(int layerNumber,int neuronNumber) {
         for (int i = layerNumber; i >= 0; i--) {
             if(i==layerNumber){

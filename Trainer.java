@@ -69,6 +69,8 @@ public class Trainer {
 
         myLayerManager.setExpectedOutputArray(expectedLayer);
         myLayerManager.forwardPropagate(); //for calculation of MSE
+        myLayerManager.relevancePropagate();//must be before forwardPropagatewithExclusion and after forwardPropagate
+
         myLayerManager.forwardPropagatewithExclusion();
 
 
@@ -81,7 +83,6 @@ public class Trainer {
     }*/
         
        
-       // myLayerManager.relevancePropagate(7,5);
         
        System.out.println("Digit "+label+" is predicted as "+prediction+" with confidence " + confidence+ " correct pixels " + myLayerManager.positivePixels+ " negative pixles "+ myLayerManager.negativePixels);
        
