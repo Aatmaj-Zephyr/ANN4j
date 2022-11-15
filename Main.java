@@ -2,7 +2,7 @@
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("Hello World");
-		parameter.setLayerArray(784,16,16,10);
+		parameter.setLayerArray(784,32,16,16,10);
 		parameter.setTrainingFileReader("mnist_train.csv", "mnist"); 
 		parameter.setTestingFileReader("mnist_test.csv", "mnist"); 
 		parameter.setLearningRate(1);
@@ -12,7 +12,7 @@ public class Main {
 		parameter.setRectificationFunction("sigmoid");
 		Trainer myTrainer = new Trainer();
 		myTrainer.train(50000);
-		myTrainer.test(3);
+		myTrainer.test(10);
 
 			// System.out.println(LayerManager.ConnectionHeap);
 
