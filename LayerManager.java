@@ -118,14 +118,14 @@ public class LayerManager {
 
         if(temp==0){
             zeroPixels++;
-           // System.out.print(127+",");
+            System.out.print(127+",");
         }
         else if (temp<0){
-           // System.out.print(0+",");
+            System.out.print(0+",");
            negativePixels++;
         }
         else{
-            //System.out.print(255+",");
+            System.out.print(255+",");
             positivePixels++;
         }
 

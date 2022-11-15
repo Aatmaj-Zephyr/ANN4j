@@ -11,8 +11,8 @@ public class Main {
 		parameter.setBatchsize(10);
 		parameter.setRectificationFunction("sigmoid");
 		Trainer myTrainer = new Trainer();
-		myTrainer.train(2000);
-		myTrainer.test(100);
+		myTrainer.train(5000);
+		myTrainer.test(2);
 
 			// System.out.println(LayerManager.ConnectionHeap);
 
