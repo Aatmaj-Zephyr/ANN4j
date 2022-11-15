@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class LayerManager {
-    public static int numtobeExcluded;
+    public static int numtobeExcluded=-1;
     // all connectoins must be in order of creation
     public static double lossFunction;
 
@@ -92,6 +92,7 @@ public class LayerManager {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
         // dont forward propagate the input layer
+        numtobeExcluded=0;
         for(;numtobeExcluded<=784;numtobeExcluded++){
         
         
