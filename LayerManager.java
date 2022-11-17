@@ -129,8 +129,8 @@ public class LayerManager {
             positivePixels++;
         }
 
-        System.out.print(InputLayer.listOfNeurons.get(numtobeExcluded).relevance*256+"---");
-        System.out.println((int)(temp*10000+128));
+        System.out.print((int)(parameter.rectify(InputLayer.listOfNeurons.get(numtobeExcluded).relevance*256-(temp*10000+128))*256)+",");
+        //System.out.println();
     }
     }
     public String toString() {

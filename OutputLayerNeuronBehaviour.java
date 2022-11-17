@@ -18,7 +18,14 @@ public class OutputLayerNeuronBehaviour implements NeuronBehaviour{
     @Override
     public void relevancePropagate(Neuron neuron) {
         // Setting the relevance of the neuron to its activation.
+       // This is a check to see if the neuron is the one that is the label. If it is,
+       // then the relevance is set to the activation.
+        if(LayerManager.ExpectedOutputArray[neuron.getNeuronNum()]==1){
         neuron.relevance=neuron.getActivation();
+        }
+        else{
+            neuron.relevance=0;
+        }
         
     }
 
