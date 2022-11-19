@@ -72,8 +72,6 @@ public class Trainer {
         myLayerManager.relevancePropagate();//must be before forwardPropagatewithExclusion and after forwardPropagate
 
         myLayerManager.forwardPropagatewithExclusion();
-
-
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
         double confidence = getconfidence(myLayerManager);
         /*if(label==7){
@@ -86,6 +84,19 @@ public class Trainer {
         
        System.out.println("Digit "+label+" is predicted as "+prediction+" with confidence " + confidence+ " correct pixels " + myLayerManager.positivePixels+ " negative pixles "+ myLayerManager.negativePixels);
        
+        myLayerManager.forwardPropagate(); //for seeing the results by forwardPropagatewithExclusion
+
+         prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+         confidence = getconfidence(myLayerManager);
+        /*if(label==7){
+        System.out.print(" Label " + label+" ");
+
+        System.out.println(getMostSignificantNeuronAsPredictionInHiddenLayer(myLayerManager));
+    }*/
+        
+       
+        
+       System.out.println("Digit "+label+" is predicted as "+prediction+" with confidence " + confidence);
 
         System.out.print("\n");
         if(prediction == label){

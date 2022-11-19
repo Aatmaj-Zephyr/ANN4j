@@ -99,6 +99,7 @@ public class LayerManager {
        
 
         numtobeExcluded=0; //previously was set -1
+        double temparray[]=new double[784];
 
         for(;numtobeExcluded<784;numtobeExcluded++){
         
@@ -112,7 +113,8 @@ public class LayerManager {
         double temp = LayerManager.lossFunction-calculateMSE();
 
         //If your error is increasing when you remove a pixel, that pixel is important, i.e positive pixel.
-
+        //which means that the value if temp is negative
+        
 // This is the code that is used to calculate the relevance of each pixel.
 //System.out.print((int)(temp*10000+127)+",");
         
@@ -128,10 +130,25 @@ public class LayerManager {
             //System.out.print(255+",");
             positivePixels++;
         }
-
-        System.out.print((int)(parameter.rectify(InputLayer.listOfNeurons.get(numtobeExcluded).relevance*256-(temp*10000+128))*256)+",");
-        //System.out.println();
+       
+        if(temp==0){
+            temparray[numtobeExcluded]=0;
+        }
+        else if (temp<0){
+            temparray[numtobeExcluded]=-temp*1000;
+        }
+        else{
+            temparray[numtobeExcluded]=0;
+        }
+        
+       
+       
     }
+    this.setInputLayer(temparray);
+    
+
+        //System.out.println();
+    
     }
     public String toString() {
         String str = "";
