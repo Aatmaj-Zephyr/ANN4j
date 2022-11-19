@@ -114,20 +114,20 @@ public class LayerManager {
 
         //If your error is increasing when you remove a pixel, that pixel is important, i.e positive pixel.
         //which means that the value if temp is negative
-        
+
 // This is the code that is used to calculate the relevance of each pixel.
 //System.out.print((int)(temp*10000+127)+",");
         
         if(temp==0){
             zeroPixels++;
-           // System.out.print(127+",");
+            System.out.print(0+",");
         }
         else if (temp<0){
-           // System.out.print(0+",");
+            System.out.print(0+",");
            negativePixels++;
         }
         else{
-            //System.out.print(255+",");
+            System.out.print(255+",");
             positivePixels++;
         }
        
@@ -135,12 +135,12 @@ public class LayerManager {
             temparray[numtobeExcluded]=0;
         }
         else if (temp<0){
-            temparray[numtobeExcluded]=-temp*1000;
+            temparray[numtobeExcluded]=0;//-temp*1000;
         }
         else{
-            temparray[numtobeExcluded]=0;
+            temparray[numtobeExcluded]=256;
         }
-        
+        //The values do not change for incorrect predictions.
        
        
     }
