@@ -123,11 +123,11 @@ public class LayerManager {
             System.out.print(0+",");
         }
         else if (temp<0){
-            System.out.print(0+",");
+            System.out.print(255+",");
            negativePixels++;
         }
         else{
-            System.out.print(255+",");
+            System.out.print(0+",");
             positivePixels++;
         }
        
@@ -135,10 +135,10 @@ public class LayerManager {
             temparray[numtobeExcluded]=0;
         }
         else if (temp<0){
-            temparray[numtobeExcluded]=0;//-temp*1000;
+            temparray[numtobeExcluded]=255;//-temp*1000;
         }
         else{
-            temparray[numtobeExcluded]=256;
+            temparray[numtobeExcluded]=0;
         }
         //The values do not change for incorrect predictions.
        
