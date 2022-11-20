@@ -69,10 +69,13 @@ public class Trainer {
 
         myLayerManager.setExpectedOutputArray(expectedLayer);
         myLayerManager.forwardPropagate(); //for calculation of MSE
-        myLayerManager.relevancePropagate();//must be before forwardPropagatewithExclusion and after forwardPropagate
+        int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        if(prediction!=label){
+
+       // myLayerManager.relevancePropagate();//must be before forwardPropagatewithExclusion and after forwardPropagate
 
         myLayerManager.forwardPropagatewithExclusion();
-        int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        }
         double confidence = getconfidence(myLayerManager);
         /*if(label==7){
         System.out.print(" Label " + label+" ");
@@ -84,10 +87,10 @@ public class Trainer {
         
        System.out.println("Digit "+label+" is predicted as "+prediction+" with confidence " + confidence+ " correct pixels " + myLayerManager.positivePixels+ " negative pixles "+ myLayerManager.negativePixels);
        
-        myLayerManager.forwardPropagate(); //for seeing the results by forwardPropagatewithExclusion
+       // myLayerManager.forwardPropagate(); //for seeing the results by forwardPropagatewithExclusion
 
-         prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
-         confidence = getconfidence(myLayerManager);
+        // prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+         //confidence = getconfidence(myLayerManager);
         /*if(label==7){
         System.out.print(" Label " + label+" ");
 

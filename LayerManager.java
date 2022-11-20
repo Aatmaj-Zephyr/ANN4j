@@ -144,7 +144,7 @@ public class LayerManager {
        
        
     }
-    this.setInputLayer(temparray);
+  //  this.setInputLayer(temparray);
     
 
         //System.out.println();
