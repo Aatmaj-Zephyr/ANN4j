@@ -13,6 +13,7 @@ public class Main {
 		Trainer myTrainer = new Trainer();
 		myTrainer.train(5000);
 		myTrainer.test(2);
+		myTrainer.relevancePropagate(2, 3);
 		//myTrainer.forwardPropagatewithExclusion(2);
 
 			// System.out.println(LayerManager.ConnectionHeap);

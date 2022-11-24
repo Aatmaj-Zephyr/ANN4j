@@ -90,6 +90,10 @@ public class Trainer {
         myLayerManager.forwardPropagatewithExclusion();
 
     }
+    public void relevancePropagate(int layerNumber,int neuronNumber) {
+        
+        myLayerManager.relevancePropagate(layerNumber, neuronNumber);
+    }
     private void test() {
         myLayerManager.setInputLayer(inputLayer);
         myLayerManager.setExpectedOutputArray(expectedLayer);
@@ -97,7 +101,6 @@ public class Trainer {
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
         
 
-       // myLayerManager.relevancePropagate();//must be before forwardPropagatewithExclusion and after forwardPropagate
         
         double confidence = getconfidence(myLayerManager);
       
