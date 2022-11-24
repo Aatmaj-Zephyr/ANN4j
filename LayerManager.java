@@ -165,16 +165,7 @@ public class LayerManager {
         }
 
     }
-    protected void relevancePropagate(){
-        // backwardPropagate in reverse order
-        for (int i = listOfLayers.size() - 1; i >= 0; i--) {
-           
-                
-            
-            listOfLayers.get(i).relevancePropagate();
-            
-        }
-    }
+  
     // This is the code that is used to calculate the relevance of each pixel.
     protected void relevancePropagate(int layerNumber,int neuronNumber) {
         for (int i = layerNumber; i >= 0; i--) {

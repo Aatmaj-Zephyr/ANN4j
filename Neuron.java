@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class Neuron {
-   private double activation;
-   protected int neuronNum;
-   protected int layerNum = -1;
-   protected ArrayList<Connection> leftConnections = new ArrayList<Connection>();
-   protected ArrayList<Connection> rightConnections = new ArrayList<Connection>();
+    private double activation;
+    protected int neuronNum;
+    protected int layerNum = -1;
+    protected ArrayList<Connection> leftConnections = new ArrayList<Connection>();
+    protected ArrayList<Connection> rightConnections = new ArrayList<Connection>();
     protected double bias;
     protected double delta;
     protected NeuronBehaviour myBehaviour;
@@ -15,17 +15,17 @@ public class Neuron {
     private double biasLearningRate;
     double relevance;
 
-   protected double getActivation() {
+    protected double getActivation() {
         return activation;
     }
 
-   protected void setActivation(double activation) {
+    protected void setActivation(double activation) {
         this.activation = activation;
     }
-   protected void setBehaviour(NeuronBehaviour myBehaviour){
+    protected void setBehaviour(NeuronBehaviour myBehaviour){
     this.myBehaviour= myBehaviour;
    }
-   protected Neuron() {
+    protected Neuron() {
         setActivation(NN.getRandom());
         bias = NN.setBias();
         batchSize=parameter.getBatchsize();

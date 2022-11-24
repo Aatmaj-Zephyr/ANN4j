@@ -35,7 +35,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
 
     protected double[] readLineToDoubleArray() throws IOException {
         String line = singleFileReader.readLine();
-        String[] arrayOfStrings = line.split(","); // CSV files are seperate dby Commas
+        String[] arrayOfStrings = line.split(","); // CSV files are seperate by Commas
         return convertStringArrayToDoubleArray(arrayOfStrings);
     }
 

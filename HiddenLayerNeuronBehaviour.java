@@ -19,6 +19,7 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour{
         }
         return  weightedSum * activation * (1 - activation);
     }
+
     @Override
     public void relevancePropagate(Neuron neuron) {
        // Calculating the relevance of the neuron.
@@ -27,7 +28,7 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour{
         double numerator=neuron.getActivation()*i.getWeight()*i.rightNeuron.relevance;
         double denominator=0;
         for(Connection k : i.rightNeuron.leftConnections){
-denominator+=k.leftNeuron.getActivation()*k.getWeight();
+            denominator+=k.leftNeuron.getActivation()*k.getWeight();
         }
         neuron.relevance+=numerator/(denominator+parameter.getEpsillion());
        }

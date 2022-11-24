@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class Connection {
-   protected Neuron leftNeuron;
-   protected Neuron rightNeuron;
-   private double weight;
-   protected ArrayList<Double> changeWishlist;
-private int batchCounter;
-private double learningRate;  //avoid using static parameters as they incerase time complexity.
-private int batchSize; //avoid using static parameters as they incerase time complexity.
+    protected Neuron leftNeuron;
+    protected Neuron rightNeuron;
+    private double weight;
+    protected ArrayList<Double> changeWishlist;
+    private int batchCounter;
+    private double learningRate;  //avoid using static parameters as they incerase time complexity.
+    private int batchSize; //avoid using static parameters as they incerase time complexity.
 
     Connection(Neuron leftNeuron, Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and

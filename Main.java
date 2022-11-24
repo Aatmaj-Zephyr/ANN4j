@@ -16,7 +16,6 @@ public class Main {
 		myTrainer.relevancePropagate(2, 3);
 		//myTrainer.forwardPropagatewithExclusion(2);
 
-			// System.out.println(LayerManager.ConnectionHeap);
 
 		
 
