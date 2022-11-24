@@ -1,31 +1,31 @@
 import java.util.*;
 
-class Neuron {
+public class Neuron {
    private double activation;
-   public int neuronNum;
-   public int layerNum = -1;
-   public ArrayList<Connection> leftConnections = new ArrayList<Connection>();
-   public ArrayList<Connection> rightConnections = new ArrayList<Connection>();
-    public double bias;
-    public double delta;
-    public NeuronBehaviour myBehaviour;
+   protected int neuronNum;
+   protected int layerNum = -1;
+   protected ArrayList<Connection> leftConnections = new ArrayList<Connection>();
+   protected ArrayList<Connection> rightConnections = new ArrayList<Connection>();
+    protected double bias;
+    protected double delta;
+    protected NeuronBehaviour myBehaviour;
     private int batchCounter;
     private ArrayList<Double> biasChangeWishlist;
     private int batchSize;
     private double biasLearningRate;
     double relevance;
 
-   public double getActivation() {
+   protected double getActivation() {
         return activation;
     }
 
-   public void setActivation(double activation) {
+   protected void setActivation(double activation) {
         this.activation = activation;
     }
-   public void setBehaviour(NeuronBehaviour myBehaviour){
+   protected void setBehaviour(NeuronBehaviour myBehaviour){
     this.myBehaviour= myBehaviour;
    }
-   public Neuron() {
+   protected Neuron() {
         setActivation(NN.getRandom());
         bias = NN.setBias();
         batchSize=parameter.getBatchsize();
@@ -33,31 +33,31 @@ class Neuron {
         biasChangeWishlist=new ArrayList<Double>();
     }
 
-    public void setLayerNum(int layerNum) {
+    protected void setLayerNum(int layerNum) {
         this.layerNum = layerNum;
     }
 
-    public int getLayerNum() {
+    protected int getLayerNum() {
         return layerNum;
     }
 
-    public void setNeuronNum(int neuronNum) {
+    protected void setNeuronNum(int neuronNum) {
         this.neuronNum = neuronNum;
     }
 
-    public int getNeuronNum() {
+    protected int getNeuronNum() {
         return neuronNum;
     }
 
-    public void addLeftConnections(Connection connection) {
+    protected void addLeftConnections(Connection connection) {
         leftConnections.add(connection);
     }
 
-    public void addRightConnections(Connection connection) {
+    protected void addRightConnections(Connection connection) {
         rightConnections.add(connection);
     }
 
-    public double getWeightedSum() {
+    protected double getWeightedSum() {
         double sum = 0;
         // Iterating through the leftConnections ArrayList and adding the activation of
         // each connection to the sum.
@@ -74,11 +74,11 @@ class Neuron {
         return sum;
     }
 
-    public double getBias() {
+    protected double getBias() {
         return bias;
     }
 
-    public void forwardPropagate() {
+    protected void forwardPropagate() {
         // System.out.println("Forward propagating in neuron # "+this.neuronNum+" in
         // layer number "+this.layerNum); //test code
         // Setting the activation of the neuron to the rectified value of the weighted
@@ -87,11 +87,11 @@ class Neuron {
 
     }
 
-    public double getDelta() {
+    protected double getDelta() {
         return delta;
     }
 
-    public void backwardPropagate() {
+    protected void backwardPropagate() {
         setDelta();
         for (Connection i : leftConnections) {
             i.backPropagate();
@@ -112,7 +112,7 @@ class Neuron {
             biasChangeWishlist=new ArrayList<Double>();        }
     }
 
-    public void setDelta() {
+    protected void setDelta() {
         this.delta=myBehaviour.setDelta(this);
     }
 
@@ -124,7 +124,7 @@ class Neuron {
      * > The function `relevancePropagate()` is called on the `myBehaviour` object, which is of type
      * `Behaviour`, and the `this` object is passed as an argument
      */
-    public void relevancePropagate() {
+    protected void relevancePropagate() {
         myBehaviour.relevancePropagate(this);
         
     }

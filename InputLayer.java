@@ -5,7 +5,7 @@ public class InputLayer extends Layer {
 
     }
 
-    public void setInput(double[] inputLayerArray) {
+    protected void setInput(double[] inputLayerArray) {
         // This is setting the activation of each neuron in the input layer to the
         // corresponding value
         // in the input array.
@@ -17,12 +17,12 @@ public class InputLayer extends Layer {
   
 
     @Override
-    public void setBehaviour() {
+    protected void setBehaviour() {
         this.myBehaviour = InputLayerNeuronBehaviour.getInstance();
         
     }
 
-    public int getSize() {
+    protected int getSize() {
         return listOfNeurons.size();
     }
 

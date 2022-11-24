@@ -1,36 +1,36 @@
 import java.util.*;
 
 public class LayerManager {
-    public static int numtobeExcluded=-1;
+    protected static int numtobeExcluded=-1;
     // all connectoins must be in order of creation
-    public static double lossFunction;
+    protected static double lossFunction;
 
    
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
-    public InputLayer InputLayer;
-    public OutputLayer OutputLayer;
-    public static double[] ExpectedOutputArray; // This will be used by various algorithms, especially backpropagation
+    protected InputLayer InputLayer;
+    protected OutputLayer OutputLayer;
+    protected static double[] ExpectedOutputArray; // This will be used by various algorithms, especially backpropagation
                                                 // in the concrete implementations of layer class.
 
 
 
-    public OutputLayer getOutputLayer() {
+    protected OutputLayer getOutputLayer() {
         return OutputLayer;
     }
 
-    public InputLayer getInputLayer() {
+    protected InputLayer getInputLayer() {
         return InputLayer;
     }
 
-    public double calculateMSE() {
+    protected double calculateMSE() {
         return MeanSquaredErrorCalculator.calculateMSE(this.getOutputLayer(), LayerManager.ExpectedOutputArray);
     }
 
-    public void setExpectedOutputArray(double[] expectedOutputArray) {
+    protected void setExpectedOutputArray(double[] expectedOutputArray) {
         ExpectedOutputArray = expectedOutputArray;
     }
 
-    public void setInputLayer(double[] inputLayerArray) {
+    protected void setInputLayer(double[] inputLayerArray) {
         this.InputLayer.setInput(inputLayerArray);
     }
 
@@ -74,7 +74,7 @@ public class LayerManager {
         }
     }
 
-    public void forwardPropagate() {
+    protected void forwardPropagate() {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
         // dont forward propagate the input layer
@@ -88,7 +88,7 @@ public class LayerManager {
 
         LayerManager.lossFunction = calculateMSE();
     }
-    public void forwardPropagatewithExclusion() {
+    protected void forwardPropagatewithExclusion() {
       
         // Calling the forwardPropagate() method on every layer in the listOfLayers
        
@@ -152,12 +152,12 @@ public class LayerManager {
         return str;
     }
 
-    public Layer getOutput() {
+    protected Layer getOutput() {
         // Returning the last layer in the listOfLayers ArrayList.
         return listOfLayers.get(listOfLayers.size() - 1);
     }
 
-    public void backwardPropagate() {
+    protected void backwardPropagate() {
 
         // backwardPropagate in reverse order
         for (int i = listOfLayers.size() - 1; i >= 0; i--) {
@@ -165,7 +165,7 @@ public class LayerManager {
         }
 
     }
-    public void relevancePropagate(){
+    protected void relevancePropagate(){
         // backwardPropagate in reverse order
         for (int i = listOfLayers.size() - 1; i >= 0; i--) {
            
@@ -176,7 +176,7 @@ public class LayerManager {
         }
     }
     // This is the code that is used to calculate the relevance of each pixel.
-    public void relevancePropagate(int layerNumber,int neuronNumber) {
+    protected void relevancePropagate(int layerNumber,int neuronNumber) {
         for (int i = layerNumber; i >= 0; i--) {
             if(i==layerNumber){
                 for(Neuron j: listOfLayers.get(layerNumber).listOfNeurons){
@@ -197,7 +197,6 @@ public class LayerManager {
         for(Neuron i:this.InputLayer.listOfNeurons){
             System.out.print((int)(NN.sigmoid(i.relevance)*255)+",");
         }
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ");
         
 
     }

@@ -7,11 +7,11 @@ public class NN {
     private NN() {
     } // Static class cannot be instantiated
 
-    public static double getRandom() {
+    protected static double getRandom() {
         return Math.random();
     }
 
-    public static double getSmallSignedRandom() {
+    protected static double getSmallSignedRandom() {
         // returns numbers from -0.5 to 0.5
         return (Math.random() - 0.5);
     }
@@ -22,7 +22,7 @@ public class NN {
    * @param numToBeRectified The number to be rectified.
    * @return The hyperbolic tangent of the number.
    */
-    public static double tanh(double numToBeRectified){
+    protected static double tanh(double numToBeRectified){
         return (Math.tanh(numToBeRectified)+1)/2;
     }
  /**
@@ -31,7 +31,7 @@ public class NN {
   * @param numToBeRectified The number to be rectified.
   * @return The softplus function is being returned.
   */
-    public static double softplus(double numToBeRectified){
+    protected static double softplus(double numToBeRectified){
         return Math.log(1+Math.exp(numToBeRectified));
     }
 /**
@@ -41,7 +41,7 @@ public class NN {
  * @return The sigmoid function is being returned.
  */
 
-    public static double sigmoid(double numToBeRectified) {
+    protected static double sigmoid(double numToBeRectified) {
         return 1 / (1 + Math.exp(-numToBeRectified));
     }
 
@@ -52,7 +52,7 @@ public class NN {
   * @return The return value is the number that is passed in if it is greater than 0, otherwise it
   * returns 0.
   */
-    public static double relu(double numToBeRectified) {
+    protected static double relu(double numToBeRectified) {
         if (numToBeRectified > 0) {
             return numToBeRectified;
         }
@@ -65,14 +65,14 @@ public class NN {
    * @return the value of the number to be rectified if it is greater than 0, and if it is less than 0,
    * it is returning 0.1 times the number to be rectified.
    */
-    public static double leakyrelu(double numToBeRectified) {
+    protected static double leakyrelu(double numToBeRectified) {
         if (numToBeRectified > 0) {
             return numToBeRectified;
         }
         return 0.1*numToBeRectified;
     }
 
-    public static double average(double[] sum) {
+    protected static double average(double[] sum) {
 
         /**
          * It takes an array of doubles, adds them all together, divides by the length
@@ -91,11 +91,11 @@ public class NN {
         return temp;
     }
 
-    public static double setBias() {
+    protected static double setBias() {
         return NN.getRandom() * 0.1;
     }
 
-    public static double average(ArrayList<Double> input) {
+    protected static double average(ArrayList<Double> input) {
 
         double sum = 0;
         for (int i = 0; i < input.size(); i++) {

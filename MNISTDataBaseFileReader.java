@@ -5,11 +5,11 @@ import java.io.IOException;
 
 public class MNISTDataBaseFileReader extends InputFileReader {
     // This class is custom made for the MNIST database Dataset
-    public double[] expectedOutputArray;
-    public double[] inputArray;
-    public double label;
-    public BufferedReader singleFileReader;
-    public int outputLayerLength;
+    protected double[] expectedOutputArray;
+    protected double[] inputArray;
+    protected double label;
+    protected BufferedReader singleFileReader;
+    protected int outputLayerLength;
 
     MNISTDataBaseFileReader(String filename,int outputLayerLength) throws FileNotFoundException {
         super(filename);
@@ -17,11 +17,11 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         this.singleFileReader = new BufferedReader(new FileReader(filename));
     }
 
-    public double getLabel() {
+    protected double getLabel() {
         return label;
     }
 
-    public void next() {
+    protected void next() {
         double[] array;
         try {
             array = readLineToDoubleArray();
@@ -33,7 +33,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         }
     }
 
-    public double[] readLineToDoubleArray() throws IOException {
+    protected double[] readLineToDoubleArray() throws IOException {
         String line = singleFileReader.readLine();
         String[] arrayOfStrings = line.split(","); // CSV files are seperate dby Commas
         return convertStringArrayToDoubleArray(arrayOfStrings);
@@ -47,16 +47,16 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return arrayOfDouble;
     }
 
-    public double[] getExpectedOutputArray() {
+    protected double[] getExpectedOutputArray() {
         return expectedOutputArray;
 
     }
 
-    public double[] getInputArray() {
+    protected double[] getInputArray() {
         return inputArray;
     }
 
-    public double[] generateExpectedOutputArrayFromLabel() {
+    protected double[] generateExpectedOutputArrayFromLabel() {
         double[] expectedOutputArray = new double[outputLayerLength];
         for (int i = 0; i < 10; i++) {
             if (i == label) {
@@ -69,7 +69,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return expectedOutputArray;
     }
 
-    public double[] generateInputFromBigArray(double[] array) {
+    protected double[] generateInputFromBigArray(double[] array) {
         // generates the input array from the total array , that is it excludes the
         // first element of the array
         double[] inputArray = new double[array.length-1];

@@ -6,7 +6,7 @@ public class HiddenLayer extends Layer {
    
 
     @Override
-    public void setBehaviour() {
+    protected void setBehaviour() {
       this.myBehaviour= HiddenLayerNeuronBehaviour.getInstance();
         
     }

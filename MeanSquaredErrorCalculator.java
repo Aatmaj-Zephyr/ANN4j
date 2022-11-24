@@ -1,6 +1,6 @@
 public class MeanSquaredErrorCalculator {
 
-    public static double calculateMSE(OutputLayer outputLayer, double[] expectedLayer) {
+    protected static double calculateMSE(OutputLayer outputLayer, double[] expectedLayer) {
 
         if (outputLayer.getListOfNeurons().size() != expectedLayer.length) {
             throw new RuntimeException("Length mismatch between lists of neurons and expected lists of neurons");

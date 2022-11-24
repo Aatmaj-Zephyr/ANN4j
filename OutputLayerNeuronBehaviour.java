@@ -2,7 +2,7 @@ public class OutputLayerNeuronBehaviour implements NeuronBehaviour{
     private static OutputLayerNeuronBehaviour myInstance;
     private OutputLayerNeuronBehaviour() {
     }
-    public static OutputLayerNeuronBehaviour getInstance(){
+    protected static OutputLayerNeuronBehaviour getInstance(){
         if(myInstance==null){
         myInstance = new OutputLayerNeuronBehaviour();
         }

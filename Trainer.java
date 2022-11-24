@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Trainer {
         //template pattern
 
-    public LayerManager myLayerManager;
-    public double[] expectedLayer;
-    public InputFileReader trainingFileReader;
-    public InputFileReader testingFileReader;
+    protected LayerManager myLayerManager;
+    protected double[] expectedLayer;
+    protected InputFileReader trainingFileReader;
+    protected InputFileReader testingFileReader;
 
     double[] inputLayer;
     double label;
@@ -19,7 +19,7 @@ public class Trainer {
 
     }
 
-    public void train(int epochs) {
+    protected void train(int epochs) {
         for (int j = 0; j <= 10; j++) {
             parameter.setTrainingFileReader("mnist_train.csv", "mnist"); 
             this.trainingFileReader = parameter.getTrainingFileReader();
@@ -45,7 +45,7 @@ public class Trainer {
 
 
     }
-    public void test(int epochs){
+    protected void test(int epochs){
         for (int i = 0; i < epochs; i++) {
              // Getting the next image from the mnist database.
              testingFileReader.next();
@@ -65,7 +65,7 @@ public class Trainer {
         System.out.println("accuracy "+(double) 100*correctCounter/epochs);
     }
 
-    public void forwardPropagatewithExclusion(int epochs){
+    protected void forwardPropagatewithExclusion(int epochs){
         for (int i = 0; i < epochs; i++) {
              // Getting the next image from the mnist database.
              testingFileReader.next();
@@ -90,7 +90,7 @@ public class Trainer {
         myLayerManager.forwardPropagatewithExclusion();
 
     }
-    public void relevancePropagate(int layerNumber,int neuronNumber) {
+    protected void relevancePropagate(int layerNumber,int neuronNumber) {
         
         myLayerManager.relevancePropagate(layerNumber, neuronNumber);
     }
@@ -115,7 +115,7 @@ public class Trainer {
         }
         
     }
-    public void train() {
+    protected void train() {
         // Heart of the code
 
         myLayerManager.setInputLayer(inputLayer);
@@ -131,7 +131,7 @@ public class Trainer {
        // System.out.println(" prediction " + prediction);
     }
 
-    public static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager) {
+    protected static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager) {
         // Finding the most significant neuron in the output layer.
         double temp = 0;
         int no = 0;
@@ -144,7 +144,7 @@ public class Trainer {
         }
         return no;
     }
-    public static double getconfidence(LayerManager myLayerManager) {
+    protected static double getconfidence(LayerManager myLayerManager) {
         // Finding the most significant neuron in the output layer.
         double temp = 0;
         int no = 0;
@@ -157,7 +157,7 @@ public class Trainer {
         }
         return temp;
     }
-    public static ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer(LayerManager myLayerManager) {
+    protected static ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer(LayerManager myLayerManager) {
         // Finding the most significant neuron in the output layer.
         double temp = 0.9;
         ArrayList<Integer> no= new ArrayList<Integer>();

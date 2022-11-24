@@ -1,25 +1,25 @@
 import java.io.FileNotFoundException;
 
 public class InputFileReader {
-    public String filename;
+    protected String filename;
 
     InputFileReader(String filename) throws FileNotFoundException {
         this.filename = filename;
     }
     // must be overriden by the base methods
 
-    public double[] getExpectedOutputArray() {
+    protected double[] getExpectedOutputArray() {
         return null;
     }
 
-    public double[] getInputArray() {
+    protected double[] getInputArray() {
         return null;
     }
 
-    public void next() {
+    protected void next() {
     }
 
-    public double getLabel() {
+    protected double getLabel() {
         return 0;
     }
 }

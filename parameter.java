@@ -11,29 +11,29 @@ public class parameter {
     private static int batchsize;
     private static double biasLearningRate;
     private static double epsillion;
-    public static double getBiasLearningRate() {
+    protected static double getBiasLearningRate() {
         return biasLearningRate;
     }
-    public static double getEpsillion() {
+    protected static double getEpsillion() {
         return epsillion;
     }
-    public static void setEpsillion(double epsillion) {
+    protected static void setEpsillion(double epsillion) {
         parameter.epsillion = epsillion;
     }
-    public static void setBiasLearningRate(double biasLearningRate) {
+    protected static void setBiasLearningRate(double biasLearningRate) {
         parameter.biasLearningRate = biasLearningRate;
     }
-    public static void setRectificationFunction(String rectificationFunction) {
+    protected static void setRectificationFunction(String rectificationFunction) {
         parameter.rectificationFunction = rectificationFunction;
     }
-    public static InputFileReader getTrainingFileReader() {
+    protected static InputFileReader getTrainingFileReader() {
         return trainingFileReader;
     }
-    public static InputFileReader getTestingFileReader() {
+    protected static InputFileReader getTestingFileReader() {
         return testingFileReader;
     }
     
-    public static void setTestingFileReader(String fileName, String type) {
+    protected static void setTestingFileReader(String fileName, String type) {
         try {
         if(type=="mnist"){
             parameter.testingFileReader = new MNISTDataBaseFileReader(fileName,layerArray[layerArray.length-1]);
@@ -42,10 +42,10 @@ public class parameter {
     } catch (FileNotFoundException ex) {
     }
     }
-    public static void setLearningRate(double learningRate) {
+    protected static void setLearningRate(double learningRate) {
         parameter.learningRate = learningRate;
     }
-    public static void setTrainingFileReader(String fileName, String type) {
+    protected static void setTrainingFileReader(String fileName, String type) {
         try {
         if(type=="mnist"){
             parameter.trainingFileReader = new MNISTDataBaseFileReader(fileName,layerArray[layerArray.length-1]);
@@ -53,7 +53,7 @@ public class parameter {
     } catch (FileNotFoundException ex) {
     }
     }
-    public static double rectify(double numToBeRectified) {
+    protected static double rectify(double numToBeRectified) {
     // This is the rectification function. It is used to rectify the output of the neuron.
     //The rectification function will rectify according to the string provided. The functions fromn NN module will be utilized for this.
         if(rectificationFunction=="relu"){
@@ -71,19 +71,19 @@ public class parameter {
 
         return NN.sigmoid(numToBeRectified);
     }
-    public static void setLayerArray(int...LayerArray){
+    protected static void setLayerArray(int...LayerArray){
         parameter.layerArray = LayerArray;
     }
-    public static double getLearningRate() {
+    protected static double getLearningRate() {
         return learningRate;
     }
-    public static int[] getLayerArray() {
+    protected static int[] getLayerArray() {
         return layerArray;
     }
-    public static int getBatchsize() {
+    protected static int getBatchsize() {
         return batchsize;
     }
-    public static void setBatchsize(int batchsize) {
+    protected static void setBatchsize(int batchsize) {
         parameter.batchsize = batchsize;
     }
 }
