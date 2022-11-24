@@ -12,6 +12,7 @@ public class LayerManager {
     protected OutputLayer OutputLayer;
     protected static ArrayList<Double> ExpectedOutputArrayList; // This will be used by various algorithms, especially backpropagation
                                                 // in the concrete implementations of layer class.
+    private static Double NeuronNumberToBeTestedinRelavancePropagation;
 
 
 
@@ -191,6 +192,14 @@ public class LayerManager {
         }
         
 
+    }
+
+    public static Double getNeuronNumberToBeTestedinRelavancePropagation() {
+        return NeuronNumberToBeTestedinRelavancePropagation;
+    }
+    public static void setNeuronNumberToBeTestedinRelavancePropagation(
+            Double neuronNumberToBeTestedinRelavancePropagation) {
+        NeuronNumberToBeTestedinRelavancePropagation = neuronNumberToBeTestedinRelavancePropagation;
     }
 
    

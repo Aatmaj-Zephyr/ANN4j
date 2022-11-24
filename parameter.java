@@ -53,6 +53,9 @@ public class parameter {
     } catch (FileNotFoundException ex) {
     }
     }
+    protected static void setNeuronNumberToBeTestedinRelavancePropagation(double NeuronNumberToBeTestedinRelavancePropagation){
+        LayerManager.setNeuronNumberToBeTestedinRelavancePropagation(NeuronNumberToBeTestedinRelavancePropagation);
+    }
     protected static double rectify(double numToBeRectified) {
     // This is the rectification function. It is used to rectify the output of the neuron.
     //The rectification function will rectify according to the string provided. The functions fromn NN module will be utilized for this.

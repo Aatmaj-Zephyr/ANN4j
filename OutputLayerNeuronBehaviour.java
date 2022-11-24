@@ -20,7 +20,7 @@ public class OutputLayerNeuronBehaviour implements NeuronBehaviour{
         // Setting the relevance of the neuron to its activation.
        // This is a check to see if the neuron is the one that is the label. If it is,
        // then the relevance is set to the activation.
-        if(LayerManager.ExpectedOutputArrayList.get(neuron.getNeuronNum())==1){
+        if(LayerManager.ExpectedOutputArrayList.get(neuron.getNeuronNum())==LayerManager.getNeuronNumberToBeTestedinRelavancePropagation()){
         neuron.relevance=neuron.getActivation();
         }
         else{

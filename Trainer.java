@@ -45,6 +45,7 @@ public class Trainer {
 
 
     }
+    
     protected void test(int epochs){
         for (int i = 0; i < epochs; i++) {
              // Getting the next image from the mnist database.
