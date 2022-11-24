@@ -2,10 +2,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MNISTDataBaseFileReader extends InputFileReader {
     // This class is custom made for the MNIST database Dataset
-    protected double[] expectedOutputArray;
+    protected ArrayList<Double> expectedOutputArray;
     protected double[] inputArray;
     protected double label;
     protected BufferedReader singleFileReader;
@@ -47,7 +48,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return arrayOfDouble;
     }
 
-    protected double[] getExpectedOutputArray() {
+    protected ArrayList<Double> getExpectedOutputArray() {
         return expectedOutputArray;
 
     }
@@ -56,13 +57,13 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return inputArray;
     }
 
-    protected double[] generateExpectedOutputArrayFromLabel() {
-        double[] expectedOutputArray = new double[outputLayerLength];
+    protected ArrayList<Double> generateExpectedOutputArrayFromLabel() {
+        ArrayList<Double> expectedOutputArray = new ArrayList<Double>();
         for (int i = 0; i < 10; i++) {
             if (i == label) {
-                expectedOutputArray[i] = 1;
+                expectedOutputArray.add(i,1.0);
             } else {       
-                expectedOutputArray[i] = 0;
+                expectedOutputArray.add(i,0.0);
             }
         }
         // go to next line

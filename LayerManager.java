@@ -5,11 +5,12 @@ public class LayerManager {
     // all connectoins must be in order of creation
     protected static double lossFunction;
 
+
    
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     protected InputLayer InputLayer;
     protected OutputLayer OutputLayer;
-    protected static double[] ExpectedOutputArray; // This will be used by various algorithms, especially backpropagation
+    protected static ArrayList<Double> ExpectedOutputArrayList; // This will be used by various algorithms, especially backpropagation
                                                 // in the concrete implementations of layer class.
 
 
@@ -23,11 +24,11 @@ public class LayerManager {
     }
 
     protected double calculateMSE() {
-        return MeanSquaredErrorCalculator.calculateMSE(this.getOutputLayer(), LayerManager.ExpectedOutputArray);
+        return MeanSquaredErrorCalculator.calculateMSE(this.getOutputLayer(), LayerManager.ExpectedOutputArrayList);
     }
 
-    protected void setExpectedOutputArray(double[] expectedOutputArray) {
-        ExpectedOutputArray = expectedOutputArray;
+    protected void setExpectedOutputArray(ArrayList<Double> expectedOutputArrayList) {
+        ExpectedOutputArrayList = expectedOutputArrayList;
     }
 
     protected void setInputLayer(double[] inputLayerArray) {
@@ -191,5 +192,7 @@ public class LayerManager {
         
 
     }
+
+   
 
 }

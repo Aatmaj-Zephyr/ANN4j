@@ -4,7 +4,7 @@ public class Trainer {
         //template pattern
 
     protected LayerManager myLayerManager;
-    protected double[] expectedLayer;
+    protected ArrayList<Double> expectedLayer;
     protected InputFileReader trainingFileReader;
     protected InputFileReader testingFileReader;
 

@@ -11,7 +11,7 @@ public class OutputLayerNeuronBehaviour implements NeuronBehaviour{
 
     @Override
     public double setDelta(Neuron i) {
-        double expectedValue = LayerManager.ExpectedOutputArray[i.getNeuronNum()];
+        double expectedValue = LayerManager.ExpectedOutputArrayList.get(i.getNeuronNum());
         double activation = i.getActivation();
         return activation * (1 - activation) * (expectedValue - activation);
     }
@@ -20,7 +20,7 @@ public class OutputLayerNeuronBehaviour implements NeuronBehaviour{
         // Setting the relevance of the neuron to its activation.
        // This is a check to see if the neuron is the one that is the label. If it is,
        // then the relevance is set to the activation.
-        if(LayerManager.ExpectedOutputArray[neuron.getNeuronNum()]==1){
+        if(LayerManager.ExpectedOutputArrayList.get(neuron.getNeuronNum())==1){
         neuron.relevance=neuron.getActivation();
         }
         else{

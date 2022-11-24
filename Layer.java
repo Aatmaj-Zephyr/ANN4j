@@ -17,7 +17,9 @@ abstract class Layer {
             addNeuron(newNeuron);
         }
     }
-
+    protected int getSize() {
+        return listOfNeurons.size();
+    }
     protected abstract void setBehaviour();
     /*
          * The delta of each neuron will be different accouding to it's type, that is if

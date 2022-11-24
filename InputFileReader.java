@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class InputFileReader {
     protected String filename;
@@ -8,7 +9,7 @@ public class InputFileReader {
     }
     // must be overriden by the base methods
 
-    protected double[] getExpectedOutputArray() {
+    protected ArrayList<Double> getExpectedOutputArray() {
         return null;
     }
 
