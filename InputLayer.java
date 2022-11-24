@@ -22,4 +22,8 @@ public class InputLayer extends Layer {
         
     }
 
+    public int getSize() {
+        return listOfNeurons.size();
+    }
+
 }

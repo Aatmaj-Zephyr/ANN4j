@@ -64,43 +64,48 @@ public class Trainer {
         }
         System.out.println("accuracy "+(double) 100*correctCounter/epochs);
     }
-    public void test() {
-        myLayerManager.setInputLayer(inputLayer);
 
-        myLayerManager.setExpectedOutputArray(expectedLayer);
+    public void forwardPropagatewithExclusion(int epochs){
+        for (int i = 0; i < epochs; i++) {
+             // Getting the next image from the mnist database.
+             testingFileReader.next();
+
+             // Getting the expected output array from the mnist database.
+             expectedLayer = testingFileReader.getExpectedOutputArray();
+ 
+             // Getting the input array from the mnist database.
+             inputLayer = testingFileReader.getInputArray();
+ 
+             // Getting the label of the image from the mnist database.
+             label = testingFileReader.getLabel();
+ 
+ 
+             forwardPropagatewithExclusion();
+        }
+        System.out.println("accuracy "+(double) 100*correctCounter/epochs);
+    }
+
+    private void forwardPropagatewithExclusion(){
         myLayerManager.forwardPropagate(); //for calculation of MSE
+        myLayerManager.forwardPropagatewithExclusion();
+
+    }
+    private void test() {
+        myLayerManager.setInputLayer(inputLayer);
+        myLayerManager.setExpectedOutputArray(expectedLayer);
+        myLayerManager.forwardPropagate(); 
         int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
-        if(prediction!=label){
+        
 
        // myLayerManager.relevancePropagate();//must be before forwardPropagatewithExclusion and after forwardPropagate
-
-        myLayerManager.forwardPropagatewithExclusion();
-        }
+        
         double confidence = getconfidence(myLayerManager);
-        /*if(label==7){
-        System.out.print(" Label " + label+" ");
-
-        System.out.println(getMostSignificantNeuronAsPredictionInHiddenLayer(myLayerManager));
-    }*/
+      
         
        
         
-       System.out.println("Digit "+label+" is predicted as "+prediction+" with confidence " + confidence+ " correct pixels " + myLayerManager.positivePixels+ " negative pixles "+ myLayerManager.negativePixels);
-       
-       // myLayerManager.forwardPropagate(); //for seeing the results by forwardPropagatewithExclusion
-
-        // prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
-         //confidence = getconfidence(myLayerManager);
-        /*if(label==7){
-        System.out.print(" Label " + label+" ");
-
-        System.out.println(getMostSignificantNeuronAsPredictionInHiddenLayer(myLayerManager));
-    }*/
-        
-       
-        
-       System.out.println("Digit "+label+" is predicted as "+prediction+" with confidence " + confidence);
-
+       System.out.println("Digit "+label+" is predicted as "+prediction+" with confidence " + confidence);       
+    
         System.out.print("\n");
         if(prediction == label){
             correctCounter++;

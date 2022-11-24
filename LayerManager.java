@@ -9,10 +9,7 @@ public class LayerManager {
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
     public InputLayer InputLayer;
     public OutputLayer OutputLayer;
-    public int positivePixels;
-    public int negativePixels;
-    public int zeroPixels;
-    public static double[] ExpectedOutputArray; // this will be used by various algorithms, especially backpropagation
+    public static double[] ExpectedOutputArray; // This will be used by various algorithms, especially backpropagation
                                                 // in the concrete implementations of layer class.
 
 
@@ -92,16 +89,14 @@ public class LayerManager {
         LayerManager.lossFunction = calculateMSE();
     }
     public void forwardPropagatewithExclusion() {
-        zeroPixels=0;
-        positivePixels=0;
-        negativePixels=0;
+      
         // Calling the forwardPropagate() method on every layer in the listOfLayers
        
 
         numtobeExcluded=0; //previously was set -1
-        double temparray[]=new double[784];
+        double temparray[]=new double[InputLayer.getSize()];
 
-        for(;numtobeExcluded<784;numtobeExcluded++){
+        for(;numtobeExcluded<temparray.length;numtobeExcluded++){
         
         for (int i = 1; i <= listOfLayers.size() - 1; i++) {
             listOfLayers.get(i).forwardPropagate();
@@ -115,20 +110,17 @@ public class LayerManager {
         //If your error is increasing when you remove a pixel, that pixel is important, i.e positive pixel.
         //which means that the value if temp is negative
 
-// This is the code that is used to calculate the relevance of each pixel.
-//System.out.print((int)(temp*10000+127)+",");
+        // This is the code that is used to calculate the relevance of each pixel.
+        //System.out.print((int)(temp*10000+127)+",");
         
         if(temp==0){
-            zeroPixels++;
             System.out.print(0+",");
         }
         else if (temp<0){
             System.out.print(255+",");
-           negativePixels++;
         }
         else{
             System.out.print(0+",");
-            positivePixels++;
         }
        
         if(temp==0){
