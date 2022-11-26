@@ -6,19 +6,19 @@ public class LayerManager {
     protected static double lossFunction;
 
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
-    protected InputLayer InputLayer;
-    protected OutputLayer OutputLayer;
+    protected InputLayer inputLayer;
+    protected OutputLayer outputLayer;
     protected static ArrayList<Double> ExpectedOutputArrayList; // This will be used by various algorithms, especially
                                                                 // backpropagation
     // in the concrete implementations of layer class.
     private static Double NeuronNumberToBeTestedinRelavancePropagation;
 
     protected OutputLayer getOutputLayer() {
-        return OutputLayer;
+        return outputLayer;
     }
 
     protected InputLayer getInputLayer() {
-        return InputLayer;
+        return inputLayer;
     }
 
     protected double calculateMSE() {
@@ -30,14 +30,14 @@ public class LayerManager {
     }
 
     protected void setInputLayer(double[] inputLayerArray) {
-        this.InputLayer.setInput(inputLayerArray);
+        this.inputLayer.setInput(inputLayerArray);
     }
 
     LayerManager(int[] layerLengths) {
         // Adding a new InputLayer to the listOfLayers ArrayList.
-        this.InputLayer = new InputLayer(layerLengths[0]);
-        this.InputLayer.setLayerNum(0);
-        listOfLayers.add(InputLayer);
+        this.inputLayer = new InputLayer(layerLengths[0]);
+        this.inputLayer.setLayerNum(0);
+        listOfLayers.add(inputLayer);
 
         for (int i = 1; i < layerLengths.length - 1; i++) {
             // Adding a new HiddenLayer to the listOfLayers ArrayList.
@@ -47,9 +47,9 @@ public class LayerManager {
         }
 
         // Adding a new OutputLayer to the listOfLayers ArrayList.
-        this.OutputLayer = new OutputLayer(layerLengths[layerLengths.length - 1]);
-        OutputLayer.setLayerNum(layerLengths.length - 1);
-        listOfLayers.add(OutputLayer);
+        this.outputLayer = new OutputLayer(layerLengths[layerLengths.length - 1]);
+        outputLayer.setLayerNum(layerLengths.length - 1);
+        listOfLayers.add(outputLayer);
 
         joinAllLayers();
     }
@@ -93,7 +93,7 @@ public class LayerManager {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
 
         numtobeExcluded = 0; // previously was set -1
-        double temparray[] = new double[InputLayer.getSize()];
+        double temparray[] = new double[inputLayer.getSize()];
 
         for (; numtobeExcluded < temparray.length; numtobeExcluded++) {
 
@@ -177,7 +177,7 @@ public class LayerManager {
             }
         }
 
-        for (Neuron i : this.InputLayer.listOfNeurons) {
+        for (Neuron i : this.inputLayer.listOfNeurons) {
             System.out.print((int) (NN.sigmoid(i.relevance) * 255) + ",");
         }
 
@@ -196,4 +196,45 @@ public class LayerManager {
         return listOfLayers.get(layerNum);
     }
 
+    protected  int getMostSignificantNeuronAsPrediction() {
+        // Finding the most significant neuron number in the output layer.
+        double temp = 0;
+        int no = 0;
+        for (int i = 0; i < outputLayer.listOfNeurons.size(); i++) {
+            double val = outputLayer.listOfNeurons.get(i).getActivation();
+            if (val > temp) {
+                no = i;
+                temp = val;
+            }
+        }
+        return no;
+    }
+    protected  double getconfidence() {
+        // Finding the most significant neuron confidance in the output layer.
+        double temp = 0;
+        int no = 0;
+        for (int i = 0; i < outputLayer.listOfNeurons.size(); i++) {
+            double val = outputLayer.listOfNeurons.get(i).getActivation();
+            if (val > temp) {
+                no = i;
+                temp = val;
+            }
+        }
+        return temp;
+    }
+
+    protected ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer() {
+        // Finding the most significant neuron in the hidden layer.
+        double temp = 0.9;
+        ArrayList<Integer> no = new ArrayList<Integer>();
+        for (int i = 0; i < listOfLayers.get(listOfLayers.size() - 2).listOfNeurons
+                .size(); i++) {
+            double val = listOfLayers.get(listOfLayers.size() - 2).listOfNeurons.get(i)
+                    .getActivation();
+            if (val > temp) {
+                no.add(i);
+            }
+        }
+        return no;
+    }
 }

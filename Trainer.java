@@ -103,9 +103,9 @@ public class Trainer {
         myLayerManager.setInputLayer(inputLayer);
         myLayerManager.setExpectedOutputArray(expectedLayer);
         myLayerManager.forwardPropagate();
-        int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        int prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
 
-        double confidence = getconfidence(myLayerManager);
+        double confidence = myLayerManager.getconfidence();
 
         System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
 
@@ -127,52 +127,14 @@ public class Trainer {
 
         myLayerManager.backwardPropagate();
 
-        int prediction = getMostSignificantNeuronAsPrediction(myLayerManager);
+        int prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
 
         // System.out.println(" prediction " + prediction);
     }
 
-    protected static int getMostSignificantNeuronAsPrediction(LayerManager myLayerManager) {
-        // Finding the most significant neuron in the output layer.
-        double temp = 0;
-        int no = 0;
-        for (int i = 0; i < myLayerManager.OutputLayer.listOfNeurons.size(); i++) {
-            double val = myLayerManager.OutputLayer.listOfNeurons.get(i).getActivation();
-            if (val > temp) {
-                no = i;
-                temp = val;
-            }
-        }
-        return no;
-    }
+    
 
-    protected static double getconfidence(LayerManager myLayerManager) {
-        // Finding the most significant neuron in the output layer.
-        double temp = 0;
-        int no = 0;
-        for (int i = 0; i < myLayerManager.OutputLayer.listOfNeurons.size(); i++) {
-            double val = myLayerManager.OutputLayer.listOfNeurons.get(i).getActivation();
-            if (val > temp) {
-                no = i;
-                temp = val;
-            }
-        }
-        return temp;
-    }
-
-    protected static ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer(LayerManager myLayerManager) {
-        // Finding the most significant neuron in the output layer.
-        double temp = 0.9;
-        ArrayList<Integer> no = new ArrayList<Integer>();
-        for (int i = 0; i < myLayerManager.listOfLayers.get(myLayerManager.listOfLayers.size() - 2).listOfNeurons
-                .size(); i++) {
-            double val = myLayerManager.listOfLayers.get(myLayerManager.listOfLayers.size() - 2).listOfNeurons.get(i)
-                    .getActivation();
-            if (val > temp) {
-                no.add(i);
-            }
-        }
-        return no;
-    }
+   
+    
 
 }
