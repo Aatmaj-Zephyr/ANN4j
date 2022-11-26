@@ -7,15 +7,18 @@ public class Trainer {
     protected ArrayList<Double> expectedLayer;
     protected InputFileReader trainingFileReader;
     protected InputFileReader testingFileReader;
+    private ModelEvaluator myModelEvaluator;
 
     double[] inputLayer;
     double label;
-    private int correctCounter = 0;
+    private double prediction;
+    private double confidence;
 
     Trainer() {
         this.myLayerManager = new LayerManager(parameter.getLayerArray());
         this.trainingFileReader = parameter.getTrainingFileReader();
         this.testingFileReader = parameter.getTestingFileReader();
+        this.myModelEvaluator = new ModelEvaluator();
 
     }
 
@@ -42,8 +45,12 @@ public class Trainer {
                 label = trainingFileReader.getLabel();
 
                 // System.out.print(" actual " + label);
+                confidence = myLayerManager.getconfidence();
+
+                prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
 
                 train();
+                myModelEvaluator.updatePredictionData(prediction, label, confidence);
 
             }
         }
@@ -63,10 +70,14 @@ public class Trainer {
 
             // Getting the label of the image from the mnist database.
             label = testingFileReader.getLabel();
+            confidence = myLayerManager.getconfidence();
+            prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
 
             test();
+            myModelEvaluator.updatePredictionData(prediction, label, confidence);
+            System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
         }
-        System.out.println("accuracy " + (double) 100 * correctCounter / epochs);
+        System.out.println("accuracy " + myModelEvaluator.getAccuracy());
     }
 
     protected void forwardPropagatewithExclusion(int epochs) {
@@ -85,7 +96,6 @@ public class Trainer {
 
             forwardPropagatewithExclusion();
         }
-        System.out.println("accuracy " + (double) 100 * correctCounter / epochs);
     }
 
     private void forwardPropagatewithExclusion() {
@@ -103,16 +113,6 @@ public class Trainer {
         myLayerManager.setInputLayer(inputLayer);
         myLayerManager.setExpectedOutputArray(expectedLayer);
         myLayerManager.forwardPropagate();
-        int prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
-
-        double confidence = myLayerManager.getconfidence();
-
-        System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
-
-        System.out.print("\n");
-        if (prediction == label) {
-            correctCounter++;
-        }
 
     }
 
@@ -127,14 +127,9 @@ public class Trainer {
 
         myLayerManager.backwardPropagate();
 
-        int prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
+        prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
 
         // System.out.println(" prediction " + prediction);
     }
-
-    
-
-   
-    
 
 }

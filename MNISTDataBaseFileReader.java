@@ -58,6 +58,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     }
 
     protected ArrayList<Double> generateExpectedOutputArrayFromLabel() {
+        //this needs to be overridden for changing the dataset
         ArrayList<Double> expectedOutputArray = new ArrayList<Double>();
         for (int i = 0; i < 10; i++) {
             if (i == label) {

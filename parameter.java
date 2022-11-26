@@ -88,8 +88,11 @@ public class parameter {
         if (rectificationFunction == "leakyrelu") {
             return NN.leakyrelu(numToBeRectified);
         }
+        if (rectificationFunction == "sigmoid") {
+            return NN.sigmoid(numToBeRectified);
+        }
 
-        return NN.sigmoid(numToBeRectified);
+        return NN.sigmoid(numToBeRectified); //add custom function here...
     }
 
     protected static void setLayerArray(int... LayerArray) {
