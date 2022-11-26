@@ -12,9 +12,9 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     protected BufferedReader singleFileReader;
     protected int outputLayerLength;
 
-    MNISTDataBaseFileReader(String filename,int outputLayerLength) throws FileNotFoundException {
+    MNISTDataBaseFileReader(String filename, int outputLayerLength) throws FileNotFoundException {
         super(filename);
-        this.outputLayerLength= outputLayerLength;
+        this.outputLayerLength = outputLayerLength;
         this.singleFileReader = new BufferedReader(new FileReader(filename));
     }
 
@@ -61,9 +61,9 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         ArrayList<Double> expectedOutputArray = new ArrayList<Double>();
         for (int i = 0; i < 10; i++) {
             if (i == label) {
-                expectedOutputArray.add(i,1.0);
-            } else {       
-                expectedOutputArray.add(i,0.0);
+                expectedOutputArray.add(i, 1.0);
+            } else {
+                expectedOutputArray.add(i, 0.0);
             }
         }
         // go to next line
@@ -73,8 +73,8 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     protected double[] generateInputFromBigArray(double[] array) {
         // generates the input array from the total array , that is it excludes the
         // first element of the array
-        double[] inputArray = new double[array.length-1];
-        for (int i = 0; i < array.length-1; i++) {
+        double[] inputArray = new double[array.length - 1];
+        for (int i = 0; i < array.length - 1; i++) {
             inputArray[i] = array[i + 1] / 256;
         }
         return inputArray;

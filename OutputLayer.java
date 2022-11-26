@@ -4,13 +4,10 @@ public class OutputLayer extends Layer {
         super(numOfNeurons);
     }
 
-  
-
     @Override
     protected void setBehaviour() {
-       this.myBehaviour = OutputLayerNeuronBehaviour.getInstance();
-        
+        this.myBehaviour = OutputLayerNeuronBehaviour.getInstance();
+
     }
 
-   
 }

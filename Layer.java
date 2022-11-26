@@ -17,23 +17,27 @@ abstract class Layer {
             addNeuron(newNeuron);
         }
     }
+
     protected int getSize() {
         return listOfNeurons.size();
     }
-    protected Neuron getNeuron(int neuronNum){
+
+    protected Neuron getNeuron(int neuronNum) {
         return listOfNeurons.get(neuronNum);
     }
+
     protected abstract void setBehaviour();
     /*
-         * The delta of each neuron will be different accouding to it's type, that is if
-         * it belongs to hidden layer or the output layer.
-         * Hence we make a abstract method to calculate the delta of each neuron.
-         * It will be implemented by the behaviours of concrete implementations of Neuron behaviour
-         * For calculating the delta of each neuron, the activation value will be
-         * required. Also the actual expected value will be required. 
-         * Each implementation of the method will differ according to the formula.
-         * This will be implemented to Strategy pattern.
-         */
+     * The delta of each neuron will be different accouding to it's type, that is if
+     * it belongs to hidden layer or the output layer.
+     * Hence we make a abstract method to calculate the delta of each neuron.
+     * It will be implemented by the behaviours of concrete implementations of
+     * Neuron behaviour
+     * For calculating the delta of each neuron, the activation value will be
+     * required. Also the actual expected value will be required.
+     * Each implementation of the method will differ according to the formula.
+     * This will be implemented to Strategy pattern.
+     */
 
     protected ArrayList<Neuron> getListOfNeurons() {
         return listOfNeurons;
@@ -83,7 +87,7 @@ abstract class Layer {
         for (Neuron i : listOfNeurons) {
             i.backwardPropagate();
         }
-       
+
     }
 
     protected void relevancePropagate() {
@@ -93,9 +97,7 @@ abstract class Layer {
         for (Neuron i : listOfNeurons) {
             i.relevancePropagate();
         }
-       
-    }
 
-     
+    }
 
 }

@@ -14,14 +14,10 @@ public class InputLayer extends Layer {
         }
     }
 
-  
-
     @Override
     protected void setBehaviour() {
         this.myBehaviour = InputLayerNeuronBehaviour.getInstance();
-        
-    }
 
-   
+    }
 
 }

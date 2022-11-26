@@ -6,8 +6,8 @@ public class Connection {
     private double weight;
     protected ArrayList<Double> changeWishlist;
     private int batchCounter;
-    private double learningRate;  //avoid using static parameters as they incerase time complexity.
-    private int batchSize; //avoid using static parameters as they incerase time complexity.
+    private double learningRate; // avoid using static parameters as they incerase time complexity.
+    private int batchSize; // avoid using static parameters as they incerase time complexity.
 
     Connection(Neuron leftNeuron, Neuron rightNeuron) {
         // This is the constructor for the Connection class. It is setting the left and
@@ -21,14 +21,16 @@ public class Connection {
         leftNeuron.addRightConnections(this);
         rightNeuron.addLeftConnections(this);
         initializeWeights();
-        this.changeWishlist=new ArrayList<Double>();
-        batchSize=parameter.getBatchsize();
-        learningRate=parameter.getLearningRate();
+        this.changeWishlist = new ArrayList<Double>();
+        batchSize = parameter.getBatchsize();
+        learningRate = parameter.getLearningRate();
 
     }
+
     protected double getWeight() {
         return weight;
     }
+
     protected void initializeWeights() {
         this.weight = NN.getSmallSignedRandom();
     }
@@ -55,19 +57,19 @@ public class Connection {
 
         changeWishlist.add(this.weight + learningRate * rightNeuron.getDelta() * leftNeuron.getActivation());
         batchCounter++;
-        if(batchCounter==batchSize){
-            batchCounter=0;
+        if (batchCounter == batchSize) {
+            batchCounter = 0;
         }
-        if(batchCounter==0){
-            this.weight= NN.average(changeWishlist);
-            changeWishlist=new ArrayList<Double>();
+        if (batchCounter == 0) {
+            this.weight = NN.average(changeWishlist);
+            changeWishlist = new ArrayList<Double>();
 
         }
     }
 
     protected double getBackwardWeightedSum() {
         // Calculating the gradient of the loss function with respect to the weight.
-        //USed in class neuron for calculation of delta.
+        // USed in class neuron for calculation of delta.
         return this.weight * rightNeuron.getDelta();
     }
 }

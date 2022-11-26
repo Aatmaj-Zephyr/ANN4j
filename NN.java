@@ -16,60 +16,67 @@ public class NN {
         return (Math.random() - 0.5);
     }
 
-  /**
-   * The tanh function takes a number and returns the hyperbolic tangent of that number
-   * 
-   * @param numToBeRectified The number to be rectified.
-   * @return The hyperbolic tangent of the number.
-   */
-    protected static double tanh(double numToBeRectified){
-        return (Math.tanh(numToBeRectified)+1)/2;
+    /**
+     * The tanh function takes a number and returns the hyperbolic tangent of that
+     * number
+     * 
+     * @param numToBeRectified The number to be rectified.
+     * @return The hyperbolic tangent of the number.
+     */
+    protected static double tanh(double numToBeRectified) {
+        return (Math.tanh(numToBeRectified) + 1) / 2;
     }
- /**
-  * > The softplus function is a smooth approximation of the rectifier function
-  * 
-  * @param numToBeRectified The number to be rectified.
-  * @return The softplus function is being returned.
-  */
-    protected static double softplus(double numToBeRectified){
-        return Math.log(1+Math.exp(numToBeRectified));
+
+    /**
+     * > The softplus function is a smooth approximation of the rectifier function
+     * 
+     * @param numToBeRectified The number to be rectified.
+     * @return The softplus function is being returned.
+     */
+    protected static double softplus(double numToBeRectified) {
+        return Math.log(1 + Math.exp(numToBeRectified));
     }
-/**
- * The sigmoid function takes a number and returns a number between 0 and 1
- * 
- * @param numToBeRectified The number to be rectified.
- * @return The sigmoid function is being returned.
- */
+
+    /**
+     * The sigmoid function takes a number and returns a number between 0 and 1
+     * 
+     * @param numToBeRectified The number to be rectified.
+     * @return The sigmoid function is being returned.
+     */
 
     protected static double sigmoid(double numToBeRectified) {
         return 1 / (1 + Math.exp(-numToBeRectified));
     }
 
- /**
-  * If the number is greater than 0, return the number. Otherwise, return 0
-  * 
-  * @param numToBeRectified The number to be rectified.
-  * @return The return value is the number that is passed in if it is greater than 0, otherwise it
-  * returns 0.
-  */
+    /**
+     * If the number is greater than 0, return the number. Otherwise, return 0
+     * 
+     * @param numToBeRectified The number to be rectified.
+     * @return The return value is the number that is passed in if it is greater
+     *         than 0, otherwise it
+     *         returns 0.
+     */
     protected static double relu(double numToBeRectified) {
         if (numToBeRectified > 0) {
             return numToBeRectified;
         }
         return 0;
     }
-  /**
-   * If the number is greater than 0, return the number, else return 0.1 times the number
-   * 
-   * @param numToBeRectified The number to be rectified.
-   * @return the value of the number to be rectified if it is greater than 0, and if it is less than 0,
-   * it is returning 0.1 times the number to be rectified.
-   */
+
+    /**
+     * If the number is greater than 0, return the number, else return 0.1 times the
+     * number
+     * 
+     * @param numToBeRectified The number to be rectified.
+     * @return the value of the number to be rectified if it is greater than 0, and
+     *         if it is less than 0,
+     *         it is returning 0.1 times the number to be rectified.
+     */
     protected static double leakyrelu(double numToBeRectified) {
         if (numToBeRectified > 0) {
             return numToBeRectified;
         }
-        return 0.1*numToBeRectified;
+        return 0.1 * numToBeRectified;
     }
 
     protected static double average(double[] sum) {

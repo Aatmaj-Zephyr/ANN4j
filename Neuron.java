@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Neuron implements Observable{
+public class Neuron implements Observable {
     private double activation;
     protected int neuronNum;
     protected int layerNum = -1;
@@ -22,16 +22,18 @@ public class Neuron implements Observable{
     protected void setActivation(double activation) {
         this.activation = activation;
     }
-    protected void setBehaviour(NeuronBehaviour myBehaviour){
-    this.myBehaviour= myBehaviour;
 
-   }
+    protected void setBehaviour(NeuronBehaviour myBehaviour) {
+        this.myBehaviour = myBehaviour;
+
+    }
+
     protected Neuron() {
         setActivation(NN.getRandom());
         bias = NN.setBias();
-        batchSize=parameter.getBatchsize();
-        biasLearningRate=parameter.getBiasLearningRate();
-        biasChangeWishlist=new ArrayList<Double>();
+        batchSize = parameter.getBatchsize();
+        biasLearningRate = parameter.getBiasLearningRate();
+        biasChangeWishlist = new ArrayList<Double>();
     }
 
     protected void setLayerNum(int layerNum) {
@@ -65,11 +67,10 @@ public class Neuron implements Observable{
         // Iterating through the leftConnections ArrayList and adding the activation of
         // each connection to the sum.
         for (Connection i : leftConnections) {
-            if(i.leftNeuron.getLayerNum()==0 & i.leftNeuron.getNeuronNum()==LayerManager.numtobeExcluded){
-                
-            }
-            else{
-            sum += i.calculateActivationForwardPropagation();
+            if (i.leftNeuron.getLayerNum() == 0 & i.leftNeuron.getNeuronNum() == LayerManager.numtobeExcluded) {
+
+            } else {
+                sum += i.calculateActivationForwardPropagation();
             }
 
         }
@@ -89,7 +90,6 @@ public class Neuron implements Observable{
         this.activation = parameter.rectify(getWeightedSum() + getBias());
         notifyObservers("The neuron has been updated by forward propagation");
 
-
     }
 
     protected double getDelta() {
@@ -104,25 +104,25 @@ public class Neuron implements Observable{
         changeBias();
         notifyObservers("The neuron has been updated by backward propagation");
 
-
     }
 
     private void changeBias() {
         batchCounter++;
-        biasChangeWishlist.add( biasLearningRate *this.getDelta());
+        biasChangeWishlist.add(biasLearningRate * this.getDelta());
 
-        if(batchCounter==batchSize){
-            batchCounter=0;
+        if (batchCounter == batchSize) {
+            batchCounter = 0;
         }
-        if(batchCounter==0){
-            this.bias= NN.average(biasChangeWishlist);
-            biasChangeWishlist=new ArrayList<Double>();        }
+        if (batchCounter == 0) {
+            this.bias = NN.average(biasChangeWishlist);
+            biasChangeWishlist = new ArrayList<Double>();
+        }
         notifyObservers("The bias of the neuron has been changed");
 
     }
 
     protected void setDelta() {
-        this.delta=myBehaviour.setDelta(this);
+        this.delta = myBehaviour.setDelta(this);
         notifyObservers("The delta difference of the neuron has been changed");
 
     }
@@ -132,7 +132,8 @@ public class Neuron implements Observable{
     }
 
     /**
-     * > The function `relevancePropagate()` is called on the `myBehaviour` object, which is of type
+     * > The function `relevancePropagate()` is called on the `myBehaviour` object,
+     * which is of type
      * `Behaviour`, and the `this` object is passed as an argument
      */
     protected void relevancePropagate() {
@@ -143,13 +144,9 @@ public class Neuron implements Observable{
 
     @Override
     public void notifyObservers(String info) {
-            for (Observer i : observerList){
-                i.update(info,this);
-            }
+        for (Observer i : observerList) {
+            i.update(info, this);
         }
-        
     }
 
-
-    
-
+}

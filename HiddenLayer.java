@@ -1,14 +1,12 @@
 public class HiddenLayer extends Layer {
-    HiddenLayer(int numOfNeurons) {
-        super(numOfNeurons);
-    }
+  HiddenLayer(int numOfNeurons) {
+    super(numOfNeurons);
+  }
 
-   
+  @Override
+  protected void setBehaviour() {
+    this.myBehaviour = HiddenLayerNeuronBehaviour.getInstance();
 
-    @Override
-    protected void setBehaviour() {
-      this.myBehaviour= HiddenLayerNeuronBehaviour.getInstance();
-        
-    }
+  }
 
 }

@@ -11,7 +11,8 @@ public class MeanSquaredErrorCalculator {
         // Mean squared error
         double[] sum = new double[outputLayer.getListOfNeurons().size()];
         for (int i = 0; i < outputLayer.getListOfNeurons().size(); i++) {
-            sum[i] = Math.pow((outputLayer.getListOfNeurons().get(i).getActivation() - expectedOutputArrayList.get(i)), 2);
+            sum[i] = Math.pow((outputLayer.getListOfNeurons().get(i).getActivation() - expectedOutputArrayList.get(i)),
+                    2);
 
         }
 
