@@ -2,7 +2,6 @@ public class ModelEvaluator {
         //Used to evaluate the predictions of the model, example pricision, accuracy and confusion matrix.
 
     private int correctCounter;
-    private int wrongCounter;
     private int turnsCounter;
 
 
@@ -12,9 +11,7 @@ public class ModelEvaluator {
         if(prediction==label){
             correctCounter++;
         }
-        else{
-            wrongCounter++;
-        }
+        
     }
 
     public Double getAccuracy(){

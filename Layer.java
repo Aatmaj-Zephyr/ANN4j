@@ -73,6 +73,7 @@ abstract class Layer {
     }
 
     protected String printWeights() {
+        // Printing the weights of the neurons.
         String s = "";
         for (Neuron i : listOfNeurons) {
             s += i.leftConnections.toString();

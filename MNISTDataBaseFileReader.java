@@ -23,6 +23,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     }
 
     protected void next() {
+       // Reading the next line of the file and converting it into a two double arrays.
         double[] array;
         try {
             array = readLineToDoubleArray();
@@ -35,12 +36,14 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     }
 
     protected double[] readLineToDoubleArray() throws IOException {
+       // Reading the next line of the file and converting it into a double array.
         String line = singleFileReader.readLine();
         String[] arrayOfStrings = line.split(","); // CSV files are seperate by Commas
         return convertStringArrayToDoubleArray(arrayOfStrings);
     }
 
     private double[] convertStringArrayToDoubleArray(String[] arrayOfStrings) {
+      // Converting the string array to a double array.
         double[] arrayOfDouble = new double[arrayOfStrings.length];
         for (int i = 0; i < arrayOfStrings.length; i++) {
             arrayOfDouble[i] = Double.parseDouble(arrayOfStrings[i]);

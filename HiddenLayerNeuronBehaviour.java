@@ -27,11 +27,14 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour {
         // Calculating the relevance of the neuron.
         neuron.relevance = 0;
         for (Connection i : neuron.rightConnections) {
+            // Calculating the relevance of the neuron.
             double numerator = neuron.getActivation() * i.getWeight() * i.rightNeuron.relevance;
             double denominator = 0;
+            // Calculating the denominator of the relevance equation.
             for (Connection k : i.rightNeuron.leftConnections) {
                 denominator += k.leftNeuron.getActivation() * k.getWeight();
             }
+            // Calculating the relevance of the neuron.
             neuron.relevance += numerator / (denominator + parameter.getEpsillion());
         }
         neuron.relevance = parameter.rectify(neuron.relevance);

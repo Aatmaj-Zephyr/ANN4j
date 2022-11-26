@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Neuron implements Observable {
+
     public ArrayList<Observer> observerList = new ArrayList<Observer>();
     private double activation;
     protected int neuronNum;
@@ -30,6 +31,10 @@ public class Neuron implements Observable {
     }
 
     protected Neuron() {
+       // This is the constructor of the `Neuron` class. It sets the activation of the neuron to a
+       // random value, sets the bias of the neuron to a random value, sets the batch size to the batch
+       // size of the parameter object, sets the bias learning rate to the bias learning rate of the
+       // parameter object, and creates a new ArrayList of doubles called `biasChangeWishlist`.
         setActivation(NN.getRandom());
         bias = NN.setBias();
         batchSize = parameter.getBatchsize();
@@ -98,6 +103,9 @@ public class Neuron implements Observable {
     }
 
     protected void backwardPropagate() {
+       // This is the code that is called when the neuron is being backpropagated. It first sets the
+       // delta of the neuron, then backpropagates through all of the left connections, and then
+       // changes the bias of the neuron.
         setDelta();
         for (Connection i : leftConnections) {
             i.backPropagate();
@@ -108,6 +116,8 @@ public class Neuron implements Observable {
     }
 
     private void changeBias() {
+    // This is the code that changes the bias of the neuron. It is called in the `backwardPropagate()`
+    // function.
         batchCounter++;
         biasChangeWishlist.add(biasLearningRate * this.getDelta());
 
@@ -142,6 +152,12 @@ public class Neuron implements Observable {
 
     }
 
+    /**
+     * For each observer in the observerList, call the update function of that observer, passing in the
+     * info and this neuron, which will be typecasted later.
+     * 
+     * @param info The information that is being passed to the observers.
+     */
     @Override
     public void notifyObservers(String info) {
         for (Observer i : observerList) {
@@ -150,6 +166,7 @@ public class Neuron implements Observable {
     }
 
     @Override
+   // Adding an observer to the observerList.
     public void registerObserver(Observer observer) {
             observerList.add(observer);
         }
