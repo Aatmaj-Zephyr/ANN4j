@@ -114,4 +114,8 @@ public class parameter {
     protected static void setBatchsize(int batchsize) {
         parameter.batchsize = batchsize;
     }
+
+    public static ModelEvaluator getModelEvaluator() {
+        return new ModelEvaluator();
+    }
 }

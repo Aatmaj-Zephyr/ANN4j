@@ -18,7 +18,7 @@ public class Trainer {
         this.myLayerManager = new LayerManager(parameter.getLayerArray());
         this.trainingFileReader = parameter.getTrainingFileReader();
         this.testingFileReader = parameter.getTestingFileReader();
-        this.myModelEvaluator = new ModelEvaluator();
+        this.myModelEvaluator = parameter.getModelEvaluator();
 
     }
 
@@ -27,10 +27,9 @@ public class Trainer {
     }
 
     protected void train(int epochs) {
-        for (int j = 0; j <= 10; j++) {
             parameter.setTrainingFileReader("mnist_train.csv", "mnist");
             this.trainingFileReader = parameter.getTrainingFileReader();
-            for (int i = 0; i <= epochs; i++) {
+            for (int i = 0; i < epochs; i++) {
 
                 // Getting the next image from the mnist database.
                 trainingFileReader.next();
@@ -53,7 +52,11 @@ public class Trainer {
                 myModelEvaluator.updatePredictionData(prediction, label, confidence);
 
             }
-        }
+        myModelEvaluator.setTrainingaccuracy(myModelEvaluator.getAccuracy());
+        System.out.println("Training accuracy " + myModelEvaluator.getTrainingAccuracy());
+
+        myModelEvaluator.reset();
+
 
     }
 
@@ -77,7 +80,9 @@ public class Trainer {
             myModelEvaluator.updatePredictionData(prediction, label, confidence);
             System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
         }
-        System.out.println("accuracy " + myModelEvaluator.getAccuracy());
+        myModelEvaluator.setTestingaccuracy(myModelEvaluator.getAccuracy());
+
+        System.out.println("Testing accuracy " + myModelEvaluator.getTestingAccuracy());
     }
 
     protected void forwardPropagatewithExclusion(int epochs) {
