@@ -26,10 +26,12 @@ public class Trainer {
         return myLayerManager;
     }
 
-    protected void train(int epochs) {
+    protected void train(int noOfSamples, int epochs) {
+        for(int j = 0; j < epochs; j++){
+
             parameter.setTrainingFileReader("mnist_train.csv", "mnist");
             this.trainingFileReader = parameter.getTrainingFileReader();
-            for (int i = 0; i < epochs; i++) {
+            for (int i = 0; i < noOfSamples; i++) {
 
                 // Getting the next image from the mnist database.
                 trainingFileReader.next();
@@ -52,15 +54,16 @@ public class Trainer {
 
             }
         myModelEvaluator.setTrainingaccuracy(myModelEvaluator.getAccuracy());
-        System.out.println("Training accuracy " + myModelEvaluator.getTrainingAccuracy());
+        System.out.println("Training accuracy in epoch "+j+" is " + myModelEvaluator.getTrainingAccuracy());
 
         myModelEvaluator.reset();
 
-
+        }
     }
 
-    protected void test(int epochs) {
-        for (int i = 0; i < epochs; i++) {
+    protected void test(int noOfSamples) {
+        //no epochs in testing
+        for (int i = 0; i < noOfSamples; i++) {
             // Getting the next image from the mnist database.
             testingFileReader.next();
 
@@ -78,15 +81,16 @@ public class Trainer {
 
             
             myModelEvaluator.updatePredictionData(prediction, label, confidence);
-            System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
+            //System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
         }
         myModelEvaluator.setTestingaccuracy(myModelEvaluator.getAccuracy());
 
         System.out.println("Testing accuracy " + myModelEvaluator.getTestingAccuracy());
     }
 
-    protected void forwardPropagatewithExclusion(int epochs) {
-        for (int i = 0; i < epochs; i++) {
+
+    protected void forwardPropagatewithExclusion(int noOfSamples) {
+        for (int i = 0; i < noOfSamples; i++) {
             // Getting the next image from the mnist database.
             testingFileReader.next();
 
