@@ -18,6 +18,9 @@ public class Trainer {
         this.testingFileReader = parameter.getTestingFileReader();
 
     }
+    public LayerManager getLayerManager(){
+        return myLayerManager;
+    }
 
     protected void train(int epochs) {
         for (int j = 0; j <= 10; j++) {

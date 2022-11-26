@@ -11,7 +11,11 @@ public class Main {
 		parameter.setBatchsize(10);
 		parameter.setRectificationFunction("sigmoid");
 		Trainer myTrainer = new Trainer();
-		myTrainer.train(5000);
+		myTrainer.train(5);
+		NeuronObserver myNeuronObserver = new NeuronObserver();
+		myNeuronObserver.setModel(myTrainer.getLayerManager());
+		myNeuronObserver.addNeuronToBeObserved(1,31);
+
 		myTrainer.test(2);
 		myTrainer.relevancePropagate(2, 3);
 		//myTrainer.forwardPropagatewithExclusion(2);

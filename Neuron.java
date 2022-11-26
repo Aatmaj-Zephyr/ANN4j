@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Neuron {
+public class Neuron implements Observable{
     private double activation;
     protected int neuronNum;
     protected int layerNum = -1;
@@ -24,6 +24,7 @@ public class Neuron {
     }
     protected void setBehaviour(NeuronBehaviour myBehaviour){
     this.myBehaviour= myBehaviour;
+
    }
     protected Neuron() {
         setActivation(NN.getRandom());
@@ -35,6 +36,7 @@ public class Neuron {
 
     protected void setLayerNum(int layerNum) {
         this.layerNum = layerNum;
+
     }
 
     protected int getLayerNum() {
@@ -43,6 +45,7 @@ public class Neuron {
 
     protected void setNeuronNum(int neuronNum) {
         this.neuronNum = neuronNum;
+
     }
 
     protected int getNeuronNum() {
@@ -84,6 +87,8 @@ public class Neuron {
         // Setting the activation of the neuron to the rectified value of the weighted
         // sum of the left connections plus the bias.
         this.activation = parameter.rectify(getWeightedSum() + getBias());
+        notifyObservers("The neuron has been updated by forward propagation");
+
 
     }
 
@@ -97,6 +102,8 @@ public class Neuron {
             i.backPropagate();
         }
         changeBias();
+        notifyObservers("The neuron has been updated by backward propagation");
+
 
     }
 
@@ -110,10 +117,14 @@ public class Neuron {
         if(batchCounter==0){
             this.bias= NN.average(biasChangeWishlist);
             biasChangeWishlist=new ArrayList<Double>();        }
+        notifyObservers("The bias of the neuron has been changed");
+
     }
 
     protected void setDelta() {
         this.delta=myBehaviour.setDelta(this);
+        notifyObservers("The delta difference of the neuron has been changed");
+
     }
 
     public String toString() {
@@ -126,7 +137,19 @@ public class Neuron {
      */
     protected void relevancePropagate() {
         myBehaviour.relevancePropagate(this);
+        notifyObservers("Relevance value of the euron has been updated.");
+
+    }
+
+    @Override
+    public void notifyObservers(String info) {
+            for (Observer i : observerList){
+                i.update(info,this);
+            }
+        }
         
     }
-    }
+
+
+    
 

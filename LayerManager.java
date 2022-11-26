@@ -202,6 +202,10 @@ public class LayerManager {
         NeuronNumberToBeTestedinRelavancePropagation = neuronNumberToBeTestedinRelavancePropagation;
     }
 
+    public Layer getLayer(int layerNum) {
+        return listOfLayers.get(layerNum);
+    }
+
    
 
 }
