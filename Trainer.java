@@ -42,13 +42,12 @@ public class Trainer {
 
                 // Getting the label of the image from the mnist database.
                 label = trainingFileReader.getLabel();
-
-                // System.out.print(" actual " + label);
-                confidence = myLayerManager.getconfidence();
+                train();
+                confidence = myLayerManager.getconfidence(); //get confidence after the training
 
                 prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
 
-                train();
+   
                 myModelEvaluator.updatePredictionData(prediction, label, confidence);
 
             }
@@ -73,10 +72,11 @@ public class Trainer {
 
             // Getting the label of the image from the mnist database.
             label = testingFileReader.getLabel();
-            confidence = myLayerManager.getconfidence();
+            test();
+            confidence = myLayerManager.getconfidence(); //get confidence after the testing
             prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
 
-            test();
+            
             myModelEvaluator.updatePredictionData(prediction, label, confidence);
             System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
         }
