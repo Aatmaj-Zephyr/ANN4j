@@ -17,7 +17,7 @@ public class Main {
 		myNeuronObserver.addNeuronToBeObserved(1, 31);
 
 		myTrainer.test(2);
-		myTrainer.relevancePropagate(2, 3);
+		//myTrainer.relevancePropagate(2, 3);
 		// myTrainer.forwardPropagatewithExclusion(2);
 
 	}

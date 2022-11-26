@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Neuron implements Observable {
+    public ArrayList<Observer> observerList = new ArrayList<Observer>();
     private double activation;
     protected int neuronNum;
     protected int layerNum = -1;
@@ -138,7 +139,6 @@ public class Neuron implements Observable {
      */
     protected void relevancePropagate() {
         myBehaviour.relevancePropagate(this);
-        notifyObservers("Relevance value of the euron has been updated.");
 
     }
 
@@ -149,4 +149,12 @@ public class Neuron implements Observable {
         }
     }
 
-}
+    @Override
+    public void registerObserver(Observer observer) {
+            observerList.add(observer);
+        }
+    
+        
+    }
+
+
