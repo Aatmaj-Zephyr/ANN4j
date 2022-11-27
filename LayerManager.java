@@ -201,7 +201,7 @@ public class LayerManager {
         return listOfLayers.get(layerNum);
     }
 
-    protected  int getMostSignificantNeuronAsPrediction() {
+    protected  int getMostSignificantNeuronNumAsPrediction() {
         // Finding the most significant neuron number in the output layer.
         double temp = 0;
         int no = 0;
@@ -230,7 +230,7 @@ public class LayerManager {
 
     protected ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer() {
         // Finding the most significant neuron in the hidden layer.
-        double temp = 0.9;
+        double temp = 0.0;
         ArrayList<Integer> no = new ArrayList<Integer>();
         for (int i = 0; i < listOfLayers.get(listOfLayers.size() - 2).listOfNeurons
                 .size(); i++) {

@@ -23,4 +23,8 @@ public class InputFileReader {
     protected double getLabel() {
         return 0;
     }
+
+    public double getPredictionFromNeuronNum(int mostSignificantNeuronNumAsPrediction) {
+        return 0;
+    }
 }

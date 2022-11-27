@@ -47,7 +47,8 @@ public class Trainer {
                 train();
                 confidence = myLayerManager.getconfidence(); //get confidence after the training
 
-                prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
+                prediction = trainingFileReader.getPredictionFromNeuronNum(myLayerManager.getMostSignificantNeuronNumAsPrediction());
+
 
    
                 myModelEvaluator.updatePredictionData(prediction, label, confidence);
@@ -77,10 +78,12 @@ public class Trainer {
             label = testingFileReader.getLabel();
             test();
             confidence = myLayerManager.getconfidence(); //get confidence after the testing
-            prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
+            // Getting the prediction from the predicted neuron number.
+            prediction = testingFileReader.getPredictionFromNeuronNum(myLayerManager.getMostSignificantNeuronNumAsPrediction());
 
             
             myModelEvaluator.updatePredictionData(prediction, label, confidence);
+            myModelEvaluator.updateConfusionMatrix(expectedLayer,myLayerManager.getMostSignificantNeuronNumAsPrediction());
             //System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
         }
         myModelEvaluator.setTestingaccuracy(myModelEvaluator.getAccuracy());
@@ -136,7 +139,7 @@ public class Trainer {
 
         myLayerManager.backwardPropagate();
 
-        prediction = myLayerManager.getMostSignificantNeuronAsPrediction();
+        prediction = myLayerManager.getMostSignificantNeuronNumAsPrediction();
 
         // System.out.println(" prediction " + prediction);
     }

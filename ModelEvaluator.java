@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 public class ModelEvaluator {
         //Used to evaluate the predictions of the model, example pricision, accuracy and confusion matrix.
 
@@ -5,7 +7,23 @@ public class ModelEvaluator {
     private int turnsCounter;
     private double trainingAccuracy;
     private double testingAccuracy;
+    protected ArrayList<Arrays> confusionMatrix = new ArrayList<Arrays>();
 
+    public void updateConfusionMatrix(ArrayList<Double> expectedOutputArray,int predictedNeuronNum){
+        ArrayList<Double> temp = new ArrayList<Double>();
+        for(int i = 0;i<=expectedOutputArray.size();i++){
+            if(i==predictedNeuronNum){
+                temp.add(i,1.0);
+            }
+            else{
+                temp.add(i,0.0);
+            }
+        }
+        updateConfusionMatrix(expectedOutputArray,temp);
+    }
+    public void updateConfusionMatrix(ArrayList<Double> expectedOutputArray,ArrayList<Double> actualOutputArray){
+        
+    }
 
     public void updatePredictionData( double prediction, double label, double confidance){
        // Updating the prediction data.

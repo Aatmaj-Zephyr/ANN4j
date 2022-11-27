@@ -94,5 +94,20 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         }
         return inputArray;
     }
+    @Override
+    public double getPredictionFromNeuronNum(int mostSignificantNeuronNumAsPrediction) {
+        return mostSignificantNeuronNumAsPrediction;
+        //in this case as every input is mapped with same neuron it is the same. But it needs to be overridden for different datasets
+        // Example for letters, change to 0 for a, 26 for b, etc.
+    }
 
 }
+
+/**Note
+
+Predicted neuron and prediction are different. 
+
+Predicted neuron is the neuron which is most significant. The prediction is the value corresponding to that neuron.
+
+Example if the neuron 4 is most significant (glows brightest)  and it corresponds to label D then the predicted neuron is 4 and prediction is D.
+**/
