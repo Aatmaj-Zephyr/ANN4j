@@ -94,7 +94,7 @@ public class Neuron implements Observable {
         // Setting the activation of the neuron to the rectified value of the weighted
         // sum of the left connections plus the bias.
         this.activation = parameter.rectify(getWeightedSum() + getBias());
-        notifyObservers("The neuron has been updated by forward propagation");
+        notifyObservers("The neuron "+neuronNum+" in layer " + layerNum +" has been updated by forward propagation");
 
     }
 
@@ -111,7 +111,7 @@ public class Neuron implements Observable {
             i.backPropagate();
         }
         changeBias();
-        notifyObservers("The neuron has been updated by backward propagation");
+        notifyObservers("The neuron "+neuronNum+" in layer " + layerNum +" has been updated by backward propagation");
 
     }
 
@@ -128,13 +128,13 @@ public class Neuron implements Observable {
             this.bias = NN.average(biasChangeWishlist);
             biasChangeWishlist = new ArrayList<Double>();
         }
-        notifyObservers("The bias of the neuron has been changed");
+        notifyObservers("The bias of the neuron "+neuronNum+" in layer " + layerNum +"  has been changed");
 
     }
 
     protected void setDelta() {
         this.delta = myBehaviour.setDelta(this);
-        notifyObservers("The delta difference of the neuron has been changed");
+        notifyObservers("The delta difference of the neuron "+neuronNum+" in layer " + layerNum +"  has been changed");
 
     }
 
