@@ -89,7 +89,7 @@ public class Trainer {
     }
 
 
-    protected void forwardPropagatewithExclusion(int noOfSamples) {
+    protected void forwardPropagatewithExclusionInputLayerOnKSamples(int noOfSamples) {
         for (int i = 0; i < noOfSamples; i++) {
             // Getting the next image from the mnist database.
             testingFileReader.next();
@@ -103,13 +103,13 @@ public class Trainer {
             // Getting the label of the image from the mnist database.
             label = testingFileReader.getLabel();
 
-            forwardPropagatewithExclusion();
+            forwardPropagatewithExclusionInputLayer();
         }
     }
 
-    private void forwardPropagatewithExclusion() {
+    private void forwardPropagatewithExclusionInputLayer() {
         myLayerManager.forwardPropagate(); // for calculation of MSE
-        myLayerManager.forwardPropagatewithExclusion();
+        myLayerManager.forwardPropagatewithExclusionInputLayer();
 
     }
 

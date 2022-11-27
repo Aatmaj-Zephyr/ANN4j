@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class LayerManager {
-    protected static int numtobeExcluded = -1;
+    private  int numtobeExcluded = -1;
     // all connectoins must be in order of creation
     protected static double lossFunction;
 
@@ -88,7 +88,7 @@ public class LayerManager {
         LayerManager.lossFunction = calculateMSE();
     }
 
-    protected void forwardPropagatewithExclusion() {
+    protected void forwardPropagatewithExclusionInputLayer() {
 
         // Calling the forwardPropagate() method on every layer in the listOfLayers
 
@@ -96,8 +96,10 @@ public class LayerManager {
         double temparray[] = new double[inputLayer.getSize()];
 
         for (; numtobeExcluded < temparray.length; numtobeExcluded++) {
-
+            // Excluding the neuron from the input layer.
+            listOfLayers.get(0).getNeuron(numtobeExcluded).exclude();
             for (int i = 1; i <= listOfLayers.size() - 1; i++) {
+
                 listOfLayers.get(i).forwardPropagate();
             }
             // Calculating the new loss function and storing it in the variable
@@ -130,6 +132,9 @@ public class LayerManager {
             }
             // The values do not change for incorrect predictions.
 
+
+            // Including the neuron that was excluded in the previous line for the next loop
+            listOfLayers.get(0).getNeuron(numtobeExcluded).include();
         }
         // this.setInputLayer(temparray);
 

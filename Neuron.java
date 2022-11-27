@@ -16,6 +16,7 @@ public class Neuron implements Observable {
     private int batchSize;
     private double biasLearningRate;
     double relevance;
+    private boolean isIncluded=true;
 
     protected double getActivation() {
         return activation;
@@ -73,9 +74,7 @@ public class Neuron implements Observable {
         // Iterating through the leftConnections ArrayList and adding the activation of
         // each connection to the sum.
         for (Connection i : leftConnections) {
-            if (i.leftNeuron.getLayerNum() == 0 & i.leftNeuron.getNeuronNum() == LayerManager.numtobeExcluded) {
-
-            } else {
+            if (i.leftNeuron.isIncluded==true) {
                 sum += i.calculateActivationForwardPropagation();
             }
 
@@ -170,6 +169,15 @@ public class Neuron implements Observable {
     public void registerObserver(Observer observer) {
             observerList.add(observer);
         }
+
+   
+    public void exclude() {
+        isIncluded=false;
+    }
+
+    public void include() {
+        isIncluded=true;
+    }
     
         
     }
