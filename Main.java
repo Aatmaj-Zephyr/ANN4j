@@ -16,8 +16,13 @@ public class Main {
 		myNeuronObserver.setModel(myTrainer.getLayerManager());
 		myTrainer.test(9990);
 
-		//myNeuronObserver.addNeuronToBeObserved(1, 31);
-		myTrainer.printConfusionMatrix();
+		myNeuronObserver.addNeuronToBeObserved(1, 31);
+		//myTrainer.printConfusionMatrix();
+		myTrainer.test(2);
+
+		myNeuronObserver.clear();
+		myNeuronObserver.addNeuronToBeObserved(2, 0);
+
 		myTrainer.test(2);
 		//myTrainer.relevancePropagate(2, 3);
 		//myTrainer.forwardPropagatewithExclusionInputLayerOnKSamples(2);

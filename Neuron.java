@@ -178,6 +178,12 @@ public class Neuron implements Observable {
     public void include() {
         isIncluded=true;
     }
+
+    @Override
+    public void deregisterObserver(NeuronObserver neuronObserver) {
+       observerList.remove(neuronObserver);
+        
+    }
     
         
     }
