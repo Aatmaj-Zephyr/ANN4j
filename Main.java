@@ -20,7 +20,7 @@ public class Main {
 
 		myTrainer.test(2);
 		//myTrainer.relevancePropagate(2, 3);
-		 myTrainer.forwardPropagatewithExclusionInputLayerOnKSamples(2);
+		myTrainer.forwardPropagatewithExclusionInputLayerOnKSamples(2);
 
 	}
 }

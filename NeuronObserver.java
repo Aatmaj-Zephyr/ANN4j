@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class NeuronObserver implements Observer {
     private LayerManager model;
+    protected ArrayList<Arrays> confusionMatrix = new ArrayList<Arrays>();
 
    /**
     * The update function is called when the observable object is changed
@@ -36,5 +40,8 @@ public class NeuronObserver implements Observer {
     public void addObjectToBeObserved(Observable observable) {
         observable.registerObserver(this);
     }
+   // public void updateConfusionMatrix(expectedOutputArray,actualOutputArray){
+
+//    }
 
 }

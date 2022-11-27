@@ -13,7 +13,7 @@ public class InputFileReader {
         return null;
     }
 
-    protected double[] getInputArray() {
+    protected ArrayList<Double> getInputArray() {
         return null;
     }
 

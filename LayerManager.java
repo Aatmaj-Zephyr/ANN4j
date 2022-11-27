@@ -29,7 +29,7 @@ public class LayerManager {
         ExpectedOutputArrayList = expectedOutputArrayList;
     }
 
-    protected void setInputLayer(double[] inputLayerArray) {
+    protected void setInputLayer(ArrayList<Double> inputLayerArray) {
         this.inputLayer.setInput(inputLayerArray);
     }
 

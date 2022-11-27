@@ -9,7 +9,7 @@ public class Trainer {
     protected InputFileReader testingFileReader;
     private ModelEvaluator myModelEvaluator;
 
-    double[] inputLayer;
+    ArrayList<Double> inputLayer;
     double label;
     private double prediction;
     private double confidence;

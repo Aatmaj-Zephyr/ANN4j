@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class MNISTDataBaseFileReader extends InputFileReader {
     // This class is custom made for the MNIST database Dataset
-    protected ArrayList<Double> expectedOutputArray;
-    protected double[] inputArray;
+    protected ArrayList<Double> expectedOutputArray = new ArrayList<Double>();;
+    protected ArrayList<Double> inputArray = new ArrayList<Double>();
     protected double label;
     protected BufferedReader singleFileReader;
     protected int outputLayerLength;
@@ -19,15 +19,17 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     }
 
     protected double getLabel() {
+        // this function is responsible for setting the labels of the data. This depends
+        // on the data set
         return label;
     }
 
     protected void next() {
-       // Reading the next line of the file and converting it into a two double arrays.
-        double[] array;
+        // Reading the next line of the file and converting it into a two double arrays.
+        ArrayList<Double> array;
         try {
             array = readLineToDoubleArray();
-            label = array[0];
+            label = array.get(0);
             expectedOutputArray = generateExpectedOutputArrayFromLabel();
             inputArray = generateInputFromBigArray(array);
 
@@ -35,18 +37,18 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         }
     }
 
-    protected double[] readLineToDoubleArray() throws IOException {
-       // Reading the next line of the file and converting it into a double array.
+    protected ArrayList<Double> readLineToDoubleArray() throws IOException {
+        // Reading the next line of the file and converting it into a double array.
         String line = singleFileReader.readLine();
         String[] arrayOfStrings = line.split(","); // CSV files are seperate by Commas
         return convertStringArrayToDoubleArray(arrayOfStrings);
     }
 
-    private double[] convertStringArrayToDoubleArray(String[] arrayOfStrings) {
-      // Converting the string array to a double array.
-        double[] arrayOfDouble = new double[arrayOfStrings.length];
+    private ArrayList<Double> convertStringArrayToDoubleArray(String[] arrayOfStrings) {
+        // Converting the string array to a double array.
+        ArrayList<Double> arrayOfDouble = new ArrayList<Double>();
         for (int i = 0; i < arrayOfStrings.length; i++) {
-            arrayOfDouble[i] = Double.parseDouble(arrayOfStrings[i]);
+            arrayOfDouble.add(i,Double.parseDouble(arrayOfStrings[i]));
         }
         return arrayOfDouble;
     }
@@ -56,15 +58,21 @@ public class MNISTDataBaseFileReader extends InputFileReader {
 
     }
 
-    protected double[] getInputArray() {
+    protected ArrayList<Double> getInputArray() {
+        //
         return inputArray;
     }
 
     protected ArrayList<Double> generateExpectedOutputArrayFromLabel() {
-        //this needs to be overridden for changing the dataset
+        // this needs to be overridden for changing the dataset
+        // responsible for generating the output neurons.
         ArrayList<Double> expectedOutputArray = new ArrayList<Double>();
         for (int i = 0; i < 10; i++) {
             if (i == label) {
+                // Works only for 0-9 digits, 0 output neuron corresponds to 0, 1st to 1 etc.
+                // But you can change this and jumble the order as required. This may be one of
+                // the test cases for making the program free from dependancies.
+                // Example for letters, change to 0 for a, 26 for b, etc.
                 expectedOutputArray.add(i, 1.0);
             } else {
                 expectedOutputArray.add(i, 0.0);
@@ -74,12 +82,15 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return expectedOutputArray;
     }
 
-    protected double[] generateInputFromBigArray(double[] array) {
+    protected ArrayList<Double> generateInputFromBigArray(ArrayList<Double> array) {
         // generates the input array from the total array , that is it excludes the
         // first element of the array
-        double[] inputArray = new double[array.length - 1];
-        for (int i = 0; i < array.length - 1; i++) {
-            inputArray[i] = array[i + 1] / 256;
+
+        // needs to be overridden depending on the dataset.
+        // This is responsible for setting the input neurons.
+        ArrayList<Double> inputArray = new ArrayList<Double>();
+        for (int i = 0; i < array.size() - 1; i++) {
+            inputArray.add(i,array.get(i + 1) / 256);
         }
         return inputArray;
     }
