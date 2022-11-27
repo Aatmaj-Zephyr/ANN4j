@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ModelEvaluator {
     // Used to evaluate the predictions of the model, example pricision, accuracy
@@ -11,7 +10,7 @@ public class ModelEvaluator {
     private double testingAccuracy;
     protected ArrayList<Double[]> confusionMatrix = new ArrayList<Double[]>();
 
-    public void updateConfusionMatrix(ArrayList<Double> expectedOutputArray, int predictedNeuronNum) {
+    protected void updateConfusionMatrix(ArrayList<Double> expectedOutputArray, int predictedNeuronNum) {
         ArrayList<Double> temp = new ArrayList<Double>();
         for (int i = 0; i <= expectedOutputArray.size(); i++) {
             if (i == predictedNeuronNum) {
@@ -38,7 +37,7 @@ public class ModelEvaluator {
      * @param actualOutputArray   The actual output of the neural network
      */
 
-    public void updateConfusionMatrix(ArrayList<Double> expectedOutputArray, ArrayList<Double> actualOutputArray) {
+    protected void updateConfusionMatrix(ArrayList<Double> expectedOutputArray, ArrayList<Double> actualOutputArray) {
         // This is checking if the confusion matrix has been initialized, if it has not
         // been
         // initialized, it initializes it.
@@ -60,7 +59,7 @@ public class ModelEvaluator {
         }
     }
 
-    private void initializeList(int size) {
+    protected void initializeList(int size) {
         confusionMatrix.clear();
         for (int i = 0; i < size; i++) {
             // Initializing the arraylist to have 4 elements.
@@ -74,7 +73,7 @@ public class ModelEvaluator {
 
     }
 
-    public void updatePredictionData(double prediction, double label, double confidance) {
+    protected void updatePredictionData(double prediction, double label, double confidance) {
         // Updating the prediction data.
         turnsCounter++;
         if (prediction == label) {
@@ -83,34 +82,38 @@ public class ModelEvaluator {
 
     }
 
-    public void reset() {
+    protected void reset() {
         correctCounter = 0;
         turnsCounter = 0;
+        resetConfusionMatrix();
+    }
+
+    public void resetConfusionMatrix() {
         confusionMatrix.clear();
     }
 
-    public double getAccuracy() {
+    protected double getAccuracy() {
         return (double) 100 * correctCounter / turnsCounter; // be careful for zero turns!
 
     }
 
-    public void setTrainingaccuracy(double accuracy) {
+    protected void setTrainingaccuracy(double accuracy) {
         this.trainingAccuracy = accuracy;
     }
 
-    public double getTrainingAccuracy() {
+    protected double getTrainingAccuracy() {
         return trainingAccuracy;
     }
 
-    public void setTestingaccuracy(double accuracy) {
+    protected void setTestingaccuracy(double accuracy) {
         this.testingAccuracy = accuracy;
     }
 
-    public double getTestingAccuracy() {
+    protected double getTestingAccuracy() {
         return testingAccuracy;
     }
 
-    public void printConfusionMatrix(InputFileReader fileReader) {
+    protected void printConfusionMatrix(InputFileReader fileReader) {
         // Printing the confusion matrix.
         for (int i = 0; i < confusionMatrix.size(); i++) {
             System.out.println("Label:" + fileReader.getPredictionFromNeuronNum(i));
