@@ -17,10 +17,10 @@ public class Main {
 		myTrainer.test(9990);
 
 		//myNeuronObserver.addNeuronToBeObserved(1, 31);
-
+		myTrainer.printConfusionMatrix();
 		myTrainer.test(2);
 		//myTrainer.relevancePropagate(2, 3);
-		myTrainer.forwardPropagatewithExclusionInputLayerOnKSamples(2);
+		//myTrainer.forwardPropagatewithExclusionInputLayerOnKSamples(2);
 
 	}
 }

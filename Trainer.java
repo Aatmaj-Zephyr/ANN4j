@@ -52,6 +52,8 @@ public class Trainer {
 
    
                 myModelEvaluator.updatePredictionData(prediction, label, confidence);
+                myModelEvaluator.updateConfusionMatrix(expectedLayer,myLayerManager.getMostSignificantNeuronNumAsPrediction());
+
 
             }
         myModelEvaluator.setTrainingaccuracy(myModelEvaluator.getAccuracy());
@@ -91,7 +93,10 @@ public class Trainer {
         System.out.println("Testing accuracy " + myModelEvaluator.getTestingAccuracy());
     }
 
-
+    protected void printConfusionMatrix(){
+        myModelEvaluator.printConfusionMatrix(testingFileReader);
+    
+    }
     protected void forwardPropagatewithExclusionInputLayerOnKSamples(int noOfSamples) {
         for (int i = 0; i < noOfSamples; i++) {
             // Getting the next image from the mnist database.
