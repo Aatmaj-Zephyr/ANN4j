@@ -1,0 +1,25 @@
+Training accuracy in epoch 0 is 14.0
+Training accuracy in epoch 1 is 12.0
+Training accuracy in epoch 2 is 14.0
+Training accuracy in epoch 3 is 10.0
+Training accuracy in epoch 4 is 10.0
+Training accuracy in epoch 5 is 12.0
+Training accuracy in epoch 6 is 12.0
+Training accuracy in epoch 7 is 12.0
+Training accuracy in epoch 8 is 12.0
+Training accuracy in epoch 9 is 12.0
+Testing accuracy 10.71071071071071
+The neuron 31 in layer 1 has been updated by forward propagation
+Neuron #31 has activation 0.12352190015958812
+
+The neuron 31 in layer 1 has been updated by forward propagation
+Neuron #31 has activation 0.7655784578574862
+
+Testing accuracy 10.708566853482786
+The neuron 0 in layer 2 has been updated by forward propagation
+Neuron #0 has activation 0.4054122259121524
+
+The neuron 0 in layer 2 has been updated by forward propagation
+Neuron #0 has activation 0.7512311586777184
+
+Testing accuracy 10.716429857914749

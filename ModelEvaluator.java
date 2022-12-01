@@ -116,12 +116,12 @@ public class ModelEvaluator {
     protected void printConfusionMatrix(InputFileReader fileReader) {
         // Printing the confusion matrix.
         for (int i = 0; i < confusionMatrix.size(); i++) {
-            System.out.println("Label:" + fileReader.getPredictionFromNeuronNum(i));
-            System.out.println("True Positive :" + confusionMatrix.get(i)[0]);
-            System.out.println("True Negative :" + confusionMatrix.get(i)[3]);
-            System.out.println("False Positive :" + confusionMatrix.get(i)[1]);
-            System.out.println("False Negative :" + confusionMatrix.get(i)[2]);
-            System.out.println("\n");
+            Writer.writeln("Label:" + fileReader.getPredictionFromNeuronNum(i));
+            Writer.writeln("True Positive :" + confusionMatrix.get(i)[0]);
+            Writer.writeln("True Negative :" + confusionMatrix.get(i)[3]);
+            Writer.writeln("False Positive :" + confusionMatrix.get(i)[1]);
+            Writer.writeln("False Negative :" + confusionMatrix.get(i)[2]);
+            Writer.writeln("\n");
         }
     }
 }

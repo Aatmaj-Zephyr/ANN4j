@@ -118,4 +118,12 @@ public class parameter {
     public static ModelEvaluator getModelEvaluator() {
         return new ModelEvaluator();
     }
+
+    public static void setOutputFile(String string, boolean printInConsoleEnabled) {
+        Writer.setFile(string);
+        Writer.setPrintInConsoleEnabled(printInConsoleEnabled);
+    }
+    public static void display(){
+        Writer.end();
+    }
 }

@@ -113,14 +113,14 @@ public class LayerManager {
             // which means that the value if temp is negative
 
             // This is the code that is used to calculate the relevance of each pixel.
-            // System.out.print((int)(temp*10000+127)+",");
+            // Writer.write((int)(temp*10000+127)+",");
 
             if (temp == 0) {
-                System.out.print(0 + ",");
+                Writer.write(0 + ",");
             } else if (temp < 0) {
-                System.out.print(255 + ",");
+                Writer.write(255 + ",");
             } else {
-                System.out.print(0 + ",");
+                Writer.write(0 + ",");
             }
 
             if (temp == 0) {
@@ -138,7 +138,7 @@ public class LayerManager {
         }
         // this.setInputLayer(temparray);
 
-        // System.out.println();
+        // Writer.writeln();
 
     }
 
@@ -183,7 +183,7 @@ public class LayerManager {
         }
 
         for (Neuron i : this.inputLayer.listOfNeurons) {
-            System.out.print((int) (NN.sigmoid(i.relevance) * 255) + ",");
+            Writer.write((int) (NN.sigmoid(i.relevance) * 255) + ",");
         }
 
     }

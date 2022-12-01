@@ -57,7 +57,7 @@ public class Trainer {
 
             }
         myModelEvaluator.setTrainingaccuracy(myModelEvaluator.getAccuracy());
-        System.out.println("Training accuracy in epoch "+j+" is " + myModelEvaluator.getTrainingAccuracy());
+        Writer.writeln("Training accuracy in epoch "+j+" is " + myModelEvaluator.getTrainingAccuracy());
 
         myModelEvaluator.reset();
 
@@ -86,11 +86,11 @@ public class Trainer {
             
             myModelEvaluator.updatePredictionData(prediction, label, confidence);
             myModelEvaluator.updateConfusionMatrix(expectedLayer,myLayerManager.getMostSignificantNeuronNumAsPrediction());
-            //System.out.println("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
+            //Writer.writeln("Digit " + label + " is predicted as " + prediction + " with confidence " + confidence);
         }
         myModelEvaluator.setTestingaccuracy(myModelEvaluator.getAccuracy());
 
-        System.out.println("Testing accuracy " + myModelEvaluator.getTestingAccuracy());
+        Writer.writeln("Testing accuracy " + myModelEvaluator.getTestingAccuracy());
     }
 
     protected void printConfusionMatrix(){
@@ -146,7 +146,7 @@ public class Trainer {
 
         prediction = myLayerManager.getMostSignificantNeuronNumAsPrediction();
 
-        // System.out.println(" prediction " + prediction);
+        // Writer.writeln(" prediction " + prediction);
     }
 
 }

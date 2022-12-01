@@ -12,9 +12,9 @@ public class NeuronObserver implements Observer {
     ArrayList<Observable> observableList = new ArrayList<Observable>();
 
     public void update(String info, Observable observable) {
-        System.out.println(info);
+        Writer.writeln(info);
         Neuron temp = (Neuron) observable;
-        System.out.print(temp);
+        Writer.write(temp);
     }
 
     void setModel(LayerManager model) {

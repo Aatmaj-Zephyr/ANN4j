@@ -88,7 +88,7 @@ public class Neuron implements Observable {
     }
 
     protected void forwardPropagate() {
-        // System.out.println("Forward propagating in neuron # "+this.neuronNum+" in
+        // Writer.writeln("Forward propagating in neuron # "+this.neuronNum+" in
         // layer number "+this.layerNum); //test code
         // Setting the activation of the neuron to the rectified value of the weighted
         // sum of the left connections plus the bias.
