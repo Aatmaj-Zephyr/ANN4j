@@ -3,9 +3,9 @@ import java.util.*;
 
 
 abstract class Layer {
-    protected ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
-    protected int layerNum;
-    protected NeuronBehaviour myBehaviour;
+    public ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
+    public int layerNum;
+    public NeuronBehaviour myBehaviour;
 
     Layer(int numOfNeurons) {
         this.setBehaviour();
@@ -20,15 +20,15 @@ abstract class Layer {
         }
     }
 
-    protected int getSize() {
+    public int getSize() {
         return listOfNeurons.size();
     }
 
-    protected Neuron getNeuron(int neuronNum) {
+    public Neuron getNeuron(int neuronNum) {
         return listOfNeurons.get(neuronNum);
     }
 
-    protected abstract void setBehaviour();
+    public abstract void setBehaviour();
     /*
      * The delta of each neuron will be different accouding to it's type, that is if
      * it belongs to hidden layer or the output layer.
@@ -41,11 +41,11 @@ abstract class Layer {
      * This will be implemented to Strategy pattern.
      */
 
-    protected ArrayList<Neuron> getListOfNeurons() {
+    public ArrayList<Neuron> getListOfNeurons() {
         return listOfNeurons;
     }
 
-    protected void setLayerNum(int layerNum) {
+    public void setLayerNum(int layerNum) {
         // Setting the layer number for each neuron in the layer.
         this.layerNum = layerNum;
         for (Neuron i : listOfNeurons) {
@@ -53,11 +53,11 @@ abstract class Layer {
         }
     }
 
-    protected void addNeuron(Neuron toBeAdded) {
+    public void addNeuron(Neuron toBeAdded) {
         listOfNeurons.add(toBeAdded);
     }
 
-    protected void forwardPropagate() {
+    public void forwardPropagate() {
         // Iterating through the list of neurons and calling the forwardPropagate method
         // on each neuron.
         for (Neuron i : listOfNeurons) {
@@ -74,7 +74,7 @@ abstract class Layer {
         return str + "\n";
     }
 
-    protected String printWeights() {
+    public String printWeights() {
         // Printing the weights of the neurons.
         String s = "";
         for (Neuron i : listOfNeurons) {
@@ -83,7 +83,7 @@ abstract class Layer {
         return s;
     }
 
-    protected void backwardPropagate() {
+    public void backwardPropagate() {
         // Iterating through the list of neurons and calling the backwardPropagate
         // method
         // on each neuron.
@@ -93,7 +93,7 @@ abstract class Layer {
 
     }
 
-    protected void relevancePropagate() {
+    public void relevancePropagate() {
         // Iterating through the list of neurons and calling the backwardPropagate
         // method
         // on each neuron.

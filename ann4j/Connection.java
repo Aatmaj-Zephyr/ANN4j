@@ -3,10 +3,10 @@ import java.util.ArrayList;
 
 
 public class Connection {
-    protected Neuron leftNeuron;
-    protected Neuron rightNeuron;
+    public Neuron leftNeuron;
+    public Neuron rightNeuron;
     private double weight;
-    protected ArrayList<Double> changeWishlist;
+    public ArrayList<Double> changeWishlist;
     private int batchCounter;
     private double learningRate; // avoid using static parameters as they incerase time complexity.
     private int batchSize; // avoid using static parameters as they incerase time complexity.
@@ -29,15 +29,15 @@ public class Connection {
 
     }
 
-    protected double getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    protected void initializeWeights() {
+    public void initializeWeights() {
         this.weight = NN.getSmallSignedRandom();
     }
 
-    protected double calculateActivationForwardPropagation() {
+    public double calculateActivationForwardPropagation() {
 
         // Calculating the activation of the left neuron times the weight of the
         // connection.
@@ -50,7 +50,7 @@ public class Connection {
                 + weight + "\n";
     }
 
-    protected void backPropagate() {
+    public void backPropagate() {
         // This is the backpropagation algorithm. It is calculating the gradient of the
         // loss function
         // with respect to the weight. It then updates the weight by subtracting the
@@ -69,7 +69,7 @@ public class Connection {
         }
     }
 
-    protected double getBackwardWeightedSum() {
+    public double getBackwardWeightedSum() {
         // Calculating the gradient of the loss function with respect to the weight.
         // USed in class neuron for calculation of delta.
         return this.weight * rightNeuron.getDelta();

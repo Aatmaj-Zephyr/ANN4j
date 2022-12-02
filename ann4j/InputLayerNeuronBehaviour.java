@@ -6,7 +6,7 @@ public class InputLayerNeuronBehaviour implements NeuronBehaviour {
     private InputLayerNeuronBehaviour() {
     }
 
-    protected static InputLayerNeuronBehaviour getInstance() {
+    public static InputLayerNeuronBehaviour getInstance() {
         if (myInstance == null) {
             myInstance = new InputLayerNeuronBehaviour();
         }

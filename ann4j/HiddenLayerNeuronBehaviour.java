@@ -6,7 +6,7 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour {
     private HiddenLayerNeuronBehaviour() {
     }
 
-    protected static HiddenLayerNeuronBehaviour getInstance() {
+    public static HiddenLayerNeuronBehaviour getInstance() {
         if (myInstance == null) {
             myInstance = new HiddenLayerNeuronBehaviour();
         }

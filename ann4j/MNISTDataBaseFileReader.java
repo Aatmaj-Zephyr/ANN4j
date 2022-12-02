@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class MNISTDataBaseFileReader extends InputFileReader {
     // This class is custom made for the MNIST database Dataset
-    protected ArrayList<Double> expectedOutputArray = new ArrayList<Double>();;
-    protected ArrayList<Double> inputArray = new ArrayList<Double>();
-    protected double label;
-    protected BufferedReader singleFileReader;
-    protected int outputLayerLength;
+    public ArrayList<Double> expectedOutputArray = new ArrayList<Double>();;
+    public ArrayList<Double> inputArray = new ArrayList<Double>();
+    public double label;
+    public BufferedReader singleFileReader;
+    public int outputLayerLength;
 
     MNISTDataBaseFileReader(String filename, int outputLayerLength) throws FileNotFoundException {
         super(filename);
@@ -19,13 +19,13 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         this.singleFileReader = new BufferedReader(new FileReader(filename));
     }
 
-    protected double getLabel() {
+    public double getLabel() {
         // this function is responsible for setting the labels of the data. This depends
         // on the data set
         return label;
     }
 
-    protected void next() {
+    public void next() {
         // Reading the next line of the file and converting it into a two double arrays.
         ArrayList<Double> array;
         try {
@@ -38,7 +38,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         }
     }
 
-    protected ArrayList<Double> readLineToDoubleArray() throws IOException {
+    public ArrayList<Double> readLineToDoubleArray() throws IOException {
         // Reading the next line of the file and converting it into a double array.
         String line = singleFileReader.readLine();
         String[] arrayOfStrings = line.split(","); // CSV files are seperate by Commas
@@ -54,17 +54,17 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return arrayOfDouble;
     }
 
-    protected ArrayList<Double> getExpectedOutputArray() {
+    public ArrayList<Double> getExpectedOutputArray() {
         return expectedOutputArray;
 
     }
 
-    protected ArrayList<Double> getInputArray() {
+    public ArrayList<Double> getInputArray() {
         //
         return inputArray;
     }
 
-    protected ArrayList<Double> generateExpectedOutputArrayFromLabel() {
+    public ArrayList<Double> generateExpectedOutputArrayFromLabel() {
         // this needs to be overridden for changing the dataset
         // responsible for generating the output neurons.
         ArrayList<Double> expectedOutputArray = new ArrayList<Double>();
@@ -83,7 +83,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return expectedOutputArray;
     }
 
-    protected ArrayList<Double> generateInputFromBigArray(ArrayList<Double> array) {
+    public ArrayList<Double> generateInputFromBigArray(ArrayList<Double> array) {
         // generates the input array from the total array , that is it excludes the
         // first element of the array
 

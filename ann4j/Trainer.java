@@ -4,10 +4,10 @@ import java.util.ArrayList;
  public class Trainer {
     // template pattern
 
-    protected LayerManager myLayerManager;
-    protected ArrayList<Double> expectedLayer;
-    protected InputFileReader trainingFileReader;
-    protected InputFileReader testingFileReader;
+    public LayerManager myLayerManager;
+    public ArrayList<Double> expectedLayer;
+    public InputFileReader trainingFileReader;
+    public InputFileReader testingFileReader;
     private ModelEvaluator myModelEvaluator;
 
     ArrayList<Double> inputLayer;

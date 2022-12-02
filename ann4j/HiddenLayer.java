@@ -5,7 +5,7 @@ package ann4j;
   }
 
   @Override
-  protected void setBehaviour() {
+  public void setBehaviour() {
     this.myBehaviour = HiddenLayerNeuronBehaviour.getInstance();
 
   }

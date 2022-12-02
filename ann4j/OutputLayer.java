@@ -7,7 +7,7 @@ public class OutputLayer extends Layer {
     }
 
     @Override
-    protected void setBehaviour() {
+    public void setBehaviour() {
         this.myBehaviour = OutputLayerNeuronBehaviour.getInstance();
 
     }

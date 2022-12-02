@@ -4,33 +4,33 @@ import java.util.*;
  public class LayerManager {
     private  int numtobeExcluded = -1;
     // all connectoins must be in order of creation
-    protected static double lossFunction;
+    public static double lossFunction;
 
     ArrayList<Layer> listOfLayers = new ArrayList<Layer>(); // polymporphism
-    protected InputLayer inputLayer;
-    protected OutputLayer outputLayer;
-    protected static ArrayList<Double> ExpectedOutputArrayList; // This will be used by various algorithms, especially
+    public InputLayer inputLayer;
+    public OutputLayer outputLayer;
+    public static ArrayList<Double> ExpectedOutputArrayList; // This will be used by various algorithms, especially
                                                                 // backpropagation
     // in the concrete implementations of layer class.
     private static Double NeuronNumberToBeTestedinRelavancePropagation;
 
-    protected OutputLayer getOutputLayer() {
+    public OutputLayer getOutputLayer() {
         return outputLayer;
     }
 
-    protected InputLayer getInputLayer() {
+    public InputLayer getInputLayer() {
         return inputLayer;
     }
 
-    protected double calculateMSE() {
+    public double calculateMSE() {
         return MeanSquaredErrorCalculator.calculateMSE(this.getOutputLayer(), LayerManager.ExpectedOutputArrayList);
     }
 
-    protected void setExpectedOutputArray(ArrayList<Double> expectedOutputArrayList) {
+    public void setExpectedOutputArray(ArrayList<Double> expectedOutputArrayList) {
         ExpectedOutputArrayList = expectedOutputArrayList;
     }
 
-    protected void setInputLayer(ArrayList<Double> inputLayerArray) {
+    public void setInputLayer(ArrayList<Double> inputLayerArray) {
         this.inputLayer.setInput(inputLayerArray);
     }
 
@@ -74,7 +74,7 @@ import java.util.*;
         }
     }
 
-    protected void forwardPropagate() {
+    public void forwardPropagate() {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
         // dont forward propagate the input layer
@@ -89,7 +89,7 @@ import java.util.*;
         LayerManager.lossFunction = calculateMSE();
     }
 
-    protected void forwardPropagatewithExclusionInputLayer() {
+    public void forwardPropagatewithExclusionInputLayer() {
 
         // Calling the forwardPropagate() method on every layer in the listOfLayers
 
@@ -153,12 +153,12 @@ import java.util.*;
         return str;
     }
 
-    protected Layer getOutput() {
+    public Layer getOutput() {
         // Returning the last layer in the listOfLayers ArrayList.
         return listOfLayers.get(listOfLayers.size() - 1);
     }
 
-    protected void backwardPropagate() {
+    public void backwardPropagate() {
 
         // backwardPropagate in reverse order
         for (int i = listOfLayers.size() - 1; i >= 0; i--) {
@@ -168,7 +168,7 @@ import java.util.*;
     }
 
     // This is the code that is used to calculate the relevance of each pixel.
-    protected void relevancePropagate(int layerNumber, int neuronNumber) {
+    public void relevancePropagate(int layerNumber, int neuronNumber) {
         for (int i = layerNumber; i >= 0; i--) {
             if (i == layerNumber) {
                 for (Neuron j : listOfLayers.get(layerNumber).listOfNeurons) {
@@ -202,7 +202,7 @@ import java.util.*;
         return listOfLayers.get(layerNum);
     }
 
-    protected  int getMostSignificantNeuronNumAsPrediction() {
+    public  int getMostSignificantNeuronNumAsPrediction() {
         // Finding the most significant neuron number in the output layer.
         double temp = 0;
         int no = 0;
@@ -215,7 +215,7 @@ import java.util.*;
         }
         return no;
     }
-    protected  double getconfidence() {
+    public  double getconfidence() {
         // Finding the most significant neuron confidance in the output layer.
         double temp = 0;
         int no = 0;
@@ -229,7 +229,7 @@ import java.util.*;
         return temp;
     }
 
-    protected ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer() {
+    public ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer() {
         // Finding the most significant neuron in the hidden layer.
         double temp = 0.0;
         ArrayList<Integer> no = new ArrayList<Integer>();

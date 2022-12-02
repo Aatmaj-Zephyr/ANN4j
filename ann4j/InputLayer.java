@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
     }
 
-    protected void setInput(ArrayList<Double> inputLayerArray) {
+    public void setInput(ArrayList<Double> inputLayerArray) {
         // This is setting the activation of each neuron in the input layer to the
         // corresponding value
         // in the input array.
@@ -18,7 +18,7 @@ import java.util.ArrayList;
     }
 
     @Override
-    protected void setBehaviour() {
+    public void setBehaviour() {
         this.myBehaviour = InputLayerNeuronBehaviour.getInstance();
 
     }

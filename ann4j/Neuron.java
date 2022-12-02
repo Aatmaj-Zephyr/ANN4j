@@ -5,13 +5,13 @@ public class Neuron implements Observable {
 
     public ArrayList<Observer> observerList = new ArrayList<Observer>();
     private double activation;
-    protected int neuronNum;
-    protected int layerNum = -1;
-    protected ArrayList<Connection> leftConnections = new ArrayList<Connection>();
-    protected ArrayList<Connection> rightConnections = new ArrayList<Connection>();
-    protected double bias;
-    protected double delta;
-    protected NeuronBehaviour myBehaviour;
+    public int neuronNum;
+    public int layerNum = -1;
+    public ArrayList<Connection> leftConnections = new ArrayList<Connection>();
+    public ArrayList<Connection> rightConnections = new ArrayList<Connection>();
+    public double bias;
+    public double delta;
+    public NeuronBehaviour myBehaviour;
     private int batchCounter;
     private ArrayList<Double> biasChangeWishlist;
     private int batchSize;
@@ -19,20 +19,20 @@ public class Neuron implements Observable {
     double relevance;
     private boolean isIncluded=true;
 
-    protected double getActivation() {
+    public double getActivation() {
         return activation;
     }
 
-    protected void setActivation(double activation) {
+    public void setActivation(double activation) {
         this.activation = activation;
     }
 
-    protected void setBehaviour(NeuronBehaviour myBehaviour) {
+    public void setBehaviour(NeuronBehaviour myBehaviour) {
         this.myBehaviour = myBehaviour;
 
     }
 
-    protected Neuron() {
+    public Neuron() {
        // This is the constructor of the `Neuron` class. It sets the activation of the neuron to a
        // random value, sets the bias of the neuron to a random value, sets the batch size to the batch
        // size of the parameter object, sets the bias learning rate to the bias learning rate of the
@@ -44,33 +44,33 @@ public class Neuron implements Observable {
         biasChangeWishlist = new ArrayList<Double>();
     }
 
-    protected void setLayerNum(int layerNum) {
+    public void setLayerNum(int layerNum) {
         this.layerNum = layerNum;
 
     }
 
-    protected int getLayerNum() {
+    public int getLayerNum() {
         return layerNum;
     }
 
-    protected void setNeuronNum(int neuronNum) {
+    public void setNeuronNum(int neuronNum) {
         this.neuronNum = neuronNum;
 
     }
 
-    protected int getNeuronNum() {
+    public int getNeuronNum() {
         return neuronNum;
     }
 
-    protected void addLeftConnections(Connection connection) {
+    public void addLeftConnections(Connection connection) {
         leftConnections.add(connection);
     }
 
-    protected void addRightConnections(Connection connection) {
+    public void addRightConnections(Connection connection) {
         rightConnections.add(connection);
     }
 
-    protected double getWeightedSum() {
+    public double getWeightedSum() {
         double sum = 0;
         // Iterating through the leftConnections ArrayList and adding the activation of
         // each connection to the sum.
@@ -84,11 +84,11 @@ public class Neuron implements Observable {
         return sum;
     }
 
-    protected double getBias() {
+    public double getBias() {
         return bias;
     }
 
-    protected void forwardPropagate() {
+    public void forwardPropagate() {
         // Writer.writeln("Forward propagating in neuron # "+this.neuronNum+" in
         // layer number "+this.layerNum); //test code
         // Setting the activation of the neuron to the rectified value of the weighted
@@ -98,11 +98,11 @@ public class Neuron implements Observable {
 
     }
 
-    protected double getDelta() {
+    public double getDelta() {
         return delta;
     }
 
-    protected void backwardPropagate() {
+    public void backwardPropagate() {
        // This is the code that is called when the neuron is being backpropagated. It first sets the
        // delta of the neuron, then backpropagates through all of the left connections, and then
        // changes the bias of the neuron.
@@ -132,7 +132,7 @@ public class Neuron implements Observable {
 
     }
 
-    protected void setDelta() {
+    public void setDelta() {
         this.delta = myBehaviour.setDelta(this);
         notifyObservers("The delta difference of the neuron "+neuronNum+" in layer " + layerNum +"  has been changed");
 
@@ -147,7 +147,7 @@ public class Neuron implements Observable {
      * which is of type
      * `Behaviour`, and the `this` object is passed as an argument
      */
-    protected void relevancePropagate() {
+    public void relevancePropagate() {
         myBehaviour.relevancePropagate(this);
 
     }
