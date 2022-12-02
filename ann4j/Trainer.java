@@ -30,7 +30,6 @@ import java.util.ArrayList;
     public void train(int noOfSamples, int epochs) {
         for(int j = 0; j < epochs; j++){
 
-            parameter.setTrainingFileReader("mnist_train.csv", "mnist");
             this.trainingFileReader = parameter.getTrainingFileReader();
             for (int i = 0; i < noOfSamples; i++) {
 

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
     public void updateConfusionMatrix(ArrayList<Double> expectedOutputArray, int predictedNeuronNum) {
         ArrayList<Double> temp = new ArrayList<Double>();
-        for (int i = 0; i <= expectedOutputArray.size(); i++) {
+        for (int i = 0; i <= parameter.numberOfOutputNeurons; i++) {
             if (i == predictedNeuronNum) {
                 temp.add(i, 1.0);
             } else {
@@ -42,10 +42,10 @@ import java.util.ArrayList;
         // This is checking if the confusion matrix has been initialized, if it has not
         // been
         // initialized, it initializes it.
-        if (confusionMatrix.size() != expectedOutputArray.size()) {// arraylist has not been initialized
-            initializeList(expectedOutputArray.size());
+        if (confusionMatrix.size() != parameter.numberOfOutputNeurons) {// arraylist has not been initialized
+            initializeList(parameter.numberOfOutputNeurons);
         }
-        for (int i = 0; i < expectedOutputArray.size(); i++) {
+        for (int i = 0; i < parameter.numberOfOutputNeurons; i++) {
 
             // This is updating the confusion matrix.
             if (expectedOutputArray.get(i) == 1.0 & actualOutputArray.get(i) == 1.0) { // True positives

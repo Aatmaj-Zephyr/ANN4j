@@ -35,6 +35,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
             inputArray = generateInputFromBigArray(array);
 
         } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -68,7 +69,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         // this needs to be overridden for changing the dataset
         // responsible for generating the output neurons.
         ArrayList<Double> expectedOutputArray = new ArrayList<Double>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < parameter.numberOfOutputNeurons; i++) {
             if (i == label) {
                 // Works only for 0-9 digits, 0 output neuron corresponds to 0, 1st to 1 etc.
                 // But you can change this and jumble the order as required. This may be one of

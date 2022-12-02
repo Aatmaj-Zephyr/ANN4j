@@ -15,6 +15,9 @@ import java.io.FileNotFoundException;
     private static int batchsize;
     private static double biasLearningRate;
     private static double epsillion;
+  // Used to store the number of input and output neurons.
+    public static int numberOfOutputNeurons;
+    public static int numberOfInputNeurons;
 
     public static double getBiasLearningRate() {
         return biasLearningRate;
@@ -51,6 +54,7 @@ import java.io.FileNotFoundException;
                 // The layer array must be initialized before this always
             }
         } catch (FileNotFoundException ex) {
+           ex.printStackTrace();
         }
     }
 
@@ -64,6 +68,7 @@ import java.io.FileNotFoundException;
                 parameter.trainingFileReader = new MNISTDataBaseFileReader(fileName, layerArray[layerArray.length - 1]);
             }
         } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -97,6 +102,8 @@ import java.io.FileNotFoundException;
     }
 
     public static void setLayerArray(int... LayerArray) {
+        parameter.numberOfInputNeurons = LayerArray[0];
+        parameter.numberOfOutputNeurons = LayerArray[LayerArray.length-1];
         parameter.layerArray = LayerArray;
     }
 

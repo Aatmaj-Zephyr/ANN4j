@@ -1,95 +1,16 @@
-Training accuracy in epoch 0 is 10.0
-Training accuracy in epoch 1 is 10.0
-Training accuracy in epoch 2 is 12.0
-Training accuracy in epoch 3 is 10.0
-Training accuracy in epoch 4 is 10.0
-Training accuracy in epoch 5 is 10.0
-Training accuracy in epoch 6 is 10.0
-Training accuracy in epoch 7 is 12.0
-Training accuracy in epoch 8 is 12.0
-Training accuracy in epoch 9 is 12.0
-Testing accuracy 10.13013013013013
-Label:0.0
-True Positive :0.0
-True Negative :9011.0
-False Positive :0.0
-False Negative :979.0
-
-
-Label:1.0
-True Positive :0.0
-True Negative :8856.0
-False Positive :0.0
-False Negative :1134.0
-
-
-Label:2.0
-True Positive :0.0
-True Negative :8959.0
-False Positive :0.0
-False Negative :1031.0
-
-
-Label:3.0
-True Positive :5.0
-True Negative :8896.0
-False Positive :85.0
-False Negative :1004.0
-
-
-Label:4.0
-True Positive :0.0
-True Negative :9009.0
-False Positive :0.0
-False Negative :981.0
-
-
-Label:5.0
-True Positive :0.0
-True Negative :9099.0
-False Positive :0.0
-False Negative :891.0
-
-
-Label:6.0
-True Positive :0.0
-True Negative :9033.0
-False Positive :0.0
-False Negative :957.0
-
-
-Label:7.0
-True Positive :0.0
-True Negative :8963.0
-False Positive :0.0
-False Negative :1027.0
-
-
-Label:8.0
-True Positive :0.0
-True Negative :9017.0
-False Positive :0.0
-False Negative :973.0
-
-
-Label:9.0
-True Positive :1007.0
-True Negative :89.0
-False Positive :8893.0
-False Negative :1.0
-
+Training accuracy in epoch 0 is 10.66891891891892
+Testing accuracy 28.92892892892893
+The neuron 31 in layer 1 has been updated by forward propagation
+Neuron #31 has activation 6.567825572210979E-4
 
 The neuron 31 in layer 1 has been updated by forward propagation
-Neuron #31 has activation 0.44070545272313627
+Neuron #31 has activation 0.003181628304117291
 
-The neuron 31 in layer 1 has been updated by forward propagation
-Neuron #31 has activation 0.805525963558943
-
-Testing accuracy 10.128102481985588
+Testing accuracy 28.93314651721377
 The neuron 0 in layer 2 has been updated by forward propagation
-Neuron #0 has activation 0.7362380271929501
+Neuron #0 has activation 0.25373727956231534
 
 The neuron 0 in layer 2 has been updated by forward propagation
-Neuron #0 has activation 0.6814481765071231
+Neuron #0 has activation 0.7220061457959416
 
-Testing accuracy 10.136081648989393
+Testing accuracy 28.94736842105263
