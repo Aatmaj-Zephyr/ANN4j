@@ -1,4 +1,4 @@
-package ann;
+package ann4j;
 import java.io.FileNotFoundException;
 
  public class parameter {

@@ -1,4 +1,4 @@
-package ann; 
+package ann4j; 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

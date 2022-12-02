@@ -1,4 +1,4 @@
-package ann;
+package ann4j;
 import java.util.ArrayList;
 
  public class NeuronObserver implements Observer {

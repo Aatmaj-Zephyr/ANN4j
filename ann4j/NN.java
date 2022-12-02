@@ -1,4 +1,4 @@
-package ann; 
+package ann4j; 
 import java.lang.Math;
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ public class NN {
     // helper class for providing the necessary methods for neural networks
 
     private NN() {
-    } // Static class cannot be instantiated
+    } // Static class cann4jot be instantiated
 
     protected static double getRandom() {
         return Math.random();

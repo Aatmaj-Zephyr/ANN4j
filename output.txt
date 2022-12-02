@@ -1,14 +1,14 @@
-Training accuracy in epoch 0 is 14.0
-Training accuracy in epoch 1 is 12.0
-Training accuracy in epoch 2 is 16.0
-Training accuracy in epoch 3 is 18.0
-Training accuracy in epoch 4 is 18.0
-Training accuracy in epoch 5 is 16.0
-Training accuracy in epoch 6 is 16.0
-Training accuracy in epoch 7 is 16.0
-Training accuracy in epoch 8 is 16.0
-Training accuracy in epoch 9 is 16.0
-Testing accuracy 10.6006006006006
+Training accuracy in epoch 0 is 10.0
+Training accuracy in epoch 1 is 10.0
+Training accuracy in epoch 2 is 12.0
+Training accuracy in epoch 3 is 10.0
+Training accuracy in epoch 4 is 10.0
+Training accuracy in epoch 5 is 10.0
+Training accuracy in epoch 6 is 10.0
+Training accuracy in epoch 7 is 12.0
+Training accuracy in epoch 8 is 12.0
+Training accuracy in epoch 9 is 12.0
+Testing accuracy 10.13013013013013
 Label:0.0
 True Positive :0.0
 True Negative :9011.0
@@ -31,10 +31,10 @@ False Negative :1031.0
 
 
 Label:3.0
-True Positive :60.0
-True Negative :8724.0
-False Positive :257.0
-False Negative :949.0
+True Positive :5.0
+True Negative :8896.0
+False Positive :85.0
+False Negative :1004.0
 
 
 Label:4.0
@@ -73,23 +73,23 @@ False Negative :973.0
 
 
 Label:9.0
-True Positive :999.0
-True Negative :308.0
-False Positive :8674.0
-False Negative :9.0
+True Positive :1007.0
+True Negative :89.0
+False Positive :8893.0
+False Negative :1.0
 
 
 The neuron 31 in layer 1 has been updated by forward propagation
-Neuron #31 has activation 0.7212724890752218
+Neuron #31 has activation 0.44070545272313627
 
 The neuron 31 in layer 1 has been updated by forward propagation
-Neuron #31 has activation 0.9689836085653567
+Neuron #31 has activation 0.805525963558943
 
-Testing accuracy 10.59847878302642
+Testing accuracy 10.128102481985588
 The neuron 0 in layer 2 has been updated by forward propagation
-Neuron #0 has activation 0.14202933216924649
+Neuron #0 has activation 0.7362380271929501
 
 The neuron 0 in layer 2 has been updated by forward propagation
-Neuron #0 has activation 0.18226652675152485
+Neuron #0 has activation 0.6814481765071231
 
-Testing accuracy 10.606363818290975
+Testing accuracy 10.136081648989393

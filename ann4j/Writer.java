@@ -1,4 +1,4 @@
-package ann;
+package ann4j;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
