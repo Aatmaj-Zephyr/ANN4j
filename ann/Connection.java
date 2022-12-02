@@ -1,4 +1,6 @@
+package ann; 
 import java.util.ArrayList;
+
 
 public class Connection {
     protected Neuron leftNeuron;

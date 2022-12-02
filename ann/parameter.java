@@ -1,6 +1,7 @@
+package ann;
 import java.io.FileNotFoundException;
 
-public class parameter {
+ public class parameter {
     // This class is used for setting the parameters of the model.
     // There is no point in passing its object to the layerManager or Trainer
     // classes so it is static class.
@@ -15,35 +16,35 @@ public class parameter {
     private static double biasLearningRate;
     private static double epsillion;
 
-    protected static double getBiasLearningRate() {
+    public static double getBiasLearningRate() {
         return biasLearningRate;
     }
 
-    protected static double getEpsillion() {
+    public static double getEpsillion() {
         return epsillion;
     }
 
-    protected static void setEpsillion(double epsillion) {
+    public static void setEpsillion(double epsillion) {
         parameter.epsillion = epsillion;
     }
 
-    protected static void setBiasLearningRate(double biasLearningRate) {
+    public static void setBiasLearningRate(double biasLearningRate) {
         parameter.biasLearningRate = biasLearningRate;
     }
 
-    protected static void setRectificationFunction(String rectificationFunction) {
+    public static void setRectificationFunction(String rectificationFunction) {
         parameter.rectificationFunction = rectificationFunction;
     }
 
-    protected static InputFileReader getTrainingFileReader() {
+    public static InputFileReader getTrainingFileReader() {
         return trainingFileReader;
     }
 
-    protected static InputFileReader getTestingFileReader() {
+    public static InputFileReader getTestingFileReader() {
         return testingFileReader;
     }
 
-    protected static void setTestingFileReader(String fileName, String type) {
+    public static void setTestingFileReader(String fileName, String type) {
         try {
             if (type == "mnist") {
                 parameter.testingFileReader = new MNISTDataBaseFileReader(fileName, layerArray[layerArray.length - 1]);
@@ -53,11 +54,11 @@ public class parameter {
         }
     }
 
-    protected static void setLearningRate(double learningRate) {
+    public static void setLearningRate(double learningRate) {
         parameter.learningRate = learningRate;
     }
 
-    protected static void setTrainingFileReader(String fileName, String type) {
+    public static void setTrainingFileReader(String fileName, String type) {
         try {
             if (type == "mnist") {
                 parameter.trainingFileReader = new MNISTDataBaseFileReader(fileName, layerArray[layerArray.length - 1]);
@@ -66,12 +67,12 @@ public class parameter {
         }
     }
 
-    protected static void setNeuronNumberToBeTestedinRelavancePropagation(
+    public static void setNeuronNumberToBeTestedinRelavancePropagation(
             double NeuronNumberToBeTestedinRelavancePropagation) {
         LayerManager.setNeuronNumberToBeTestedinRelavancePropagation(NeuronNumberToBeTestedinRelavancePropagation);
     }
 
-    protected static double rectify(double numToBeRectified) {
+    public static double rectify(double numToBeRectified) {
         // This is the rectification function. It is used to rectify the output of the
         // neuron.
         // The rectification function will rectify according to the string provided. The
@@ -95,23 +96,23 @@ public class parameter {
         return NN.sigmoid(numToBeRectified); //add custom function here...
     }
 
-    protected static void setLayerArray(int... LayerArray) {
+    public static void setLayerArray(int... LayerArray) {
         parameter.layerArray = LayerArray;
     }
 
-    protected static double getLearningRate() {
+    public static double getLearningRate() {
         return learningRate;
     }
 
-    protected static int[] getLayerArray() {
+    public static int[] getLayerArray() {
         return layerArray;
     }
 
-    protected static int getBatchsize() {
+    public static int getBatchsize() {
         return batchsize;
     }
 
-    protected static void setBatchsize(int batchsize) {
+    public static void setBatchsize(int batchsize) {
         parameter.batchsize = batchsize;
     }
 

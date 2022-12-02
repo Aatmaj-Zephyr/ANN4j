@@ -1,6 +1,7 @@
+package ann;
 import java.util.ArrayList;
 
-public class NeuronObserver implements Observer {
+ public class NeuronObserver implements Observer {
     private LayerManager model;
 
     /**
@@ -17,7 +18,7 @@ public class NeuronObserver implements Observer {
         Writer.write(temp);
     }
 
-    void setModel(LayerManager model) {
+    public void setModel(LayerManager model) {
         // set the model to be observed
         this.model = model;
     }

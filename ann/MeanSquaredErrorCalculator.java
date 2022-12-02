@@ -1,6 +1,7 @@
+package ann;
 import java.util.ArrayList;
 
-public class MeanSquaredErrorCalculator {
+ public class MeanSquaredErrorCalculator {
 
     protected static double calculateMSE(OutputLayer outputLayer, ArrayList<Double> expectedOutputArrayList) {
 

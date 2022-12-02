@@ -1,6 +1,7 @@
+package ann;
 import java.util.ArrayList;
 
-public class ModelEvaluator {
+ public class ModelEvaluator {
     // Used to evaluate the predictions of the model, example pricision, accuracy
     // and confusion matrix.
 

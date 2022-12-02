@@ -1,6 +1,7 @@
+package ann;
 import java.util.ArrayList;
 
-public class Trainer {
+ public class Trainer {
     // template pattern
 
     protected LayerManager myLayerManager;
@@ -14,7 +15,7 @@ public class Trainer {
     private double prediction;
     private double confidence;
 
-    Trainer() {
+    public Trainer() {
         this.myLayerManager = new LayerManager(parameter.getLayerArray());
         this.trainingFileReader = parameter.getTrainingFileReader();
         this.testingFileReader = parameter.getTestingFileReader();
@@ -26,7 +27,7 @@ public class Trainer {
         return myLayerManager;
     }
 
-    protected void train(int noOfSamples, int epochs) {
+    public void train(int noOfSamples, int epochs) {
         for(int j = 0; j < epochs; j++){
 
             parameter.setTrainingFileReader("mnist_train.csv", "mnist");
@@ -64,7 +65,7 @@ public class Trainer {
         }
     }
 
-    protected void test(int noOfSamples) {
+    public void test(int noOfSamples) {
         //no epochs in testing
         for (int i = 0; i < noOfSamples; i++) {
             // Getting the next image from the mnist database.
@@ -93,11 +94,11 @@ public class Trainer {
         Writer.writeln("Testing accuracy " + myModelEvaluator.getTestingAccuracy());
     }
 
-    protected void printConfusionMatrix(){
+    public void printConfusionMatrix(){
         myModelEvaluator.printConfusionMatrix(testingFileReader);
     
     }
-    protected void forwardPropagatewithExclusionInputLayerOnKSamples(int noOfSamples) {
+    public void forwardPropagatewithExclusionInputLayerOnKSamples(int noOfSamples) {
         for (int i = 0; i < noOfSamples; i++) {
             // Getting the next image from the mnist database.
             testingFileReader.next();
@@ -121,7 +122,7 @@ public class Trainer {
 
     }
 
-    protected void relevancePropagate(int layerNumber, int neuronNumber) {
+    public void relevancePropagate(int layerNumber, int neuronNumber) {
 
         myLayerManager.relevancePropagate(layerNumber, neuronNumber);
     }
@@ -133,7 +134,7 @@ public class Trainer {
 
     }
 
-    protected void train() {
+    public void train() {
         // Heart of the code
 
         myLayerManager.setInputLayer(inputLayer);

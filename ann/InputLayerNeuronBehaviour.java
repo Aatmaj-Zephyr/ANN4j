@@ -1,12 +1,14 @@
-public class HiddenLayerNeuronBehaviour implements NeuronBehaviour {
-    private static HiddenLayerNeuronBehaviour myInstance;
+package ann;
 
-    private HiddenLayerNeuronBehaviour() {
+public class InputLayerNeuronBehaviour implements NeuronBehaviour {
+    private static InputLayerNeuronBehaviour myInstance;
+
+    private InputLayerNeuronBehaviour() {
     }
 
-    protected static HiddenLayerNeuronBehaviour getInstance() {
+    protected static InputLayerNeuronBehaviour getInstance() {
         if (myInstance == null) {
-            myInstance = new HiddenLayerNeuronBehaviour();
+            myInstance = new InputLayerNeuronBehaviour();
         }
         return myInstance;
     }
@@ -25,19 +27,24 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour {
     @Override
     public void relevancePropagate(Neuron neuron) {
         // Calculating the relevance of the neuron.
+
         neuron.relevance = 0;
         for (Connection i : neuron.rightConnections) {
-            // Calculating the relevance of the neuron.
+            // Calculating the numerator of the relevance equation.
             double numerator = neuron.getActivation() * i.getWeight() * i.rightNeuron.relevance;
             double denominator = 0;
             // Calculating the denominator of the relevance equation.
             for (Connection k : i.rightNeuron.leftConnections) {
                 denominator += k.leftNeuron.getActivation() * k.getWeight();
             }
-            // Calculating the relevance of the neuron.
+            // Calculating the final relevance of the neuron.
             neuron.relevance += numerator / (denominator + parameter.getEpsillion());
         }
+
+        // This is a rectification function. It is used to make sure that the relevance
+        // is not negative.
         neuron.relevance = parameter.rectify(neuron.relevance);
+
     }
 
 }

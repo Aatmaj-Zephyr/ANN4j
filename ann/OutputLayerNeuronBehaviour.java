@@ -1,3 +1,5 @@
+package ann;
+
 public class OutputLayerNeuronBehaviour implements NeuronBehaviour {
     private static OutputLayerNeuronBehaviour myInstance;
 

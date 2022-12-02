@@ -1,6 +1,7 @@
+package ann;
 import java.util.*;
 
-public class LayerManager {
+ public class LayerManager {
     private  int numtobeExcluded = -1;
     // all connectoins must be in order of creation
     protected static double lossFunction;

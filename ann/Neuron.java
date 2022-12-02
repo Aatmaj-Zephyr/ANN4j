@@ -1,3 +1,4 @@
+package ann; 
 import java.util.*;
 
 public class Neuron implements Observable {

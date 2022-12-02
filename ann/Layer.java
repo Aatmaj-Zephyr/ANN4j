@@ -1,4 +1,6 @@
+package ann;
 import java.util.*;
+
 
 abstract class Layer {
     protected ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();

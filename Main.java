@@ -1,3 +1,4 @@
+import ann.*;
 
 public class Main {
 	public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class Main {
 		myTrainer.test(9990);
 
 		myNeuronObserver.addNeuronToBeObserved(1, 31);
-		//myTrainer.printConfusionMatrix();
+		myTrainer.printConfusionMatrix();
 		myTrainer.test(2);
 
 		myNeuronObserver.clear();

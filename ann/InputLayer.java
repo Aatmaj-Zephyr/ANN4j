@@ -1,6 +1,7 @@
+package ann;
 import java.util.ArrayList;
 
-public class InputLayer extends Layer {
+ public class InputLayer extends Layer {
 
     InputLayer(int numOfNeurons) {
         super(numOfNeurons);
