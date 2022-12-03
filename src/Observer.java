@@ -1,5 +1,5 @@
 // The above code is an interface for an Observer to be implemented by NeuronObserves
-package ann4j;
+package src;
 public interface Observer {
 
      void addObjectToBeObserved(Observable observable);

@@ -1,4 +1,4 @@
-package ann4j;
+package src;
 
 public class OutputLayer extends Layer {
 

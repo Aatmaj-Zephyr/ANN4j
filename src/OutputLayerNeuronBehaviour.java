@@ -1,4 +1,4 @@
-package ann4j;
+package src;
 
 public class OutputLayerNeuronBehaviour implements NeuronBehaviour {
     private static OutputLayerNeuronBehaviour myInstance;
