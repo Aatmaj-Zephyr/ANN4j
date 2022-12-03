@@ -197,5 +197,6 @@ connection.getWeight();
 
 - More about Artificial Neural Networks https://www.3blue1brown.com/topics/neural-networks
 - Relevance propagation example https://towardsdatascience.com/indepth-layer-wise-relevance-propagation-340f95deb1ea
+- Rectification functions https://www.quora.com/What-is-the-purpose-of-rectifier-functions-in-neural-networks
 
 
