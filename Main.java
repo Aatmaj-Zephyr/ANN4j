@@ -1,4 +1,4 @@
-import src.main.java.ann4j.*;
+import ann4j.*;
 
 public class Main {
 	public static void main(String[] args) {
@@ -9,10 +9,10 @@ public class Main {
 
 		// Setting the training file to be emnist-letters-train.csv and the file type to
 		// be mnist.
-		parameter.setTrainingFileReader("emnist-letters-train.csv", "mnist");
+		parameter.setTrainingFileReader("mnist_train.csv", "mnist");
 		// Setting the testing file to be emnist-letters-test.csv and the file type to
 		// be mnist.
-		parameter.setTestingFileReader("emnist-letters-test.csv", "mnist");
+		parameter.setTestingFileReader("mnist_test.csv", "mnist");
 
 		// Setting the learning rate to 1.
 		parameter.setLearningRate(1);
