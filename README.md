@@ -23,7 +23,7 @@ This package provides Object oriented Neural Networks for making _Explainable Ne
 
 ### Usage
 
-import `import ann4j.*;`
+ `import ann4j.*;`
 
 
 #### Setting parameters
@@ -31,7 +31,7 @@ import `import ann4j.*;`
 - Setting the output file to be output.txt and enabling command line logging
 
 ```java
-		parameter.setOutputFile("output.txt", true);
+	parameter.setOutputFile("output.txt", true);
 ```
 
 - Setting the number of neurons in each layer.
