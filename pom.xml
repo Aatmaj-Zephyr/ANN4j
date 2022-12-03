@@ -23,7 +23,7 @@
     <repository>
       <id>github</id>
       <name>ANN4j</name>
-      <url>https://maven.pkg.github.com/Aatmaj-Zephyr/ann4j</url>
+      <url>https://maven.pkg.github.com/Aatmaj-Zephyr/ANN4j</url>
     </repository>
   </distributionManagement>
 
