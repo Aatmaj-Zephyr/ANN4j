@@ -29,14 +29,27 @@ public class Connection {
 
     }
 
+   /**
+    * This function returns the weight of the object
+    * 
+    * @return The weight of the object.
+    */
     public double getWeight() {
         return weight;
     }
 
+   /**
+    * This function initializes the weight of the connection to a small random number
+    */
     public void initializeWeights() {
         this.weight = NN.getSmallSignedRandom();
     }
 
+    /**
+     * Calculate the activation of the left neuron times the weight of the connection.
+     * 
+     * @return The activation of the left neuron times the weight of the connection.
+     */
     public double calculateActivationForwardPropagation() {
 
         // Calculating the activation of the left neuron times the weight of the
@@ -50,6 +63,10 @@ public class Connection {
                 + weight + "\n";
     }
 
+   /**
+    * The backpropagation algorithm is calculating the gradient of the loss function with respect to
+    * the weight. It then updates the weight by subtracting the learning rate times the gradient
+    */
     public void backPropagate() {
         // This is the backpropagation algorithm. It is calculating the gradient of the
         // loss function
@@ -69,6 +86,11 @@ public class Connection {
         }
     }
 
+  /**
+   * The function returns the gradient of the loss function with respect to the weight
+   * 
+   * @return The gradient of the loss function with respect to the weight.
+   */
     public double getBackwardWeightedSum() {
         // Calculating the gradient of the loss function with respect to the weight.
         // USed in class neuron for calculation of delta.

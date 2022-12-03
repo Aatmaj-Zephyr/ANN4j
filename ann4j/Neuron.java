@@ -19,13 +19,28 @@ public class Neuron implements Observable {
     double relevance;
     private boolean isIncluded=true;
 
+   /**
+    * This function returns the activation of the neuron
+    * 
+    * @return The activation value of the neuron.
+    */
     public double getActivation() {
         return activation;
     }
 
+   /**
+    * This function sets the activation of the neuron to the value passed in as a parameter
+    * 
+    * @param activation The activation of the neuron.
+    */
     public void setActivation(double activation) {
         this.activation = activation;
     }
+/**
+ * This function sets the behaviour of the neuron to the behaviour passed in as a parameter.
+ * 
+ * @param myBehaviour The behaviour of the neuron.
+ */
 
     public void setBehaviour(NeuronBehaviour myBehaviour) {
         this.myBehaviour = myBehaviour;
@@ -49,27 +64,57 @@ public class Neuron implements Observable {
 
     }
 
+  /**
+   * This function returns the layer number of the neuron
+   * 
+   * @return The layerNum variable is being returned.
+   */
     public int getLayerNum() {
         return layerNum;
     }
 
+    /**
+     * This function sets the number of neurons in the layer
+     * 
+     * @param neuronNum The number of neurons in the layer.
+     */
     public void setNeuronNum(int neuronNum) {
         this.neuronNum = neuronNum;
 
     }
 
+    /**
+     * This function returns the number of neurons in the layer
+     * 
+     * @return The number of neurons in the layer.
+     */
     public int getNeuronNum() {
         return neuronNum;
     }
 
+    /**
+     * This function adds a connection to the leftConnections list.
+     * 
+     * @param connection The connection to add to the list of connections.
+     */
     public void addLeftConnections(Connection connection) {
         leftConnections.add(connection);
     }
 
+   /**
+    * This function adds a connection to the rightConnections list
+    * 
+    * @param connection The connection to add to the list of connections.
+    */
     public void addRightConnections(Connection connection) {
         rightConnections.add(connection);
     }
 
+    /**
+     * It calculates the weighted sum of the left connections of the neuron
+     * 
+     * @return The weighted sum of the left connections.
+     */
     public double getWeightedSum() {
         double sum = 0;
         // Iterating through the leftConnections ArrayList and adding the activation of
@@ -84,6 +129,11 @@ public class Neuron implements Observable {
         return sum;
     }
 
+   /**
+    * This function returns the bias of the neuron
+    * 
+    * @return The bias of the neuron.
+    */
     public double getBias() {
         return bias;
     }
@@ -98,10 +148,19 @@ public class Neuron implements Observable {
 
     }
 
+ /**
+  * This function returns the value of the delta variable
+  * 
+  * @return The value of the variable delta.
+  */
     public double getDelta() {
         return delta;
     }
 
+   /**
+    * The neuron first sets its delta, then backpropagates through all of its left connections, and
+    * then changes its bias
+    */
     public void backwardPropagate() {
        // This is the code that is called when the neuron is being backpropagated. It first sets the
        // delta of the neuron, then backpropagates through all of the left connections, and then
@@ -115,6 +174,13 @@ public class Neuron implements Observable {
 
     }
 
+    /**
+     * The bias of the neuron is changed by adding the bias learning rate multiplied by the delta of
+     * the neuron to the bias change wishlist. If the batch counter is equal to the batch size, the
+     * batch counter is reset to 0. If the batch counter is equal to 0, the bias is changed to the
+     * average of the bias change wishlist. The bias change wishlist is then reset to an empty
+     * arraylist
+     */
     private void changeBias() {
     // This is the code that changes the bias of the neuron. It is called in the `backwardPropagate()`
     // function.
@@ -132,6 +198,9 @@ public class Neuron implements Observable {
 
     }
 
+    /**
+     * The delta difference of the neuron in layer has been changed
+     */
     public void setDelta() {
         this.delta = myBehaviour.setDelta(this);
         notifyObservers("The delta difference of the neuron "+neuronNum+" in layer " + layerNum +"  has been changed");
