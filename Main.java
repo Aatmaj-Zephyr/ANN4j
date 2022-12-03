@@ -1,4 +1,4 @@
-import ann4j.*;
+import src.main.java.ann4j.*;
 
 public class Main {
 	public static void main(String[] args) {
