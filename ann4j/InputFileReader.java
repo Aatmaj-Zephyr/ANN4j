@@ -1,4 +1,4 @@
-package src;
+package ann4j;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

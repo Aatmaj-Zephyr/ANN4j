@@ -1,4 +1,4 @@
-package src; 
+package ann4j; 
 import java.lang.Math;
 import java.util.ArrayList;
 

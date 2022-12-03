@@ -1,4 +1,4 @@
-package src;
+package ann4j;
 import java.util.ArrayList;
 
  public class Trainer {

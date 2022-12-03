@@ -1,4 +1,4 @@
-package src;
+package ann4j;
  public class HiddenLayer extends Layer {
   HiddenLayer(int numOfNeurons) {
     super(numOfNeurons);
