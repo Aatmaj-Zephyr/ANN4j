@@ -61,7 +61,13 @@ import java.io.FileNotFoundException;
     public static void setLearningRate(double learningRate) {
         parameter.learningRate = learningRate;
     }
+    public static void setTrainingFileReader(InputFileReader inputFileReader){
+        parameter.trainingFileReader = inputFileReader;
+    }
 
+    public static void setTestingFileReader(InputFileReader inputFileReader){
+        parameter.testingFileReader = inputFileReader;
+    }
     public static void setTrainingFileReader(String fileName, String type) {
         try {
             if (type == "mnist") {
