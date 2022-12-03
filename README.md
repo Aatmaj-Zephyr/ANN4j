@@ -8,6 +8,19 @@
 
 This package provides Object oriented Neural Networks for making _Explainable Networks_. Object Oriented Network structure is helpful for observing each and every element the model. This package is developed for XAI research and development.
 
+
+#### Features 
+- Observable implementation
+- XAI method for relevance propagation
+- Stochastic/batch gradient descent
+- No hardcoded implementations lets researchers change the parameters as they want.
+- Plug and play mnist type data. Other Data files can be handeled via extension
+- 
+
+
+
+
+
 ### Usage
 
 import `import ann4j.*;`
@@ -103,13 +116,28 @@ import `import ann4j.*;`
 
   ```
 
-#### XAI
+#### Evaluating the model
 
-- confusion matrix
+- Training accuracy
+```java
+myTrainer.getModelEvaluator().getTrainingAccuracy();
+```
+
+- Testing accuracy
+```java
+myTrainer.getModelEvaluator().getTrainingAccuracy();
+```
+
+- Confusion Matrix
 
 ```java
-myTrainer.printConfusionMatrix();
+myTrainer.getModelEvaluator().printConfusionMatrix();
 ```
+
+
+#### XAI
+
+
 
 - xai algorithm for relevance propagation.
   ```java
@@ -156,3 +184,9 @@ myTrainer.getLayerManager().getLayer(layerNum).getNeuron(neuronNum));
 ```java
 connection.getWeight();
 ```
+
+
+#### Other resources
+
+- Example code https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/Main.java
+- Relevance propagation example https://towardsdatascience.com/indepth-layer-wise-relevance-propagation-340f95deb1ea

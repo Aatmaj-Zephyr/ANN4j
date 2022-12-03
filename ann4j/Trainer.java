@@ -14,7 +14,9 @@ import java.util.ArrayList;
     double label;
     private double prediction;
     private double confidence;
-
+    public ModelEvaluator getModelEvaluator() {
+        return myModelEvaluator;
+    }
     public Trainer() {
         this.myLayerManager = new LayerManager(parameter.getLayerArray());
         this.trainingFileReader = parameter.getTrainingFileReader();

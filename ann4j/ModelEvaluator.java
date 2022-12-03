@@ -92,6 +92,11 @@ import java.util.ArrayList;
     public void resetConfusionMatrix() {
         confusionMatrix.clear();
     }
+/**
+ * It returns the accuracy of the player as a percentage
+ * 
+ * @return The accuracy of the player.
+ */
 
     public double getAccuracy() {
         return (double) 100 * correctCounter / turnsCounter; // be careful for zero turns!
@@ -110,6 +115,11 @@ import java.util.ArrayList;
         this.testingAccuracy = accuracy;
     }
 
+   /**
+    * This function returns the testing accuracy of the model
+    * 
+    * @return The testing accuracy of the model.
+    */
     public double getTestingAccuracy() {
         return testingAccuracy;
     }
