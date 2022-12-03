@@ -10,12 +10,12 @@ This package provides Object oriented Neural Networks for making _Explainable Ne
 
 
 #### Features 
-- Observable implementation
+- Observable implementation for Artificial Neural Networks (ANN)
 - XAI method for relevance propagation
 - Stochastic/batch gradient descent
 - No hardcoded implementations lets researchers change the parameters as they want.
 - Plug and play mnist type data. Other Data files can be handeled via extension
-- 
+
 
 
 
@@ -186,7 +186,16 @@ connection.getWeight();
 ```
 
 
-#### Other resources
+#### Examples
 
 - Example code https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/Main.java
+- Sample output https://github.com/Aatmaj-Zephyr/ANN4j/blob/3721148ec24371bf095e1394fe39fc471f391466/output.txt
+
+- Sample output https://github.com/Aatmaj-Zephyr/ANN4j/blob/ef0f34b505e6e6316f94b5a660b9ef651582667d/output.txt
+
+#### Other resources
+
+- More about Artificial Neural Networks https://www.3blue1brown.com/topics/neural-networks
 - Relevance propagation example https://towardsdatascience.com/indepth-layer-wise-relevance-propagation-340f95deb1ea
+
+
