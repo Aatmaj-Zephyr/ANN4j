@@ -33,6 +33,7 @@ import java.util.ArrayList;
         for(int j = 0; j < epochs; j++){
 
             this.trainingFileReader = parameter.getTrainingFileReader();
+            trainingFileReader.restart();
             for (int i = 0; i < noOfSamples; i++) {
 
                 // Getting the next image from the mnist database.

@@ -12,9 +12,11 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     public double label;
     public BufferedReader singleFileReader;
     public int outputLayerLength;
+    public String fileName;
 
     MNISTDataBaseFileReader(String filename, int outputLayerLength) throws FileNotFoundException {
         super(filename);
+        this.fileName= fileName;
         this.outputLayerLength = outputLayerLength;
         this.singleFileReader = new BufferedReader(new FileReader(filename));
     }
@@ -101,6 +103,15 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return mostSignificantNeuronNumAsPrediction;
         //in this case as every input is mapped with same neuron it is the same. But it needs to be overridden for different datasets
         // Example for letters, change to 0 for a, 26 for b, etc.
+    }
+    @Override 
+    public void restart(){
+        try {
+            this.singleFileReader = new BufferedReader(new FileReader(filename));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
 }

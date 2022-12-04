@@ -29,4 +29,8 @@ public class InputFileReader {
     public double getPredictionFromNeuronNum(int mostSignificantNeuronNumAsPrediction) {
         return 0;
     }
+
+    public void restart(){
+        
+    }
 }
