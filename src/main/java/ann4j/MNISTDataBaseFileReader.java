@@ -16,7 +16,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
 
     MNISTDataBaseFileReader(String filename, int outputLayerLength) throws FileNotFoundException {
         super(filename);
-        this.fileName= fileName;
+        
         this.outputLayerLength = outputLayerLength;
         this.singleFileReader = new BufferedReader(new FileReader(filename));
     }
