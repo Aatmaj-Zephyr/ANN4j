@@ -37,10 +37,10 @@ ANN4j is a java package that provides object oriented functionality to neural ne
       - [Constructor](#constructor)
       - [Getting Input](#getting-input)
       - [Getting Label](#getting-label)
-      - [Getting Input Neuron values](getting-input-neuron-values)
-      - [Getting Output Neuron values](getting-output-neuron-values)
-      - [Getting prediction from the output neurons](getting-prediction-from-the-output-neurons)
-      - [Restarting the FileReader](Restarting-the-file)
+      - [Getting Input Neuron values](#getting-input-neuron-values)
+      - [Getting Output Neuron values](#getting-output-neuron-values)
+      - [Getting prediction from the output neurons](#getting-prediction-from-the-output-neurons)
+      - [Restarting the FileReader](#Restarting-the-file)
 - [Examples](#examples)
     - [Other Resources](#other-resources)
 - [ANN4j Community](#ann4j-community)
@@ -64,7 +64,7 @@ The package can be imported after download.
  `import ann4j.*;`
 
 #### Requirements and Dependencies
-None. The java package requires java 5.0+. No other requirements are required. Recommended to use the latest version of Java. [Java download link](https://www.java.com/download/ie_manual.jsp)
+None. This package is made using 100% Pure Java. The java package requires java 5.0+. No other requirements are required. Recommended to use the latest version of Java. [Java download link](https://www.java.com/download/ie_manual.jsp)
 
 ### Training
 #### Setting parameters
@@ -311,7 +311,7 @@ Creates a new instance of the file reader and starts all over again.
 
 - Sample output https://github.com/Aatmaj-Zephyr/ANN4j/blob/ef0f34b505e6e6316f94b5a660b9ef651582667d/output.txt
 
-#### Other resources
+#### 📋 Other resources
 
 - More about Artificial Neural Networks https://www.3blue1brown.com/topics/neural-networks
 - Relevance propagation example https://towardsdatascience.com/indepth-layer-wise-relevance-propagation-340f95deb1ea
@@ -319,23 +319,23 @@ Creates a new instance of the file reader and starts all over again.
 
 ### ANN4j Community
 
-#### Raising an issue
+#### ⌨️ Raising an issue
 Please feel free to suggest any changes or point out any errors by raising an issue [here](https://github.com/Aatmaj-Zephyr/ANN4j/issues/new/choose)
 
 #### Asking for help
 
 For asking for clarification on any topic, raise an question issue [here](https://github.com/Aatmaj-Zephyr/ANN4j/issues/new?assignees=Aatmaj-Zephyr&labels=&template=question.md&title=Question)
 
-#### Community
+#### 🗞 Community
 
 - [Discussions](https://github.com/Aatmaj-Zephyr/ANN4j/discussions)
 - [Wiki](https://github.com/Aatmaj-Zephyr/ANN4j/wiki)
 
-#### Contributing
+#### ✏️ Contributing
 Please read the contributing guidelines [here](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/CONTRIBUTING.md).
 Everyone is free to contribute to this project. 
 
-### License
+### ⚖️ License
 
 [License notice](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/LICENSE)]
 
