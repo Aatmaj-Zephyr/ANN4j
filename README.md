@@ -17,6 +17,8 @@ This package provides Object oriented Neural Networks for making _Explainable Ne
 - Plug and play mnist type data. Other Data files can be handeled via extension
 
 
+#### ANN4j - Creating observable object-oriented neural networks for better Explainable AI.
+ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a seperate object. While this kind of implementation is highly inefficiant when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiantly. Indivisual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique. 
 
 
 
@@ -164,8 +166,8 @@ In ANN4j, every neuron is an object of its own. Every Neuron can be observed by 
 
  - Get arraylist of the left or right connections of the neuron
     ```java
-   	neuron.leftConnections;
-   	neuron.rightConnections;
+    neuron.leftConnections;
+    neuron.rightConnections;
    ```
 
 - Get weight of a connection
