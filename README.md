@@ -4,9 +4,9 @@
 
 ---
 
-### Artificial Neural Networks for Java
+### ANN4j - Artificial Neural Networks for Java
 
-This package provides Object oriented Neural Networks for making _Explainable Networks_. Object Oriented Network structure is helpful for observing each and every element the model. This package is developed for XAI research and development.
+ANN4j is a java package that provides Object oriented Neural Networks for making _Explainable Networks_. Object Oriented Network structure is helpful for observing each and every element the model. This package is developed for XAI research and development.
 
 
 #### Features 
@@ -20,14 +20,41 @@ This package provides Object oriented Neural Networks for making _Explainable Ne
 #### ANN4j - Creating observable object-oriented neural networks for better Explainable AI.
 ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a seperate object. While this kind of implementation is highly inefficiant when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiantly. Indivisual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique. 
 
+## Table of Contents
+
+- [Usage](#usage)
+- [Training](#training)
+  - [Parameters](#setting-parameters)
+  - [Training the Model](#training-the-model)
+  - [Evaluating the model](#evaluating-the-model)
+  - [Explanable AI](#xai)
+  - [Observable Methods](#observable-methods)
+- [Data Format](#data-format)
+   - [Default Format](#default-format)
+   - [Other Format](#file-rendering-for-other-formats)
+      - [Constructor](#constructor)
+      - [Getting Input](#getting-input)
+      - [Getting Label](#getting-label)
+      - [Getting Input Neuron values](getting-input-neuron-values)
+      - [Getting Output Neuron values](getting-output-neuron-values)
+      - [Getting prediction from the output neurons](getting-prediction-from-the-output-neurons)
+      - [Restarting the FileReader](Restarting-the-file)
+- [Examples](#examples)
+    - [Other Resources](#other-resources)
+
+___
 
 
 
 ### Usage
 
  `import ann4j.*;`
+ 
+ [Releases](https://github.com/Aatmaj-Zephyr/ANN4j/releases)
+ 
 
 
+### Training
 #### Setting parameters
 
 - Setting the output file to be output.txt and enabling command line logging.
@@ -140,12 +167,6 @@ ANN4j is a java package that provides object oriented functionality to neural ne
   	myTrainer.forwardPropagatewithExclusionInputLayerOnKSamples(2);
   ```
 
-
-#### File rendering
-
-ANN4j provides functionality to extend the InputFileReader to add file handling for various types of datasets apart from mnist type files.
-
-
 #### Observable methods
 
 In ANN4j, every neuron is an object of its own. Every Neuron can be observed by the NeuronObserver class when the values are updated. NeuronObserver class can be extended as per the requirement of the parameters to be observed. Neurons objects can also be obtined and observed independantly.
@@ -176,7 +197,102 @@ In ANN4j, every neuron is an object of its own. Every Neuron can be observed by 
    ```
 
 
-#### Examples
+### Data format
+
+#### Default format
+The default format for the package is MNIST format. 
+
+File type CSV consisting of the following
+- 1 Label (Expected number)
+- n pixel weights
+n must match number of input neurons.
+
+Example 
+```
+2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,116,125,171,255,255,150,93,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,169,253,253,253,253,253,253,218,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,169,253,253,253,213,142,176,253,253,122,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,52,250,253,210,32,12,0,6,206,253,140,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,77,251,210,25,0,0,0,122,248,253,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,18,0,0,0,0,209,253,253,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,117,247,253,198,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,76,247,253,231,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,253,253,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,176,246,253,159,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,234,253,233,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,253,253,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,248,253,189,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,200,253,253,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,134,253,253,173,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,248,253,253,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,248,253,253,43,20,20,20,20,5,0,5,20,20,37,150,150,150,147,10,0,0,0,0,0,0,0,0,0,248,253,253,253,253,253,253,253,168,143,166,253,253,253,253,253,253,253,123,0,0,0,0,0,0,0,0,0,174,253,253,253,253,253,253,253,253,253,253,253,249,247,247,169,117,117,57,0,0,0,0,0,0,0,0,0,0,118,123,123,123,166,253,253,253,155,123,123,41,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+```
+
+<img width="200" alt="image" src="https://user-images.githubusercontent.com/83284294/208296890-8655f164-ffe5-41b3-865d-c28c909ded2c.png">
+
+Here the image 2 is represented as an array of 28*28 pixels each value represents pixel activation.
+
+
+References 
+- [Kaggle](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv)
+- [Preparing MNIST data](https://visualstudiomagazine.com/articles/2022/02/01/preparing-mnist-image-data-text-files.aspx#:~:text=The%20MNIST%20Modified%20National%20Institute,integer%20between%200%20and%20255)
+
+
+#### File rendering for other formats
+
+ANN4j provides functionality to extend the InputFileReader to add file handling for various types of datasets apart from mnist type files. InputFileReader or MNISTFileReader can be extended by making relevant changes in file reading functions. 
+
+##### Constructor
+The new file reader class must pass the filename to the super constructor.
+```java
+    super(filename);
+```
+
+#### Getting input
+The `next()` method is responsible for reading new line input from the dataset. It must also act as a super setter method. It must set all values like `label` , `expectedOutputArray` and `inputArray`
+```java
+    public void next()
+```
+
+#### Getting label
+This method must return the label (expected value of prediction).
+
+```java
+    public double getLabel()
+```
+
+#### Getting Input Neuron values
+This method must return the values of neurons (expected value of prediction). Example for digit recognition fo digit two, the arraylist must contain 784 elements of the pixel values.
+```
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,116,125,171,255,255,150,93,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,169,253,253,253,253,253,253,218,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,169,253,253,253,213,142,176,253,253,122,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,52,250,253,210,32,12,0,6,206,253,140,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,77,251,210,25,0,0,0,122,248,253,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,18,0,0,0,0,209,253,253,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,117,247,253,198,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,76,247,253,231,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,253,253,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,176,246,253,159,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,234,253,233,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,253,253,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,248,253,189,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,200,253,253,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,134,253,253,173,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,248,253,253,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,248,253,253,43,20,20,20,20,5,0,5,20,20,37,150,150,150,147,10,0,0,0,0,0,0,0,0,0,248,253,253,253,253,253,253,253,168,143,166,253,253,253,253,253,253,253,123,0,0,0,0,0,0,0,0,0,174,253,253,253,253,253,253,253,253,253,253,253,249,247,247,169,117,117,57,0,0,0,0,0,0,0,0,0,0,118,123,123,123,166,253,253,253,155,123,123,41,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+```
+
+```java
+    public ArrayList<Double> getInputArray()
+```
+
+#### Getting Output Neuron values
+This method must return the expected values of output neurons (expected value of prediction). Example for digit recognition fo digit two, the arraylist can be 
+`0,0,1,0,0,0,0,0,0,0`
+
+
+This is dependant on the model and is a design decision.
+
+
+```java
+    public ArrayList<Double> getExpectedOutputArray() 
+```
+
+#### Getting prediction from the output neurons
+This method is used for obtaining the prediction value from the activations in the output neurons. In the digit recognitoin case as every input is mapped with same neuron it is the same. For example if neuron number 3 fires the highest, the model has predicted 3. But this needs to be overridden for different model configurations.
+
+```java
+    public double getPredictionFromNeuronNum(int mostSignificantNeuronNumAsPrediction)
+```
+
+
+Note- 
+
+Predicted neuron and prediction are different. 
+
+Predicted neuron is the neuron which is most significant in firing. The prediction is the value corresponding to that neuron.
+
+Example Consider case of handwritten letters database. If the neuron 4 is most significant (glows brightest)  and it corresponds to label D then the predicted neuron is 4 and prediction is D.
+
+`getMostSignificantNeuronNumAsPrediction()` is a method in LayerManager class which helps to get the value of the neuron which fires the most.
+
+#### Restarting the file
+Creates a new instance of the file reader and starts all over again.
+```java
+    public void restart()
+````
+
+
+### Examples
 
 - Example code https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/Main.java
 - Sample output https://github.com/Aatmaj-Zephyr/ANN4j/blob/3721148ec24371bf095e1394fe39fc471f391466/output.txt
