@@ -57,11 +57,21 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return arrayOfDouble;
     }
 
+   /**
+    * This function returns the expected output array
+    * 
+    * @return The expected output array.
+    */
     public ArrayList<Double> getExpectedOutputArray() {
         return expectedOutputArray;
 
     }
 
+    /**
+     * This function returns the inputArray
+     * 
+     * @return The inputArray is being returned.
+     */
     public ArrayList<Double> getInputArray() {
         //
         return inputArray;
@@ -99,12 +109,14 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return inputArray;
     }
     @Override
+// This is used to convert the neuron number to the corresponding label.
     public double getPredictionFromNeuronNum(int mostSignificantNeuronNumAsPrediction) {
         return mostSignificantNeuronNumAsPrediction;
         //in this case as every input is mapped with same neuron it is the same. But it needs to be overridden for different datasets
         // Example for letters, change to 0 for a, 26 for b, etc.
     }
     @Override 
+// This is used to restart the file reader.
     public void restart(){
         try {
             this.singleFileReader = new BufferedReader(new FileReader(filename));
