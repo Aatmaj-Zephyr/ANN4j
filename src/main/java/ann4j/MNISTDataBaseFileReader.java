@@ -4,6 +4,24 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+/*
+MNIST database format
+File type CSV consisting of the following
+
+- 1 Label (Expected number)
+- n pixel weights n must match number of input neurons.
+
+ Some datasets to test the package on (without extending mnist file reader)
+
+1) MNIST Handwritten database
+2) MNIST extended chracter database
+3) MNIST fashion data set
+
+
+For other datasets, you will need to extend inputfilereader or MNISTDataBaseFileReader according to the data format
+
+ */
+
 
 public class MNISTDataBaseFileReader extends InputFileReader {
     // This class is custom made for the MNIST database Dataset

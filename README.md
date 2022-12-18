@@ -231,8 +231,17 @@ Example
 Here the image 2 is represented as an array of 28*28 pixels each value represents pixel activation.
 
 
+Some datasets to test the package on (without extending mnist file reader)
+
+1) [MNIST Handwritten database](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv)
+2) [MNIST extended chracter database](https://www.nist.gov/itl/products-and-services/emnist-dataset) and [Kaggle link](https://www.kaggle.com/datasets/crawford/emnist)
+3) [MNIST fashion data set](https://www.kaggle.com/datasets/zalando-research/fashionmnist)
+4) [Kannada MNIST](https://www.kaggle.com/competitions/Kannada-MNIST/data)
+
+
 References 
-- [Kaggle](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv)
+- [About MNIST database](https://en.wikipedia.org/wiki/MNIST_database)
+
 - [Preparing MNIST data](https://visualstudiomagazine.com/articles/2022/02/01/preparing-mnist-image-data-text-files.aspx#:~:text=The%20MNIST%20Modified%20National%20Institute,integer%20between%200%20and%20255)
 
 
@@ -356,7 +365,7 @@ note = {(Accessed on <date>)}
 
 ### License
 
-[License notice](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/LICENSE)]
+[License notice](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/LICENSE)
 
 ```
 MIT License
