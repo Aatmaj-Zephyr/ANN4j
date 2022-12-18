@@ -48,6 +48,8 @@ ANN4j is a java package that provides object oriented functionality to neural ne
   - [Asking for help](#asking-for-help)
   - [Community](#community)
   - [Contributing](#contributing)
+  - [Help spread the word](#help-spread-the-word)
+  - [Cite](#citing-this-package-for-research-work)
 - [License](#license)
 
 ___
@@ -311,7 +313,7 @@ Creates a new instance of the file reader and starts all over again.
 
 - Sample output https://github.com/Aatmaj-Zephyr/ANN4j/blob/ef0f34b505e6e6316f94b5a660b9ef651582667d/output.txt
 
-#### 📋 Other resources
+#### Other resources
 
 - More about Artificial Neural Networks https://www.3blue1brown.com/topics/neural-networks
 - Relevance propagation example https://towardsdatascience.com/indepth-layer-wise-relevance-propagation-340f95deb1ea
@@ -326,16 +328,33 @@ Please feel free to suggest any changes or point out any errors by raising an is
 
 For asking for clarification on any topic, raise an question issue [here](https://github.com/Aatmaj-Zephyr/ANN4j/issues/new?assignees=Aatmaj-Zephyr&labels=&template=question.md&title=Question)
 
-#### 🗞 Community
+#### Community
 
 - [Discussions](https://github.com/Aatmaj-Zephyr/ANN4j/discussions)
 - [Wiki](https://github.com/Aatmaj-Zephyr/ANN4j/wiki)
 
-#### ✏️ Contributing
+#### Contributing
 Please read the contributing guidelines [here](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/CONTRIBUTING.md).
 Everyone is free to contribute to this project. 
 
-### ⚖️ License
+#### Help spread the word
+Are you using ANN4j in your research or project? If so, please let me know and I may add a link to your project or application and your logo to this repository. 
+
+#### Citing this package for research work
+You can cite this repository using the following bibtex entry. Please update the date.
+
+```
+@misc{AatmajZephyr21:online,
+author = {Aatmaj Mhatre},
+title = {Aatmaj-Zephyr/ANN4j: Artificial Neural Networks for Java This package provides Object oriented Neural Networks for making Explainable Networks. Object Oriented Network structure is helpful for observing each and every element the model. This package is developed for XAI research and development.},
+howpublished = {\url{https://github.com/Aatmaj-Zephyr/ANN4j}},
+month = {},
+year = {},
+note = {(Accessed on <date>)}
+}
+```
+
+### License
 
 [License notice](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/LICENSE)]
 
