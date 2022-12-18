@@ -23,6 +23,8 @@ ANN4j is a java package that provides object oriented functionality to neural ne
 ## Table of Contents
 
 - [Usage](#usage)
+  - [Download](#download)
+  - [Requirements and Dependencies](#requirements-and-dependancies)
 - [Training](#training)
   - [Parameters](#setting-parameters)
   - [Training the Model](#training-the-model)
@@ -41,6 +43,12 @@ ANN4j is a java package that provides object oriented functionality to neural ne
       - [Restarting the FileReader](Restarting-the-file)
 - [Examples](#examples)
     - [Other Resources](#other-resources)
+- [ANN4j Community](#ann4j-community)
+	- [Raising an issue](#raising-an-issue)
+  - [Asking for help](#asking-for-help)
+  - [Community](#community)
+  - [Contributing](#contributing)
+- [License](#license)
 
 ___
 
@@ -48,11 +56,15 @@ ___
 
 ### Usage
 
- `import ann4j.*;`
- 
+
+#### Download
  [Releases](https://github.com/Aatmaj-Zephyr/ANN4j/releases)
  
+The package can be imported after download.
+ `import ann4j.*;`
 
+#### Requirements and Dependencies
+None. The java package requires java 5.0+. No other requirements are required. Recommended to use the latest version of Java. [Java download link](https://www.java.com/download/ie_manual.jsp)
 
 ### Training
 #### Setting parameters
@@ -305,4 +317,48 @@ Creates a new instance of the file reader and starts all over again.
 - Relevance propagation example https://towardsdatascience.com/indepth-layer-wise-relevance-propagation-340f95deb1ea
 - Rectification functions https://www.quora.com/What-is-the-purpose-of-rectifier-functions-in-neural-networks
 
+### ANN4j Community
 
+#### Raising an issue
+Please feel free to suggest any changes or point out any errors by raising an issue [here](https://github.com/Aatmaj-Zephyr/ANN4j/issues/new/choose)
+
+#### Asking for help
+
+For asking for clarification on any topic, raise an question issue [here](https://github.com/Aatmaj-Zephyr/ANN4j/issues/new?assignees=Aatmaj-Zephyr&labels=&template=question.md&title=Question)
+
+#### Community
+
+- [Discussions](https://github.com/Aatmaj-Zephyr/ANN4j/discussions)
+- [Wiki](https://github.com/Aatmaj-Zephyr/ANN4j/wiki)
+
+#### Contributing
+Please read the contributing guidelines [here](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/CONTRIBUTING.md).
+Everyone is free to contribute to this project. 
+
+### License
+
+[License notice](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/LICENSE)]
+
+```
+MIT License
+
+Copyright (c) 2022 Aatmaj
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
