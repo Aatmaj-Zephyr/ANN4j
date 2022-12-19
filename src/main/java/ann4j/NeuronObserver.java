@@ -1,12 +1,13 @@
 package ann4j;
+
 import java.util.ArrayList;
 
- public class NeuronObserver implements Observer {
+public class NeuronObserver implements Observer {
     private LayerManager model;
 
-    
     ArrayList<Observable> observableList = new ArrayList<Observable>();
-/**
+
+    /**
      * The update function is called when the observable object is changed
      * 
      * @param info       The message that the observable sends to the observer.
@@ -18,11 +19,11 @@ import java.util.ArrayList;
         Writer.write(temp);
     }
 
-   /**
-    * This function sets the model to be observed.
-    * 
-    * @param model The model to be observed.
-    */
+    /**
+     * This function sets the model to be observed.
+     * 
+     * @param model The model to be observed.
+     */
     public void setModel(LayerManager model) {
         // set the model to be observed
         this.model = model;

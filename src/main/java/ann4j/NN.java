@@ -41,7 +41,7 @@ public class NN {
     }
 
     /**
-     * > The softplus function is a smooth approximation of the rectifier function
+     * The softplus function is a smooth approximation of the rectifier function
      * 
      * @param numToBeRectified The number to be rectified.
      * @return The softplus function is being returned.
