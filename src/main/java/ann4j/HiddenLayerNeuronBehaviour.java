@@ -3,9 +3,16 @@ package ann4j;
 public class HiddenLayerNeuronBehaviour implements NeuronBehaviour {
     private static HiddenLayerNeuronBehaviour myInstance;
 
+   // A private constructor.
     private HiddenLayerNeuronBehaviour() {
     }
 
+   /**
+    * The function returns an instance of the class if one exists, otherwise it creates a new
+    * instance and returns it
+    * 
+    * @return The instance of the HiddenLayerNeuronBehaviour class.
+    */
     public static HiddenLayerNeuronBehaviour getInstance() {
         if (myInstance == null) {
             myInstance = new HiddenLayerNeuronBehaviour();
@@ -14,6 +21,7 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour {
     }
 
     @Override
+  // Calculating the delta for the output layer.
     public double setDelta(Neuron i) {
         // Calculating the delta for the output layer.
         double activation = i.getActivation();
@@ -25,6 +33,7 @@ public class HiddenLayerNeuronBehaviour implements NeuronBehaviour {
     }
 
     @Override
+    // Calculating the relevance of the neuron.
     public void relevancePropagate(Neuron neuron) {
         // Calculating the relevance of the neuron.
         neuron.relevance = 0;

@@ -3,9 +3,15 @@ package ann4j;
 public class InputLayerNeuronBehaviour implements NeuronBehaviour {
     private static InputLayerNeuronBehaviour myInstance;
 
+    // A private constructor. It is used to make sure that the class cannot be instantiated.
     private InputLayerNeuronBehaviour() {
     }
 
+    /**
+     * (singleton pattern) If the instance of the class is null, create a new instance of the class and return it
+     * 
+     * @return The instance of the class.
+     */
     public static InputLayerNeuronBehaviour getInstance() {
         if (myInstance == null) {
             myInstance = new InputLayerNeuronBehaviour();
@@ -14,6 +20,7 @@ public class InputLayerNeuronBehaviour implements NeuronBehaviour {
     }
 
     @Override
+   // Calculating the delta for the output layer.
     public double setDelta(Neuron i) {
         // Calculating the delta for the output layer.
         double activation = i.getActivation();
@@ -25,6 +32,7 @@ public class InputLayerNeuronBehaviour implements NeuronBehaviour {
     }
 
     @Override
+   // The above code is calculating the relevance of the neuron.
     public void relevancePropagate(Neuron neuron) {
         // Calculating the relevance of the neuron.
 

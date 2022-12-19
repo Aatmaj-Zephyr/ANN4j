@@ -32,6 +32,7 @@ public class MNISTDataBaseFileReader extends InputFileReader {
     public int outputLayerLength;
     public String fileName;
 
+    // This is the constructor of the class. It is used to initialize the variables.
     MNISTDataBaseFileReader(String filename, int outputLayerLength) throws FileNotFoundException {
         super(filename);
         
@@ -39,12 +40,21 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         this.singleFileReader = new BufferedReader(new FileReader(filename));
     }
 
+    /**
+     * This function is responsible for setting the labels of the data. This depends on the data set
+     * 
+     * @return The label of the data.
+     */
     public double getLabel() {
         // this function is responsible for setting the labels of the data. This depends
         // on the data set
         return label;
     }
 
+    /**
+     * It reads the next line of the file, converts it into a two double arrays, and then sets the
+     * label and expected output array
+     */
     public void next() {
         // Reading the next line of the file and converting it into a two double arrays.
         ArrayList<Double> array;
@@ -59,6 +69,12 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         }
     }
 
+    /**
+     * It reads the next line of the file, splits it into an array of strings, and then converts that
+     * array of strings into an array of doubles
+     * 
+     * @return An ArrayList of Doubles.
+     */
     public ArrayList<Double> readLineToDoubleArray() throws IOException {
         // Reading the next line of the file and converting it into a double array.
         String line = singleFileReader.readLine();
@@ -66,6 +82,12 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return convertStringArrayToDoubleArray(arrayOfStrings);
     }
 
+   /**
+    * Convert a string array to a double array
+    * 
+    * @param arrayOfStrings The string array that you want to convert to a double array.
+    * @return The method is returning an ArrayList of Doubles.
+    */
     private ArrayList<Double> convertStringArrayToDoubleArray(String[] arrayOfStrings) {
         // Converting the string array to a double array.
         ArrayList<Double> arrayOfDouble = new ArrayList<Double>();
@@ -95,6 +117,11 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return inputArray;
     }
 
+    /**
+     * This function is responsible for generating the output neurons
+     * 
+     * @return The expected output array.
+     */
     public ArrayList<Double> generateExpectedOutputArrayFromLabel() {
         // this needs to be overridden for changing the dataset
         // responsible for generating the output neurons.
@@ -114,6 +141,13 @@ public class MNISTDataBaseFileReader extends InputFileReader {
         return expectedOutputArray;
     }
 
+    /**
+     * It takes the array of all the values in the dataset and returns an array of all the values
+     * except the first one
+     * 
+     * @param array The array that contains the data.
+     * @return The input array is being returned.
+     */
     public ArrayList<Double> generateInputFromBigArray(ArrayList<Double> array) {
         // generates the input array from the total array , that is it excludes the
         // first element of the array

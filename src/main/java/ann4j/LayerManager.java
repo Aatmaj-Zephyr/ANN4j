@@ -14,26 +14,54 @@ import java.util.*;
     // in the concrete implementations of layer class.
     private static Double NeuronNumberToBeTestedinRelavancePropagation;
 
+   /**
+    * This function returns the output layer of the neural network
+    * 
+    * @return The output layer of the neural network.
+    */
     public OutputLayer getOutputLayer() {
         return outputLayer;
     }
 
+    /**
+     * This function returns the input layer of the neural network.
+     * 
+     * @return The input layer of the neural network.
+     */
     public InputLayer getInputLayer() {
         return inputLayer;
     }
 
+    /**
+     * This function calculates the mean squared error of the network
+     * 
+     * @return The mean squared error of the output layer.
+     */
     public double calculateMSE() {
         return MeanSquaredErrorCalculator.calculateMSE(this.getOutputLayer(), LayerManager.ExpectedOutputArrayList);
     }
 
+    /**
+     * This function takes an ArrayList of Doubles as an argument and sets the ExpectedOutputArrayList
+     * variable to the argument
+     * 
+     * @param expectedOutputArrayList This is the array list of expected outputs.
+     */
     public void setExpectedOutputArray(ArrayList<Double> expectedOutputArrayList) {
         ExpectedOutputArrayList = expectedOutputArrayList;
     }
 
+    /**
+     * This function takes an ArrayList of Doubles and sets the inputLayer's input to that ArrayList
+     * 
+     * @param inputLayerArray The input layer array.
+     */
     public void setInputLayer(ArrayList<Double> inputLayerArray) {
         this.inputLayer.setInput(inputLayerArray);
     }
 
+    // This is the constructor of the LayerManager class. It takes an array of integers as an argument
+    // and creates a neural network with the number of neurons in each layer as specified by the array.
     LayerManager(int[] layerLengths) {
         // Adding a new InputLayer to the listOfLayers ArrayList.
         this.inputLayer = new InputLayer(layerLengths[0]);
@@ -55,6 +83,9 @@ import java.util.*;
         joinAllLayers();
     }
 
+   /**
+    * > Joining all the layers together
+    */
     private void joinAllLayers() {
         // Joining all the layers together.
         for (int i = 0; i < listOfLayers.size() - 1; i++) {
@@ -63,6 +94,13 @@ import java.util.*;
         }
     }
 
+    /**
+     * Joining two layers together.
+     * For every neuron in layer 1, create a connection to every neuron in layer 2.
+     * 
+     * @param layer The layer that will be connected to the next layer.
+     * @param layer2 The layer that the neurons in layer1 will be connected to.
+     */
     private void joinLayer(Layer layer, Layer layer2) {
         // Creating a connection between every neuron in layer 1 and every neuron in
         // layer 2.
@@ -74,6 +112,10 @@ import java.util.*;
         }
     }
 
+    /**
+     * The forwardPropagate() method is called on every layer in the listOfLayers ArrayList, except the
+     * input layer
+     */
     public void forwardPropagate() {
         // Calling the forwardPropagate() method on every layer in the listOfLayers
         // ArrayList.
@@ -89,6 +131,10 @@ import java.util.*;
         LayerManager.lossFunction = calculateMSE();
     }
 
+    /**
+     * The function calculates the relevance of each pixel in the input image by excluding each pixel
+     * and calculating the loss function
+     */
     public void forwardPropagatewithExclusionInputLayer() {
 
         // Calling the forwardPropagate() method on every layer in the listOfLayers
@@ -143,6 +189,11 @@ import java.util.*;
 
     }
 
+   /**
+    * This function returns a string representation of the neural network
+    * 
+    * @return The string representation of the network.
+    */
     public String toString() {
         String str = "";
         for (Layer i : listOfLayers) {
@@ -153,11 +204,20 @@ import java.util.*;
         return str;
     }
 
+   /**
+    * Return the last layer in the listOfLayers ArrayList.
+    * 
+    * @return The last layer in the listOfLayers ArrayList.
+    */
     public Layer getOutput() {
         // Returning the last layer in the listOfLayers ArrayList.
         return listOfLayers.get(listOfLayers.size() - 1);
     }
 
+   /**
+    * For each layer in the network, starting from the last layer, call the backwardPropagate
+    * function of that layer
+    */
     public void backwardPropagate() {
 
         // backwardPropagate in reverse order
@@ -167,8 +227,17 @@ import java.util.*;
 
     }
 
-    // This is the code that is used to calculate the relevance of each pixel.
+    
+    /**
+     * The function takes in the layer number and the neuron number of the output layer and then
+     * calculates the relevance of each pixel in the input layer
+     * 
+     * @param layerNumber The layer number of the neuron that you want to calculate the relevance of.
+     * @param neuronNumber The number of the neuron in the output layer that you want to find the
+     * relevance of.
+     */
     public void relevancePropagate(int layerNumber, int neuronNumber) {
+        // This is the code that is used to calculate the relevance of each pixel.
         for (int i = layerNumber; i >= 0; i--) {
             if (i == layerNumber) {
                 for (Neuron j : listOfLayers.get(layerNumber).listOfNeurons) {
@@ -189,19 +258,41 @@ import java.util.*;
 
     }
 
+    /**
+     * This function returns the number of neurons to be tested in relevance propagation
+     * 
+     * @return The number of neurons to be tested in relevance propagation.
+     */
     public static Double getNeuronNumberToBeTestedinRelavancePropagation() {
         return NeuronNumberToBeTestedinRelavancePropagation;
     }
 
+   /**
+    * This function sets the number of neurons to be tested in relevance propagation
+    * 
+    * @param neuronNumberToBeTestedinRelavancePropagation This is the number of neurons that you want
+    * to test in the relevance propagation.
+    */
     public static void setNeuronNumberToBeTestedinRelavancePropagation(
             Double neuronNumberToBeTestedinRelavancePropagation) {
         NeuronNumberToBeTestedinRelavancePropagation = neuronNumberToBeTestedinRelavancePropagation;
     }
 
+   /**
+    * This function returns the layer at the specified index
+    * 
+    * @param layerNum The layer number you want to get.
+    * @return The layer at the specified index.
+    */
     public Layer getLayer(int layerNum) {
         return listOfLayers.get(layerNum);
     }
 
+    /**
+     * It returns the index of the neuron in the output layer that has the highest activation value
+     * 
+     * @return The most significant neuron number in the output layer.
+     */
     public  int getMostSignificantNeuronNumAsPrediction() {
         // Finding the most significant neuron number in the output layer.
         double temp = 0;
@@ -215,6 +306,13 @@ import java.util.*;
         }
         return no;
     }
+
+
+   /**
+    * It returns the confidence of the most significant neuron in the output layer
+    * 
+    * @return The most significant neuron confidance in the output layer.
+    */
     public  double getconfidence() {
         // Finding the most significant neuron confidance in the output layer.
         double temp = 0;
@@ -229,6 +327,11 @@ import java.util.*;
         return temp;
     }
 
+    /**
+     * It returns the index of the most significant neuron in the hidden layer
+     * 
+     * @return The index of the most significant neuron in the hidden layer.
+     */
     public ArrayList getMostSignificantNeuronAsPredictionInHiddenLayer() {
         // Finding the most significant neuron in the hidden layer.
         double temp = 0.0;

@@ -3,6 +3,14 @@ import java.util.ArrayList;
 
  public class MeanSquaredErrorCalculator {
 
+    /**
+     * The function takes in an output layer and an array list of expected outputs. It then calculates
+     * the mean squared error between the output layer and the expected output array list
+     * 
+     * @param outputLayer The output layer of the neural network
+     * @param expectedOutputArrayList The expected output of the neural network.
+     * @return The mean squared error.
+     */
     public static double calculateMSE(OutputLayer outputLayer, ArrayList<Double> expectedOutputArrayList) {
 
         if (outputLayer.getSize() != expectedOutputArrayList.size()) {

@@ -7,6 +7,11 @@ public class Writer {
     static BufferedWriter myWriter;
     static private boolean printInConsole = true;
 
+    /**
+     * If the user wants to print to the console, print to the console. Otherwise, write to the file
+     * 
+     * @param string The string to be written to the file.
+     */
     private static void write(String string) {
         if (printInConsole) {
             System.out.println(string);
@@ -21,6 +26,9 @@ public class Writer {
 
     }
 
+   /**
+    * It takes in a variable number of arguments and prints them out
+    */
     public static void write(Object... ob) {
         for (Object i : ob) {
             write(i.toString());
@@ -33,6 +41,9 @@ public class Writer {
         write(ob);
     }
 
+    /**
+     * This function closes the file that we opened in the start() function
+     */
     public static void end() {
         try {
             myWriter.close();
@@ -42,6 +53,7 @@ public class Writer {
 
     }
 
+    // Setting the file that we want to write to.
     public static void setFile(String filename) {
         try {
             myWriter = new BufferedWriter(new FileWriter(filename));
@@ -50,6 +62,11 @@ public class Writer {
         }
     }
 
+    /**
+     * It sets the value of the static variable printInConsole to the value of the parameter bool.
+     * 
+     * @param bool true if you want to print in console as well, false if you don't.
+     */
     public static void setPrintInConsoleEnabled(boolean bool) {
         printInConsole = bool;
     }

@@ -7,8 +7,8 @@ public class Neuron implements Observable {
     private double activation;
     public int neuronNum;
     public int layerNum = -1;
-    public ArrayList<Connection> leftConnections = new ArrayList<Connection>();
-    public ArrayList<Connection> rightConnections = new ArrayList<Connection>();
+    public ArrayList<Connection> leftConnections = new ArrayList<Connection>(); //Connections of the left side of the neuron
+    public ArrayList<Connection> rightConnections = new ArrayList<Connection>(); //Connections of the right side of the neuron
     public double bias;
     public double delta;
     public NeuronBehaviour myBehaviour;
@@ -36,22 +36,22 @@ public class Neuron implements Observable {
     public void setActivation(double activation) {
         this.activation = activation;
     }
+
 /**
  * This function sets the behaviour of the neuron to the behaviour passed in as a parameter.
  * 
  * @param myBehaviour The behaviour of the neuron.
  */
-
     public void setBehaviour(NeuronBehaviour myBehaviour) {
         this.myBehaviour = myBehaviour;
 
     }
 
+    // This is the constructor of the `Neuron` class. It sets the activation of the neuron to a
+    // random value, sets the bias of the neuron to a random value, sets the batch size to the
+    // batch size of the parameter object, sets the bias learning rate to the bias learning rate of
+    // the parameter object, and creates a new ArrayList of doubles called `biasChangeWishlist`.
     public Neuron() {
-       // This is the constructor of the `Neuron` class. It sets the activation of the neuron to a
-       // random value, sets the bias of the neuron to a random value, sets the batch size to the batch
-       // size of the parameter object, sets the bias learning rate to the bias learning rate of the
-       // parameter object, and creates a new ArrayList of doubles called `biasChangeWishlist`.
         setActivation(NN.getRandom());
         bias = NN.setBias();
         batchSize = parameter.getBatchsize();
@@ -59,6 +59,11 @@ public class Neuron implements Observable {
         biasChangeWishlist = new ArrayList<Double>();
     }
 
+   /**
+    * This function sets the layer number of the neuron
+    * 
+    * @param layerNum The number of layers in the neural network.
+    */
     public void setLayerNum(int layerNum) {
         this.layerNum = layerNum;
 
@@ -138,6 +143,10 @@ public class Neuron implements Observable {
         return bias;
     }
 
+    /**
+     * The activation of the neuron is set to the rectified value of the weighted sum of the left
+     * connections plus the bias
+     */
     public void forwardPropagate() {
         // Writer.writeln("Forward propagating in neuron # "+this.neuronNum+" in
         // layer number "+this.layerNum); //test code
@@ -207,12 +216,17 @@ public class Neuron implements Observable {
 
     }
 
+   /**
+    * The toString() function returns a string representation of the object
+    * 
+    * @return The activation of the neuron.
+    */
     public String toString() {
         return "Neuron #" + neuronNum + " has activation " + activation + "\n";
     }
 
     /**
-     * > The function `relevancePropagate()` is called on the `myBehaviour` object,
+     * The function `relevancePropagate()` is called on the `myBehaviour` object,
      * which is of type
      * `Behaviour`, and the `this` object is passed as an argument
      */
@@ -241,15 +255,22 @@ public class Neuron implements Observable {
         }
 
    
+    /**
+     *  This function sets the value of the isIncluded variable to false, after which it wont be included in forward propagation
+     */
     public void exclude() {
         isIncluded=false;
     }
 
+    /**
+     * This function sets the isIncluded variable to true after which it will be included in forward propagation
+     */
     public void include() {
         isIncluded=true;
     }
 
     @Override
+    // Removing the observer from the observer list.
     public void deregisterObserver(NeuronObserver neuronObserver) {
        observerList.remove(neuronObserver);
         

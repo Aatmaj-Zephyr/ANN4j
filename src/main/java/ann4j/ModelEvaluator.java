@@ -11,6 +11,13 @@ import java.util.ArrayList;
     private double testingAccuracy;
     public ArrayList<Double[]> confusionMatrix = new ArrayList<Double[]>();
 
+    /**
+     * This function updates the confusion matrix by comparing the expected output array with the
+     * predicted output array
+     * 
+     * @param expectedOutputArray The expected output of the neural network.
+     * @param predictedNeuronNum The index of the neuron that was predicted to be the correct one.
+     */
     public void updateConfusionMatrix(ArrayList<Double> expectedOutputArray, int predictedNeuronNum) {
         ArrayList<Double> temp = new ArrayList<Double>();
         for (int i = 0; i <= parameter.numberOfOutputNeurons; i++) {
@@ -37,7 +44,6 @@ import java.util.ArrayList;
      * @param expectedOutputArray The expected output of the neural network
      * @param actualOutputArray   The actual output of the neural network
      */
-
     public void updateConfusionMatrix(ArrayList<Double> expectedOutputArray, ArrayList<Double> actualOutputArray) {
         // This is checking if the confusion matrix has been initialized, if it has not
         // been
@@ -60,6 +66,11 @@ import java.util.ArrayList;
         }
     }
 
+   /**
+    * Initialize the confusion matrix to all zeros
+    * 
+    * @param size The number of classes in the dataset.
+    */
     public void initializeList(int size) {
         confusionMatrix.clear();
         for (int i = 0; i < size; i++) {
@@ -74,6 +85,13 @@ import java.util.ArrayList;
 
     }
 
+  /**
+   * This function updates the prediction data
+   * 
+   * @param prediction The prediction of the model.
+   * @param label The actual label of the data.
+   * @param confidance The confidance of the prediction.
+   */
     public void updatePredictionData(double prediction, double label, double confidance) {
         // Updating the prediction data.
         turnsCounter++;
@@ -83,6 +101,9 @@ import java.util.ArrayList;
 
     }
 
+    /**
+     * This function resets the confusion matrix, the correct counter, and the turns counter
+     */
     public void reset() {
         correctCounter = 0;
         turnsCounter = 0;
@@ -92,25 +113,40 @@ import java.util.ArrayList;
     public void resetConfusionMatrix() {
         confusionMatrix.clear();
     }
+
 /**
  * It returns the accuracy of the player as a percentage
  * 
  * @return The accuracy of the player.
  */
-
     public double getAccuracy() {
         return (double) 100 * correctCounter / turnsCounter; // be careful for zero turns!
 
     }
 
+    /**
+     * This function sets the training accuracy of the model
+     * 
+     * @param accuracy The accuracy of the model on the training data.
+     */
     public void setTrainingaccuracy(double accuracy) {
         this.trainingAccuracy = accuracy;
     }
 
+   /**
+    * This function returns the training accuracy of the model
+    * 
+    * @return The training accuracy of the model.
+    */
     public double getTrainingAccuracy() {
         return trainingAccuracy;
     }
 
+    /**
+     * This function sets the testing accuracy of the model
+     * 
+     * @param accuracy The accuracy of the model on the test data.
+     */
     public void setTestingaccuracy(double accuracy) {
         this.testingAccuracy = accuracy;
     }
@@ -124,6 +160,11 @@ import java.util.ArrayList;
         return testingAccuracy;
     }
 
+    /**
+     * It prints the confusion matrix
+     * 
+     * @param fileReader This is the object of the InputFileReader class.
+     */
     public void printConfusionMatrix(InputFileReader fileReader) {
         // Printing the confusion matrix.
         for (int i = 0; i < confusionMatrix.size(); i++) {

@@ -57,6 +57,12 @@ public class Connection {
         return leftNeuron.getActivation() * this.weight;
     }
 
+   /**
+    * This function returns a string that contains the neuron numbers of the neurons that are connected
+    * by this connection, as well as the weight of the connection
+    * 
+    * @return The string representation of the connection.
+    */
     public String toString() {
         return "Neuron #" + leftNeuron.getNeuronNum() + " in layer #" + leftNeuron.getLayerNum() + " and Neuron #"
                 + rightNeuron.getNeuronNum() + " in Layer #" + rightNeuron.getLayerNum() + " are connected with weight "

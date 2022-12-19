@@ -1,17 +1,29 @@
-package ann4j; 
+package ann4j;
+
 import java.lang.Math;
 import java.util.ArrayList;
 
 public class NN {
     // helper class for providing the necessary methods for neural networks
 
+    // Static class cannot be instantiated
     private NN() {
-    } // Static class cann4jot be instantiated
+    }
 
+    /**
+     * This function returns a random number between 0 and 1.
+     * 
+     * @return A random number between 0 and 1.
+     */
     public static double getRandom() {
         return Math.random();
     }
 
+    /**
+     * It returns a random number between -0.5 and 0.5
+     * 
+     * @return A random number between -0.5 and 0.5
+     */
     public static double getSmallSignedRandom() {
         // returns numbers from -0.5 to 0.5
         return (Math.random() - 0.5);
@@ -80,17 +92,15 @@ public class NN {
         return 0.1 * numToBeRectified;
     }
 
+    /**
+     * It takes an array of doubles, adds them all together, divides by the length
+     * of the array, and
+     * returns the result
+     * 
+     * @param sum an array of doubles
+     * @return The average of the array.
+     */
     public static double average(double[] sum) {
-
-        /**
-         * It takes an array of doubles, adds them all together, divides by the length
-         * of the array, and
-         * returns the result
-         * 
-         * @param sum an array of doubles
-         * @return The average of the array.
-         */
-
         double temp = 0;
         for (double i : sum) {
             temp += i;
@@ -99,10 +109,23 @@ public class NN {
         return temp;
     }
 
+    /**
+     * This function returns a random number between 0 and 0.1
+     * 
+     * @return A random number between 0 and 0.1
+     */
     public static double setBias() {
         return NN.getRandom() * 0.1;
     }
 
+    /**
+     * It takes an ArrayList of Doubles as input, and returns the average of the
+     * elements in the
+     * ArrayList
+     * 
+     * @param input an ArrayList of Double values
+     * @return The average of the numbers in the array.
+     */
     public static double average(ArrayList<Double> input) {
 
         double sum = 0;
