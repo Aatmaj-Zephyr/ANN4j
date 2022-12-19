@@ -20,11 +20,17 @@ ANN4j is a java package that provides Object oriented Neural Networks for making
 #### ANN4j - Creating observable object-oriented neural networks for better Explainable AI.
 ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a seperate object. While this kind of implementation is highly inefficiant when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiantly. Indivisual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique. 
 
+## READ COMPLETE DOCUMENTATION [HERE](https://aatmaj-zephyr.github.io/ANN4jwiki/)
+
 ## Table of Contents
 
 - [Usage](#usage)
   - [Download](#download)
-  - [Requirements and Dependencies](#requirements-and-dependancies)
+  - [Requirements and Dependancies](#requirements-and-dependancies)
+- [Design](#design)
+   -[Class Diagram](#class-diagram)
+   -[Clases and Methods](https://aatmaj-zephyr.github.io/ANN4jwiki/)
+   -[Design Patterns](#design-pattterns)
 - [Training](#training)
   - [Parameters](#setting-parameters)
   - [Training the Model](#training-the-model)
@@ -40,7 +46,7 @@ ANN4j is a java package that provides object oriented functionality to neural ne
       - [Getting Input Neuron values](#getting-input-neuron-values)
       - [Getting Output Neuron values](#getting-output-neuron-values)
       - [Getting prediction from the output neurons](#getting-prediction-from-the-output-neurons)
-      - [Restarting the FileReader](#Restarting-the-file)
+      - [Restarting the FileReader](#restarting-the-file)
 - [Examples](#examples)
     - [Other Resources](#other-resources)
 - [ANN4j Community](#ann4j-community)
@@ -65,8 +71,23 @@ ___
 The package can be imported after download.
  `import ann4j.*;`
 
-#### Requirements and Dependencies
+#### Requirements and Dependancies
 None. This package is made using 100% Pure Java. The java package requires java 5.0+. No other requirements are required. Recommended to use the latest version of Java. [Java download link](https://www.java.com/download/ie_manual.jsp)
+
+#### Design
+
+#### Class Diagram
+
+<img width="1371" alt="image" src="https://user-images.githubusercontent.com/83284294/208302425-951e57e9-d389-42e1-81e2-aa54148cc21e.png">
+
+#### Classes and Methods
+Exaustive information can be found on our [wiki](https://aatmaj-zephyr.github.io/ANN4jwiki/)
+
+#### Design patterns 
+- Strategy Pattern - NeuronBehaviour
+- Observer pattern
+- Template pattern - Trainer
+- Singleton Pattern - NeuronBehaviour concrete classes
 
 ### Training
 #### Setting parameters
@@ -314,6 +335,14 @@ Creates a new instance of the file reader and starts all over again.
     public void restart()
 ````
 
+#### Setting the file reader
+
+After the file reader custom class had been made, it can be passed to the parameter class using the methods
+
+```java
+    public static void setTrainingFileReader(InputFileReader inputFileReader);
+    public static void setTestingFileReader(InputFileReader inputFileReader){
+```
 
 ### Examples
 
@@ -330,7 +359,7 @@ Creates a new instance of the file reader and starts all over again.
 
 ### ANN4j Community
 
-#### ⌨️ Raising an issue
+#### Raising an issue
 Please feel free to suggest any changes or point out any errors by raising an issue [here](https://github.com/Aatmaj-Zephyr/ANN4j/issues/new/choose)
 
 #### Asking for help
@@ -341,6 +370,7 @@ For asking for clarification on any topic, raise an question issue [here](https:
 
 - [Discussions](https://github.com/Aatmaj-Zephyr/ANN4j/discussions)
 - [Wiki](https://github.com/Aatmaj-Zephyr/ANN4j/wiki)
+- [Documentation](https://aatmaj-zephyr.github.io/ANN4jwiki/)
 
 #### Contributing
 Please read the contributing guidelines [here](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/CONTRIBUTING.md).
