@@ -5,7 +5,7 @@ public class Main {
 		// Setting the output file to be output.txt and enabling command line logging
 		parameter.setOutputFile("output.txt", true);
 		// Setting the number of neurons in each layer.
-		parameter.setLayerArray(784, 32, 16, 16, 26);
+		parameter.setLayerArray(784, 32, 16, 16, 10);
 
 		// Setting the training file to be emnist-letters-train.csv and the file type to
 		// be mnist.
@@ -27,8 +27,8 @@ public class Main {
 
 		// Creating a new instance of the Trainer class.
 		Trainer myTrainer = new Trainer();
-		// Training the network with 88800 samples for 10 epochs
-		myTrainer.train(88800, 10);
+		// Training the network with 45000 samples for 10 epochs
+		myTrainer.train(45000, 10);
 		// Creating a new instance of the NeuronObserver class this class will observe
 		// the neurons and respond when every parameter is changed.
 		NeuronObserver myNeuronObserver = new NeuronObserver();
