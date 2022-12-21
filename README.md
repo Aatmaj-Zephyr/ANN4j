@@ -9,28 +9,19 @@
 ANN4j is a java package that provides Object oriented Neural Networks for making _Explainable Networks_. Object Oriented Network structure is helpful for observing each and every element the model. This package is developed for XAI research and development.
 
 
-#### Features 
-- Observable implementation for Artificial Neural Networks (ANN)
-- XAI method for relevance propagation
-- Stochastic/batch gradient descent
-- No hardcoded implementations lets researchers change the parameters as they want.
-- Plug and play mnist type data. Other Data files can be handeled via extension
-
-
-#### ANN4j - Creating observable object-oriented neural networks for better Explainable AI.
-ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a seperate object. While this kind of implementation is highly inefficiant when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiantly. Indivisual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique. 
-
 ## READ COMPLETE DOCUMENTATION [HERE](https://aatmaj-zephyr.github.io/ANN4jwiki/)
 
 ## Table of Contents
 
+- [About](#about)
+  - [Features](#features)
 - [Usage](#usage)
   - [Download](#download)
   - [Requirements and Dependancies](#requirements-and-dependancies)
 - [Design](#design)
    - [Class Diagram](#class-diagram)
    - [Clases and Methods](https://aatmaj-zephyr.github.io/ANN4jwiki/)
-   - [Design Patterns](#design-pattterns)
+   - [Design Patterns](#design-patterns)
 - [Training](#training)
   - [Parameters](#setting-parameters)
   - [Training the Model](#training-the-model)
@@ -48,7 +39,8 @@ ANN4j is a java package that provides object oriented functionality to neural ne
       - [Getting Output Neuron values](#getting-output-neuron-values)
       - [Getting prediction from the output neurons](#getting-prediction-from-the-output-neurons)
       - [Restarting the FileReader](#restarting-the-file)
-- [Examples](#examples)
+- [Documentation](#documentation) 
+    -[Examples](#examples)
     - [Other Resources](#other-resources)
 - [ANN4j Community](#ann4j-community)
 	- [Raising an issue](#raising-an-issue)
@@ -61,7 +53,18 @@ ANN4j is a java package that provides object oriented functionality to neural ne
 
 ___
 
+### About
 
+
+##### ANN4j - Creating observable object-oriented neural networks for better Explainable AI.
+ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a seperate object. While this kind of implementation is highly inefficiant when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiantly. Indivisual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique.
+
+#### Features 
+- Observable implementation for Artificial Neural Networks (ANN)
+- XAI method for relevance propagation
+- Stochastic/batch gradient descent
+- No hardcoded implementations lets researchers change the parameters as they want.
+- Plug and play mnist type data. Other Data files can be handeled via extension
 
 ### Usage
 
@@ -77,14 +80,18 @@ None. This package is made using 100% Pure Java. The java package requires java 
 
 #### Design
 
+Exaustive information can be found on our [wiki](https://aatmaj-zephyr.github.io/ANN4jwiki/)
+
 #### Class Diagram
 
 <img width="1371" alt="image" src="https://user-images.githubusercontent.com/83284294/208302425-951e57e9-d389-42e1-81e2-aa54148cc21e.png">
 
 #### Classes and Methods
-Exaustive information can be found on our [wiki](https://aatmaj-zephyr.github.io/ANN4jwiki/)
+<img width="588" alt="image" src="https://user-images.githubusercontent.com/83284294/208826148-f679c611-dac5-4f87-997a-cd024f0376b5.png">
 
-#### Design patterns 
+
+#### Design patterns
+
 - Strategy Pattern - NeuronBehaviour
 - Observer pattern - NeuronObserver
 - Template pattern - Trainer
@@ -371,7 +378,10 @@ After the file reader custom class had been made, it can be passed to the parame
     public static void setTestingFileReader(InputFileReader inputFileReader){
 ```
 
-### Examples
+### Documentation
+Please visit the documentation wiki page https://aatmaj-zephyr.github.io/ANN4jwiki/
+
+#### Examples
 
 - Example code https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/Main.java
 - Sample output https://github.com/Aatmaj-Zephyr/ANN4j/blob/3721148ec24371bf095e1394fe39fc471f391466/output.txt
@@ -404,7 +414,7 @@ Please read the contributing guidelines [here](https://github.com/Aatmaj-Zephyr/
 Everyone is free to contribute to this project. 
 
 #### Help spread the word
-Are you using ANN4j in your research or project? If so, please let me know and I may add a link to your project or application and your logo to this repository. 
+Are you using ANN4j in your research or project? If so, please let me know and I may add a link to your project or application and your logo to this repository. Also please consider starring this repository and following me.
 
 #### Citing this package for research work
 You can cite this repository using the following bibtex entry. Please update the date.
