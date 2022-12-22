@@ -2,7 +2,7 @@ input: .
 output: .retype
 branding:
   title: ANN4j
-  logo: favion.png
+  logo: logo.png
   favicon: favion.png
 links:
   - text: Documentation
