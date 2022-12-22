@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.725002437210">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.4.0">
+
+    <!-- Primary Meta Tags -->
+    <title>README</title>
+    <meta name="title" content="README">
+    <meta name="description" content="ANN4j is a java package that provides Object oriented Neural Networks for making Explainable Networks" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/">
+    <meta property="og:title" content="README">
+    <meta property="og:description" content="ANN4j is a java package that provides Object oriented Neural Networks for making Explainable Networks">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/">
+    <meta property="twitter:title" content="README">
+    <meta property="twitter:description" content="ANN4j is a java package that provides Object oriented Neural Networks for making Explainable Networks">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="resources/css/retype.css?v=2.4.0.725002437210" rel="stylesheet" />
+
+    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.725002437210" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.725002437210" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.725002437210" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Project Name</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="readme" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#readme">#</doc-anchor-trigger>
+        <span>README</span>
+    </h1>
+</doc-anchor-target>
+<p align="center">
+<img width="600" align="center" src="https://user-images.githubusercontent.com/83284294/205426515-b272d188-2902-42d7-aa79-defdf3f073f7.png">
+</p>
+<hr />
+<doc-anchor-target id="ann4j---artificial-neural-networks-for-java">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ann4j---artificial-neural-networks-for-java">#</doc-anchor-trigger>
+        <span>ANN4j - Artificial Neural Networks for Java</span>
+    </h3>
+</doc-anchor-target>
+<p>ANN4j is a java package that provides Object oriented Neural Networks for making <em>Explainable Networks</em>. Object Oriented Network structure is helpful for observing each and every element the model. This package is developed for XAI research and development.</p>
+<doc-anchor-target id="read-complete-documentation-here">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#read-complete-documentation-here">#</doc-anchor-trigger>
+        <span>READ COMPLETE DOCUMENTATION <a href="https://aatmaj-zephyr.github.io/ANN4jwiki/">HERE</a></span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="table-of-contents">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#table-of-contents">#</doc-anchor-trigger>
+        <span>Table of Contents</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><doc-anchor-trigger to="#about">About</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#features">Features</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#usage">Usage</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#download">Download</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#requirements-and-dependancies">Requirements and Dependancies</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#design">Design</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#class-diagram">Class Diagram</doc-anchor-trigger></li>
+<li><a href="https://aatmaj-zephyr.github.io/ANN4jwiki/">Clases and Methods</a></li>
+<li><doc-anchor-trigger to="#design-patterns">Design Patterns</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#training">Training</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#setting-parameters">Parameters</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#training-the-model">Training the Model</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#evaluating-the-model">Evaluating the model</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#xai">Explanable AI</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#observable-methods">Observable Methods</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#output">Output</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#data-format">Data Format</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#default-format">Default Format</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#file-rendering-for-other-formats">Other Format</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#constructor">Constructor</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#getting-input">Getting Input</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#getting-label">Getting Label</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#getting-input-neuron-values">Getting Input Neuron values</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#getting-output-neuron-values">Getting Output Neuron values</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#getting-prediction-from-the-output-neurons">Getting prediction from the output neurons</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#restarting-the-file">Restarting the FileReader</doc-anchor-trigger></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#documentation">Documentation</doc-anchor-trigger>
+-<doc-anchor-trigger to="#examples">Examples</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#other-resources">Other Resources</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#ann4j-community">ANN4j Community</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#raising-an-issue">Raising an issue</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#asking-for-help">Asking for help</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#community">Community</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#contributing">Contributing</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#help-spread-the-word">Help spread the word</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#citing-this-package-for-research-work">Cite</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#license">License</doc-anchor-trigger></li>
+</ul>
+<hr />
+<doc-anchor-target id="about">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#about">#</doc-anchor-trigger>
+        <span>About</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="ann4j---creating-observable-object-oriented-neural-networks-for-better-explainable-ai">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ann4j---creating-observable-object-oriented-neural-networks-for-better-explainable-ai">#</doc-anchor-trigger>
+        <span>ANN4j - Creating observable object-oriented neural networks for better Explainable AI.</span>
+    </h5>
+</doc-anchor-target>
+<p>ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a seperate object. While this kind of implementation is highly inefficiant when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiantly. Indivisual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique.</p>
+<doc-anchor-target id="features">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#features">#</doc-anchor-trigger>
+        <span>Features</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Observable implementation for Artificial Neural Networks (ANN)</li>
+<li>XAI method for relevance propagation</li>
+<li>Stochastic/batch gradient descent</li>
+<li>No hardcoded implementations lets researchers change the parameters as they want.</li>
+<li>Plug and play mnist type data. Other Data files can be handeled via extension</li>
+</ul>
+<doc-anchor-target id="usage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
+        <span>Usage</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="download">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#download">#</doc-anchor-trigger>
+        <span>Download</span>
+    </h4>
+</doc-anchor-target>
+<p><a href="https://github.com/Aatmaj-Zephyr/ANN4j/releases">Releases</a></p>
+<p>The package can be imported after download.
+<code v-pre>import ann4j.*;</code></p>
+<doc-anchor-target id="requirements-and-dependancies">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#requirements-and-dependancies">#</doc-anchor-trigger>
+        <span>Requirements and Dependancies</span>
+    </h4>
+</doc-anchor-target>
+<p>None. This package is made using 100% Pure Java. The java package requires java 5.0+. No other requirements are required. Recommended to use the latest version of Java. <a href="https://www.java.com/download/ie_manual.jsp">Java download link</a></p>
+<doc-anchor-target id="design">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#design">#</doc-anchor-trigger>
+        <span>Design</span>
+    </h4>
+</doc-anchor-target>
+<p>Exaustive information can be found on our <a href="https://aatmaj-zephyr.github.io/ANN4jwiki/">wiki</a></p>
+<doc-anchor-target id="class-diagram">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#class-diagram">#</doc-anchor-trigger>
+        <span>Class Diagram</span>
+    </h4>
+</doc-anchor-target>
+<img width="1371" alt="image" src="https://user-images.githubusercontent.com/83284294/208302425-951e57e9-d389-42e1-81e2-aa54148cc21e.png">
+<doc-anchor-target id="classes-and-methods">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#classes-and-methods">#</doc-anchor-trigger>
+        <span>Classes and Methods</span>
+    </h4>
+</doc-anchor-target>
+<img width="588" alt="image" src="https://user-images.githubusercontent.com/83284294/208826148-f679c611-dac5-4f87-997a-cd024f0376b5.png">
+<doc-anchor-target id="design-patterns">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#design-patterns">#</doc-anchor-trigger>
+        <span>Design patterns</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Strategy Pattern - NeuronBehaviour</li>
+<li>Observer pattern - NeuronObserver</li>
+<li>Template pattern - Trainer</li>
+<li>Singleton Pattern - NeuronBehaviour concrete classes</li>
+</ul>
+<doc-anchor-target id="training">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#training">#</doc-anchor-trigger>
+        <span>Training</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="setting-parameters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-parameters">#</doc-anchor-trigger>
+        <span>Setting parameters</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><p>Setting the output file to be output.txt and enabling command line logging.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java"> 	parameter.setOutputFile(&quot;output.txt&quot;, true);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Setting the number of neurons in each layer.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  parameter.setLayerArray(784, 32, 16, 16, 26);	</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Setting the training file to be emnist-letters-train.csv and the file type</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  parameter.setTrainingFileReader(&quot;emnist-letters-train.csv&quot;, &quot;mnist&quot;);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Setting the testing file</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  parameter.setTestingFileReader(&quot;emnist-letters-test.csv&quot;, &quot;mnist&quot;);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Setting the learning rate for weights</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  parameter.setLearningRate(1);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Setting the learning rate for the bias to 1.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  parameter.setBiasLearningRate(1);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Setting the epsillion value for the relevance propagation algorithm.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  parameter.setEpsillion(0);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Setting the batch size</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  parameter.setBatchsize(10);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Setting the rectification function.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  parameter.setRectificationFunction(&quot;sigmoid&quot;);</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+<doc-anchor-target id="training-the-model">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#training-the-model">#</doc-anchor-trigger>
+        <span>Training the Model</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><p>Creating a new instance of the Trainer class.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  Trainer myTrainer = new Trainer();</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Training the network with 88800 samples for n epochs</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  myTrainer.train(m, n);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Creating a new instance of the NeuronObserver class this class will observe the neurons and respond when every parameter is changed.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  NeuronObserver myNeuronObserver = new NeuronObserver();</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Testing the network with 9990 samples.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  myTrainer.test(9990);</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Adding the neuron at layer 1 and index 31 to be observed.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  myNeuronObserver.addNeuronToBeObserved(1, 31);</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+<doc-anchor-target id="evaluating-the-model">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#evaluating-the-model">#</doc-anchor-trigger>
+        <span>Evaluating the model</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><p>Training accuracy</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java"> 	myTrainer.getModelEvaluator().getTrainingAccuracy();	</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Testing accuracy</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">   	myTrainer.getModelEvaluator().getTrainingAccuracy();	</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Confusion Matrix</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java"> 	myTrainer.getModelEvaluator().printConfusionMatrix();	</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+<doc-anchor-target id="xai">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#xai">#</doc-anchor-trigger>
+        <span>XAI</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><p>xai algorithm for relevance propagation.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  myTrainer.relevancePropagate(2, 3);	</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>xai algotithm for most significant input neurons</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">  myTrainer.forwardPropagatewithExclusionInputLayerOnKSamples(2);</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+<doc-anchor-target id="observable-methods">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#observable-methods">#</doc-anchor-trigger>
+        <span>Observable methods</span>
+    </h4>
+</doc-anchor-target>
+<p>In ANN4j, every neuron is an object of its own. Every Neuron can be observed by the NeuronObserver class when the values are updated. NeuronObserver class can be extended as per the requirement of the parameters to be observed. Neurons objects can also be obtined and observed independantly.</p>
+<ul>
+<li><p>Get a neuron object from a layer.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java"> 	myTrainer.getLayerManager().getLayer(layerNum).getNeuron(neuronNum));</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Get activation of a neuron</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java"> 	neuron.getActivation();</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Get bias of the neuron</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java"> 	neuron.getBias();</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Get arraylist of the left or right connections of the neuron</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">neuron.leftConnections;
+neuron.rightConnections;</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Get weight of a connection</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java"> 	connection.getWeight();</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+<doc-anchor-target id="output">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#output">#</doc-anchor-trigger>
+        <span>Output</span>
+    </h4>
+</doc-anchor-target>
+<p>Output can be seen in the file specified by the parameter class. The write class can be used to write any user defined Strings to the file.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    Writer.write();</code></pre>
+</doc-codeblock></div>
+<p>This is an example of the output generated by training and observing a neuron.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Training accuracy in epoch 0 is 10.66891891891892
+Testing accuracy 28.92892892892893
+The neuron 31 in layer 1 has been updated by forward propagation
+Neuron #31 has activation 6.567825572210979E-4
+
+The neuron 31 in layer 1 has been updated by forward propagation
+Neuron #31 has activation 0.003181628304117291
+
+Testing accuracy 28.93314651721377
+The neuron 0 in layer 2 has been updated by forward propagation
+Neuron #0 has activation 0.25373727956231534
+
+The neuron 0 in layer 2 has been updated by forward propagation
+Neuron #0 has activation 0.7220061457959416
+
+Testing accuracy 28.94736842105263</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="data-format">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data-format">#</doc-anchor-trigger>
+        <span>Data format</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="default-format">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#default-format">#</doc-anchor-trigger>
+        <span>Default format</span>
+    </h4>
+</doc-anchor-target>
+<p>The default format for the package is MNIST format.</p>
+<p>File type CSV consisting of the following</p>
+<ul>
+<li>1 Label (Expected number)</li>
+<li>n pixel weights
+n must match number of input neurons.</li>
+</ul>
+<p>Example</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,116,125,171,255,255,150,93,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,169,253,253,253,253,253,253,218,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,169,253,253,253,213,142,176,253,253,122,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,52,250,253,210,32,12,0,6,206,253,140,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,77,251,210,25,0,0,0,122,248,253,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,18,0,0,0,0,209,253,253,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,117,247,253,198,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,76,247,253,231,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,253,253,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,176,246,253,159,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,234,253,233,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,253,253,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,248,253,189,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,200,253,253,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,134,253,253,173,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,248,253,253,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,248,253,253,43,20,20,20,20,5,0,5,20,20,37,150,150,150,147,10,0,0,0,0,0,0,0,0,0,248,253,253,253,253,253,253,253,168,143,166,253,253,253,253,253,253,253,123,0,0,0,0,0,0,0,0,0,174,253,253,253,253,253,253,253,253,253,253,253,249,247,247,169,117,117,57,0,0,0,0,0,0,0,0,0,0,118,123,123,123,166,253,253,253,155,123,123,41,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</code></pre>
+</doc-codeblock></div>
+<img width="200" alt="image" src="https://user-images.githubusercontent.com/83284294/208296890-8655f164-ffe5-41b3-865d-c28c909ded2c.png">
+<p>Here the image 2 is represented as an array of 28*28 pixels each value represents pixel activation.</p>
+<p>Some datasets to test the package on (without extending mnist file reader)</p>
+<ol>
+<li><a href="https://www.kaggle.com/datasets/oddrationale/mnist-in-csv">MNIST Handwritten database</a></li>
+<li><a href="https://www.nist.gov/itl/products-and-services/emnist-dataset">MNIST extended chracter database</a> and <a href="https://www.kaggle.com/datasets/crawford/emnist">Kaggle link</a></li>
+<li><a href="https://www.kaggle.com/datasets/zalando-research/fashionmnist">MNIST fashion data set</a></li>
+<li><a href="https://www.kaggle.com/competitions/Kannada-MNIST/data">Kannada MNIST</a></li>
+</ol>
+<p>References</p>
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/MNIST_database">About MNIST database</a></p>
+</li>
+<li><p><a href="https://visualstudiomagazine.com/articles/2022/02/01/preparing-mnist-image-data-text-files.aspx#:%7E:text=The%20MNIST%20Modified%20National%20Institute,integer%20between%200%20and%20255">Preparing MNIST data</a></p>
+</li>
+</ul>
+<doc-anchor-target id="file-rendering-for-other-formats">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#file-rendering-for-other-formats">#</doc-anchor-trigger>
+        <span>File rendering for other formats</span>
+    </h4>
+</doc-anchor-target>
+<p>ANN4j provides functionality to extend the InputFileReader to add file handling for various types of datasets apart from mnist type files. InputFileReader or MNISTFileReader can be extended by making relevant changes in file reading functions.</p>
+<doc-anchor-target id="constructor">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#constructor">#</doc-anchor-trigger>
+        <span>Constructor</span>
+    </h5>
+</doc-anchor-target>
+<p>The new file reader class must pass the filename to the super constructor.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    super(filename);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="getting-input">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-input">#</doc-anchor-trigger>
+        <span>Getting input</span>
+    </h4>
+</doc-anchor-target>
+<p>The <code v-pre>next()</code> method is responsible for reading new line input from the dataset. It must also act as a super setter method. It must set all values like <code v-pre>label</code> , <code v-pre>expectedOutputArray</code> and <code v-pre>inputArray</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    public void next()</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="getting-label">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-label">#</doc-anchor-trigger>
+        <span>Getting label</span>
+    </h4>
+</doc-anchor-target>
+<p>This method must return the label (expected value of prediction).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    public double getLabel()</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="getting-input-neuron-values">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-input-neuron-values">#</doc-anchor-trigger>
+        <span>Getting Input Neuron values</span>
+    </h4>
+</doc-anchor-target>
+<p>This method must return the values of neurons (expected value of prediction). Example for digit recognition fo digit two, the arraylist must contain 784 elements of the pixel values.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,116,125,171,255,255,150,93,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,169,253,253,253,253,253,253,218,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,169,253,253,253,213,142,176,253,253,122,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,52,250,253,210,32,12,0,6,206,253,140,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,77,251,210,25,0,0,0,122,248,253,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,18,0,0,0,0,209,253,253,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,117,247,253,198,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,76,247,253,231,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,253,253,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,176,246,253,159,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,234,253,233,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,253,253,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,248,253,189,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,200,253,253,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,134,253,253,173,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,248,253,253,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,248,253,253,43,20,20,20,20,5,0,5,20,20,37,150,150,150,147,10,0,0,0,0,0,0,0,0,0,248,253,253,253,253,253,253,253,168,143,166,253,253,253,253,253,253,253,123,0,0,0,0,0,0,0,0,0,174,253,253,253,253,253,253,253,253,253,253,253,249,247,247,169,117,117,57,0,0,0,0,0,0,0,0,0,0,118,123,123,123,166,253,253,253,155,123,123,41,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    public ArrayList&lt;Double&gt; getInputArray()</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="getting-output-neuron-values">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-output-neuron-values">#</doc-anchor-trigger>
+        <span>Getting Output Neuron values</span>
+    </h4>
+</doc-anchor-target>
+<p>This method must return the expected values of output neurons (expected value of prediction). Example for digit recognition fo digit two, the arraylist can be
+<code v-pre>0,0,1,0,0,0,0,0,0,0</code></p>
+<p>This is dependant on the model and is a design decision.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    public ArrayList&lt;Double&gt; getExpectedOutputArray() </code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="getting-prediction-from-the-output-neurons">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-prediction-from-the-output-neurons">#</doc-anchor-trigger>
+        <span>Getting prediction from the output neurons</span>
+    </h4>
+</doc-anchor-target>
+<p>This method is used for obtaining the prediction value from the activations in the output neurons. In the digit recognitoin case as every input is mapped with same neuron it is the same. For example if neuron number 3 fires the highest, the model has predicted 3. But this needs to be overridden for different model configurations.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    public double getPredictionFromNeuronNum(int mostSignificantNeuronNumAsPrediction)</code></pre>
+</doc-codeblock></div>
+<p>Note-</p>
+<p>Predicted neuron and prediction are different.</p>
+<p>Predicted neuron is the neuron which is most significant in firing. The prediction is the value corresponding to that neuron.</p>
+<p>Example Consider case of handwritten letters database. If the neuron 4 is most significant (glows brightest)  and it corresponds to label D then the predicted neuron is 4 and prediction is D.</p>
+<p><code v-pre>getMostSignificantNeuronNumAsPrediction()</code> is a method in LayerManager class which helps to get the value of the neuron which fires the most.</p>
+<doc-anchor-target id="restarting-the-file">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#restarting-the-file">#</doc-anchor-trigger>
+        <span>Restarting the file</span>
+    </h4>
+</doc-anchor-target>
+<p>Creates a new instance of the file reader and starts all over again.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    public void restart()</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="setting-the-file-reader">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-the-file-reader">#</doc-anchor-trigger>
+        <span>Setting the file reader</span>
+    </h4>
+</doc-anchor-target>
+<p>After the file reader custom class had been made, it can be passed to the parameter class using the methods</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">    public static void setTrainingFileReader(InputFileReader inputFileReader);
+    public static void setTestingFileReader(InputFileReader inputFileReader){</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="documentation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#documentation">#</doc-anchor-trigger>
+        <span>Documentation</span>
+    </h3>
+</doc-anchor-target>
+<p>Please visit the documentation wiki page <a href="https://aatmaj-zephyr.github.io/ANN4jwiki/">https://aatmaj-zephyr.github.io/ANN4jwiki/</a></p>
+<doc-anchor-target id="examples">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
+        <span>Examples</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><p>Example code <a href="https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/Main.java">https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/Main.java</a></p>
+</li>
+<li><p>Sample output <a href="https://github.com/Aatmaj-Zephyr/ANN4j/blob/3721148ec24371bf095e1394fe39fc471f391466/output.txt">https://github.com/Aatmaj-Zephyr/ANN4j/blob/3721148ec24371bf095e1394fe39fc471f391466/output.txt</a></p>
+</li>
+<li><p>Sample output <a href="https://github.com/Aatmaj-Zephyr/ANN4j/blob/ef0f34b505e6e6316f94b5a660b9ef651582667d/output.txt">https://github.com/Aatmaj-Zephyr/ANN4j/blob/ef0f34b505e6e6316f94b5a660b9ef651582667d/output.txt</a></p>
+</li>
+</ul>
+<doc-anchor-target id="other-resources">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#other-resources">#</doc-anchor-trigger>
+        <span>Other resources</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>More about Artificial Neural Networks <a href="https://www.3blue1brown.com/topics/neural-networks">https://www.3blue1brown.com/topics/neural-networks</a></li>
+<li>Relevance propagation example <a href="https://towardsdatascience.com/indepth-layer-wise-relevance-propagation-340f95deb1ea">https://towardsdatascience.com/indepth-layer-wise-relevance-propagation-340f95deb1ea</a></li>
+<li>Rectification functions <a href="https://www.quora.com/What-is-the-purpose-of-rectifier-functions-in-neural-networks">https://www.quora.com/What-is-the-purpose-of-rectifier-functions-in-neural-networks</a></li>
+</ul>
+<doc-anchor-target id="ann4j-community">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ann4j-community">#</doc-anchor-trigger>
+        <span>ANN4j Community</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="raising-an-issue">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#raising-an-issue">#</doc-anchor-trigger>
+        <span>Raising an issue</span>
+    </h4>
+</doc-anchor-target>
+<p>Please feel free to suggest any changes or point out any errors by raising an issue <a href="https://github.com/Aatmaj-Zephyr/ANN4j/issues/new/choose">here</a></p>
+<doc-anchor-target id="asking-for-help">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#asking-for-help">#</doc-anchor-trigger>
+        <span>Asking for help</span>
+    </h4>
+</doc-anchor-target>
+<p>For asking for clarification on any topic, raise an question issue <a href="https://github.com/Aatmaj-Zephyr/ANN4j/issues/new?assignees=Aatmaj-Zephyr&amp;labels=&amp;template=question.md&amp;title=Question">here</a></p>
+<doc-anchor-target id="community">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#community">#</doc-anchor-trigger>
+        <span>Community</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="https://github.com/Aatmaj-Zephyr/ANN4j/discussions">Discussions</a></li>
+<li><a href="https://github.com/Aatmaj-Zephyr/ANN4j/wiki">Wiki</a></li>
+<li><a href="https://aatmaj-zephyr.github.io/ANN4jwiki/">Documentation</a></li>
+</ul>
+<doc-anchor-target id="contributing">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contributing">#</doc-anchor-trigger>
+        <span>Contributing</span>
+    </h4>
+</doc-anchor-target>
+<p>Please read the contributing guidelines <a href="https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/CONTRIBUTING.md">here</a>.
+Everyone is free to contribute to this project.</p>
+<doc-anchor-target id="help-spread-the-word">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#help-spread-the-word">#</doc-anchor-trigger>
+        <span>Help spread the word</span>
+    </h4>
+</doc-anchor-target>
+<p>Are you using ANN4j in your research or project? If so, please let me know and I may add a link to your project or application and your logo to this repository. Also please consider starring this repository and following me.</p>
+<doc-anchor-target id="citing-this-package-for-research-work">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#citing-this-package-for-research-work">#</doc-anchor-trigger>
+        <span>Citing this package for research work</span>
+    </h4>
+</doc-anchor-target>
+<p>You can cite this repository using the following bibtex entry. Please update the date.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">@misc{AatmajZephyr21:online,
+author = {Aatmaj Mhatre},
+title = {Aatmaj-Zephyr/ANN4j: Artificial Neural Networks for Java This package provides Object oriented Neural Networks for making Explainable Networks. Object Oriented Network structure is helpful for observing each and every element the model. This package is developed for XAI research and development.},
+howpublished = {\url{https://github.com/Aatmaj-Zephyr/ANN4j}},
+month = {},
+year = {},
+note = {(Accessed on &lt;date&gt;)}
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="license">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#license">#</doc-anchor-trigger>
+        <span>License</span>
+    </h3>
+</doc-anchor-target>
+<p><a href="https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/LICENSE">License notice</a></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">MIT License
+
+Copyright (c) 2022 Aatmaj
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre>
+</doc-codeblock></div>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="src/main/java/ann4j/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Ann​4​j</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2022. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "README", isRoot: true, level: 0, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>

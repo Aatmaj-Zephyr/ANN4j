@@ -1,0 +1,16 @@
+Training accuracy in epoch 0 is 10.66891891891892
+Testing accuracy 28.92892892892893
+The neuron 31 in layer 1 has been updated by forward propagation
+Neuron #31 has activation 6.567825572210979E-4
+
+The neuron 31 in layer 1 has been updated by forward propagation
+Neuron #31 has activation 0.003181628304117291
+
+Testing accuracy 28.93314651721377
+The neuron 0 in layer 2 has been updated by forward propagation
+Neuron #0 has activation 0.25373727956231534
+
+The neuron 0 in layer 2 has been updated by forward propagation
+Neuron #0 has activation 0.7220061457959416
+
+Testing accuracy 28.94736842105263
