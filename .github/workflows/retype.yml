@@ -1,0 +1,11 @@
+input: .
+output: .retype
+branding:
+  title: ANN4j
+  logo: favicon.png
+  favicon: favicon.png
+links:
+  - text: Documentation
+    link: https://aatmaj-zephyr.github.io/ANN4jwiki/
+footer:
+  copyright: "&copy; Copyright Aatmaj. MIT License. All rights reserved."
