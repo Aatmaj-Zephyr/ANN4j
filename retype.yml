@@ -2,8 +2,8 @@ input: .
 output: .retype
 branding:
   title: ANN4j
-  logo: favicon.png
-  favicon: favicon.png
+  logo: favion.png
+  favicon: favion.png
 links:
   - text: Documentation
     link: https://aatmaj-zephyr.github.io/ANN4jwiki/
