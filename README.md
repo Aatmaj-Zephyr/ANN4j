@@ -6,7 +6,9 @@
 
 ### ANN4j - Artificial Neural Networks for Java
 
-ANN4j is a java package that provides Object oriented Neural Networks for making _Explainable Networks_. Object Oriented Network structure is helpful for observing each and every element the model. This package is developed for XAI research and development.
+ANN4j is a package that provides Object Oriented implementation of Artificial Neural Networks in java for exploration and analysis of neural networks and their algorithms. The package provides various functionalities for observing indivisual neurons and particular layers in multilayer perceptrons.  Since every neuron, layer and model in ANN4j is an object of its own, implementation of new operations and algorithms on them can be done without much effort. Research on new algorithms can be done without the need for translation of the operations into matrix format.
+This package can be used to train models on various datasets. ANN4j provides functionality for extension of inbuilt file readers for reading from new  formats of input data files. The ease of use and flexibility of this package makes it ideal for research and development of multilayer perceptrons in java.
+
 
 
 ## READ COMPLETE DOCUMENTATION [HERE](https://aatmaj-zephyr.github.io/ANN4jwiki/)
