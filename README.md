@@ -70,6 +70,7 @@ ANN4j is a java package that provides object oriented functionality to neural ne
 
 ### Usage
 
+To get started with ANN4j,you will need to download ANN4j from source, and import it in your workspace. No other installations required. Since the package is made using pure java, there are no other requirements or dependancies on this package.
 
 #### Download
  [Releases](https://github.com/Aatmaj-Zephyr/ANN4j/releases)
@@ -459,3 +460,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+### Final words
+ANN4j provides functionality for objectt orinted artificial neural networks in pure Java. This package can be used to perform fundamental research in areas of artificial intelligance. 
