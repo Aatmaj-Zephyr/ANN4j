@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.731596759229">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.731676558850">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=2.4.0.731596759229" rel="stylesheet" />
+    <link href="resources/css/retype.css?v=2.4.0.731676558850" rel="stylesheet" />
 
-    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.731596759229" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.731676558850" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.731596759229" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.731596759229" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.731676558850" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.731676558850" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -321,6 +321,16 @@ This package can be used to train models on various datasets. ANN4j provides fun
     </h4>
 </doc-anchor-target>
 <p>Exaustive information can be found on our <a href="https://aatmaj-zephyr.github.io/ANN4jwiki/">wiki</a></p>
+<doc-anchor-target id="inside-ann4j">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inside-ann4j">#</doc-anchor-trigger>
+        <span>Inside ANN4j</span>
+    </h4>
+</doc-anchor-target>
+<p>ANN4j treats every neuron, weight, layer of neurons and the whole model as indivisual objects. Operations like forwardpropogation and backpropogation are encoded at each of these levels using superclass-subclass polymorphism. Neurons inherit special observable properties. These make it possible to observe these neurons whenever any of their parameters change.
+Control over the various functions has been controlled by the use of template pattern on the Trainer class by providing standered sequence of algorithms. However there is provision that any of the algorithms can be used, altered and researched upon as per requirement.
+The overall design of the package makes it very felxible to use. For example, strategy pattern used for neuron behavours make it possible to add custom algorithms for setting the value of delta difference between neurons. New algorithms can be tested by inheriting class neuron and making appropriate changes in the custom implementation of algorithms.
+Detailed class structure, required documentation and Class Hierarchy can be found at our documentation. <a href="https://aatmaj-zephyr.github.io/ANN4jwiki/overview-tree.html">https://aatmaj-zephyr.github.io/ANN4jwiki/overview-tree.html</a></p>
 <doc-anchor-target id="class-diagram">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#class-diagram">#</doc-anchor-trigger>
