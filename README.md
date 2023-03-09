@@ -85,6 +85,12 @@ None. This package is made using 100% Pure Java. The java package requires java 
 
 Exaustive information can be found on our [wiki](https://aatmaj-zephyr.github.io/ANN4jwiki/)
 
+#### Inside ANN4j
+ANN4j treats every neuron, weight, layer of neurons and the whole model as indivisual objects. Operations like forwardpropogation and backpropogation are encoded at each of these levels using superclass-subclass polymorphism. Neurons inherit special observable properties. These make it possible to observe these neurons whenever any of their parameters change.
+Control over the various functions has been controlled by the use of template pattern on the Trainer class by providing standered sequence of algorithms. However there is provision that any of the algorithms can be used, altered and researched upon as per requirement.
+The overall design of the package makes it very felxible to use. For example, strategy pattern used for neuron behavours make it possible to add custom algorithms for setting the value of delta difference between neurons. New algorithms can be tested by inheriting class neuron and making appropriate changes in the custom implementation of algorithms.
+Detailed class structure, required documentation and Class Hierarchy can be found at our documentation. https://aatmaj-zephyr.github.io/ANN4jwiki/overview-tree.html 
+
 #### Class Diagram
 
 <img width="1371" alt="image" src="https://user-images.githubusercontent.com/83284294/208302425-951e57e9-d389-42e1-81e2-aa54148cc21e.png">
