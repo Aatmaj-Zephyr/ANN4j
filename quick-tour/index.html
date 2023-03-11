@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Security Policy</title>
-    <meta name="title" content="Security Policy">
-    <meta name="description" content="These are the supported versions." />
+    <title>Quick Tour</title>
+    <meta name="title" content="Quick Tour">
+    <meta name="description" content="The model parameters can be set using the parameter class. The number of neurons in each layer of the network needs to be set." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="/security/" />
+    <link rel="canonical" href="/quick-tour/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/security/">
-    <meta property="og:title" content="Security Policy">
-    <meta property="og:description" content="These are the supported versions.">
+    <meta property="og:url" content="/quick-tour/">
+    <meta property="og:title" content="Quick Tour">
+    <meta property="og:description" content="The model parameters can be set using the parameter class. The number of neurons in each layer of the network needs to be set.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/security/">
-    <meta property="twitter:title" content="Security Policy">
-    <meta property="twitter:description" content="These are the supported versions.">
+    <meta property="twitter:url" content="/quick-tour/">
+    <meta property="twitter:title" content="Quick Tour">
+    <meta property="twitter:description" content="The model parameters can be set using the parameter class. The number of neurons in each layer of the network needs to be set.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -35,6 +35,7 @@
     <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.731852873604" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.731852873604" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../resources/js/prism.js?v=2.4.0.731852873604" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,42 +171,54 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="security-policy" class="break-words">
+<doc-anchor-target id="quick-tour" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#security-policy">#</doc-anchor-trigger>
-        <span>Security Policy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-tour">#</doc-anchor-trigger>
+        <span>Quick Tour</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="supported-versions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#supported-versions">#</doc-anchor-trigger>
-        <span>Supported Versions</span>
-    </h2>
+<doc-anchor-target id="setting-parameters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-parameters">#</doc-anchor-trigger>
+        <span>Setting parameters</span>
+    </h4>
 </doc-anchor-target>
-<p>These are the supported versions.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Version</th>
-<th>Supported</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.0.x</td>
-<td><span class="docs-emoji">&#x2705;</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="reporting-a-vulnerability">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reporting-a-vulnerability">#</doc-anchor-trigger>
-        <span>Reporting a Vulnerability</span>
-    </h2>
+<p>The model parameters can be set using the <code v-pre>parameter</code> class. The number of neurons in each layer of the network needs to be set.
+After that the learning rate for weights and bias needs to be set. The batch size for mini-batch propogation algorithm needs to be set. For stochiastic gradient descent, it must be set to 1. For batch gradient descent, it must be set to the batchsize.
+The current options for rectification functions are sigmoid function, relu, leaky relu, tanh and softplus. Custom rectification functions are currently not supported, but can be configured using source code. (More information related to this can be found in the parameter class code.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">parameter.setLayerArray(784, 32, 16, 16, 10);
+parameter.setLearningRate(1);
+parameter.setBiasLearningRate(1);
+parameter.setBatchsize(10);
+parameter.setRectificationFunction(&quot;sigmoid&quot;);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="training-the-model">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#training-the-model">#</doc-anchor-trigger>
+        <span>Training the model</span>
+    </h4>
 </doc-anchor-target>
-<p>Please raise an issue <a href="https://github.com/Aatmaj-Zephyr/ANN4j/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=">https://github.com/Aatmaj-Zephyr/ANN4j/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=</a></p>
+<p>The Trainer class is used to train all the data in the model. Creating a new trainer class automatically creates the required layers, neurons and weights, all of which are objects.
+The trainer class can be trained with required number of samples and epochs. Testing of the data can be done with required number of samples. Testing and training of the data is done from two diferent files.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">Trainer myTrainer = new Trainer();
+		// Training the network with 45000 samples for 10 epochs
+		myTrainer.train(45000, 10);
+    myTrainer.test(9990);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="observing-each-neuron">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#observing-each-neuron">#</doc-anchor-trigger>
+        <span>Observing each neuron</span>
+    </h4>
+</doc-anchor-target>
+<p>Neurons can be observed using The neuron observer class. Everytime the observed neuron is updated, the results are displayed.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-java"><code v-pre class="language-java">NeuronObserver myNeuronObserver = new NeuronObserver();
+myNeuronObserver.setModel(myTrainer.getLayerManager());
+myNeuronObserver.addNeuronToBeObserved(1, 31);</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -215,16 +228,23 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../quick-tour/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../code_of_conduct/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Quick Tour</span>
+                                                <span class="block mt-1">Contributor Covenant Code of Conduct</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../security/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Security Policy</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -265,6 +285,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Security Policy", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Quick Tour", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
