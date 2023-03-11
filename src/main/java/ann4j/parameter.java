@@ -155,8 +155,14 @@ import java.io.FileNotFoundException;
             return NN.sigmoid(numToBeRectified);
         }
 
-        return NN.sigmoid(numToBeRectified); //add custom function here...
+        //add custom function here...
+        return NN.sigmoid(numToBeRectified); 
     }
+    /*future scope
+    Add custom rectification function functionality. Need to see how.
+
+    */
+
 
    // Setting the number of input and output neurons.
     public static void setLayerArray(int... LayerArray) {
@@ -211,3 +217,25 @@ import java.io.FileNotFoundException;
         Writer.end();
     }
 }
+
+/*
+ * 
+ * How to add a new rectification function in this class.
+ * Step 1) Write your function It must be a static function. It must take in a double value as input and return a double value as output.
+ * Example 
+ * public static double relu(double numToBeRectified) {
+        if (numToBeRectified > 0) { //logic of code
+            return numToBeRectified;
+        }
+        return 0;
+    }
+
+ * Step 2) Add the following snippet to the rectify functiuon of this class before return statement
+ * 
+ *  if (rectificationFunction == "Your function name") {
+            return fun(numToBeRectified);
+        }
+ * 
+ * For more information on the rectification functions please visit https://en.wikipedia.org/wiki/Rectifier_(neural_networks)
+ * 
+ */
