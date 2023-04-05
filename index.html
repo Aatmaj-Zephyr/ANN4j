@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.731852873604">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.733994584086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=2.4.0.731852873604" rel="stylesheet" />
+    <link href="resources/css/retype.css?v=2.4.0.733994584086" rel="stylesheet" />
 
-    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.731852873604" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.733994584086" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.731852873604" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.731852873604" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.733994584086" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.733994584086" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -263,6 +263,7 @@ This package can be used to train models on various datasets. ANN4j provides fun
 </ul>
 </li>
 <li><doc-anchor-trigger to="#license">License</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#future-scope">Future Scope</doc-anchor-trigger></li>
 </ul>
 <hr />
 <doc-anchor-target id="about">
@@ -816,13 +817,51 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="future-scope">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#future-scope">#</doc-anchor-trigger>
+        <span>Future Scope</span>
+    </h3>
+</doc-anchor-target>
+<p>The future scope for the package consists of the following goals</p>
+<ol>
+<li>Implement advanced models of neural networks like -
+<ol type="a">
+<li>CNN (convolutional neural networks)</li>
+<li>RNN (recurrent neural networks)</li>
+<li>Deep learning models like LSTM – Long Short-Term Memory</li>
+</ol>
+</li>
+<li>Add visualization for graphs of testing parameters.</li>
+<li>Add visualization of the model</li>
+<li>Make implementation for other dataset formats like
+<ol type="a">
+<li>multifolder format</li>
+<li>Extraction of data directly from images for image processing.</li>
+</ol>
+</li>
+</ol>
+<doc-anchor-target id="drawbacks-of-the-package">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#drawbacks-of-the-package">#</doc-anchor-trigger>
+        <span>Drawbacks of the package</span>
+    </h3>
+</doc-anchor-target>
+<p>Due to the technology and methods used for the package, the following drawbacks can be seen</p>
+<ol>
+<li>Slow execution of code due to Java.</li>
+<li>Slow execution of code due to object oriented implementation.</li>
+<li>High memory cost. Takes more memory when compared to matrix multiplication.</li>
+<li>No GPU support, all processing occurs in GPU.</li>
+<li>No active community and support.</li>
+</ol>
 <doc-anchor-target id="final-words">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#final-words">#</doc-anchor-trigger>
         <span>Final words</span>
     </h3>
 </doc-anchor-target>
-<p>ANN4j provides functionality for objectt orinted artificial neural networks in pure Java. This package can be used to perform fundamental research in areas of artificial intelligance.</p>
+<p>ANN4j provides functionality for object orinted artificial neural networks in pure Java. It has been developed and published open source on github under the MIT liscence. The source code has been refactored multiple times to include clean code principles as well as relevant design patterns. This package can be used to perform fundamental research in areas of artificial intelligance as it provides flexibility due to its object oriented approach.</p>
 
                                 
                                 <!-- Required only on API pages -->
