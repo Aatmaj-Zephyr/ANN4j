@@ -52,6 +52,7 @@ This package can be used to train models on various datasets. ANN4j provides fun
   - [Help spread the word](#help-spread-the-word)
   - [Cite](#citing-this-package-for-research-work)
 - [License](#license)
+- [Future Scope](#future-scope)
 
 ___
 
@@ -467,5 +468,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+### Future Scope
+
+The future scope for the package consists of the following goals
+1) Implement advanced models of neural networks like - 
+	a) CNN (convolutional neural networks) 
+	b) RNN (recurrent neural networks)
+	c) Deep learning models like LSTM – Long Short-Term Memory
+2) Add visualization for graphs of testing parameters. 
+3) Add visualization of the model
+4) Make implementation for other dataset formats like
+	a) multifolder format 
+	b) Extraction of data directly from images for image processing.
+
+### Drawbacks of the package
+
+Due to the technology and methods used for the package, the following drawbacks can be seen
+1) Slow execution of code due to Java.
+2) Slow execution of code due to object oriented implementation.
+3) High memory cost. Takes more memory when compared to matrix multiplication.
+4) No GPU support, all processing occurs in GPU.
+5) No active community and support.
+
 ### Final words
-ANN4j provides functionality for objectt orinted artificial neural networks in pure Java. This package can be used to perform fundamental research in areas of artificial intelligance. 
+ANN4j provides functionality for object orinted artificial neural networks in pure Java. It has been developed and published open source on github under the MIT liscence. The source code has been refactored multiple times to include clean code principles as well as relevant design patterns. This package can be used to perform fundamental research in areas of artificial intelligance as it provides flexibility due to its object oriented approach. 
+
