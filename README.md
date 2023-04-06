@@ -67,7 +67,9 @@ ANN4j is a java package that provides object oriented functionality to neural ne
 - XAI method for relevance propagation
 - Stochastic/batch gradient descent
 - No hardcoded implementations lets researchers change the parameters as they want.
-- Plug and play mnist type data. Other Data files can be handeled via extension
+- Plug and play mnist type data. Other Data files can be handeled via extension.
+
+
 
 ### Usage
 
@@ -106,6 +108,16 @@ Detailed class structure, required documentation and Class Hierarchy can be foun
 - Observer pattern - NeuronObserver
 - Template pattern - Trainer
 - Singleton Pattern - NeuronBehaviour concrete classes
+
+The following clean code principles have been applied to increase the maintainability of the package. 
+1) Usage of composition and aggregation for increasing code quality.
+2) Preference to work delegation. 
+3) Proper use of inheritance, polymorphism and interfaces. 
+4) Explanatory variable naming.
+5) Short length of functions and an increase in the number of functions increases flexibility. 
+6) Short length of classes and increase in the number of classes. 
+7) Inline comments wherever required. 
+8) Explanatory comments for every function. 
 
 ### Training
 #### Setting parameters
@@ -487,8 +499,8 @@ Due to the technology and methods used for the package, the following drawbacks 
 1) Slow execution of code due to Java.
 2) Slow execution of code due to object oriented implementation.
 3) High memory cost. Takes more memory when compared to matrix multiplication.
-4) No GPU support, all processing occurs in GPU.
-5) No active community and support.
+4) No GPU support, all processing occurs in CPU.
+5) No active community.
 
 ### Final words
 ANN4j provides functionality for object orinted artificial neural networks in pure Java. It has been developed and published open source on github under the MIT liscence. The source code has been refactored multiple times to include clean code principles as well as relevant design patterns. This package can be used to perform fundamental research in areas of artificial intelligance as it provides flexibility due to its object oriented approach. 
