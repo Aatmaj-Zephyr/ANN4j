@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.733994584086">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734076572732">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=2.4.0.733994584086" rel="stylesheet" />
+    <link href="resources/css/retype.css?v=2.4.0.734076572732" rel="stylesheet" />
 
-    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.733994584086" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.734076572732" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.733994584086" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.733994584086" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.734076572732" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=2.4.0.734076572732" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -290,7 +290,7 @@ This package can be used to train models on various datasets. ANN4j provides fun
 <li>XAI method for relevance propagation</li>
 <li>Stochastic/batch gradient descent</li>
 <li>No hardcoded implementations lets researchers change the parameters as they want.</li>
-<li>Plug and play mnist type data. Other Data files can be handeled via extension</li>
+<li>Plug and play mnist type data. Other Data files can be handeled via extension.</li>
 </ul>
 <doc-anchor-target id="usage">
     <h3>
@@ -358,6 +358,17 @@ Detailed class structure, required documentation and Class Hierarchy can be foun
 <li>Template pattern - Trainer</li>
 <li>Singleton Pattern - NeuronBehaviour concrete classes</li>
 </ul>
+<p>The following clean code principles have been applied to increase the maintainability of the package.</p>
+<ol>
+<li>Usage of composition and aggregation for increasing code quality.</li>
+<li>Preference to work delegation.</li>
+<li>Proper use of inheritance, polymorphism and interfaces.</li>
+<li>Explanatory variable naming.</li>
+<li>Short length of functions and an increase in the number of functions increases flexibility.</li>
+<li>Short length of classes and increase in the number of classes.</li>
+<li>Inline comments wherever required.</li>
+<li>Explanatory comments for every function.</li>
+</ol>
 <doc-anchor-target id="training">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#training">#</doc-anchor-trigger>
@@ -852,8 +863,8 @@ SOFTWARE.</code></pre>
 <li>Slow execution of code due to Java.</li>
 <li>Slow execution of code due to object oriented implementation.</li>
 <li>High memory cost. Takes more memory when compared to matrix multiplication.</li>
-<li>No GPU support, all processing occurs in GPU.</li>
-<li>No active community and support.</li>
+<li>No GPU support, all processing occurs in CPU.</li>
+<li>No active community.</li>
 </ol>
 <doc-anchor-target id="final-words">
     <h3>
