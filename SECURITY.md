@@ -11,4 +11,4 @@ These are the supported versions.
 
 ## Reporting a Vulnerability
 
-Please raise an issue https://github.com/Aatmaj-Zephyr/ANN4j/issues/new?assignees=&labels=&template=bug_report.md&title=
+Please raise an issue [here](https://github.com/Aatmaj-Zephyr/ANN4j/issues/new?assignees=&labels=&template=bug_report.md&title=)
