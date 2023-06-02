@@ -7,5 +7,18 @@ branding:
 links:
   - text: Documentation
     link: https://aatmaj-zephyr.github.io/ANN4jwiki/
+    icon: project-roadmap
+  - text: Source
+    link: https://github.com/Aatmaj-Zephyr/ANN4j
+    icon: mark-github
+  - text: Follow me
+    link: https://github.com/Aatmaj-Zephyr/
+    icon: star
+  - text: Issues
+    link: https://github.com/Aatmaj-Zephyr/ANN4j/issues
+    icon: bug
+search:
+  mode: partial
 footer:
   copyright: "&copy; Copyright Aatmaj. MIT License. All rights reserved."
+favicon: /favion.png

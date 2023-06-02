@@ -16,3 +16,6 @@ ANN4j find its use for research purposes for researching on new ANN algorithms. 
 
 ### How do I get started?
 You can refer the [quick start guide](https://github.com/Aatmaj-Zephyr/ANN4j/blob/main/Quick%20Tour.md)  the [README file](https://github.com/Aatmaj-Zephyr/ANN4j/tree/main#readme) and the [documentation wiki](https://aatmaj-zephyr.github.io/ANN4jwiki/)
+
+_____
+> More questions? Please raise an issue [here](https://github.com/Aatmaj-Zephyr/ANN4j/issues)

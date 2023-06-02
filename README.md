@@ -1,12 +1,12 @@
+
+
 <p align="center">
 <img width="600" align="center" src="https://user-images.githubusercontent.com/83284294/205426515-b272d188-2902-42d7-aa79-defdf3f073f7.png">
 </p>
 
----
----
-label: "What is ANN4j?"
-icon: home
----
+
+
+
 
 ### ANN4j - Artificial Neural Networks for Java
 
@@ -16,8 +16,8 @@ This package can be used to train models on various datasets. ANN4j provides fun
 Please consider [following me on github](https://github.com/Aatmaj-Zephyr) 😄
 
 
-## READ COMPLETE DOCUMENTATION [HERE](https://aatmaj-zephyr.github.io/ANN4jwiki/)
-## Source code [HERE](https://github.com/Aatmaj-Zephyr/ANN4j/tree/main/src)
+##### READ COMPLETE DOCUMENTATION [HERE](https://aatmaj-zephyr.github.io/ANN4jwiki/)
+##### Source code will be found [HERE](https://github.com/Aatmaj-Zephyr/ANN4j/tree/main/src)
 
 ## Table of Contents
 

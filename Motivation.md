@@ -44,7 +44,7 @@ As you can see, the ANN4j implementation is very similar to the actual concept. 
 ______
 
 
-|        | Efficient | Easy to Interpret | Easy to modify |
+|  Type  | Efficient | Easy to Interpret | Easy to modify |
 |--------|-----------|-------------------|----------------|
 | Matrix | Yes       | No                | No             |
 | ANN4j  | No        | Yes               | Yes            |
