@@ -3,15 +3,21 @@
 </p>
 
 ---
+---
+label: "What is ANN4j?"
+icon: home
+---
 
 ### ANN4j - Artificial Neural Networks for Java
 
-ANN4j is a package that provides Object Oriented implementation of Artificial Neural Networks in java for exploration and analysis of neural networks and their algorithms. The package provides various functionalities for observing indivisual neurons and particular layers in multilayer perceptrons.  Since every neuron, layer and model in ANN4j is an object of its own, implementation of new operations and algorithms on them can be done without much effort. Research on new algorithms can be done without the need for translation of the operations into matrix format.
+ANN4j is a package that provides Object Oriented implementation of Artificial Neural Networks in java for exploration and analysis of neural networks and their algorithms. The package provides various functionalities for observing individual neurons and particular layers in multilayer perceptrons.  Since every neuron, layer and model in ANN4j is an object of its own, implementation of new operations and algorithms on them can be done without much effort. Research on new algorithms can be done without the need for translation of the operations into matrix format.
 This package can be used to train models on various datasets. ANN4j provides functionality for extension of inbuilt file readers for reading from new  formats of input data files. The ease of use and flexibility of this package makes it ideal for research and development of multilayer perceptrons in java.
 
+Please consider [following me on github](https://github.com/Aatmaj-Zephyr) 😄
 
 
 ## READ COMPLETE DOCUMENTATION [HERE](https://aatmaj-zephyr.github.io/ANN4jwiki/)
+## Source code [HERE](https://github.com/Aatmaj-Zephyr/ANN4j/tree/main/src)
 
 ## Table of Contents
 
@@ -19,7 +25,7 @@ This package can be used to train models on various datasets. ANN4j provides fun
   - [Features](#features)
 - [Usage](#usage)
   - [Download](#download)
-  - [Requirements and Dependancies](#requirements-and-dependancies)
+  - [Requirements and Dependancies](#requirements-and-dependencies)
 - [Design](#design)
    - [Class Diagram](#class-diagram)
    - [Clases and Methods](https://aatmaj-zephyr.github.io/ANN4jwiki/)
@@ -60,20 +66,24 @@ ___
 
 
 ##### ANN4j - Creating observable object-oriented neural networks for better Explainable AI.
-ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a seperate object. While this kind of implementation is highly inefficiant when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiantly. Indivisual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique.
+ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a separate object. While this kind of implementation is highly inefficient when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiently. Individual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique.
 
 #### Features 
 - Observable implementation for Artificial Neural Networks (ANN)
 - XAI method for relevance propagation
 - Stochastic/batch gradient descent
 - No hardcoded implementations lets researchers change the parameters as they want.
-- Plug and play mnist type data. Other Data files can be handeled via extension.
+- Plug and play mnist type data. Other Data files can be handled via extension.
 
 
 
 ### Usage
 
-To get started with ANN4j,you will need to download ANN4j from source, and import it in your workspace. No other installations required. Since the package is made using pure java, there are no other requirements or dependancies on this package.
+To get started with ANN4j,you will need to download ANN4j from source, and import it in your workspace. No other installations required. Since the package is made using pure java, there are no other requirements or dependencies on this package.
+
+Consider this as an pre-cooked java source code that you can directly use in your project. Just download the code from the source (link below). Place the package in a directory. Configure the path for the import statements and use it in your project! 😃
+
+Please consider [following me on github](https://github.com/Aatmaj-Zephyr) 😄
 
 #### Download
  [Releases](https://github.com/Aatmaj-Zephyr/ANN4j/releases)
@@ -81,7 +91,7 @@ To get started with ANN4j,you will need to download ANN4j from source, and impor
 The package can be imported after download.
  `import ann4j.*;`
 
-#### Requirements and Dependancies
+#### Requirements and Dependencies
 None. This package is made using 100% Pure Java. The java package requires java 5.0+. No other requirements are required. Recommended to use the latest version of Java. [Java download link](https://www.java.com/download/ie_manual.jsp)
 
 #### Design
@@ -89,10 +99,10 @@ None. This package is made using 100% Pure Java. The java package requires java 
 Exaustive information can be found on our [wiki](https://aatmaj-zephyr.github.io/ANN4jwiki/)
 
 #### Inside ANN4j
-ANN4j treats every neuron, weight, layer of neurons and the whole model as indivisual objects. Operations like forwardpropogation and backpropogation are encoded at each of these levels using superclass-subclass polymorphism. Neurons inherit special observable properties. These make it possible to observe these neurons whenever any of their parameters change.
-Control over the various functions has been controlled by the use of template pattern on the Trainer class by providing standered sequence of algorithms. However there is provision that any of the algorithms can be used, altered and researched upon as per requirement.
-The overall design of the package makes it very felxible to use. For example, strategy pattern used for neuron behavours make it possible to add custom algorithms for setting the value of delta difference between neurons. New algorithms can be tested by inheriting class neuron and making appropriate changes in the custom implementation of algorithms.
-Detailed class structure, required documentation and Class Hierarchy can be found at our documentation. https://aatmaj-zephyr.github.io/ANN4jwiki/overview-tree.html 
+ANN4j treats every neuron, weight, layer of neurons and the whole model as individual objects. Operations like forwardpropagation and backpropagation are encoded at each of these levels using superclass-subclass polymorphism. Neurons inherit special observable properties. These make it possible to observe these neurons whenever any of their parameters change.
+Control over the various functions has been controlled by the use of template pattern on the Trainer class by providing standard sequence of algorithms. However there is provision that any of the algorithms can be used, altered and researched upon as per requirement.
+The overall design of the package makes it very flexible to use. For example, strategy pattern used for neuron behaviors make it possible to add custom algorithms for setting the value of delta difference between neurons. New algorithms can be tested by inheriting class neuron and making appropriate changes in the custom implementation of algorithms.
+Detailed class structure, required documentation and Class Hierarchy can be found at our [documentation](https://aatmaj-zephyr.github.io/ANN4jwiki/overview-tree.html)
 
 #### Class Diagram
 
@@ -490,7 +500,7 @@ The future scope for the package consists of the following goals
 2) Add visualization for graphs of testing parameters. 
 3) Add visualization of the model
 4) Make implementation for other dataset formats like
-	a) multifolder format 
+	a) Multifolder format 
 	b) Extraction of data directly from images for image processing.
 
 ### Drawbacks of the package
@@ -503,5 +513,5 @@ Due to the technology and methods used for the package, the following drawbacks 
 5) No active community.
 
 ### Final words
-ANN4j provides functionality for object orinted artificial neural networks in pure Java. It has been developed and published open source on github under the MIT liscence. The source code has been refactored multiple times to include clean code principles as well as relevant design patterns. This package can be used to perform fundamental research in areas of artificial intelligance as it provides flexibility due to its object oriented approach. 
+ANN4j provides functionality for object oriented artificial neural networks in pure Java. It has been developed and published open source on github under the MIT license. The source code has been refactored multiple times to include clean code principles as well as relevant design patterns. This package can be used to perform fundamental research in areas of artificial intelligence as it provides flexibility due to its object oriented approach. 
 
