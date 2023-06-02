@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738910679404">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738997513588">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.1">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.0.1.738910679404" rel="stylesheet" />
+    <link href="resources/css/retype.css?v=3.0.1.738997513588" rel="stylesheet" />
 
-    <script type="text/javascript" src="resources/js/config.js?v=3.0.1.738910679404" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/config.js?v=3.0.1.738997513588" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="resources/js/retype.js?v=3.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=3.0.1.738910679404" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=3.0.1.738910679404" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=3.0.1.738997513588" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="resources/js/prism.js?v=3.0.1.738997513588" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,18 +181,33 @@
 <img width="600" align="center" src="https://user-images.githubusercontent.com/83284294/205426515-b272d188-2902-42d7-aa79-defdf3f073f7.png">
 </p>
 <hr />
+<hr />
+<doc-anchor-target id="label-what-is-ann4jicon-home">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#label-what-is-ann4jicon-home">#</doc-anchor-trigger>
+        <span>label: &quot;What is ANN4j?&quot;
+icon: home</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="ann4j---artificial-neural-networks-for-java">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ann4j---artificial-neural-networks-for-java">#</doc-anchor-trigger>
         <span>ANN4j - Artificial Neural Networks for Java</span>
     </h3>
 </doc-anchor-target>
-<p>ANN4j is a package that provides Object Oriented implementation of Artificial Neural Networks in java for exploration and analysis of neural networks and their algorithms. The package provides various functionalities for observing indivisual neurons and particular layers in multilayer perceptrons.  Since every neuron, layer and model in ANN4j is an object of its own, implementation of new operations and algorithms on them can be done without much effort. Research on new algorithms can be done without the need for translation of the operations into matrix format.
+<p>ANN4j is a package that provides Object Oriented implementation of Artificial Neural Networks in java for exploration and analysis of neural networks and their algorithms. The package provides various functionalities for observing individual neurons and particular layers in multilayer perceptrons.  Since every neuron, layer and model in ANN4j is an object of its own, implementation of new operations and algorithms on them can be done without much effort. Research on new algorithms can be done without the need for translation of the operations into matrix format.
 This package can be used to train models on various datasets. ANN4j provides functionality for extension of inbuilt file readers for reading from new  formats of input data files. The ease of use and flexibility of this package makes it ideal for research and development of multilayer perceptrons in java.</p>
+<p>Please consider <a href="https://github.com/Aatmaj-Zephyr">following me on github</a> <span class="docs-emoji">&#x1F604;</span></p>
 <doc-anchor-target id="read-complete-documentation-here">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#read-complete-documentation-here">#</doc-anchor-trigger>
         <span>READ COMPLETE DOCUMENTATION <a href="https://aatmaj-zephyr.github.io/ANN4jwiki/">HERE</a></span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="source-code-here">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#source-code-here">#</doc-anchor-trigger>
+        <span>Source code <a href="https://github.com/Aatmaj-Zephyr/ANN4j/tree/main/src">HERE</a></span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="table-of-contents">
@@ -210,7 +225,7 @@ This package can be used to train models on various datasets. ANN4j provides fun
 <li><doc-anchor-trigger to="#usage">Usage</doc-anchor-trigger>
 <ul>
 <li><doc-anchor-trigger to="#download">Download</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#requirements-and-dependancies">Requirements and Dependancies</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#requirements-and-dependencies">Requirements and Dependancies</doc-anchor-trigger></li>
 </ul>
 </li>
 <li><doc-anchor-trigger to="#design">Design</doc-anchor-trigger>
@@ -278,7 +293,7 @@ This package can be used to train models on various datasets. ANN4j provides fun
         <span>ANN4j - Creating observable object-oriented neural networks for better Explainable AI.</span>
     </h5>
 </doc-anchor-target>
-<p>ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a seperate object. While this kind of implementation is highly inefficiant when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiantly. Indivisual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique.</p>
+<p>ANN4j is a java package that provides object oriented functionality to neural networks. It implements multilayer perceptrons in java by using Objects instead of matrix multiplications. Every neuron is treated as a separate object. While this kind of implementation is highly inefficient when compared to matrix multiplications, this implementation will help research in the fields of Explainable AI. Explainable AI aims at making the model interpretable. By pausing and observing the neural net at different stages, researchers can study neural networks more efficiently. Individual observable interfaces are more easy to observe then matrices. Operations which are difficult to perform on matrices can be performed more easily using this technique.</p>
 <doc-anchor-target id="features">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#features">#</doc-anchor-trigger>
@@ -290,7 +305,7 @@ This package can be used to train models on various datasets. ANN4j provides fun
 <li>XAI method for relevance propagation</li>
 <li>Stochastic/batch gradient descent</li>
 <li>No hardcoded implementations lets researchers change the parameters as they want.</li>
-<li>Plug and play mnist type data. Other Data files can be handeled via extension.</li>
+<li>Plug and play mnist type data. Other Data files can be handled via extension.</li>
 </ul>
 <doc-anchor-target id="usage">
     <h3>
@@ -298,7 +313,9 @@ This package can be used to train models on various datasets. ANN4j provides fun
         <span>Usage</span>
     </h3>
 </doc-anchor-target>
-<p>To get started with ANN4j,you will need to download ANN4j from source, and import it in your workspace. No other installations required. Since the package is made using pure java, there are no other requirements or dependancies on this package.</p>
+<p>To get started with ANN4j,you will need to download ANN4j from source, and import it in your workspace. No other installations required. Since the package is made using pure java, there are no other requirements or dependencies on this package.</p>
+<p>Consider this as an pre-cooked java source code that you can directly use in your project. Just download the code from the source (link below). Place the package in a directory. Configure the path for the import statements and use it in your project! <span class="docs-emoji">&#x1F603;</span></p>
+<p>Please consider <a href="https://github.com/Aatmaj-Zephyr">following me on github</a> <span class="docs-emoji">&#x1F604;</span></p>
 <doc-anchor-target id="download">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#download">#</doc-anchor-trigger>
@@ -308,10 +325,10 @@ This package can be used to train models on various datasets. ANN4j provides fun
 <p><a href="https://github.com/Aatmaj-Zephyr/ANN4j/releases">Releases</a></p>
 <p>The package can be imported after download.
 <code v-pre>import ann4j.*;</code></p>
-<doc-anchor-target id="requirements-and-dependancies">
+<doc-anchor-target id="requirements-and-dependencies">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#requirements-and-dependancies">#</doc-anchor-trigger>
-        <span>Requirements and Dependancies</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#requirements-and-dependencies">#</doc-anchor-trigger>
+        <span>Requirements and Dependencies</span>
     </h4>
 </doc-anchor-target>
 <p>None. This package is made using 100% Pure Java. The java package requires java 5.0+. No other requirements are required. Recommended to use the latest version of Java. <a href="https://www.java.com/download/ie_manual.jsp">Java download link</a></p>
@@ -328,10 +345,10 @@ This package can be used to train models on various datasets. ANN4j provides fun
         <span>Inside ANN4j</span>
     </h4>
 </doc-anchor-target>
-<p>ANN4j treats every neuron, weight, layer of neurons and the whole model as indivisual objects. Operations like forwardpropogation and backpropogation are encoded at each of these levels using superclass-subclass polymorphism. Neurons inherit special observable properties. These make it possible to observe these neurons whenever any of their parameters change.
-Control over the various functions has been controlled by the use of template pattern on the Trainer class by providing standered sequence of algorithms. However there is provision that any of the algorithms can be used, altered and researched upon as per requirement.
-The overall design of the package makes it very felxible to use. For example, strategy pattern used for neuron behavours make it possible to add custom algorithms for setting the value of delta difference between neurons. New algorithms can be tested by inheriting class neuron and making appropriate changes in the custom implementation of algorithms.
-Detailed class structure, required documentation and Class Hierarchy can be found at our documentation. <a href="https://aatmaj-zephyr.github.io/ANN4jwiki/overview-tree.html">https://aatmaj-zephyr.github.io/ANN4jwiki/overview-tree.html</a></p>
+<p>ANN4j treats every neuron, weight, layer of neurons and the whole model as individual objects. Operations like forwardpropagation and backpropagation are encoded at each of these levels using superclass-subclass polymorphism. Neurons inherit special observable properties. These make it possible to observe these neurons whenever any of their parameters change.
+Control over the various functions has been controlled by the use of template pattern on the Trainer class by providing standard sequence of algorithms. However there is provision that any of the algorithms can be used, altered and researched upon as per requirement.
+The overall design of the package makes it very flexible to use. For example, strategy pattern used for neuron behaviors make it possible to add custom algorithms for setting the value of delta difference between neurons. New algorithms can be tested by inheriting class neuron and making appropriate changes in the custom implementation of algorithms.
+Detailed class structure, required documentation and Class Hierarchy can be found at our <a href="https://aatmaj-zephyr.github.io/ANN4jwiki/overview-tree.html">documentation</a></p>
 <doc-anchor-target id="class-diagram">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#class-diagram">#</doc-anchor-trigger>
@@ -847,7 +864,7 @@ SOFTWARE.</code></pre>
 <li>Add visualization of the model</li>
 <li>Make implementation for other dataset formats like
 <ol type="a">
-<li>multifolder format</li>
+<li>Multifolder format</li>
 <li>Extraction of data directly from images for image processing.</li>
 </ol>
 </li>
@@ -872,7 +889,7 @@ SOFTWARE.</code></pre>
         <span>Final words</span>
     </h3>
 </doc-anchor-target>
-<p>ANN4j provides functionality for object orinted artificial neural networks in pure Java. It has been developed and published open source on github under the MIT liscence. The source code has been refactored multiple times to include clean code principles as well as relevant design patterns. This package can be used to perform fundamental research in areas of artificial intelligance as it provides flexibility due to its object oriented approach.</p>
+<p>ANN4j provides functionality for object oriented artificial neural networks in pure Java. It has been developed and published open source on github under the MIT license. The source code has been refactored multiple times to include clean code principles as well as relevant design patterns. This package can be used to perform fundamental research in areas of artificial intelligence as it provides flexibility due to its object oriented approach.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -885,10 +902,10 @@ SOFTWARE.</code></pre>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="contributing/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="quick-tour/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">CONTRIBUTING</span>
+                                                <span class="block mt-1">Quick Tour</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
